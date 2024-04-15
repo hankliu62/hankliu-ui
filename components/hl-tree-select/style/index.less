@@ -1,0 +1,25 @@
+@import '~antd4x/lib/tree-select/style/index-pure.less';
+@import '../../style/themes/variable';
+.hlui-select-tree .hlui-select-tree-node-content-wrapper.hlui-select-tree-node-selected {
+    color: @color-primary;
+}
+
+.hl-tree-select-lock-height {
+  .hlui-select-clear {
+    display: flex;
+    border-radius: 100%;
+  }
+  .hlui-select-selector {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+  .hlui-select-selection-overflow {
+    flex-wrap: nowrap;
+    max-width: none;
+    overflow: visible;
+  }
+}

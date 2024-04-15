@@ -1,0 +1,24 @@
+@import '../../style/themes/variable';
+
+.hlui-load-more {
+  padding: 15px 0;
+  text-align: center;
+}
+.hlui-load-more-spin {
+  display: flex;
+  justify-content: center;
+  .hlui-load-more-spin-icon {
+    color: @color-primary-light;
+    font-size: 26px;
+    animation: hlui-load-more-spin-ani ease-in-out infinite 1.5s;
+  }
+}
+
+@keyframes hlui-load-more-spin-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}

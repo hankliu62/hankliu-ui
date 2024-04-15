@@ -1,0 +1,130 @@
+@import '~antd4x/lib/input/style/index-pure.less';
+@import '../../style/themes/variable';
+@medium-height: 36px;
+.medium() {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+.hlui-input-medium {
+  .medium();
+  &.hlui-input-affix-wrapper {
+    .medium();
+  }
+}
+.hlui-input-group-wrapper.hlui-input-medium {
+  padding: 0;
+  .hlui-input {
+    .medium();
+  }
+}
+.hlui-input-search-medium {
+  .hlui-input {
+    .medium();
+  }
+  .hlui-input-search-button {
+    height: @medium-height;
+  }
+}
+
+.hlui-input-group-medium .hlui-input,
+.hlui-input-group-medium > .hlui-input-group-addon {
+  .medium();
+}
+.hlui-input-group-medium .hlui-select-single .hlui-select-selector {
+  height: @medium-height;
+}
+.hlui-input[type='color'].hlui-input-medium {
+  height: @medium-height;
+}
+.hlui-input-search .hlui-input-medium {
+  line-height: 1.5713;
+}
+.hlui-input-password-medium {
+  .medium();
+}
+
+@smedium-height: 28px;
+.smedium() {
+  padding: 2px 10px;
+  font-size: 14px;
+}
+
+.hlui-input-smedium {
+  .smedium();
+  &.hlui-input-affix-wrapper {
+    .smedium();
+  }
+}
+.hlui-input-group-wrapper.hlui-input-smedium {
+  padding: 0;
+  .hlui-input {
+    .smedium();
+  }
+}
+.hlui-input-search-smedium {
+  .hlui-input {
+    .smedium();
+  }
+  .hlui-input-search-button {
+    height: @smedium-height;
+  }
+}
+
+.hlui-input-group-smedium .hlui-input,
+.hlui-input-group-smedium > .hlui-input-group-addon {
+  .smedium();
+}
+.hlui-input-group-smedium .hlui-select-single .hlui-select-selector {
+  height: @smedium-height;
+}
+.hlui-input[type='color'].hlui-input-smedium {
+  height: @smedium-height;
+}
+.hlui-input-search .hlui-input-smedium {
+  line-height: 1.5713;
+}
+.hlui-input-password-smedium {
+  .smedium();
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .hlui-input-medium {
+    height: @medium-height;
+  }
+  .hlui-input-smedium {
+    height: @smedium-height;
+  }
+}
+
+// border-radius
+.hlui-input-affix-wrapper {
+  border-radius: 6px;
+  &.hlui-input-smedium,
+  &.hlui-input-affix-wrapper-sm {
+    border-radius: 4px;
+  }
+}
+.hlui-input {
+  border-radius: 6px;
+  &.hlui-input-smedium,
+  &.hlui-input-sm {
+    border-radius: 4px;
+  }
+}
+.hlui-input-group-addon {
+  border-radius: 6px;
+}
+.hlui-input-smedium,
+.hlui-input-group-wrapper-sm {
+  .hlui-input-group-addon {
+    border-radius: 4px;
+  }
+}
+.hlui-input-search-smedium {
+  .hlui-input,.hlui-input-group-addon {
+    border-radius: 4px;
+  }
+}
+.hlui-input-password-smedium {
+  border-radius: 4px;
+}

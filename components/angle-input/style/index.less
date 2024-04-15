@@ -1,0 +1,73 @@
+@import '../../style/themes/variable';
+
+.hlui-angle-input {
+  position: relative;
+  padding-right: 48px;
+  display: flex;
+  align-items: center;
+
+  .hlui-input-number-affix-wrapper {
+    flex-grow: 1;
+  }
+  .angle-disk {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    border: solid 1px @color-border-dark;
+    background-color: @color-border;
+    margin: auto;
+    &:hover {
+      border-color: @color-primary;
+    }
+    .disk-point {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      right: 6px;
+      top: 14px;
+      transform-origin: -5px center;
+      border-radius: 50%;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      transform: rotateZ(0deg);
+    }
+  }
+
+  &.size-small {
+    padding-right: 40px;
+    .angle-disk {
+      width: 28px;
+      height: 28px;
+      .disk-point {
+        right: 4px;
+        top: 10px;
+        transform-origin: -3px center;
+      }
+    }
+  }
+  &.size-large {
+    padding-right: 60px;
+    .angle-disk {
+      width: 48px;
+      height: 48px;
+      .disk-point {
+        right: 6px;
+        top: 20px;
+        transform-origin: -11px center;
+      }
+    }
+  }
+
+  &.disabled {
+    .angle-disk {
+      cursor: not-allowed;
+      opacity: 0.6;
+      border-color: #ccc;
+    }
+  }
+
+}

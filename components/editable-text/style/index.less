@@ -1,0 +1,75 @@
+@import '~antd4x/lib/empty/style/index-pure.less';
+@import '../../style/themes/variable';
+
+.hlui-editable-text {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 1px;
+    background-color: @color-primary;
+    opacity: 0;
+    content: '';
+  }
+}
+
+.hlui-editable-text-editing {
+  &::after {
+    opacity: 1;
+  }
+  .hlui-editable-text-value {
+    display: none;
+  }
+  .hlui-editable-text-input {
+    display: block;
+  }
+}
+.hlui-editable-text-placeholder {
+  color: @color-text-light;
+}
+.hlui-editable-text-full-width {
+  width: 100%;
+}
+.hlui-editable-text-value {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding-right: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  .hlui-editable-text-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1em;
+    height: 1em;
+    margin: auto;
+    color: @color-primary;
+    cursor: pointer;
+    &:hover {
+      color: @color-primary-dark;
+    }
+  }
+}
+.hlui-editable-text-placeholder {
+  color: @color-text-light;
+}
+
+.hlui-editable-text-input {
+  display: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  outline: none;
+}

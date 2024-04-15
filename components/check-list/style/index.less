@@ -1,0 +1,216 @@
+@import '../../style/themes/variable';
+@import '../../style/mixins/clearfix.less';
+// checklist
+.@{ant-prefix}-checklist {
+  &-list-item {
+    margin-top: 8px;
+    display: flex;
+    align-items: flex-start;
+    &:first-child {
+      margin-top: 0;
+    }
+    &-item-title {
+      flex: 1;
+      .@{ant-prefix}-checkbox-wrapper {
+        display: block;
+        position: relative;
+        padding-left: 16px;
+        .@{ant-prefix}-checkbox {
+          position: absolute;
+          left: 0;
+          top: 3px;
+        }
+        .@{ant-prefix}-checkbox + span {
+          display: block;
+        }
+      }
+    }
+    &-item-subtitle {
+      font-size: 12px;
+      line-height: 23px;
+      color: @color-text-light;
+    }
+  }
+  &-more {
+    margin-top: 8px;
+  }
+  &-more-action {
+    color: @color-text-light;
+    cursor: pointer;
+    &:hover {
+      color:@primary-color;
+    }
+  }
+}
+
+// end
+
+.@{ant-prefix}-head-subtitle {
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  bottom: 0;
+  margin: auto;
+  color: @color-text-light;
+  line-height: 1;
+  height: 1em;
+}
+.@{ant-prefix}-checklist-group, .@{ant-prefix}-checklist-groups {
+  .check-list {
+    padding-left: 18px;
+  }
+}
+.check-list-group.@{ant-prefix}-collapse > .@{ant-prefix}-collapse-item,
+.check-list-groups.@{ant-prefix}-collapse > .@{ant-prefix}-collapse-item {
+  padding-bottom: 0;
+  border: none;
+  .@{ant-prefix}-collapse-content > .@{ant-prefix}-collapse-content-box {
+    padding-top: 8px;
+  }
+  & > .@{ant-prefix}-collapse-header {
+    padding-top: 0;
+    .@{ant-prefix}-collapse-arrow {
+      top: 5px;
+    }
+  }
+}
+.@{ant-prefix}-more-action {
+  color: @color-text-light;
+  cursor: pointer;
+  &:hover {
+    color:@primary-color;
+  }
+}
+
+.@{ant-prefix}-checklist-groups.hlui-collapse , .hlui-checklist-group.hlui-collapse  {
+  border: none;
+  background-color: transparent;
+  & > .hlui-collapse-item > .hlui-collapse-header {
+    padding: 2px 12px 2px 0;
+  }
+  .hlui-collapse-content > .hlui-collapse-content-box {
+    padding: 6px 34px;
+  }
+  .hlui-collapse-item {
+    padding-bottom: 0;
+    margin: 6px 0;
+  }
+  .hlui-collapse-item, .hlui-collapse-header, .hlui-collapse-content {
+    border: none;
+  }
+}
+.hlui-checklist-groups-more {
+  padding: 8px;
+}
+
+//end
+.@{ant-prefix}-checklist-rows {
+  position: relative;
+  // z-index: 99;
+  &.scrolled {
+    padding: 0 24px;
+    .scroll-left, .scroll-right {
+      display: flex;
+    }
+  }
+  .rows-scroll {
+    overflow: hidden;
+    position: relative;
+  }
+  .scroll-left, .scroll-right {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    font-size: 16px;
+    width: 24px;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      color:@primary-color;
+    }
+  }
+  .scroll-left {
+    left: 0;
+    // background: linear-gradient(to right, #FFFFFF 50px, rgba(255, 255, 255, 0) 100%);
+  }
+  .scroll-right {
+    right: 0;
+    // background: linear-gradient(to left, #FFFFFF 50px, rgba(255, 255, 255, 0) 100%);
+  }
+  .rows-inner {
+    white-space: nowrap;
+    display: inline-block;
+    transform: translate3d(0, 0, 0);
+    transition: all 400ms;
+  }
+  .row-item {
+    padding: 8px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 30px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    .anticon-icon-expand {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 8px;
+      margin: auto;
+      width: 1em;
+      height: 1em;
+      transform: rotateZ(0deg);
+      transition: all 400ms;
+    }
+    &.active {
+      background-color: @color-bg;
+      .anticon-icon-expand {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+
+  .@{ant-prefix}-checklist-drop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+
+  }
+  .@{ant-prefix}-checklist-rows-sub {
+    // position: ;
+    margin-top: 0;
+  }
+  &:hover {
+    .@{ant-prefix}-checklist-drop {
+      display: block;
+    }
+  }
+
+}
+
+.@{ant-prefix}-checklist-rows-sub {
+  .clearfix();
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  margin-top: -4px;
+  padding: 8px 0;
+  background-color: @color-bg;
+  border-radius: 4px;
+  &.no-tlr {
+    border-top-left-radius: 0;
+  }
+  &.no-trr {
+    border-top-right-radius: 0;
+  }
+  .sub-item {
+    float: left;
+    padding: 4px 8px;
+  }
+}

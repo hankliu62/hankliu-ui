@@ -1,0 +1,18 @@
+.clear-fix() {
+  zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.text-ellipsis() {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

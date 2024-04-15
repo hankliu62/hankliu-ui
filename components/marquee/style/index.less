@@ -1,0 +1,27 @@
+@import '../../style/themes/variable';
+
+.tui-marquee {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  .marquee-inner {
+    position: absolute;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  // 水平方向
+  &.direction-horizontal {
+    .marquee-inner {
+      bottom: 0;
+    }
+  }
+  // 垂直方向
+  &.direction-vertical {
+    .marquee-inner {
+      right: 0;
+      transition: transform 500ms linear;
+    }
+  }
+}

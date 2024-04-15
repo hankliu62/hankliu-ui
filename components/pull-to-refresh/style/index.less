@@ -1,0 +1,121 @@
+@import '../../style/themes/variable';
+
+.hlui-ptr {
+  position: relative;
+  overflow: hidden;
+}
+
+.refresh-view {
+  position: relative;
+  z-index: 11;
+  background-color: #fff;
+}
+
+.ptr-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  color: @color-text-light;
+  text-align: center;
+
+  .loading {
+    display: none;
+    margin: 12px 0 0 5px;
+    text-align: center;
+    opacity: 0.4;
+    .refresh-loading-img {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+
+    }
+
+    .refresh-loading-icon {
+      animation: pull-to-refresh-loading ease-in-out infinite 1.5s;
+      font-size: 26px;
+      color: @color-primary-light
+    }
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 3px;
+      vertical-align: middle;
+      border-radius: 50%;
+      transform: scale(0.3);
+      animation: ptr-loading 0.4s infinite alternate;
+    }
+  }
+
+  .loading-ptr-1 {
+    animation-delay: 0s;
+  }
+
+  .loading-ptr-2 {
+    animation-delay: 0.2s;
+  }
+
+  .loading-ptr-3 {
+    animation-delay: 0.4s;
+  }
+
+  .ptr-icon {
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+    font-size: 24px;
+    opacity: 0.6;
+    transition: all 0.25s ease;
+  }
+}
+
+.ptr-refresh .ptr-element .ptr-icon {
+  transform: rotate(180deg);
+}
+.ptr-loading .ptr-element .ptr-icon,
+.ptr-reset .ptr-element .ptr-icon {
+  display: none;
+}
+.ptr-loading .ptr-element .loading {
+  display: block;
+}
+
+.ptr-loading .refresh-view,
+.ptr-reset .refresh-view,
+.ptr-loading .ptr-element,
+.ptr-reset .ptr-element {
+  transition: all 0.25s ease;
+}
+
+.ptr-reset .refresh-view {
+  transform: translate3d(0, 0, 0);
+}
+
+.ptr-loading .refresh-view {
+  transform: translate3d(0, 50px, 0);
+}
+
+@keyframes ptr-loading {
+  0% {
+    transform: translateY(0) scale(0.3);
+    opacity: 0;
+  }
+
+  100% {
+    background-color: #333;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pull-to-refresh-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}

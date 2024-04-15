@@ -1,0 +1,130 @@
+@import '../../style/themes/variable';
+.hlui-simple-menu-select {
+  width: 100%;
+}
+.hlui-simple-menu-select-dropdown {
+  display: flex;
+  height: 300px;
+}
+.hlui-simple-menu-select-alphabet-filter-wrap {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  width: 30px;
+  height: 100%;
+  padding: 0 8px 0 0;
+  overflow-y: auto;
+}
+.hlui-simple-menu-select-alphabet-filter {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  border-right: solid 1px @color-border;
+}
+.hlui-simple-menu-select-alphabet-item {
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  width: 12px;
+  height: 16px;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  &:active,
+  &:hover,
+  &-active {
+    color: @color-primary;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      height: 16px;
+      margin: auto;
+      background-color: @color-primary;
+      content: '';
+    }
+  }
+}
+
+.hlui-simple-menu-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 8px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  &:hover,
+  &-active {
+    background-color: @color-bg-dark;
+  }
+  &-disabled {
+    color: @color-text-disabled;
+    cursor: not-allowed;
+  }
+}
+.hlui-simple-menu-select-box {
+  margin: 0 0 0 5px;
+}
+.hlui-simple-menu-node-extra {
+  display: flex;
+}
+.hlui-simple-menu-select-arrow {
+  margin: 0 2px 0 10px;
+}
+
+.hlui-simple-menu-select-only-parent-box {
+  border-bottom: solid 1px @color-border;
+}
+.hlui-simple-menu-select-group {
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px @color-border;
+  &:last-child {
+    border-right: none;
+  }
+}
+.hlui-simple-menu-select-group-node-list {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.hlui-simple-menu-select-node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hlui-simple-menu-select-fold {
+  display: inline-block;
+  width: 10px;
+}
+.hlui-simple-menu-select-fold-wrap {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+.hlui-simple-menu-select-count {
+  display: inline-block;
+  height: 18px;
+  margin: 0 0 0 8px;
+  padding: 0 10px;
+  color: #858e99;
+  font-size: 12px;
+  line-height: 18px;
+  background-color: #dce1e5;
+  border-radius: 9px;
+}
+
+.hlui-simple-menu-select-dropdown-content {
+  min-width: auto !important;
+}
+.hlui-simple-menu-search-matched {
+  color: @color-primary;
+}
+.hlui-simple-menu-select-empty {
+  padding: 20px;
+}

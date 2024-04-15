@@ -1,0 +1,21 @@
+@import '../../style/themes/variable';
+
+.hl-select-lock-height {
+  .hlui-select-clear {
+    display: flex;
+    border-radius: 100%;
+  }
+  .hlui-select-selector {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+  .hlui-select-selection-overflow {
+    flex-wrap: nowrap;
+    max-width: none;
+    overflow: visible;
+  }
+}

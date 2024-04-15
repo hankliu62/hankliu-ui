@@ -1,0 +1,10 @@
+@import '~antd4x/lib/tooltip/style/index-pure.less';
+@import '../../style/themes/variable';
+.@{ant-prefix}-tooltip.ghosted {
+  pointer-events: none;
+}
+.@{ant-prefix}-tooltip-arrow {
+  .@{ant-prefix}-tooltip-arrow-content::before {
+    clip-path: polygon(0 75%, 75% 0, 75% 75%);
+  }
+}

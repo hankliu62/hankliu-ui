@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html {{ htmlAttributes | safe }}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1890ff" />
+    <title>{% if title %}{{ title | safe }}{% else %}{% endif %}</title>
+    {% if meta %}{{ meta | safe }}{% endif %}
+    <link rel="icon" type="image/x-icon" href="https://hankliu62.github.io/img/favicon.ico" />
+    {% for cssFile in manifest["css"] %}
+    <link rel="stylesheet" type="text/css" href="{{ root }}{{ cssFile }}" />
+    {% endfor %}
+    <style id="nprogress-style">
+      #nprogress {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet/less" type="text/css" href="{{ root }}color.less" />
+    <link id="darkThemeLink" rel="stylesheet" href="/dark.css" />
+    <style>
+      .home-page-header .hlui-select-selector {
+        background-color: transparent !important;
+      }
+      .home-page-header .hlui-select-arrow {
+        color: rgba(255, 250, 250, 0.25) !important;
+      }
+      .home-page-header .hlui-menu-horizontal > .hlui-menu-item a {
+        color: #fff !important;
+      }
+      .home-page-header .hlui-menu .hlui-menu-item-active {
+        background-color: transparent !important;
+      }
+      .home-page-header input {
+        color: #fff;
+      }
+
+      @keyframes an-loading {
+        0% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+      @keyframes loadingCircle {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      #main-loader {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        opacity: 1;
+        transition: opacity 400ms;
+      }
+      #main-loader .load-img {
+        display: block;
+        width: 100px;
+        height: 80px;
+        animation: an-loading 1600ms infinite, loadingCircle 1600ms infinite;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+      }
+      #main-loader.leaving {
+        opacity: 0;
+      }
+    </style>
+    <script>
+      /* 设置 meta theme-color 的值，默认会设置一个 #1890ff   */
+      function setColor(isDarken) {
+        try {
+          var theme = document.getElementsByTagName('meta')['theme-color'];
+          theme.setAttribute('content', isDarken ? 'rgba(0,0,0,0.65)' : '#1890ff');
+        } catch (error) {}
+      }
+      /* -------------------------- 主题相关 -------------------------- */
+      (function () {
+        /* 获取查询参数对象 */
+        function getSearchParam(search) {
+          // 处理入参错误
+          var search = search || location.search;
+          if (search === undefined) {
+            return;
+          }
+
+          var pattern = /(\w+)=(\w+)/gi; // 定义正则
+          var matches = search.match(pattern);
+          if (!matches) {
+            return;
+          }
+
+          function fromEntries(iterable) {
+            return iterable.reduce(function (obj, keyvalue) {
+              var key = keyvalue[0];
+              var val = keyvalue[1];
+              obj[key] = val;
+              return obj;
+            }, {});
+          }
+
+          var searchParam = fromEntries(
+            matches.map(function (item) {
+              return item.split('=');
+            }),
+          );
+          return searchParam;
+        }
+
+        var searchParam = getSearchParam(location.search) || {}; // 查询参数对象
+
+        var isDarkMode = searchParam.theme === 'dark'; // 判断当前主题
+        var isComponentsPage = location.pathname.indexOf('/components') === 0; // 判断是否组件页面
+
+        // 1. 暗色主题刷新时无白屏
+        // 如果是暗色主题，且在components路由下
+        var darkThemeLinkEl = document.getElementById('darkThemeLink');
+        if (isDarkMode && isComponentsPage) {
+          // 将预先定义的暗色主题link移动到body内
+          document.addEventListener(
+            'readystatechange',
+            function () {
+              document.head.appendChild(styleElement);
+            },
+            { once: true },
+          );
+          // load后卸载
+          window.addEventListener(
+            'load',
+            function () {
+              darkThemeLinkEl.parentNode.removeChild(darkThemeLinkEl);
+            },
+            { once: true },
+          );
+          setColor(true);
+          // 清除dark.css中的全部transition 待解析完后恢复
+          var styleElement = document.createElement('style');
+          styleElement.type = 'text/css';
+          styleElement.innerHTML =
+            '* {transition: none !important;} html {background: rgb(20, 20, 20)}';
+          document.head.appendChild(styleElement);
+          document.documentElement.style.backgroundColor = 'black';
+          window.addEventListener(
+            'load',
+            function () {
+              styleElement.parentNode.removeChild(styleElement);
+            },
+            { once: true },
+          );
+
+          // 设置系统主题
+          document.documentElement.style.colorScheme = 'dark';
+        } else {
+          setColor(false);
+          document.documentElement.style.colorScheme = 'light';
+          darkThemeLinkEl.parentNode.removeChild(darkThemeLinkEl);
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        function isLocalStorageNameSupported() {
+          var testKey = 'test';
+          var storage = window.localStorage;
+          try {
+            storage.setItem(testKey, '1');
+            storage.removeItem(testKey);
+            return true;
+          } catch (error) {
+            return false;
+          }
+        }
+        // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+        var pathname = location.pathname;
+
+        function isZhCN(pathname) {
+          return /-cn\/?$/.test(pathname);
+        }
+        function getLocalizedPathname(path, zhCN) {
+          var pathname = path.indexOf('/') === 0 ? path : '/' + path;
+          if (!zhCN) {
+            // to enUS
+            return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+          } else if (pathname === '/') {
+            return '/index-cn';
+          } else if (pathname.indexOf('/') === pathname.length - 1) {
+            return pathname.replace(/\/$/, '-cn/');
+          }
+          return pathname + '-cn';
+        }
+
+        // 兼容旧的 URL， `?locale=...`
+        var queryString = location.search;
+        if (queryString) {
+          var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+          if (isZhCNConfig && !isZhCN(pathname)) {
+            location.pathname = getLocalizedPathname(pathname, isZhCNConfig);
+          }
+        }
+
+        // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+        if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+          var lang =
+            (window.localStorage && localStorage.getItem('locale')) ||
+            ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn'
+              ? 'zh-CN'
+              : 'en-US');
+          // safari is 'zh-cn', while other browser is 'zh-CN';
+          if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+            location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+          }
+        }
+        document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="react-content">{{ content | safe }}</div>
+    <div id="main-loader">
+      <img
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIGRhdGEtaWNvbj0ic3luYyIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiMwY2M1YWUiIGFyaWEtaGlkZGVuPSJ0cnVlIj48cGF0aCBkPSJNMTY4IDUwNC4yYzEtNDMuNyAxMC04Ni4xIDI2LjktMTI2IDE3LjMtNDEgNDIuMS03Ny43IDczLjctMTA5LjRTMzM3IDIxMi4zIDM3OCAxOTVjNDIuNC0xNy45IDg3LjQtMjcgMTMzLjktMjdzOTEuNSA5LjEgMTMzLjggMjdBMzQxLjUgMzQxLjUgMCAwMTc1NSAyNjguOGM5LjkgOS45IDE5LjIgMjAuNCAyNy44IDMxLjRsLTYwLjIgNDdhOCA4IDAgMDAzIDE0LjFsMTc1LjcgNDNjNSAxLjIgOS45LTIuNiA5LjktNy43bC44LTE4MC45YzAtNi43LTcuNy0xMC41LTEyLjktNi4zbC01Ni40IDQ0LjFDNzY1LjggMTU1LjEgNjQ2LjIgOTIgNTExLjggOTIgMjgyLjcgOTIgOTYuMyAyNzUuNiA5MiA1MDMuOGE4IDggMCAwMDggOC4yaDYwYzQuNCAwIDcuOS0zLjUgOC03Ljh6bTc1NiA3LjhoLTYwYy00LjQgMC03LjkgMy41LTggNy44LTEgNDMuNy0xMCA4Ni4xLTI2LjkgMTI2LTE3LjMgNDEtNDIuMSA3Ny44LTczLjcgMTA5LjRBMzQyLjQ1IDM0Mi40NSAwIDAxNTEyLjEgODU2YTM0Mi4yNCAzNDIuMjQgMCAwMS0yNDMuMi0xMDAuOGMtOS45LTkuOS0xOS4yLTIwLjQtMjcuOC0zMS40bDYwLjItNDdhOCA4IDAgMDAtMy0xNC4xbC0xNzUuNy00M2MtNS0xLjItOS45IDIuNi05LjkgNy43bC0uNyAxODFjMCA2LjcgNy43IDEwLjUgMTIuOSA2LjNsNTYuNC00NC4xQzI1OC4yIDg2OC45IDM3Ny44IDkzMiA1MTIuMiA5MzJjMjI5LjIgMCA0MTUuNS0xODMuNyA0MTkuOC00MTEuOGE4IDggMCAwMC04LTguMnoiPjwvcGF0aD48L3N2Zz4="
+        class="load-img"
+      />
+    </div>
+    {% for jsFile in manifest["js"] %}
+    <script src="{{ root }}{{ jsFile }}"></script>
+    {% endfor %}
+  </body>
+</html>

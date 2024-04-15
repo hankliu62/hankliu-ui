@@ -1,0 +1,52 @@
+@import '../../../static/theme.less';
+@import (reference) '../../../../../components/style/themes/index.less';
+@import './index.less';
+
+#logo {
+  display: flex;
+  height: @header-height;
+  padding-left: 40px;
+  overflow: hidden;
+  color: @site-heading-color;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: PuHuiTi, @font-family, sans-serif;
+  line-height: @header-height;
+  letter-spacing: -0.18px;
+  white-space: nowrap;
+  text-decoration: none;
+
+  .hlui-row-rtl & {
+    float: right;
+    padding-right: 40px;
+    padding-left: 0;
+  }
+
+  img {
+    height: 24px;
+    margin-right: 12px;
+
+    .hlui-row-rtl & {
+      margin-right: 0;
+      margin-left: 16px;
+    }
+  }
+  .web-version {
+    top: 12px;
+    left: 205px;
+    font-size: 12px;
+    line-height: 1.5em;
+    height: 1.5em;
+    padding: 0 5px;
+    border-radius: 2px;
+    font-family: Georgia, sans-serif;
+    color: var(--color-text);
+}
+}
+
+@media only screen and (max-width: @mobile-max-width) {
+  #logo {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

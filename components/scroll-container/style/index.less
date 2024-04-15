@@ -1,0 +1,39 @@
+@import '../../style/themes/variable';
+
+.hlui-scroll-container
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .scroll-top-shadow, .scroll-bottom-shadow{
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    height: 12px;
+    opacity: 0;
+    transition: all 400ms;
+    &.visible {
+      opacity: 1;
+    }
+  }
+  .scroll-top-shadow {
+    top: 0;
+    // background-image: linear-gradient(to top, rgba(102, 102, 102, 0), rgba(0, 0, 0, 0.3));
+    background-image: radial-gradient(at 50% 0%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 80%);
+  }
+  .scroll-bottom-shadow {
+    bottom: 0;
+    background-image: radial-gradient(at 50% 100%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 80%);
+    // background-image: linear-gradient(to bottom, rgba(102, 102, 102, 0), rgba(0, 0, 0, 0.3));
+  }
+
+}
+
+.hlui-scroll-body
+{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

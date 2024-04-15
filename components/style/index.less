@@ -1,0 +1,99 @@
+@import './themes/index';
+@import './core/index';
+:root {
+  // --color-primary-slight: #e6fff8;
+  // --color-primary-active: #adf7e5;
+  // --color-primary-light: #7febd3;
+  // --color-primary-hover-lighter: #54dec5;
+  // --color-primary-hover: #2ed1b9;
+  // --color-primary: #0cc5ae;
+  // --color-primary-dark: #029e91;
+
+  --color-primary-slight: #f0f5ff;
+  --color-primary-active: #d6e4ff;
+  --color-primary-light: #adc6ff;
+  --color-primary-hover-lighter: #85a5ff;
+  --color-primary-hover: #597ef7;
+  --color-primary: #2f54eb;
+  --color-primary-dark: #10239e;
+
+
+  --color-border-light: #e6ebf0;
+  --color-border: #dce1e5;
+  --color-border-dark: #d3d7db;
+
+  --color-bg-light: #f8f9fa;
+  --color-bg: #f3f5f7;
+  --color-bg-dark: #edf0f2;
+
+  --color-text-disabled: #b1b8c2;
+  --color-text-light: #858e99;
+  --color-text: #576272;
+  --color-text-dark: #263035;
+
+  --color-success-light: #88f2cd;
+  --color-success: #11cb9e;
+  --color-success-dark: #05a683;
+
+  --color-progress-light: #b0e1ff;
+  --color-progress: #349af9;
+  --color-progress-dark: #2278d4;
+
+  --color-hint-light: #ffbed7;
+  --color-hint: #ff7daf;
+  --color-hint-dark: #eb689b;
+
+  --color-warning-light: #ffe3ab;
+  --color-warning: #ffa730;
+  --color-warning-dark: #d9821e;
+
+  //--color-danger-hover-bg: #fff1f0;
+  //--color-danger-active-bg: #ffeae8;
+  --color-danger-light: #ffeae8;
+  --color-danger-hover: #ff6e70;
+  --color-danger: #f9434d;
+  --color-danger-dark: #d42f3c;
+
+  --color-help-light: #f6ebca;
+  --color-help: #edd196;
+  --color-help-dark: #e0c283;
+
+  --color-highlight: #f0fbf9;
+  --color-white: #fff;
+  --color-dark: #000;
+}
+
+// 关闭波纹动画
+[hlui-click-animating-without-extra-node='true']::after,
+.hlui-click-animating-node
+{
+  animation: none;
+  transition: none;
+  display: none;
+}
+
+
+body {
+
+  // ie 浏览器hover 显示滚动条
+  // -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  ::-webkit-scrollbar
+  {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: content-box;
+    border: 2px solid transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}

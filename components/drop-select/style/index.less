@@ -1,0 +1,35 @@
+@import '../../style/themes/variable';
+
+.drop-select-wrap {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid @color-border-light;
+  box-shadow: @box-shadow-4;
+}
+
+.drop-select-title {
+  color: @color-text-dark;
+  padding: 11px 16px;
+  line-height: 22px;
+  font-size: 14px;
+  border-bottom: 1px solid @color-border;
+}
+
+.drop-select-option {
+  padding: 11px 16px;
+  line-height: 22px;
+  font-size: 14px;
+  color: @color-text;
+  cursor: pointer;
+  &:hover {
+    background-color: @color-bg
+  }
+  &.selected {
+    color: @primary-color;
+  }
+  &.disabled {
+    color: @color-text-light;
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+}

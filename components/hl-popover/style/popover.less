@@ -1,0 +1,60 @@
+
+.@{ant-prefix}-popover-inner
+{
+  box-shadow: @box-shadow-3;
+}
+
+.@{ant-prefix}-popover-title
+{
+  color: inherit;
+  border: none;
+  min-height: none;
+}
+
+.@{ant-prefix}-popover.ghosted {
+  pointer-events: none;
+}
+
+.@{ant-prefix}-popover.size-small {
+  .@{ant-prefix}-popover-title
+  {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 12px;
+  }
+  .@{ant-prefix}-popover-inner-content
+  {
+    padding: 12px;
+    font-size: 12px;
+  }
+  .@{ant-prefix}-popover-title + .@{ant-prefix}-popover-inner-content {
+    padding-top: 0;
+  }
+}
+
+.@{ant-prefix}-popover.size-large
+{
+  .@{ant-prefix}-popover-title
+  {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 16px 24px 8px;
+  }
+  .@{ant-prefix}-popover-inner-content
+  {
+    padding: 20px 24px;
+  }
+  .@{ant-prefix}-popover-title + .@{ant-prefix}-popover-inner-content {
+    padding-top: 0;
+  }
+}
+
+.layout-filled .@{ant-prefix}-popover-inner-content
+{
+  padding: 0;
+}
+
+.@{ant-prefix}-popover-title + .@{ant-prefix}-popover-inner-content
+{
+  padding-top: 0;
+}

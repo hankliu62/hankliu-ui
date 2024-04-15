@@ -1,0 +1,85 @@
+@import '~antd4x/lib/button/style/index-pure.less';
+@import '../../style/themes/variable';
+
+.@{ant-prefix}-btn.@{ant-prefix}-btn-medium {
+  height: 36px;
+  padding: 6.4px 14px;
+  font-size: 14px;
+  border-radius: @btn-border-radius-base;
+}
+.@{ant-prefix}-btn-icon-only.@{ant-prefix}-btn-medium {
+  width: 36px;
+  height: 36px;
+  padding: 4.9px 0;
+  font-size: 18px;
+  border-radius: @btn-border-radius-base;
+}
+.@{ant-prefix}-btn-icon-only.@{ant-prefix}-btn-medium > * {
+  font-size: 18px;
+}
+.@{ant-prefix}-btn-round.@{ant-prefix}-btn-medium {
+  width: auto;
+  height: 36px;
+  padding: 6.4px 20px;
+  font-size: 14px;
+  border-radius: 36px;
+}
+.@{ant-prefix}-btn-circle.@{ant-prefix}-btn-medium {
+  min-width: 36px;
+  border-radius: 50%;
+}
+a.@{ant-prefix}-btn-medium {
+  line-height: 36px;
+}
+// ========== smedium
+.@{ant-prefix}-btn.@{ant-prefix}-btn-smedium {
+  height: 28px;
+  padding: 0px 10px;
+  font-size: 14px;
+  border-radius:@btn-border-radius-smedium;
+}
+.@{ant-prefix}-btn-icon-only.@{ant-prefix}-btn-smedium {
+  width: 28px;
+  height: 28px;
+  padding: 0px 0;
+  font-size: 14px;
+  border-radius: @btn-border-radius-smedium;
+}
+.@{ant-prefix}-btn-icon-only.@{ant-prefix}-btn-smedium > * {
+  font-size: 14px;
+}
+.@{ant-prefix}-btn-round.@{ant-prefix}-btn-smedium {
+  width: auto;
+  height: 28px;
+  padding: 0px 12px;
+  font-size: 14px;
+  border-radius: 28px;
+}
+.@{ant-prefix}-btn-circle.@{ant-prefix}-btn-smedium {
+  min-width: 28px;
+  border-radius: 50%;
+}
+.@{ant-prefix}-btn-group-smedium > .@{ant-prefix}-btn:only-child {
+  border-radius:@btn-border-radius-smedium;
+}
+.@{ant-prefix}-btn-group-smedium > span:only-child > .@{ant-prefix}-btn {
+  border-radius: @btn-border-radius-smedium;
+}
+.@{ant-prefix}-btn-group-smedium > .@{ant-prefix}-btn:first-child:not(:last-child),
+.@{ant-prefix}-btn-group-smedium > span:first-child:not(:last-child) > .@{ant-prefix}-btn {
+  border-top-left-radius:@btn-border-radius-smedium;
+  border-bottom-left-radius: @btn-border-radius-smedium;
+}
+.@{ant-prefix}-btn-group-smedium > .@{ant-prefix}-btn:last-child:not(:first-child),
+.@{ant-prefix}-btn-group-smedium > span:last-child:not(:first-child) > .@{ant-prefix}-btn {
+  border-top-right-radius: @btn-border-radius-smedium;
+  border-bottom-right-radius: @btn-border-radius-smedium;
+}
+a.@{ant-prefix}-btn-smedium {
+  line-height: 28px;
+}
+
+.@{ant-prefix}-btn > .anticon {
+  height: 1em;
+  vertical-align: -0.09em;
+}

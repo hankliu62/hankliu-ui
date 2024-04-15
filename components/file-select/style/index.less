@@ -1,0 +1,84 @@
+@import '../../style/themes/variable';
+
+.hlui-file-select {
+  position: relative;
+  cursor: pointer;
+
+  .input-wrap {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+
+    input {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      &::-ms-value {
+        display: none;
+        width: 0;
+      }
+
+      &::-ms-browse {
+        width: 100%;
+      }
+    }
+  }
+
+  .select-box {
+    background-color: @color-bg-light;
+    padding: 30px;
+    border: 1px dashed @color-border-dark;
+    border-radius: 2px;
+    transition: @transition-duration;
+
+    &.fix-height {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &:hover .select-box,
+  &:focus .select-box {
+    border-color: @color-primary;
+    color: @color-primary;
+  }
+
+  .box-icon {
+    font-size: 40px;
+    line-height: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .box-title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: @color-text;
+  }
+
+  .box-subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: @color-text-light;
+  }
+
+  &.disabled {
+    .select-box {
+      background-color: @color-bg;
+      border-color: @color-border-dark;
+      cursor: not-allowed;
+      color: @color-text;
+    }
+  }
+
+}

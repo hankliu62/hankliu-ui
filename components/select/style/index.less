@@ -1,0 +1,130 @@
+@import '~antd4x/lib/select/style/index-pure.less';
+@import '../../style/themes/variable';
+
+//输入框内tag样式
+.hlui-select-multiple .hlui-select-selection-item {
+  color: #fff;
+  background-color: @color-primary;
+  border: none;
+  border-radius: 20px;
+  padding-inline-start: 14px;
+  padding-inline-end: 12px;
+}
+.hlui-select-multiple .hlui-select-selection-item-remove {
+  color: #fff;
+  opacity: 0.8;
+}
+.hlui-select-disabled.hlui-select-multiple .hlui-select-selection-item {
+  color: #fff;
+  background-color: @color-primary;
+  opacity: 0.5;
+}
+.hlui-select-multiple .hlui-select-selection-item-remove:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+@medium-height: 36px;
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input) .hlui-select-selector {
+  height: @medium-height;
+}
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input) .hlui-select-selector::after,
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input)
+  .hlui-select-selector
+  .hlui-select-selection-item,
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input)
+  .hlui-select-selector
+  .hlui-select-selection-placeholder {
+  line-height: @medium-height - 2px;
+}
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input):not(.hlui-select-customize-input)
+  .hlui-select-selection-search-input {
+  height:  @medium-height - 2px;
+}
+.hlui-select-single.hlui-select-medium:not(.hlui-select-customize-input) .hlui-select-selector {
+  padding: 0 11px;
+}
+.hlui-select-multiple.hlui-select-medium .hlui-select-selector::after {
+  line-height: 28px;
+}
+.hlui-select-multiple.hlui-select-medium .hlui-select-selection-item {
+  height: 28px;
+  line-height: 28px;
+}
+.hlui-select-multiple.hlui-select-medium .hlui-select-selection-search {
+  height: 28px;
+  line-height: 28px;
+}
+.hlui-select-multiple.hlui-select-medium .hlui-select-selection-search-input,
+.hlui-select-multiple.hlui-select-medium .hlui-select-selection-search-mirror {
+  height: 28px;
+  line-height: 26px;
+}
+.hlui-select-multiple.hlui-select-medium .hlui-select-selection-item {
+  height: 28px;
+  line-height: 28px;
+}
+.hlui-select-medium {
+  font-size: 14px;
+}
+
+
+
+// add size
+@smedium-height: 28px;
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input) .hlui-select-selector {
+  height: @smedium-height;
+}
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input) .hlui-select-selector::after,
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input)
+  .hlui-select-selector
+  .hlui-select-selection-item,
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input)
+  .hlui-select-selector
+  .hlui-select-selection-placeholder {
+  line-height: @smedium-height - 2px;
+}
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input):not(.hlui-select-customize-input)
+  .hlui-select-selection-search-input {
+  height:  @smedium-height - 2px;
+}
+.hlui-select-single.hlui-select-smedium:not(.hlui-select-customize-input) .hlui-select-selector {
+  padding: 0 11px;
+}
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selector::after {
+  line-height: 20px;
+}
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selection-item {
+  height: 20px;
+  line-height: 20px;
+}
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selection-search {
+  height: 20px;
+  line-height: 20px;
+}
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selection-search-input,
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selection-search-mirror {
+  height: 20px;
+  line-height: 16px;
+}
+.hlui-select-multiple.hlui-select-smedium .hlui-select-selection-item {
+  height: 20px;
+  line-height: 20px;
+}
+.hlui-select-smedium {
+  font-size: 14px;
+}
+
+//border-radius
+&.hlui-select:not(.hlui-select-customize-input) .hlui-select-selector {
+    border-radius: 6px;;
+}
+.hlui-select-sm,.hlui-select-smedium {
+    &.hlui-select:not(.hlui-select-customize-input) .hlui-select-selector {
+        border-radius: 4px;;
+    }
+}
+
+.hlui-select-multiple.hlui-select-sm .hlui-select-selection-item {
+  font-size: 12px;
+}

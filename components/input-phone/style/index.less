@@ -1,0 +1,30 @@
+@import '../../style/themes/variable';
+
+.hlui-input-phone {
+  display: flex;
+  .hlui-input-phone-input {
+    border-left-color: transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    &:focus, &:hover {
+      border-left-color: @color-primary-hover;
+    }
+  }
+  .hlui-input-phone-select {
+    .hlui-select-selector {
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
+}
+.hlui-input-phone-option-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.hlui-input-phone-option-name {
+  display: inline-block;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
