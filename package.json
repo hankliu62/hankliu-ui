@@ -1,6 +1,7 @@
 {
   "name": "@hankliu/hankliu-ui",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
+  "private": false,
   "description": "HankLiu UI Components base on Ant-design@4.x",
   "files": [
     "dist",
@@ -22,13 +23,17 @@
     "clean": "antd-tools run clean && rm -rf es lib coverage dist report.html",
     "compile": "npm run clean && antd-tools run compile",
     "dist": "antd-tools run dist",
-    "prepublishOnly": "npm run compile",
+    "prepublishOnlyNot": "npm run compile",
     "site": "rimraf _website && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",
     "less": "lessc --js --modify-var=\"root-entry-name=variable\" --global-var=\"root-entry-name=variable\" ./components/button/style/index.less ./components/button/style/index.css"
   },
+  "homepage": "https://github.com/hankliu62/hankliu-ui",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hankliu62/hankliu-ui.git"
+  },
+  "bugs": {
+    "url": "http://github.com/hankliu62/hankliu-ui/issues"
   },
   "author": "hank.liu",
   "license": "ISC",

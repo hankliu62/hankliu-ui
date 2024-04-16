@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: HankLiu UI Components Publish
+name: Publish HankLiu-Design Components Into NPM
 
 on:
   push:
@@ -19,6 +19,7 @@ jobs:
       # 将代码拉到虚拟机
       - name: 获取源码 🛎️
         uses: actions/checkout@v2
+
       # 指定node版本
       - name: Node环境版本 🗜️
         uses: actions/setup-node@v3
@@ -65,6 +66,13 @@ jobs:
       - name: 获取源码 🛎️
         uses: actions/checkout@v2
 
+      # 指定node版本
+      - name: Node环境版本 🗜️
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+
       # 获取或存的lock文件
       - name: 获取lock文件 🎻
         uses: actions/cache@v2
@@ -85,7 +93,7 @@ jobs:
 
       # 发布
       - name: 发布 🚀
-        run: npm publish --access public
+        run: npm publish --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -134,15 +142,14 @@ jobs:
 
       - name: 从 package.json 中获得版本 ⭐
         id: version
-        run: echo ::set-output name=VERSION::$(node -e "console.log(require('./package.json').version)")
-
-      - name: 创建 Tag 🌕
-        id: tag
-        run: |
-          git tag v${{ steps.version.outputs.VERSION }}
-          echo "::set-output name=TAG_VERSION::v${{ steps.version.outputs.VERSION }}"
+        run: echo "VERSION=$(node -p 'require(`./package.json`).version')" >> $GITHUB_ENV
 
       - name: 提交 Tag 🏄
-        run: git push origin v${{ steps.tag.outputs.VERSION }}
+        id: tag
+        run: |
+          git config --local user.email "${{ secrets.MY_GIT_USER_EMAIL }}"
+          git config --local user.name "${{ secrets.MY_GIT_USER_NAME }}"
+          git tag -a v${{ env.VERSION }} -m "create tag v${{ env.VERSION }}"
+          git push origin v${{ env.VERSION }}
 
     needs: site

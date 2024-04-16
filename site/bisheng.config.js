@@ -30,6 +30,8 @@ function alertBabelConfig(rules) {
 
 module.exports = {
   port: 6200,
+  // 如果网站将部署在域的子目录下（类似 https://hankliu62.github.io/hankliu-ui/ ），我们必须设置它（例如 /hankliu-ui/ ）
+  root: process.env.GITHUB_ACTIONS ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, "") : "/",
   hash: true,
   source: {
     components: './components',
