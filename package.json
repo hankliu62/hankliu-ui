@@ -24,7 +24,7 @@
     "compile": "npm run clean && antd-tools run compile",
     "dist": "antd-tools run dist",
     "prepublishOnlyNot": "npm run compile",
-    "site": "rimraf _website && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",
+    "site": "rimraf _site && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",
     "less": "lessc --js --modify-var=\"root-entry-name=variable\" --global-var=\"root-entry-name=variable\" ./components/button/style/index.less ./components/button/style/index.css"
   },
   "homepage": "https://github.com/hankliu62/hankliu-ui",
@@ -67,7 +67,7 @@
     "@docsearch/react": "^3.6.0",
     "@icons/material": "^0.4.1",
     "@qixian.cs/github-contributors-list": "^2.0.1",
-    "@stackblitz/sdk": "^1.5.4",
+    "@stackblitz/sdk": "~1.8.2",
     "@types/file-saver": "^2.0.7",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
