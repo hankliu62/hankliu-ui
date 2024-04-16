@@ -8,6 +8,8 @@ on:
     branches:
       # 触发ci/cd的代码分支
       - master
+  pull_request:
+    branches: [ master ]
 
 jobs:
   setup:
@@ -33,7 +35,7 @@ jobs:
       # 仅在不下载任何包的情况下，更新package-lock.json文件。
       # 这个命令常用于确保所有的依赖项都是最新的，或者在你不确定更新了哪些包时刷新锁文件。
       - name: 更新lock文件 📌
-        run: npm i --package-lock-only
+        run: npm i --package-lock-only --force
 
       # 缓存lock文件到package-temp-dir路径
       - name: 缓存lock文件 🗼
@@ -54,7 +56,7 @@ jobs:
       # 依赖下载
       - name: 安装依赖 📦
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm ci --force
 
   compile:
     runs-on: ubuntu-latest
@@ -122,3 +124,25 @@ jobs:
           clean: true
 
     needs: setup
+
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      # 将代码拉到虚拟机
+      - name: 获取源码 🛎️
+        uses: actions/checkout@v2
+
+      - name: 从 package.json 中获得版本 ⭐
+        id: version
+        run: echo ::set-output name=VERSION::$(node -e "console.log(require('./package.json').version)")
+
+      - name: 创建 Tag 🌕
+        id: tag
+        run: |
+          git tag v${{ steps.version.outputs.VERSION }}
+          echo "::set-output name=TAG_VERSION::v${{ steps.version.outputs.VERSION }}"
+
+      - name: 提交 Tag 🏄
+        run: git push origin v${{ steps.tag.outputs.VERSION }}
+
+    needs: compile
