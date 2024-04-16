@@ -1,6 +1,6 @@
 ## @hankliu/hankliu-ui
 
-基于AntDesign@4.x的一个UI组件库，一套企业级 UI 设计语言和 React 组件库
+基于 `AntDesign@4.x` 的一个 `UI` 组件库，一套企业级 `UI` 设计语言和 `React` 组件库
 
 ### 安装
 
