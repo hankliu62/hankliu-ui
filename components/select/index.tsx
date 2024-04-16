@@ -16,7 +16,7 @@ export interface SelectProps extends Omit<AntdSelectProps, 'size'> {
   size?: AntdSelectProps['size'] | 'medium' | 'smedium';
 }
 
-const Select = React.forwardRef<AntdRefSelectProps, SelectProps>((props, ref) => {
+const InnerSelect = React.forwardRef<AntdRefSelectProps, SelectProps>((props, ref) => {
   const { size, className, ...rest } = props;
   let finalSize = size;
   let finalClassName = className;
@@ -35,9 +35,15 @@ const Select = React.forwardRef<AntdRefSelectProps, SelectProps>((props, ref) =>
   );
 });
 
-// @ts-ignore
-export default Object.assign(Select, {
+const Select: typeof InnerSelect & {
+  displayName?: string;
+  SECRET_COMBOBOX_MODE_DO_NOT_USE: string;
+  Option: typeof AntdSelect.Option;
+  OptGroup: typeof AntdSelect.OptGroup;
+} = Object.assign(InnerSelect, {
   SECRET_COMBOBOX_MODE_DO_NOT_USE: AntdSelect.SECRET_COMBOBOX_MODE_DO_NOT_USE,
   Option: AntdSelect.Option,
   OptGroup: AntdSelect.OptGroup,
 });
+
+export default Select;

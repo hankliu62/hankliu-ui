@@ -123,7 +123,7 @@ jobs:
           folder: _site # 这里填打包好的目录名称
           clean: true
 
-    needs: setup
+    needs: compile
 
   tag:
     runs-on: ubuntu-latest
@@ -145,4 +145,4 @@ jobs:
       - name: 提交 Tag 🏄
         run: git push origin v${{ steps.tag.outputs.VERSION }}
 
-    needs: compile
+    needs: site

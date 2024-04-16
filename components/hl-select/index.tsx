@@ -15,7 +15,7 @@ export interface HlSelectProps extends SelectProps {
   lockHeight?: boolean;
 }
 
-const HlSelect = React.forwardRef<RefSelectProps, HlSelectProps>((props, ref) => {
+const InnerHlSelect = React.forwardRef<RefSelectProps, HlSelectProps>((props, ref) => {
   const { lockHeight, mode, className, ...rest } = props;
 
   const randomClass = useMemo(() => generateRandomClass(), []);
@@ -60,9 +60,15 @@ const HlSelect = React.forwardRef<RefSelectProps, HlSelectProps>((props, ref) =>
   );
 });
 
-// @ts-ignore
-export default Object.assign(HlSelect, {
+const HlSelect: typeof InnerHlSelect & {
+  displayName?: string;
+  SECRET_COMBOBOX_MODE_DO_NOT_USE: string;
+  Option: typeof Select.Option;
+  OptGroup: typeof Select.OptGroup;
+} = Object.assign(InnerHlSelect, {
   SECRET_COMBOBOX_MODE_DO_NOT_USE: Select.SECRET_COMBOBOX_MODE_DO_NOT_USE,
   Option: Select.Option,
   OptGroup: Select.OptGroup,
 });
+
+export default HlSelect;
