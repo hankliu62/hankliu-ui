@@ -31,3 +31,5 @@ webpack.config.js
 _website
 
 _site
+
+.env.local
