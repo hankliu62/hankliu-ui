@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: none;
+      }
+      
+    </style>
+    <script>
+      const nodes = new Map();
+
+      // sync parent inline style or remote style
+      function syncStyle() {
+        const existNodes = new Set();
+
+        const allStyles = [].concat(
+          // Inline style
+          [].slice.call(parent.document.querySelectorAll('style')),
+          // Remote style
+          [].slice.call(parent.document.querySelectorAll('link[rel=stylesheet]'))
+        );
+
+        allStyles.forEach(function(node) {
+          if (node) {
+            if (!nodes.has(node)) {
+              const cloneNode = node.cloneNode(true);
+              document.getElementsByTagName('head')[0].appendChild(cloneNode);
+
+              nodes.set(node,cloneNode);
+            }
+          }
+        });
+
+        Array.from(nodes.keys()).forEach(function(node) {
+          if (!allStyles.includes(node)) {
+            const oodNode = nodes.get(node);
+            oodNode.parentNode.removeChild(oodNode);
+            nodes.delete(node);
+          }
+        });
+      }
+
+      syncStyle();
+
+      // Use MutationObserver to sync style update
+      const observer = new MutationObserver(function(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            syncStyle();
+          }
+        }
+      });
+
+      observer.observe(parent.document.querySelector('head'), { childList: true });
+    </script>
+  </head>
+  <body>
+    <div id="components-alert-demo-banner"></div>
+    <script>
+      function require(module) {
+        if (module === 'react-router') {
+          return window.ReactRouter;
+        }
+        if (module === 'react-router-dom') {
+          return window.ReactRouterDOM;
+        }
+        return window.parent[module];
+      }
+      var mountNode = document.getElementById('components-alert-demo-banner');
+      var React = require('react');
+      var ReactDOM = require('react-dom');
+    </script>
+    
+    <script>
+      function bishengPluginReactPreviewer() {
+  var React = require("react");
+  var ReactDOM = require("react-dom");
+  var _hankliuUi = require("@hankliu/hankliu-ui");
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_hankliuUi.Alert, {
+    message: "Warning text",
+    banner: true
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement(_hankliuUi.Alert, {
+    message: "Very long warning text warning text text text text text text text",
+    banner: true,
+    closable: true
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement(_hankliuUi.Alert, {
+    showIcon: false,
+    message: "Warning text without icon",
+    banner: true
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement(_hankliuUi.Alert, {
+    type: "error",
+    message: "Error text",
+    banner: true
+  }));
+}
+    </script>
+    <script>
+      var ReactDOM = require('react-dom');
+      var app = bishengPluginReactPreviewer();
+
+      if (true) {
+        var container = null;
+        var originApp = app;
+        var demoRef = React.createRef();
+
+        window.addEventListener('message', function(event) {
+          var result = JSON.parse(event.data);
+
+          if (result.action === 'sync.theme') {
+            demoRef.current.setTheme({
+              token: result.designToken,
+              hashed: result.hashed,
+            });
+          }
+        });
+
+        var Demo = React.forwardRef(function (_, ref) {
+          var [theme, setTheme] = React.useState();
+
+          React.useImperativeHandle(ref, function() {
+            return { setTheme(newTheme) {
+              if (JSON.stringify(theme) !== JSON.stringify(newTheme)) {
+                setTheme(newTheme);
+              }
+            } };
+          });
+
+          return React.createElement(
+            require('antd').ConfigProvider,
+            {
+              getPopupContainer() { return container; },
+              theme: theme,
+            },
+            [
+              React.cloneElement(originApp, { key: 'AppContent' }),
+              React.createElement('div', {
+                key: 'InjectProviderHolder',
+                ref(node) { container = node; },
+              }),
+            ],
+          );
+        });
+
+        app = React.createElement(Demo, { ref: demoRef });
+      }
+
+      ReactDOM.render(app, mountNode);
+    </script>
+    <script src="https://unpkg.com/theme-switcher@1.x/dist/index.min.js"></script>
+    <script>
+      var timestamp = new Date().getTime();
+      // handle message with parent
+      function handleMessage(event) {
+        try {
+          var result = JSON.parse(event.data);
+          switch (result.action) {
+            //
+            case 'change.theme': {
+              var themeData = result.data;
+              var theme = themeData.theme;
+              var themeConfig = themeData.themeConfig;
+              if (window.ThemeSwitcher) {
+                var themeSwitcher = window.ThemeSwitcher(themeConfig);
+                themeSwitcher.switcher({
+                  theme: theme,
+                  useStorage: false,
+                });
+              }
+              break;
+            }
+            default: {}
+          }
+        } catch (_) {
+          window.parent.console.error('[Demo] handleMessage error', _);
+        }
+      }
+
+      window.addEventListener('message', handleMessage, false);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: none;
+      }
+      .demo {
+  margin: 16px;
+}
+.demo-nav {
+  height: 30px;
+  margin-bottom: 16px;
+  line-height: 30px;
+  background: #f8f8f8;
+}
+.demo-nav a {
+  padding: 0 8px;
+  line-height: 30px;
+}
+.app-list {
+  margin-top: 16px;
+}
+  [data-theme="dark"] .demo-nav {
+    background: #141414;
+  }
+
+    </style>
+    <script>
+      const nodes = new Map();
+
+      // sync parent inline style or remote style
+      function syncStyle() {
+        const existNodes = new Set();
+
+        const allStyles = [].concat(
+          // Inline style
+          [].slice.call(parent.document.querySelectorAll('style')),
+          // Remote style
+          [].slice.call(parent.document.querySelectorAll('link[rel=stylesheet]'))
+        );
+
+        allStyles.forEach(function(node) {
+          if (node) {
+            if (!nodes.has(node)) {
+              const cloneNode = node.cloneNode(true);
+              document.getElementsByTagName('head')[0].appendChild(cloneNode);
+
+              nodes.set(node,cloneNode);
+            }
+          }
+        });
+
+        Array.from(nodes.keys()).forEach(function(node) {
+          if (!allStyles.includes(node)) {
+            const oodNode = nodes.get(node);
+            oodNode.parentNode.removeChild(oodNode);
+            nodes.delete(node);
+          }
+        });
+      }
+
+      syncStyle();
+
+      // Use MutationObserver to sync style update
+      const observer = new MutationObserver(function(mutationsList, observer) {
+        for (let mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            syncStyle();
+          }
+        }
+      });
+
+      observer.observe(parent.document.querySelector('head'), { childList: true });
+    </script>
+  </head>
+  <body>
+    <div id="components-breadcrumb-demo-react-router"></div>
+    <script>
+      function require(module) {
+        if (module === 'react-router') {
+          return window.ReactRouter;
+        }
+        if (module === 'react-router-dom') {
+          return window.ReactRouterDOM;
+        }
+        return window.parent[module];
+      }
+      var mountNode = document.getElementById('components-breadcrumb-demo-react-router');
+      var React = require('react');
+      var ReactDOM = require('react-dom');
+    </script>
+    
+    <script src="https://unpkg.com/history@5/umd/history.production.min.js"></script>
+    <script src="https://unpkg.com/react-router@^6.22.3/umd/react-router.production.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom@^6.22.3/umd/react-router-dom.production.min.js"></script>
+    
+    <script>
+      function bishengPluginReactPreviewer() {
+  var React = require("react");
+  var ReactDOM = require("react-dom");
+  var _reactRouterDom = require("react-router-dom");
+  var _react = _interopRequireDefault(require("react"));
+  var _hankliuUi = require("@hankliu/hankliu-ui");
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+  console.log('------------------', _hankliuUi.Breadcrumb);
+  var Apps = function Apps() {
+    return /*#__PURE__*/_react["default"].createElement("ul", {
+      className: "app-list"
+    }, /*#__PURE__*/_react["default"].createElement("li", null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/apps/1"
+    }, "Application1"), "\uFF1A", /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/apps/1/detail"
+    }, "Detail")), /*#__PURE__*/_react["default"].createElement("li", null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/apps/2"
+    }, "Application2"), "\uFF1A", /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/apps/2/detail"
+    }, "Detail")));
+  };
+  var breadcrumbNameMap = {
+    '/apps': 'Application List',
+    '/apps/1': 'Application1',
+    '/apps/2': 'Application2',
+    '/apps/1/detail': 'Detail',
+    '/apps/2/detail': 'Detail'
+  };
+  var Home = function Home(props) {
+    console.log('Breadcrumb', _hankliuUi.Breadcrumb);
+    var location = (0, _reactRouterDom.useLocation)();
+    var pathSnippets = location.pathname.split('/').filter(function (i) {
+      return i;
+    });
+    var extraBreadcrumbItems = pathSnippets.map(function (_, index) {
+      var url = "/".concat(pathSnippets.slice(0, index + 1).join('/'));
+      return /*#__PURE__*/_react["default"].createElement(_hankliuUi.Breadcrumb.Item, {
+        key: url
+      }, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+        to: url
+      }, breadcrumbNameMap[url]));
+    });
+    var breadcrumbItems = [/*#__PURE__*/_react["default"].createElement(_hankliuUi.Breadcrumb.Item, {
+      key: "home"
+    }, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/"
+    }, "Home"))].concat(extraBreadcrumbItems);
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      className: "demo"
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      className: "demo-nav"
+    }, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/"
+    }, "Home"), /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Link, {
+      to: "/apps"
+    }, "Application List")), /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Route, {
+      path: "/apps",
+      element: /*#__PURE__*/_react["default"].createElement(Apps, null)
+    }), /*#__PURE__*/_react["default"].createElement(_reactRouterDom.Route, {
+      path: "*",
+      element: /*#__PURE__*/_react["default"].createElement("span", null, "Home Page")
+    })), /*#__PURE__*/_react["default"].createElement(Alert, {
+      style: {
+        margin: '16px 0'
+      },
+      message: "Click the navigation above to switch:"
+    }), /*#__PURE__*/_react["default"].createElement(_hankliuUi.Breadcrumb, null, breadcrumbItems));
+  };
+  return /*#__PURE__*/_react["default"].createElement(_reactRouterDom.HashRouter, null, /*#__PURE__*/_react["default"].createElement(Home, null));
+}
+    </script>
+    <script>
+      var ReactDOM = require('react-dom');
+      var app = bishengPluginReactPreviewer();
+
+      if (true) {
+        var container = null;
+        var originApp = app;
+        var demoRef = React.createRef();
+
+        window.addEventListener('message', function(event) {
+          var result = JSON.parse(event.data);
+
+          if (result.action === 'sync.theme') {
+            demoRef.current.setTheme({
+              token: result.designToken,
+              hashed: result.hashed,
+            });
+          }
+        });
+
+        var Demo = React.forwardRef(function (_, ref) {
+          var [theme, setTheme] = React.useState();
+
+          React.useImperativeHandle(ref, function() {
+            return { setTheme(newTheme) {
+              if (JSON.stringify(theme) !== JSON.stringify(newTheme)) {
+                setTheme(newTheme);
+              }
+            } };
+          });
+
+          return React.createElement(
+            require('antd').ConfigProvider,
+            {
+              getPopupContainer() { return container; },
+              theme: theme,
+            },
+            [
+              React.cloneElement(originApp, { key: 'AppContent' }),
+              React.createElement('div', {
+                key: 'InjectProviderHolder',
+                ref(node) { container = node; },
+              }),
+            ],
+          );
+        });
+
+        app = React.createElement(Demo, { ref: demoRef });
+      }
+
+      ReactDOM.render(app, mountNode);
+    </script>
+    <script src="https://unpkg.com/theme-switcher@1.x/dist/index.min.js"></script>
+    <script>
+      var timestamp = new Date().getTime();
+      // handle message with parent
+      function handleMessage(event) {
+        try {
+          var result = JSON.parse(event.data);
+          switch (result.action) {
+            //
+            case 'change.theme': {
+              var themeData = result.data;
+              var theme = themeData.theme;
+              var themeConfig = themeData.themeConfig;
+              if (window.ThemeSwitcher) {
+                var themeSwitcher = window.ThemeSwitcher(themeConfig);
+                themeSwitcher.switcher({
+                  theme: theme,
+                  useStorage: false,
+                });
+              }
+              break;
+            }
+            default: {}
+          }
+        } catch (_) {
+          window.parent.console.error('[Demo] handleMessage error', _);
+        }
+      }
+
+      window.addEventListener('message', handleMessage, false);
+    </script>
+  </body>
+</html>
