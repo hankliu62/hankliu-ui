@@ -93,7 +93,7 @@ jobs:
 
       # 发布
       - name: 发布 🚀
-        run: npm publish --access public --tag beta
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

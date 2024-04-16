@@ -3,6 +3,7 @@ category: Components
 type: 反馈
 title: HlSpin
 subtitle: 加载中
+cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*5mC5TomY4B0AAAAAAAAAAAAADrJ8AQ/original
 ---
 
 用于页面和区块的加载中状态。

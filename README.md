@@ -134,7 +134,7 @@ ReactDOM.render(<ImageCropperDefault />, mountNode);
 
 ## 链接
 
-- [首页](https://hankliu62.github.io/hankliu-ui)
+- [首页](https://hankliu62.github.io/hankliu-ui/index-cn)
 
 ## 本地开发
 

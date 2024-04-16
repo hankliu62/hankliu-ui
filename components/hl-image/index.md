@@ -4,6 +4,7 @@ type: 数据展示
 cols: 1
 title: HlImage
 subtitle: 图片
+cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAAAAAAAADrJ8AQ/original
 ---
 
 用于图片展示。

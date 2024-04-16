@@ -3,6 +3,7 @@ category: Components
 subtitle: 颜色选择器
 type: 数据录入
 title: ColorPicker
+cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*PpY4RYNM8UcAAAAAAAAAAAAADrJ8AQ/original
 ---
 
 用于选择颜色

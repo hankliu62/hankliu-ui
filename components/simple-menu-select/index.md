@@ -4,6 +4,7 @@ type: 其他
 cols: 1
 title: SimpleMenuSelect
 subtitle: 基础菜单树选择器
+cover: https://gw.alipayobjects.com/zos/alicdn/Ax4DA0njr/TreeSelect.svg
 ---
 
 基础菜单树选择器

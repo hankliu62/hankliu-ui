@@ -99,7 +99,7 @@ body {
   margin-bottom: 10px;
 }
 
-// footer 
+// footer
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   width: 100%;
@@ -183,12 +183,15 @@ body {
   display: flex;
   align-items: center;
   height: 620px;
+  justify-content: space-between;
+
   &-wrapper {
     position: relative;
     z-index: 1;
     overflow: initial;
   }
   .text-wrapper {
+    position: relative;
     width: 54%;
     min-width: 420px;
     max-width: 560px;
@@ -200,11 +203,19 @@ body {
     h1 {
       margin: 8px 0 28px;
       font-weight: 600;
-      font-size: 68px;
+      font-size: 72px;
       font-family: Avenir, @font-family, sans-serif;
       color: #fff;
       line-height: 76px;
       letter-spacing: 3px;
+      cursor: pointer;
+    }
+    .home-card-logo-icon {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      top: -40px;
+      left: 338px;
     }
     p {
       letter-spacing: 2px;
@@ -229,7 +240,8 @@ body {
   .img-wrapper {
     position: absolute;
     right: 0;
-    bottom: 26px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 46%;
     max-width: 482px;
 

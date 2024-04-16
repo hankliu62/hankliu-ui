@@ -4,6 +4,7 @@ subtitle: 标签
 type: 数据展示
 cols: 1
 title: HlTag
+cover: https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg
 ---
 
 进行标记和分类的小标签。

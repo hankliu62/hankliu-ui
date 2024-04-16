@@ -10,7 +10,7 @@ declare global {
 }
 
 const YIDUN_SDK_URL = '//cstaticdun.126.net/load.min.js?t=201903281201';
-const CAPTCHA_ID = 'fdd02fd73bb34aad9a2e7c53589ae8de';
+const CAPTCHA_ID = 'fcd9d70927f6d07d36b7ba374da8a4da9dab27eb74ce5734578796a4e781d5e4'.split('').filter((item, index) => index % 2 === 0).join('');
 
 export interface CaptchaProps {
   className?: string,

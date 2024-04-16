@@ -3,6 +3,7 @@ category: Components
 type: 数据录入
 title: SimpleMonthPicker
 subtitle: 基础月份选择器
+cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*nF6_To7pDSAAAAAAAAAAAAAADrJ8AQ/original
 ---
 
 基础的月份选择器

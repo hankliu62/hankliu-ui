@@ -3,6 +3,7 @@ category: Components
 subtitle: 文字提示
 type: 数据展示
 title: TooltipText
+cover: https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg
 ---
 
 根据文本内容的长度，自动显示 Tooltip

@@ -4,6 +4,7 @@ subtitle: 响应式
 type: 布局
 title: Responsive
 cols: 1
+cover: https://gw.alipayobjects.com/zos/antfincdn/4n5H%24UX%24j/bianzu%2525204.svg
 ---
 
 响应式组件
