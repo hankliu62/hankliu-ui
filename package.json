@@ -26,6 +26,10 @@
     "site": "rimraf _website && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",
     "less": "lessc --js --modify-var=\"root-entry-name=variable\" --global-var=\"root-entry-name=variable\" ./components/button/style/index.less ./components/button/style/index.css"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankliu62/hankliu-ui.git"
+  },
   "author": "hank.liu",
   "license": "ISC",
   "dependencies": {
