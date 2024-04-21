@@ -263,5 +263,10 @@ export type { HlTableProps } from './hl-table';
 export { default as EditableText } from './editable-text';
 export type { EditableTextProps } from './editable-text';
 
-// export { default as MonacoEditor } from './monaco-editor';
-// export type { IMonacoEditorProps as MonacoEditorProps, MonacoEditorMethods } from './monaco-editor';
+export { default as Fullpage } from './fullpage';
+
+export { default as Exception } from './exception';
+export type { IExceptionProps as ExceptionProps } from './exception';
+
+export { default as Watermark } from './watermark';
+export type { WatermarkProps } from './watermark';

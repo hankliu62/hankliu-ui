@@ -1,11 +1,9 @@
 const path = require('path');
 const replaceLib = require('@ant-design/tools/lib/replaceLib');
 const getWebpackConfig = require('@ant-design/tools/lib/getWebpackConfig');
-// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const { version } = require('../package.json');
 const themeConfig = require('./themeConfig');
-// const constants = require('@hankliu/rc-monaco-editor/lib/constants');
 
 const { webpack } = getWebpackConfig;
 
@@ -112,20 +110,6 @@ module.exports = {
       include: /node_modules/,
       type: 'javascript/auto',
     });
-
-    // // 处理 Worker Loader
-    // config.module.rules.push({
-    //   test: /\.(worker.(j|t)s)$/,
-    //   include: /node_modules/,
-    //   use: 'worker-loader',
-    // });
-
-    // config.plugins.push(
-    //   new MonacoWebpackPlugin({
-    //     languages: constants.Languages,
-    //     filename: 'static/[name].worker.js',
-    //   }),
-    // );
 
     config.plugins.push(
       new webpack.DefinePlugin({

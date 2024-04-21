@@ -25,9 +25,8 @@ timeline: true
 ## 0.0.2
 
 - 🆕 新增 `Fullpage` 组件。
-- 🆕 新增 `MonacoEditor` 组件。
-- 🆕 新增 `MirrorEditor` 组件。
 - 🆕 新增 `Exception` 组件。
+- 🆕 新增 `Watermark` 组件。
 - 🛠 使用 `@hankliu/colors` 替换 `@ant-design/colors` 组件。
 - 🛠 使用 `@hankliu/icons` 替换 `@ant-design/icons` 组件，丰富 Icon 的图标库。
 - 🐞 修复使用 `@hankliu/hankliu-ui` 还需要在项目中额外安装 `react-color` 库的问题。
