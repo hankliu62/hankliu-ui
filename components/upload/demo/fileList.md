@@ -22,7 +22,7 @@ You can gain full control over filelist by configuring `fileList`. You can accom
 2. read from response and show file link.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { Button, Upload } from '@hankliu/hankliu-ui';
 import type { UploadFile } from 'antd/es/upload/interface';
@@ -38,7 +38,7 @@ const App: React.FC = () => {
     },
   ]);
 
-  const handleChange: UploadProps['onChange'] = info => {
+  const handleChange: UploadProps['onChange'] = (info) => {
     let newFileList = [...info.fileList];
 
     // 1. Limit the number of uploaded files
@@ -46,7 +46,7 @@ const App: React.FC = () => {
     newFileList = fileList.slice(-2);
 
     // 2. Read from response and show file link
-    newFileList = fileList.map(file => {
+    newFileList = fileList.map((file) => {
       if (file.response) {
         // Component will show file.url as link
         file.url = file.response.url;

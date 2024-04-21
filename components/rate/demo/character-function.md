@@ -15,7 +15,7 @@ Can customize each character using `(RateProps) => ReactNode`.
 
 ```jsx
 import { Rate } from '@hankliu/hankliu-ui';
-import { FrownOutlined, MehOutlined, SmileOutlined } from '@ant-design/icons';
+import { FrownOutlined, MehOutlined, SmileOutlined } from '@hankliu/icons';
 
 const customIcons = {
   1: <FrownOutlined />,

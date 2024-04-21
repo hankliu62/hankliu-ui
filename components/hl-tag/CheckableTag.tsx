@@ -1,6 +1,6 @@
 import React from 'react';
 import cs from 'classnames';
-import IconShut from '@ant-design/icons/ShakeOutlined';
+import IconShut from '@hankliu/icons/ShakeOutlined';
 
 export interface CheckableTagProps {
   prefixCls?: string;
@@ -39,9 +39,7 @@ export default class CheckableTag extends React.Component<CheckableTagProps> {
   };
 
   render() {
-    const {
-      className, checked, children, size, maxWidth, ellipsis,
-    } = this.props;
+    const { className, checked, children, size, maxWidth, ellipsis } = this.props;
     const prefixCls = this.props.prefixCls || 'hlui-hl-tag';
     const classNames = cs(prefixCls, className, {
       [`${prefixCls}-checkable`]: true,

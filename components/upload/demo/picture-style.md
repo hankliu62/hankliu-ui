@@ -14,7 +14,7 @@ title:
 If uploaded file is a picture, the thumbnail can be shown. `IE8/9` do not support local thumbnail show. Please use `thumbUrl` instead.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import { Button, Upload } from '@hankliu/hankliu-ui';
 import type { UploadFile } from 'antd/es/upload/interface';
 import React from 'react';

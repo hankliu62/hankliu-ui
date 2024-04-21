@@ -15,7 +15,7 @@ Complex error feedback.
 
 ```jsx
 import { Result, Button, Typography } from '@hankliu/hankliu-ui';
-import { CloseCircleOutlined } from '@ant-design/icons';
+import { CloseCircleOutlined } from '@hankliu/icons';
 
 const { Paragraph, Text } = Typography;
 

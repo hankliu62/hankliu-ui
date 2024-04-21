@@ -16,7 +16,7 @@ The close icon can be customized using `closeIcon`.
 
 ```jsx
 import { Tag } from '@hankliu/hankliu-ui';
-import { CloseCircleOutlined } from '@ant-design/icons';
+import { CloseCircleOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

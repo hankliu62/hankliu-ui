@@ -19,7 +19,7 @@ Layout.Sider supports responsive layout.
 
 ```jsx
 import { Layout, Menu } from '@hankliu/hankliu-ui';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@hankliu/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -28,7 +28,7 @@ ReactDOM.render(
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
-      onBreakpoint={broken => {
+      onBreakpoint={(broken) => {
         console.log(broken);
       }}
       onCollapse={(collapsed, type) => {

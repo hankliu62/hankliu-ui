@@ -13,36 +13,36 @@ title:
 
 Ternary modal
 
-````jsx
+```jsx
 import { HlModal as Modal, Button, message } from '@hankliu/hankliu-ui';
-import IconDelete from '@ant-design/icons/DeleteOutlined'
+import IconDelete from '@hankliu/icons/DeleteOutlined';
 
 class App extends React.Component {
-  state = { open: false }
+  state = { open: false };
 
   showModal = () => {
     this.setState({
-      open: true
+      open: true,
     });
-  }
+  };
 
   handleOk = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   handleSecondly = (e) => {
     console.log('secondly clicked');
-  }
+  };
 
   handleCancel = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   useModalShow = () => {
     const modal = Modal.show({
@@ -52,17 +52,17 @@ class App extends React.Component {
       title: '确认复制该项目到草稿？(show)',
       content: '一些描述文字一些描述文字一些描述文字一些描述文字一些描述文字',
       onOk: () => {
-        console.log('ok clicked')
+        console.log('ok clicked');
       },
       onSecondly: () => {
-        console.log('secondly clicked')
+        console.log('secondly clicked');
       },
       onCancel: () => {
-        console.log('cancel clicked')
-        modal.destroy()
-      }
-    })
-  }
+        console.log('cancel clicked');
+        modal.destroy();
+      },
+    });
+  };
 
   render() {
     return (
@@ -75,7 +75,7 @@ class App extends React.Component {
         </Button>
         <Modal
           ternary
-          icon={<IconDelete style={{color: 'var(--color-danger)'}} />}
+          icon={<IconDelete style={{ color: 'var(--color-danger)' }} />}
           secondText="删 除"
           title="确认复制该项目到草稿？(components)"
           open={this.state.open}
@@ -91,4 +91,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
-````
+```

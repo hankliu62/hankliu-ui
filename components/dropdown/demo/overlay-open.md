@@ -16,13 +16,13 @@ The default is to close the menu when you click on menu items, this feature can 
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
 import type { MenuProps } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 import { useState } from 'react';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  const handleMenuClick: MenuProps['onClick'] = e => {
+  const handleMenuClick: MenuProps['onClick'] = (e) => {
     if (e.key === '3') {
       setOpen(false);
     }
@@ -56,7 +56,7 @@ const App: React.FC = () => {
       onOpenChange={handleOpenChange}
       open={open}
     >
-      <a onClick={e => e.preventDefault()}>
+      <a onClick={(e) => e.preventDefault()}>
         <Space>
           Hover me
           <DownOutlined />

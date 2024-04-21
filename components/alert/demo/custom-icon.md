@@ -16,7 +16,7 @@ A relevant icon makes information clearer and more friendly.
 
 ```tsx
 import { Alert } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const icon = <SmileOutlined />;
 

@@ -15,7 +15,7 @@ The icon should be placed in front of the text.
 
 ```jsx
 import { Breadcrumb } from '@hankliu/hankliu-ui';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Breadcrumb>

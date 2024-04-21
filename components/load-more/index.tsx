@@ -1,4 +1,4 @@
-import IconLoading from '@ant-design/icons/lib/icons/LoadingOutlined';
+import IconLoading from '@hankliu/icons/lib/icons/LoadingOutlined';
 import cs from 'classnames';
 import * as React from 'react';
 import { Waypoint } from 'react-waypoint';

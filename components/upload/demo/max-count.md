@@ -14,7 +14,7 @@ title:
 Limit files with `maxCount`. Will replace current one when `maxCount` is `1`.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import { Button, Space, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';
 

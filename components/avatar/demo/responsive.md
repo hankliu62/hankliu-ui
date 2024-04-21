@@ -15,7 +15,7 @@ Avatar size can be automatically adjusted based on the screen size.
 
 ```tsx
 import { Avatar } from '@hankliu/hankliu-ui';
-import { AntDesignOutlined } from '@ant-design/icons';
+import { AntDesignOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Avatar

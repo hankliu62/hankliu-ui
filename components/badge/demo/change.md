@@ -15,7 +15,7 @@ The count will be animated as it changes.
 
 ```jsx
 import { Badge, Button, Switch, Divider, Avatar } from '@hankliu/hankliu-ui';
-import { MinusOutlined, PlusOutlined, QuestionOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined, QuestionOutlined } from '@hankliu/icons';
 
 const ButtonGroup = Button.Group;
 
@@ -43,7 +43,7 @@ class Demo extends React.Component {
     this.setState({ count });
   };
 
-  onChange = show => {
+  onChange = (show) => {
     this.setState({ show });
   };
 

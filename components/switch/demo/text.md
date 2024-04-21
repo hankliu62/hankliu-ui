@@ -15,7 +15,7 @@ With text and icon.
 
 ```jsx
 import { Switch } from '@hankliu/hankliu-ui';
-import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
+import { CloseOutlined, CheckOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

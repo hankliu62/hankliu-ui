@@ -2,7 +2,7 @@ import React from 'react';
 
 import confirm from 'antd4x/lib/modal/confirm';
 import type { ModalFuncProps } from 'antd4x/lib/modal';
-import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
+import DeleteOutlined from '@hankliu/icons/DeleteOutlined';
 import ErrorSvg from './icon/error';
 import InfoSvg from './icon/info';
 import SuccessSvg from './icon/success';
@@ -53,7 +53,7 @@ export function withError(props: ModalFuncProps): ModalFuncProps {
 export function withDelete(props: ModalFuncProps): ModalFuncProps {
   return {
     centered: true,
-    icon: <DeleteOutlined style={{color: 'var(--color-danger)'}} />,
+    icon: <DeleteOutlined style={{ color: 'var(--color-danger)' }} />,
     okCancel: true,
     okButtonProps: {
       danger: true,

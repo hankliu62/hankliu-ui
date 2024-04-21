@@ -7,7 +7,7 @@ title: 自定义加载指示符
 
 ```jsx
 import { LoadMore, Icon } from '@hankliu/hankliu-ui';
-import SyncOutlined from '@ant-design/icons/lib/icons/SyncOutlined';
+import SyncOutlined from '@hankliu/icons/lib/icons/SyncOutlined';
 
 class Demo extends React.Component {
   constructor(props) {

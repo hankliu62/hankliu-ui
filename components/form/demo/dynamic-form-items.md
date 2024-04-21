@@ -15,10 +15,10 @@ Nest dynamic field need extends `field`. Pass `field.name` to nest item.
 
 ```jsx
 import { Form, Input, Button, Space } from '@hankliu/hankliu-ui';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@hankliu/icons';
 
 const Demo = () => {
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
 

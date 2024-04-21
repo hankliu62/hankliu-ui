@@ -15,12 +15,12 @@ Vertical menu with inline submenus.
 
 ```jsx
 import { Menu } from '@hankliu/hankliu-ui';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
 class Sider extends React.Component {
-  handleClick = e => {
+  handleClick = (e) => {
     console.log('click ', e);
   };
 

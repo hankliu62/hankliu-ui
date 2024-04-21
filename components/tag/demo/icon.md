@@ -24,7 +24,7 @@ import {
   YoutubeOutlined,
   FacebookOutlined,
   LinkedinOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 ReactDOM.render(
   <>

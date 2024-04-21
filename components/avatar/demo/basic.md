@@ -15,7 +15,7 @@ Three sizes and two shapes are available.
 
 ```tsx
 import { Avatar } from '@hankliu/hankliu-ui';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

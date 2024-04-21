@@ -14,7 +14,7 @@ title:
 Use `showUploadList` for custom action icons of files.
 
 ```tsx
-import { StarOutlined, UploadOutlined } from '@ant-design/icons';
+import { StarOutlined, UploadOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { Button, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';
@@ -52,7 +52,7 @@ const props: UploadProps = {
     showDownloadIcon: true,
     downloadIcon: 'Download',
     showRemoveIcon: true,
-    removeIcon: <StarOutlined onClick={e => console.log(e, 'custom removeIcon event')} />,
+    removeIcon: <StarOutlined onClick={(e) => console.log(e, 'custom removeIcon event')} />,
   },
 };
 

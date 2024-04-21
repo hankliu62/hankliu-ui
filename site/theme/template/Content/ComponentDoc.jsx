@@ -4,7 +4,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import { Row, Col, Affix, Tooltip } from '@hankliu/hankliu-ui';
 import { getChildren } from 'jsonml.js/lib/utils';
-import { CodeFilled, CodeOutlined, BugFilled, BugOutlined } from '@ant-design/icons';
+import { CodeFilled, CodeOutlined, BugFilled, BugOutlined } from '@hankliu/icons';
 import Demo from './Demo';
 import EditButton from './EditButton';
 import { ping, getMetaDescription } from '../utils';

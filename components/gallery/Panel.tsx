@@ -1,30 +1,30 @@
 // @ts-nocheck
 import React from 'react';
 import cs from 'classnames';
-import IconLeft from '@ant-design/icons/LeftOutlined';
-import IconRight from '@ant-design/icons/RightOutlined';
-import IconDownload from '@ant-design/icons/DownloadOutlined';
-import IconShut from '@ant-design/icons/ShrinkOutlined';
+import IconLeft from '@hankliu/icons/LeftOutlined';
+import IconRight from '@hankliu/icons/RightOutlined';
+import IconDownload from '@hankliu/icons/DownloadOutlined';
+import IconShut from '@hankliu/icons/ShrinkOutlined';
 import getFileName from '../_util/getFileName';
 import _downloadFile from '../_util/downloadFile';
 import Image from './Image';
 import Video from './Video';
 
 export interface GalleryProps {
-  open?: boolean,
-  width?: number | string,
-  height?: number | string,
-  style?: any,
-  className?: string,
-  index?: number,
-  items: any[],
-  sidebar?: React.ReactNode,
-  options?: any,
-  download?: boolean,
-  showCount?: boolean,
-  downloadFile?: (src: string, name: string) => void,
-  onClose?: () => void,
-  onChange?: (index: number, des: string) => void,
+  open?: boolean;
+  width?: number | string;
+  height?: number | string;
+  style?: any;
+  className?: string;
+  index?: number;
+  items: any[];
+  sidebar?: React.ReactNode;
+  options?: any;
+  download?: boolean;
+  showCount?: boolean;
+  downloadFile?: (src: string, name: string) => void;
+  onClose?: () => void;
+  onChange?: (index: number, des: string) => void;
 }
 
 const MAXIMUM = 5;
@@ -101,14 +101,22 @@ export default class Gallery extends React.Component<any, any> {
     }
     return (
       <div key={item._index} className={`gallery-item ${current === item._index ? 'active' : ''}`}>
-        { _item }
+        {_item}
       </div>
     );
   };
 
   render() {
     const {
-      width, height, style = {}, className, items, showCount, onClose, download, closeable,
+      width,
+      height,
+      style = {},
+      className,
+      items,
+      showCount,
+      onClose,
+      download,
+      closeable,
     } = this.props;
     const { current } = this.state;
     let _prev = null;
@@ -134,8 +142,16 @@ export default class Gallery extends React.Component<any, any> {
         <div className="gallery-head">
           {showCount && this.renderCount()}
           <div className="head-title">{items[current] && items[current].title}</div>
-          { download ? <div className="head-action" onClick={this.download}><IconDownload /></div> : null }
-          { closeable ? <div onClick={onClose} className="head-action action-close"><IconShut /></div> : null}
+          {download ? (
+            <div className="head-action" onClick={this.download}>
+              <IconDownload />
+            </div>
+          ) : null}
+          {closeable ? (
+            <div onClick={onClose} className="head-action action-close">
+              <IconShut />
+            </div>
+          ) : null}
         </div>
         {_prev}
         {getMaxItems(items, current, MAXIMUM).map(this.renderItem)}
@@ -159,7 +175,7 @@ export default class Gallery extends React.Component<any, any> {
 }
 
 function getMaxItems(items: any[], current: number, maximum: number) {
-  items.forEach((item: any, idx: number) => item._index = idx);
+  items.forEach((item: any, idx: number) => (item._index = idx));
   const num = Math.ceil((maximum - 1) / 2);
   let start = current - num;
   if (start < 0) start = 0;

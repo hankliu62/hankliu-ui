@@ -18,7 +18,7 @@ Implement a customized column search example via `filterDropdown`.
 ```jsx
 import { Table, Input, Button, Space } from '@hankliu/hankliu-ui';
 import Highlighter from 'react-highlight-words';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@hankliu/icons';
 
 const data = [
   {
@@ -53,16 +53,16 @@ class App extends React.Component {
     searchedColumn: '',
   };
 
-  getColumnSearchProps = dataIndex => ({
+  getColumnSearchProps = (dataIndex) => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
       <div style={{ padding: 8 }}>
         <Input
-          ref={node => {
+          ref={(node) => {
             this.searchInput = node;
           }}
           placeholder={`Search ${dataIndex}`}
           value={selectedKeys[0]}
-          onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
+          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
           onPressEnter={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
           style={{ marginBottom: 8, display: 'block' }}
         />
@@ -95,17 +95,19 @@ class App extends React.Component {
         </Space>
       </div>
     ),
-    filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
+    filterIcon: (filtered) => (
+      <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />
+    ),
     onFilter: (value, record) =>
       record[dataIndex]
         ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
         : '',
-    onFilterDropdownVisibleChange: visible => {
+    onFilterDropdownVisibleChange: (visible) => {
       if (visible) {
         setTimeout(() => this.searchInput.select(), 100);
       }
     },
-    render: text =>
+    render: (text) =>
       this.state.searchedColumn === dataIndex ? (
         <Highlighter
           highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
@@ -126,7 +128,7 @@ class App extends React.Component {
     });
   };
 
-  handleReset = clearFilters => {
+  handleReset = (clearFilters) => {
     clearFilters();
     this.setState({ searchText: '' });
   };

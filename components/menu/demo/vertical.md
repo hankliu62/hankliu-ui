@@ -15,7 +15,7 @@ Submenus open as pop-ups.
 
 ```jsx
 import { Menu } from '@hankliu/hankliu-ui';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 

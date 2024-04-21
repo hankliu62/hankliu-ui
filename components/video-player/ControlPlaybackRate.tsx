@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingOutlined from '@ant-design/icons/lib/icons/SettingOutlined';
+import SettingOutlined from '@hankliu/icons/lib/icons/SettingOutlined';
 import { DropDownProps } from 'antd4x/es/dropdown';
 import DropSelect, { DropSelectProps } from '../drop-select';
 import { getLocale } from './locale';
@@ -30,7 +30,7 @@ interface ControlPlaybackRateProps {
   onChange: DropSelectProps['onChange'];
 }
 function ControlPlaybackRate({
-                               playbackRate,
+  playbackRate,
   getPopupContainer,
   onChange,
 }: ControlPlaybackRateProps) {
@@ -53,4 +53,4 @@ function ControlPlaybackRate({
   );
 }
 
-export default React.memo(ControlPlaybackRate)
+export default React.memo(ControlPlaybackRate);

@@ -27,7 +27,7 @@ import {
   Row,
   Col,
 } from '@hankliu/hankliu-ui';
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
+import { UploadOutlined, InboxOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 
@@ -171,8 +171,6 @@ const Demo = () => {
       <Form.Item name="rate" label="Rate">
         <Rate />
       </Form.Item>
-
-
 
       <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
         <Button type="primary" htmlType="submit">

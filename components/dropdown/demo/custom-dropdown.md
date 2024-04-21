@@ -9,7 +9,6 @@ title:
 
 使用 `dropdownRender` 对下拉菜单进行自由扩展。如果你并不需要 Menu 内容，请直接使用 Popover 组件。
 
-
 ## en-US
 
 Customize the dropdown menu via `dropdownRender`. If you don't need the Menu content, use the Popover component directly.
@@ -17,7 +16,7 @@ Customize the dropdown menu via `dropdownRender`. If you don't need the Menu con
 ```jsx
 import { Menu, Dropdown, Space, Divider, Button } from '@hankliu/hankliu-ui';
 import type { MenuProps } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const items: MenuProps['items'] = [
   {
@@ -51,7 +50,7 @@ const items: MenuProps['items'] = [
 ReactDOM.render(
   <Dropdown
     menu={{ items }}
-    dropdownRender={menu => (
+    dropdownRender={(menu) => (
       <div className="dropdown-content">
         {menu}
         <Divider style={{ margin: 0 }} />
@@ -61,7 +60,7 @@ ReactDOM.render(
       </div>
     )}
   >
-    <a onClick={e => e.preventDefault()}>
+    <a onClick={(e) => e.preventDefault()}>
       <Space>
         Hover me
         <DownOutlined />

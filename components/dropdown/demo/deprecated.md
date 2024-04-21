@@ -15,7 +15,7 @@ The most basic dropdown menu.
 
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const menu = (
   <Menu
@@ -58,7 +58,7 @@ const menu = (
 
 ReactDOM.render(
   <Dropdown overlay={menu}>
-    <a onClick={e => e.preventDefault()}>
+    <a onClick={(e) => e.preventDefault()}>
       <Space>
         Hover me
         <DownOutlined />

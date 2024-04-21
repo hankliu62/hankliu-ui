@@ -15,14 +15,14 @@ A loading indicator can be added to a button by setting the `loading` property o
 
 ```jsx
 import { Button, Space } from '@hankliu/hankliu-ui';
-import { PoweroffOutlined } from '@ant-design/icons';
+import { PoweroffOutlined } from '@hankliu/icons';
 
 class App extends React.Component {
   state = {
     loadings: [],
   };
 
-  enterLoading = index => {
+  enterLoading = (index) => {
     this.setState(({ loadings }) => {
       const newLoadings = [...loadings];
       newLoadings[index] = true;

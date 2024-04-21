@@ -14,7 +14,7 @@ title:
 Add status to Input with `status`, which could be `error` or `warning`.
 
 ```jsx
-import ClockCircleOutlined from '@ant-design/icons/ClockCircleOutlined';
+import ClockCircleOutlined from '@hankliu/icons/ClockCircleOutlined';
 import { Input, Space } from '@hankliu/hankliu-ui';
 import React from 'react';
 

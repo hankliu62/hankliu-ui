@@ -16,7 +16,7 @@ Tree with connected line between nodes, turn on by `showLine`, customize the pre
 ```tsx
 import React, { useState } from 'react';
 import { Tree, Switch } from '@hankliu/hankliu-ui';
-import { CarryOutOutlined, FormOutlined } from '@ant-design/icons';
+import { CarryOutOutlined, FormOutlined } from '@hankliu/icons';
 
 const treeData = [
   {

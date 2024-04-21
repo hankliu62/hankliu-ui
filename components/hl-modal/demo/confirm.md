@@ -13,9 +13,9 @@ title:
 
 To use `Modal.confirm()` to popup a confirmation modal dialog.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
-import IconDelete from '@ant-design/icons/lib/icons/DeleteOutlined';
+import IconDelete from '@hankliu/icons/lib/icons/DeleteOutlined';
 
 const confirm = Modal.confirm;
 
@@ -64,16 +64,12 @@ function showDeleteConfirm() {
 
 ReactDOM.render(
   <div>
-    <Button onClick={showConfirm}>
-      Confirm
-    </Button>
-    <Button onClick={showConfirmWithClose}>
-      有关闭按钮的 Confirm
-    </Button>
+    <Button onClick={showConfirm}>Confirm</Button>
+    <Button onClick={showConfirmWithClose}>有关闭按钮的 Confirm</Button>
     <Button onClick={showDeleteConfirm} type="danger">
       Delete
     </Button>
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

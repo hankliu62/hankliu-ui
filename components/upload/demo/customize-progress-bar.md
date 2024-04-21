@@ -14,7 +14,7 @@ title:
 Use `progress` for customize progress bar.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { Button, message, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';
@@ -41,7 +41,7 @@ const props: UploadProps = {
       '100%': '#87d068',
     },
     strokeWidth: 3,
-    format: percent => percent && `${parseFloat(percent.toFixed(2))}%`,
+    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
   },
 };
 

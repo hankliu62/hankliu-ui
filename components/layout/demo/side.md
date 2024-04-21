@@ -30,7 +30,7 @@ import {
   FileOutlined,
   TeamOutlined,
   UserOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -40,7 +40,7 @@ class SiderDemo extends React.Component {
     collapsed: false,
   };
 
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     console.log(collapsed);
     this.setState({ collapsed });
   };

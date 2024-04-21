@@ -36,7 +36,7 @@ import {
 } from '@hankliu/hankliu-ui';
 import moment from 'moment';
 import difference from 'lodash/difference';
-import { DownOutlined, ClockCircleOutlined } from '@ant-design/icons';
+import { DownOutlined, ClockCircleOutlined } from '@hankliu/icons';
 
 const { Panel } = Collapse;
 const { TreeNode } = Tree;
@@ -61,7 +61,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const oriTargetKeys = mockData.filter(item => +item.key % 3 > 1).map(item => item.key);
+const oriTargetKeys = mockData.filter((item) => +item.key % 3 > 1).map((item) => item.key);
 
 const data = [
   {
@@ -260,10 +260,10 @@ const TableTransfer = ({ leftColumns, rightColumns, ...restProps }) => (
       const columns = direction === 'left' ? leftColumns : rightColumns;
 
       const rowSelection = {
-        getCheckboxProps: item => ({ disabled: listDisabled || item.disabled }),
+        getCheckboxProps: (item) => ({ disabled: listDisabled || item.disabled }),
         onSelectAll(selected, selectedRows) {
           const treeSelectedKeys = selectedRows
-            .filter(item => !item.disabled)
+            .filter((item) => !item.disabled)
             .map(({ key }) => key);
           const diffKeys = selected
             ? difference(treeSelectedKeys, listSelectedKeys)
@@ -305,25 +305,25 @@ class App extends React.Component {
     showSearch: false,
   };
 
-  handleDisable = disabled => {
+  handleDisable = (disabled) => {
     this.setState({
       disabled,
     });
   };
 
-  handleTableTransferChange = nextTargetKeys => {
+  handleTableTransferChange = (nextTargetKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
   };
 
-  triggerDisable = disabled => {
+  triggerDisable = (disabled) => {
     this.setState({ disabled });
   };
 
-  triggerShowSearch = showSearch => {
+  triggerShowSearch = (showSearch) => {
     this.setState({ showSearch });
   };
 
-  handleTransferChange = nextTargetKeys => {
+  handleTransferChange = (nextTargetKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
   };
 
@@ -337,14 +337,14 @@ class App extends React.Component {
     });
   };
 
-  handleOk = e => {
+  handleOk = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     console.log(e);
     this.setState({
       open: false,
@@ -440,7 +440,7 @@ class App extends React.Component {
             selectedKeys={selectedKeys}
             onChange={this.handleTransferChange}
             onSelectChange={this.handleTransferSelectChange}
-            render={item => item.title}
+            render={(item) => item.title}
             disabled={disabled}
           />
           <TableTransfer
@@ -539,7 +539,7 @@ class App extends React.Component {
             pagination={false}
             id="table-demo-summary"
             bordered
-            summary={pageData => {
+            summary={(pageData) => {
               let totalBorrow = 0;
               let totalRepayment = 0;
 

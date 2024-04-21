@@ -16,7 +16,7 @@ Basic Usage.
 
 ```jsx
 import { Select } from '@hankliu/hankliu-ui';
-import { SmileOutlined, MehOutlined } from '@ant-design/icons';
+import { SmileOutlined, MehOutlined } from '@hankliu/icons';
 
 const smileIcon = <SmileOutlined />;
 const mehIcon = <MehOutlined />;

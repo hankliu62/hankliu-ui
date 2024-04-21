@@ -9,7 +9,7 @@ title:
 
 按钮有大、中偏大、中、中偏小、小 五种尺寸。
 
-通过设置 `size` 为 `large`(大)、`medium`(中偏大)、`smedium`(中偏小)、`small`(小)  来设置尺寸。若不设置 `size`，则尺寸为中。
+通过设置 `size` 为 `large`(大)、`medium`(中偏大)、`smedium`(中偏小)、`small`(小) 来设置尺寸。若不设置 `size`，则尺寸为中。
 
 ## en-US
 
@@ -19,14 +19,14 @@ If a large or small button is desired, set the `size` property to either `large`
 
 ```jsx
 import { Button, Radio } from '@hankliu/hankliu-ui';
-import { DownloadOutlined } from '@ant-design/icons';
+import { DownloadOutlined } from '@hankliu/icons';
 
 class ButtonSize extends React.Component {
   state = {
     size: 'large',
   };
 
-  handleSizeChange = e => {
+  handleSizeChange = (e) => {
     this.setState({ size: e.target.value });
   };
 
@@ -40,14 +40,15 @@ class ButtonSize extends React.Component {
           <Radio.Button value="default">Default</Radio.Button>
           <Radio.Button value="smedium">Smedium</Radio.Button>
           <Radio.Button value="small">Small</Radio.Button>
-
         </Radio.Group>
         <br />
         <br />
         <Button type="primary" size={size}>
           Primary
         </Button>
-        <Button type="secondary" size={size}>Secondary</Button>
+        <Button type="secondary" size={size}>
+          Secondary
+        </Button>
         <Button type="dashed" size={size}>
           Dashed
         </Button>

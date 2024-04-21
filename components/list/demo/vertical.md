@@ -15,14 +15,15 @@ Set the `itemLayout` property to `vertical` to create a vertical list.
 
 ```jsx
 import { List, Avatar, Space } from '@hankliu/hankliu-ui';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { MessageOutlined, LikeOutlined, StarOutlined } from '@hankliu/icons';
 
 const listData = [];
 for (let i = 0; i < 23; i++) {
   listData.push({
     href: 'https://ant.design',
     title: `ant design part ${i}`,
-    avatar: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
+    avatar:
+      'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
     description:
       'Ant Design, a design language for background applications, is refined by Ant UED Team.',
     content:
@@ -42,7 +43,7 @@ ReactDOM.render(
     itemLayout="vertical"
     size="large"
     pagination={{
-      onChange: page => {
+      onChange: (page) => {
         console.log(page);
       },
       pageSize: 3,
@@ -53,7 +54,7 @@ ReactDOM.render(
         <b>ant design</b> footer part
       </div>
     }
-    renderItem={item => (
+    renderItem={(item) => (
       <List.Item
         key={item.title}
         actions={[

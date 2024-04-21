@@ -15,7 +15,7 @@ Generating a set of Tags by array, you can add and remove dynamically.
 
 ```jsx
 import { Tag, Input, Tooltip } from '@hankliu/hankliu-ui';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@hankliu/icons';
 
 class EditableTagGroup extends React.Component {
   state = {
@@ -26,8 +26,8 @@ class EditableTagGroup extends React.Component {
     editInputValue: '',
   };
 
-  handleClose = removedTag => {
-    const tags = this.state.tags.filter(tag => tag !== removedTag);
+  handleClose = (removedTag) => {
+    const tags = this.state.tags.filter((tag) => tag !== removedTag);
     console.log(tags);
     this.setState({ tags });
   };
@@ -36,7 +36,7 @@ class EditableTagGroup extends React.Component {
     this.setState({ inputVisible: true }, () => this.input.focus());
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     this.setState({ inputValue: e.target.value });
   };
 
@@ -54,7 +54,7 @@ class EditableTagGroup extends React.Component {
     });
   };
 
-  handleEditInputChange = e => {
+  handleEditInputChange = (e) => {
     this.setState({ editInputValue: e.target.value });
   };
 
@@ -71,11 +71,11 @@ class EditableTagGroup extends React.Component {
     });
   };
 
-  saveInputRef = input => {
+  saveInputRef = (input) => {
     this.input = input;
   };
 
-  saveEditInputRef = input => {
+  saveEditInputRef = (input) => {
     this.editInput = input;
   };
 
@@ -109,7 +109,7 @@ class EditableTagGroup extends React.Component {
               onClose={() => this.handleClose(tag)}
             >
               <span
-                onDoubleClick={e => {
+                onDoubleClick={(e) => {
                   if (index !== 0) {
                     this.setState({ editInputIndex: index, editInputValue: tag }, () => {
                       this.editInput.focus();

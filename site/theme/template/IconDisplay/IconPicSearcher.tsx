@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Upload, Tooltip, Popover, Modal, Progress, message, Spin, Result } from '@hankliu/hankliu-ui';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { injectIntl } from 'react-intl';
-import * as AntdIcons from '@ant-design/icons';
+import * as AntdIcons from '@hankliu/icons';
 
 const allIcons: {
   [key: string]: any;

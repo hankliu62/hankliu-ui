@@ -1,18 +1,19 @@
 import * as React from 'react';
-import Icon, * as AntdIcons from '@ant-design/icons';
+import Icon, * as AntdIcons from '@hankliu/icons';
 import { Radio, Input, Empty } from '@hankliu/hankliu-ui';
 import { RadioChangeEvent } from 'antd/es/radio/interface';
 import { injectIntl } from 'react-intl';
 import debounce from 'lodash/debounce';
 import Category from './Category';
 import IconPicSearcher from './IconPicSearcher';
-import { FilledIcon, OutlinedIcon, TwoToneIcon } from './themeIcons';
+import { FilledIcon, OutlinedIcon, TwoToneIcon, CustomIcon } from './themeIcons';
 import { categories, Categories, CategoriesKeys } from './fields';
 
 export enum ThemeType {
   Filled = 'Filled',
   Outlined = 'Outlined',
   TwoTone = 'TwoTone',
+  Custom = 'Icon',
 }
 
 const allIcons: {
@@ -50,7 +51,7 @@ class IconDisplay extends React.PureComponent<IconDisplayProps, IconDisplayState
   };
 
   handleSearchIcon = (searchKey: string) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ...prevState,
       searchKey,
     }));
@@ -60,23 +61,26 @@ class IconDisplay extends React.PureComponent<IconDisplayProps, IconDisplayState
     const { searchKey = '', theme } = this.state;
 
     const categoriesResult = Object.keys(categories)
+      // @ts-ignore
       .map((key: CategoriesKeys) => {
         let iconList = categories[key];
         if (searchKey) {
           const matchKey = searchKey
             // eslint-disable-next-line prefer-regex-literals
             .replace(new RegExp(`^<([a-zA-Z]*)\\s/>$`, 'gi'), (_, name) => name)
-            .replace(/(Filled|Outlined|TwoTone)$/, '')
+            .replace(/(Filled|Outlined|TwoTone|Icon)$/, '')
             .toLowerCase();
-          iconList = iconList.filter(iconName => iconName.toLowerCase().includes(matchKey));
+          iconList = iconList.filter((iconName) => iconName.toLowerCase().includes(matchKey));
         }
 
         // CopyrightCircle is same as Copyright, don't show it
-        iconList = iconList.filter(icon => icon !== 'CopyrightCircle');
+        iconList = iconList.filter((icon) => icon !== 'CopyrightCircle');
 
         return {
           category: key,
-          icons: iconList.map(iconName => iconName + theme).filter(iconName => allIcons[iconName]),
+          icons: iconList
+            .map((iconName) => (theme === ThemeType.Custom ? theme + iconName : iconName + theme))
+            .filter((iconName) => allIcons[iconName]),
         };
       })
       .filter(({ icons }) => !!icons.length)
@@ -115,12 +119,15 @@ class IconDisplay extends React.PureComponent<IconDisplayProps, IconDisplayState
             <Radio.Button value={ThemeType.TwoTone}>
               <Icon component={TwoToneIcon} /> {messages['app.docs.components.icon.two-tone']}
             </Radio.Button>
+            <Radio.Button value={ThemeType.Custom}>
+              <Icon component={CustomIcon} /> {messages['app.docs.components.icon.custom']}
+            </Radio.Button>
           </Radio.Group>
           <Input.Search
             placeholder={messages['app.docs.components.icon.search.placeholder']}
             style={{ margin: '0 10px', flex: 1 }}
             allowClear
-            onChange={e => this.handleSearchIcon(e.currentTarget.value)}
+            onChange={(e) => this.handleSearchIcon(e.currentTarget.value)}
             size="large"
             autoFocus
             suffix={<IconPicSearcher />}

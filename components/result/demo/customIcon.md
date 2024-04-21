@@ -15,7 +15,7 @@ Custom icon.
 
 ```jsx
 import { Result, Button } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Result

@@ -15,7 +15,7 @@ There are two built-in themes: `light` and `dark`. The default value is `light`.
 
 ```jsx
 import { Menu, Switch } from '@hankliu/hankliu-ui';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
@@ -25,13 +25,13 @@ class Sider extends React.Component {
     current: '1',
   };
 
-  changeTheme = value => {
+  changeTheme = (value) => {
     this.setState({
       theme: value ? 'dark' : 'light',
     });
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     console.log('click ', e);
     this.setState({
       current: e.key,

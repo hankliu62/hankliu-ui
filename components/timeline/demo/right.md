@@ -15,7 +15,7 @@ Right alternate timeline.
 
 ```jsx
 import { Timeline } from '@hankliu/hankliu-ui';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Timeline mode="right">

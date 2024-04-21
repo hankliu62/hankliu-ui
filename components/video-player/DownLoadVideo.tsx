@@ -1,5 +1,5 @@
 import React from 'react';
-import IconDownload from '@ant-design/icons/lib/icons/DownloadOutlined';
+import IconDownload from '@hankliu/icons/lib/icons/DownloadOutlined';
 
 interface DownLoadVideoProps {
   source: string;
@@ -18,4 +18,4 @@ function DownLoadVideo({ source }: DownLoadVideoProps) {
   );
 }
 
-export default React.memo(DownLoadVideo)
+export default React.memo(DownLoadVideo);

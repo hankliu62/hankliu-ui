@@ -15,7 +15,7 @@ Using pre & post tabs example.
 
 ```jsx
 import { InputNumber, Select, Space, Cascader } from '@hankliu/hankliu-ui';
-import { SettingOutlined } from '@ant-design/icons';
+import { SettingOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 

@@ -19,8 +19,20 @@ timeline: true
 🛠 重构或工具链优化
 ⚡️ 性能提升
 ```
+
 ---
 
+## 0.0.2
+
+- 🆕 新增 `Fullpage` 组件。
+- 🆕 新增 `MonacoEditor` 组件。
+- 🆕 新增 `MirrorEditor` 组件。
+- 🆕 新增 `Exception` 组件。
+- 🛠 使用 `@hankliu/colors` 替换 `@ant-design/colors` 组件。
+- 🛠 使用 `@hankliu/icons` 替换 `@ant-design/icons` 组件，丰富 Icon 的图标库。
+- 🐞 修复使用 `@hankliu/hankliu-ui` 还需要在项目中额外安装 `react-color` 库的问题。
+
 ## 0.0.1
-- 🐞 修复DatePicker 样式依赖缺失
+
+- 🐞 修复 DatePicker 样式依赖缺失
 - 🆕 Gallery 新增 sidebarPosition、showCount 属性

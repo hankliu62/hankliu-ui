@@ -16,7 +16,7 @@ Basic use case. Users can select or input a date in panel.
 
 ```jsx
 import { DatePicker, Space } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const smileIcon = <SmileOutlined />;
 const { RangePicker } = DatePicker;

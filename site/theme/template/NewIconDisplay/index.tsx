@@ -1,4 +1,4 @@
-import * as IconList from '@ant-design/icons/lib/icons';
+import * as IconList from '@hankliu/icons/lib/icons';
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
 import Input from '../../../../components/input';
@@ -46,16 +46,12 @@ function NewIconDisplay() {
   return (
     <div>
       <p>
-        推荐使用新版 @ant-design/icons 图标方案，
-        <a
-          rel="noreferrer"
-          href="https://github.com/ant-design/ant-design-icons"
-          target="_blank"
-        >
+        推荐使用新版 @hankliu/icons 图标方案，
+        <a rel="noreferrer" href="https://github.com/ant-design/ant-design-icons" target="_blank">
           查看使用文档
         </a>
       </p>
-      <h2>@ant-design/icons 图标列表</h2>
+      <h2>@hankliu/icons 图标列表</h2>
       <div
         style={{
           marginBottom: 20,
@@ -68,7 +64,7 @@ function NewIconDisplay() {
           <Option value="Filled">Filled</Option>
           <Option value="Outlined">Outlined</Option>
           <Option value="TwoTone">Two-Tone</Option>
-          <Option value="Icon">原有Icon</Option>
+          <Option value="Icon">自定义</Option>
         </Select>
         <Input
           placeholder="在此搜索图标，点击图标可复制"

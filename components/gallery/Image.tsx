@@ -1,32 +1,32 @@
 // @ts-nocheck
 import * as React from 'react';
 import loadImg from '../_util/loadImage';
-import IconPictureEnlarge from '@ant-design/icons/PictureOutlined';
-import IconPictureNarrow from '@ant-design/icons/PictureOutlined';
-import IconPictureRotate from '@ant-design/icons/PictureOutlined';
-import IconRefresh from '@ant-design/icons/PictureOutlined';
+import IconPictureEnlarge from '@hankliu/icons/PictureOutlined';
+import IconPictureNarrow from '@hankliu/icons/PictureOutlined';
+import IconPictureRotate from '@hankliu/icons/PictureOutlined';
+import IconRefresh from '@hankliu/icons/PictureOutlined';
 import { getLocale } from './locale';
 import Tooltip from '../tooltip';
-import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
+import LoadingOutlined from '@hankliu/icons/LoadingOutlined';
 // import throttle from 'lodash/throttle'
 // import debounce from 'lodash/debounce'
 
 interface ImageStyle {
-  scale: number,
-  rotate: number,
-  translateX: number,
-  translateY: number,
+  scale: number;
+  rotate: number;
+  translateX: number;
+  translateY: number;
 }
 
 export interface ImageProps {
-  src: string,
-  type: string,
-  component?: any,
-  title?: string,
-  w?: number,
-  h?: number,
-  _index?: number,
-  onStyleChange?: (style: ImageStyle) => void
+  src: string;
+  type: string;
+  component?: any;
+  title?: string;
+  w?: number;
+  h?: number;
+  _index?: number;
+  onStyleChange?: (style: ImageStyle) => void;
 }
 
 const SCALES = [0.25, 0.5, 0.75, 1, 1.5, 2];
@@ -62,7 +62,7 @@ export default class Image extends React.Component<ImageProps, any> {
     const width = this.$wrap.clientWidth;
     const height = this.$wrap.clientHeight;
     let scale = 1;
-    if ((w / h) > (width / height)) {
+    if (w / h > width / height) {
       if (w > width) scale = width / w;
     } else if (h > height) scale = height / h;
     const { type, src } = this.props;
@@ -91,12 +91,14 @@ export default class Image extends React.Component<ImageProps, any> {
   changeStyle(style: any) {
     this.setState(style);
     const { onStyleChange } = this.props;
-    const {
-      scale, rotate, translateX, translateY,
-    } = this.state;
+    const { scale, rotate, translateX, translateY } = this.state;
     if (onStyleChange) {
       onStyleChange({
-        scale, rotate, translateX, translateY, ...style,
+        scale,
+        rotate,
+        translateX,
+        translateY,
+        ...style,
       });
     }
   }
@@ -104,7 +106,10 @@ export default class Image extends React.Component<ImageProps, any> {
   reset = () => {
     const { deaultScale } = this.state;
     this.changeStyle({
-      scale: deaultScale, rotate: 0, translateX: 0, translateY: 0,
+      scale: deaultScale,
+      rotate: 0,
+      translateX: 0,
+      translateY: 0,
     });
   };
 
@@ -136,7 +141,10 @@ export default class Image extends React.Component<ImageProps, any> {
     if (loading) return;
     const { clientX, clientY } = e;
     this.mouseEv = {
-      x: clientX, y: clientY, translateX, translateY,
+      x: clientX,
+      y: clientY,
+      translateX,
+      translateY,
     };
   };
 
@@ -146,9 +154,7 @@ export default class Image extends React.Component<ImageProps, any> {
     const { clientX, clientY } = e;
     // console.log('this.mouseEv: ', this.mouseEv)
     // console.log(clientX, clientY)
-    const {
-      translateX, translateY, x, y,
-    } = this.mouseEv;
+    const { translateX, translateY, x, y } = this.mouseEv;
     this.changeStyle({
       translateX: translateX + clientX - x,
       translateY: translateY + clientY - y,
@@ -177,9 +183,7 @@ export default class Image extends React.Component<ImageProps, any> {
   };
 
   setPosition(deltaX: number, deltaY: number) {
-    const {
-      translateX, translateY, scale, rotate,
-    } = this.state;
+    const { translateX, translateY, scale, rotate } = this.state;
     if (this.wheeling || this.state.loading) return;
     // this.wheeling = true
     // setTimeout(() => this.wheeling = false, 30)
@@ -217,9 +221,7 @@ export default class Image extends React.Component<ImageProps, any> {
   }
 
   componentDidMount() {
-    const {
-      type, src, w, h,
-    } = this.props;
+    const { type, src, w, h } = this.props;
     if (type === 'image') {
       this.loadImage(src);
     } else {
@@ -231,9 +233,7 @@ export default class Image extends React.Component<ImageProps, any> {
   }
 
   componentDidUpdate(prevProps: ImageProps) {
-    const {
-      type, src, w, h,
-    } = this.props;
+    const { type, src, w, h } = this.props;
     if (type === 'image') {
       if (prevProps.src !== src) {
         this.loadImage(src);
@@ -248,13 +248,14 @@ export default class Image extends React.Component<ImageProps, any> {
   }
 
   renderImage() {
-    const {
-      type, component, w, h,
-    } = this.props;
-    const {
-      src, img, loading, scale, rotate, translateX, translateY,
-    } = this.state;
-    if (loading) return <div className="img-spin"><LoadingOutlined /></div>;
+    const { type, component, w, h } = this.props;
+    const { src, img, loading, scale, rotate, translateX, translateY } = this.state;
+    if (loading)
+      return (
+        <div className="img-spin">
+          <LoadingOutlined />
+        </div>
+      );
     const style: any = {
       left: -2 * img.width,
       right: -2 * img.width,
@@ -269,9 +270,14 @@ export default class Image extends React.Component<ImageProps, any> {
     style.height = h;
     return (
       <div className="img-element" style={style}>
-        {typeof component === 'function' ? component({
-          scale, rotate, translateX, translateY,
-        }) : component}
+        {typeof component === 'function'
+          ? component({
+              scale,
+              rotate,
+              translateX,
+              translateY,
+            })
+          : component}
       </div>
     );
   }
@@ -283,11 +289,17 @@ export default class Image extends React.Component<ImageProps, any> {
     return (
       <div className="img-bar">
         <Tooltip title={locale.zoomIn}>
-          <IconPictureEnlarge className={`bar-action ${scale >= scales[scales.length - 1] ? 'disabled' : ''}`} onClick={this.zoomIn} />
+          <IconPictureEnlarge
+            className={`bar-action ${scale >= scales[scales.length - 1] ? 'disabled' : ''}`}
+            onClick={this.zoomIn}
+          />
         </Tooltip>
-        <span className="bar-text">{ `${Math.round(scale * 100)}%` }</span>
+        <span className="bar-text">{`${Math.round(scale * 100)}%`}</span>
         <Tooltip title={locale.zoomOut}>
-          <IconPictureNarrow className={`bar-action ${scale <= scales[0] ? 'disabled' : ''}`} onClick={this.zoomOut} />
+          <IconPictureNarrow
+            className={`bar-action ${scale <= scales[0] ? 'disabled' : ''}`}
+            onClick={this.zoomOut}
+          />
         </Tooltip>
         <Tooltip title={locale.rotate}>
           <IconPictureRotate className="bar-action with-gap" onClick={this.rotate} />

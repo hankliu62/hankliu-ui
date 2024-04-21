@@ -15,14 +15,14 @@ Input type of password.
 
 ```jsx
 import { Input, Space } from '@hankliu/hankliu-ui';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@hankliu/icons';
 
 ReactDOM.render(
   <Space direction="vertical">
     <Input.Password placeholder="input password" />
     <Input.Password
       placeholder="input password"
-      iconRender={open => (open ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+      iconRender={(open) => (open ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
     />
   </Space>,
   mountNode,

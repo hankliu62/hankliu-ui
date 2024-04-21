@@ -15,7 +15,7 @@ Set a node as an icon or other custom element.
 
 ```jsx
 import { Timeline } from '@hankliu/hankliu-ui';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Timeline>

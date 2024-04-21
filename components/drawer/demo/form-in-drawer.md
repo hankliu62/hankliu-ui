@@ -14,8 +14,18 @@ title:
 Use a form in Drawer with a submit button.
 
 ```jsx
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Space } from '@hankliu/hankliu-ui';
-import { PlusOutlined } from '@ant-design/icons';
+import {
+  Drawer,
+  Form,
+  Button,
+  Col,
+  Row,
+  Input,
+  Select,
+  DatePicker,
+  Space,
+} from '@hankliu/hankliu-ui';
+import { PlusOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 
@@ -128,7 +138,7 @@ class DrawerForm extends React.Component {
                 >
                   <DatePicker.RangePicker
                     style={{ width: '100%' }}
-                    getPopupContainer={trigger => trigger.parentElement}
+                    getPopupContainer={(trigger) => trigger.parentElement}
                   />
                 </Form.Item>
               </Col>

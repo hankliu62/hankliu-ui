@@ -1,18 +1,18 @@
 // @ts-nocheck
 import * as React from 'react';
 import cs from 'classnames';
-import SyncOutlined from '@ant-design/icons/SyncOutlined';
+import SyncOutlined from '@hankliu/icons/SyncOutlined';
 
 export interface HlSpinProps {
-  size?: string,
-  title?: string,
-  className?: string,
-  style?: any,
-  coverStyle?: any,
-  loading?: boolean,
-  block?: boolean,
-  delay?: number,
-  indicator?: React.ReactNode
+  size?: string;
+  title?: string;
+  className?: string;
+  style?: any;
+  coverStyle?: any;
+  loading?: boolean;
+  block?: boolean;
+  delay?: number;
+  indicator?: React.ReactNode;
 }
 
 class HlSpin extends React.Component<HlSpinProps, any> {
@@ -58,9 +58,7 @@ class HlSpin extends React.Component<HlSpinProps, any> {
   };
 
   render() {
-    const {
-      className, style, coverStyle, size, title, block, children, indicator,
-    } = this.props;
+    const { className, style, coverStyle, size, title, block, children, indicator } = this.props;
     const { loading } = this.state;
 
     const cls = cs('hlui-custom-spin-wrap', className, {

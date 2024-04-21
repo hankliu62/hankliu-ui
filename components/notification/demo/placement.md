@@ -20,9 +20,9 @@ import {
   RadiusUprightOutlined,
   RadiusBottomleftOutlined,
   RadiusBottomrightOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
-const openNotification = placement => {
+const openNotification = (placement) => {
   notification.info({
     message: `Notification ${placement}`,
     description:

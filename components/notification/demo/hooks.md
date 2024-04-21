@@ -20,14 +20,14 @@ import {
   RadiusUprightOutlined,
   RadiusBottomleftOutlined,
   RadiusBottomrightOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const Context = React.createContext({ name: 'Default' });
 
 const Demo = () => {
   const [api, contextHolder] = notification.useNotification();
 
-  const openNotification = placement => {
+  const openNotification = (placement) => {
     api.info({
       message: `Notification ${placement}`,
       description: <Context.Consumer>{({ name }) => `Hello, ${name}!`}</Context.Consumer>,

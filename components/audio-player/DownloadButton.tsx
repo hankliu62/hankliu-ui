@@ -1,5 +1,5 @@
 import React from 'react';
-import IconDownload from '@ant-design/icons/DownloadOutlined';
+import IconDownload from '@hankliu/icons/DownloadOutlined';
 
 export interface DownloadButtonProps {
   source: string;
@@ -11,5 +11,5 @@ export default function (props: DownloadButtonProps) {
     <a download href={source} target="_blank" className="control-btn">
       <IconDownload />
     </a>
-  )
+  );
 }

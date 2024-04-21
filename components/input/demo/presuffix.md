@@ -15,7 +15,7 @@ Add a prefix or suffix icons inside input.
 
 ```jsx
 import { Input, Tooltip } from '@hankliu/hankliu-ui';
-import { InfoCircleOutlined, UserOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined, UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

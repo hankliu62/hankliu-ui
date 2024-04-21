@@ -16,10 +16,10 @@ Nest with `noStyle` field dynamic form.
 
 ```jsx
 import { Form, Input, Button, Space } from '@hankliu/hankliu-ui';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@hankliu/icons';
 
 const Demo = () => {
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
 
@@ -29,7 +29,7 @@ const Demo = () => {
         <Form.List name="users">
           {(fields, { add, remove }) => (
             <>
-              {fields.map(field => (
+              {fields.map((field) => (
                 <Space key={field.key} style={{ marginBottom: 16 }}>
                   <Form.Item noStyle name={[field.name, 'lastName']} rules={[{ required: true }]}>
                     <Input placeholder="Last Name" />

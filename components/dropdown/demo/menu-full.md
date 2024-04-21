@@ -21,7 +21,7 @@ This demo was created for debugging Menu styles inside Dropdown.
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
 import type { MenuProps } from '@hankliu/hankliu-ui';
-import { MailOutlined, AppstoreOutlined, SettingOutlined, DownOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined, DownOutlined } from '@hankliu/icons';
 
 type MenuItem = Required<MenuProps>['items'][number];
 

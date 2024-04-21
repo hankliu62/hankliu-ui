@@ -2,7 +2,7 @@ import * as React from 'react';
 import type { ModalProps } from 'antd4x/lib/modal/Modal';
 import Modal from 'antd4x/lib/modal/Modal';
 import cs from 'classnames';
-import IconClose from '@ant-design/icons/lib/icons/CloseOutlined';
+import IconClose from '@hankliu/icons/lib/icons/CloseOutlined';
 import type { HlButtonProps, HlButtonType } from '../button';
 import Button from '../button';
 import ScrollContainer from '../scroll-container';
@@ -50,9 +50,7 @@ type HlModalChildrenProps = Pick<
 >;
 
 function HlModalChildren(props: HlModalChildrenProps) {
-  const {
-    children, title, scroll, ternary, icon,
-  } = props;
+  const { children, title, scroll, ternary, icon } = props;
   if (scroll === true) {
     return (
       // eslint-disable-next-line no-use-before-define
@@ -115,20 +113,39 @@ function HlModalFooter(props: HlModalFooterProps) {
   const result: any[] = [];
   if (cancelButtonVisible) {
     result.push(
-      <Button key="cancel" size='medium' type={cancelType} onClick={onCancel} {...cancelButtonProps}>
+      <Button
+        key="cancel"
+        size="medium"
+        type={cancelType}
+        onClick={onCancel}
+        {...cancelButtonProps}
+      >
         {cancelText || locale.cancelText}
       </Button>,
     );
   }
   if (ternary) {
     result.push(
-      <Button key="second" size='medium' type={secondType} onClick={onSecondly} {...secondButtonProps}>
+      <Button
+        key="second"
+        size="medium"
+        type={secondType}
+        onClick={onSecondly}
+        {...secondButtonProps}
+      >
         {secondText}
       </Button>,
     );
   }
   result.push(
-    <Button key="ok" size='medium' type={okType} onClick={onOk} loading={confirmLoading} {...okButtonProps}>
+    <Button
+      key="ok"
+      size="medium"
+      type={okType}
+      onClick={onOk}
+      loading={confirmLoading}
+      {...okButtonProps}
+    >
       {okText || locale.okText}
     </Button>,
   );

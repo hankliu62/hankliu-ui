@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'bisheng/router';
 import { Row, Col, Menu, Affix, Tooltip, Avatar, Dropdown } from '@hankliu/hankliu-ui';
 import { injectIntl } from 'react-intl';
-import { LeftOutlined, RightOutlined, ExportOutlined } from '@ant-design/icons';
+import { LeftOutlined, RightOutlined, ExportOutlined } from '@hankliu/icons';
 
 import classNames from 'classnames';
 import get from 'lodash/get';

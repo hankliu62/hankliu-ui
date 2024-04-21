@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dropdown, Menu, Button } from '@hankliu/hankliu-ui';
 import { FormattedMessage } from 'react-intl';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 import { SharedProps } from './interface';
 
 const smallStyle = { fontSize: 12, color: '#777', marginLeft: '0.3em' };

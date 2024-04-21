@@ -15,7 +15,7 @@ A loading indicator can be added to a button by setting the `loading` property o
 
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const items: MenuProps['items'] = [
   {
@@ -28,7 +28,7 @@ class App extends React.Component {
     loadings: [],
   };
 
-  enterLoading = index => {
+  enterLoading = (index) => {
     const newLoadings = [...this.state.loadings];
     newLoadings[index] = true;
     this.setState({

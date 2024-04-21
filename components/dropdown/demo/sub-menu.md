@@ -16,7 +16,7 @@ The menu has multiple levels.
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
 import type { MenuProps } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const items: MenuProps['items'] = [
   {
@@ -67,7 +67,7 @@ const items: MenuProps['items'] = [
 
 ReactDOM.render(
   <Dropdown menu={{ items }}>
-    <a onClick={e => e.preventDefault()}>
+    <a onClick={(e) => e.preventDefault()}>
       <Space>
         Cascading menu
         <DownOutlined />

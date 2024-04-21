@@ -17,7 +17,7 @@ Normal login form which can contain more elements.
 
 ```tsx
 import { Form, Input, Button, Checkbox } from '@hankliu/hankliu-ui';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined } from '@hankliu/icons';
 
 const NormalLoginForm = () => {
   const onFinish = (values: any) => {

@@ -4,8 +4,8 @@ import * as dayjs from 'dayjs';
 import find from 'lodash/find';
 import times from 'lodash/times';
 import cls from 'classnames';
-import IconSelectUpMin from '@ant-design/icons/UpOutlined';
-import IconSelectDownMin from '@ant-design/icons/DownOutlined';
+import IconSelectUpMin from '@hankliu/icons/UpOutlined';
+import IconSelectDownMin from '@hankliu/icons/DownOutlined';
 import Popover from '../popover';
 
 function formatValue(value: any) {

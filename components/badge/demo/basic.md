@@ -15,7 +15,7 @@ Simplest Usage. Badge will be hidden when `count` is `0`, but we can use `showZe
 
 ```jsx
 import { Badge, Avatar } from '@hankliu/hankliu-ui';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

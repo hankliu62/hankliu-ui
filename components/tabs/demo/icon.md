@@ -15,7 +15,7 @@ The Tab with Icon.
 
 ```jsx
 import { Tabs } from '@hankliu/hankliu-ui';
-import { AppleOutlined, AndroidOutlined } from '@ant-design/icons';
+import { AppleOutlined, AndroidOutlined } from '@hankliu/icons';
 
 const { TabPane } = Tabs;
 

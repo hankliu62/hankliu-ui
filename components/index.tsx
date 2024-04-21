@@ -10,7 +10,7 @@ if (
 ) {
   // eslint-disable-next-line no-console
   console.warn(
-    'You are using a whole package of antd, ' +
+    'You are using a whole package of hankliu ui, ' +
       'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
   );
 }
@@ -262,3 +262,6 @@ export type { HlTableProps } from './hl-table';
 
 export { default as EditableText } from './editable-text';
 export type { EditableTextProps } from './editable-text';
+
+// export { default as MonacoEditor } from './monaco-editor';
+// export type { IMonacoEditorProps as MonacoEditorProps, MonacoEditorMethods } from './monaco-editor';

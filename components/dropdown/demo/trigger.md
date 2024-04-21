@@ -15,7 +15,7 @@ The default trigger mode is `hover`, you can change it to `click`.
 
 ```jsx
 import { Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const items: MenuProps['items'] = [
   {
@@ -37,7 +37,7 @@ const items: MenuProps['items'] = [
 
 ReactDOM.render(
   <Dropdown menu={{ items }} trigger={['click']}>
-    <a onClick={e => e.preventDefault()}>
+    <a onClick={(e) => e.preventDefault()}>
       <Space>
         Click me
         <DownOutlined />

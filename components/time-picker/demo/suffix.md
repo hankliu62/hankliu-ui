@@ -17,7 +17,7 @@ Click `TimePicker`, and then we could select or input a time in panel.
 ```jsx
 import { TimePicker } from '@hankliu/hankliu-ui';
 import moment from 'moment';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 function onChange(time, timeString) {
   console.log(time, timeString);

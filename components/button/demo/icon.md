@@ -19,7 +19,7 @@ If you want specific control over the positioning and placement of the `Icon`, t
 
 ```jsx
 import { Button, Tooltip } from '@hankliu/hankliu-ui';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>
@@ -35,12 +35,16 @@ ReactDOM.render(
     <Tooltip title="search">
       <Button type="secondary" shape="circle" icon={<SearchOutlined />} />
     </Tooltip>
-    <Button type="secondary" icon={<SearchOutlined />}>Search</Button>
+    <Button type="secondary" icon={<SearchOutlined />}>
+      Search
+    </Button>
     <br />
     <Tooltip title="search">
       <Button type="secondary" shape="circle" icon={<SearchOutlined />} />
     </Tooltip>
-    <Button type="secondary" icon={<SearchOutlined />}>Search</Button>
+    <Button type="secondary" icon={<SearchOutlined />}>
+      Search
+    </Button>
     <Tooltip title="search">
       <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
     </Tooltip>

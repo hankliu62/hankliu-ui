@@ -17,7 +17,7 @@ buggy!
 ```tsx
 import * as React from 'react';
 import { Menu, MenuProps, Switch } from '@hankliu/hankliu-ui';
-import { MailOutlined, AppstoreOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
@@ -38,7 +38,7 @@ class Demo extends React.Component<{}, DemoState> {
     });
   };
 
-  handleClick: MenuProps['onClick'] = e => {
+  handleClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
     this.setState({
       current: e.key,
@@ -63,7 +63,7 @@ class Demo extends React.Component<{}, DemoState> {
           mode="inline"
           inlineCollapsed
           // Test only. Remove in future.
-          _internalRenderMenuItem={node =>
+          _internalRenderMenuItem={(node) =>
             React.cloneElement(node, {
               style: {
                 ...node.props.style,
@@ -72,7 +72,7 @@ class Demo extends React.Component<{}, DemoState> {
             })
           }
           // Test only. Remove in future.
-          _internalRenderSubMenuItem={node =>
+          _internalRenderSubMenuItem={(node) =>
             React.cloneElement(node, {
               style: {
                 ...node.props.style,

@@ -15,7 +15,7 @@ Horizontal top navigation menu.
 
 ```jsx
 import { Menu } from '@hankliu/hankliu-ui';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
@@ -24,7 +24,7 @@ class App extends React.Component {
     current: 'mail',
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     console.log('click ', e);
     this.setState({ current: e.key });
   };

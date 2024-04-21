@@ -16,7 +16,7 @@ Alternatively you can implement drag sorting with handler using [react-sortable-
 ```jsx
 import { Table } from '@hankliu/hankliu-ui';
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc';
-import { MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@hankliu/icons';
 import { arrayMoveImmutable } from 'array-move';
 
 const DragHandle = SortableHandle(() => <MenuOutlined style={{ cursor: 'grab', color: '#999' }} />);
@@ -68,8 +68,8 @@ const data = [
   },
 ];
 
-const SortableItem = SortableElement(props => <tr {...props} />);
-const SortableBody = SortableContainer(props => <tbody {...props} />);
+const SortableItem = SortableElement((props) => <tr {...props} />);
+const SortableBody = SortableContainer((props) => <tbody {...props} />);
 
 class SortableTable extends React.Component {
   state = {
@@ -80,14 +80,14 @@ class SortableTable extends React.Component {
     const { dataSource } = this.state;
     if (oldIndex !== newIndex) {
       const newData = arrayMoveImmutable([].concat(dataSource), oldIndex, newIndex).filter(
-        el => !!el,
+        (el) => !!el,
       );
       console.log('Sorted items: ', newData);
       this.setState({ dataSource: newData });
     }
   };
 
-  DraggableContainer = props => (
+  DraggableContainer = (props) => (
     <SortableBody
       useDragHandle
       disableAutoscroll
@@ -100,7 +100,7 @@ class SortableTable extends React.Component {
   DraggableBodyRow = ({ className, style, ...restProps }) => {
     const { dataSource } = this.state;
     // function findIndex base on Table rowKey props and should always be a right array index
-    const index = dataSource.findIndex(x => x.index === restProps['data-row-key']);
+    const index = dataSource.findIndex((x) => x.index === restProps['data-row-key']);
     return <SortableItem index={index} {...restProps} />;
   };
 

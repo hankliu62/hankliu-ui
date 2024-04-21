@@ -27,7 +27,7 @@ import {
   DesktopOutlined,
   ContainerOutlined,
   MailOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 

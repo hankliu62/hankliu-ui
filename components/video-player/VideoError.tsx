@@ -1,5 +1,5 @@
 import React from 'react';
-import IconRemind from '@ant-design/icons/lib/icons/WarningOutlined';
+import IconRemind from '@hankliu/icons/lib/icons/WarningOutlined';
 import { getLocale } from './locale';
 
 function VideoError() {
@@ -12,4 +12,4 @@ function VideoError() {
   );
 }
 
-export default React.memo(VideoError)
+export default React.memo(VideoError);

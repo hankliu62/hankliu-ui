@@ -15,7 +15,7 @@ A dynamic progress bar is better.
 
 ```jsx
 import { Progress, Button } from '@hankliu/hankliu-ui';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined } from '@hankliu/icons';
 
 class App extends React.Component {
   state = {

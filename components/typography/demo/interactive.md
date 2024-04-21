@@ -16,7 +16,7 @@ Provide additional interactive capacity of editable and copyable.
 ```jsx
 import React, { useState } from 'react';
 import { Checkbox, Radio, Typography } from '@hankliu/hankliu-ui';
-import { CheckOutlined, HighlightOutlined, SmileOutlined, SmileFilled } from '@ant-design/icons';
+import { CheckOutlined, HighlightOutlined, SmileOutlined, SmileFilled } from '@hankliu/icons';
 
 const { Paragraph } = Typography;
 
@@ -38,7 +38,7 @@ const Demo = () => {
     'This is an editable text with limited length.',
   );
 
-  const radioToState = input => {
+  const radioToState = (input) => {
     switch (input) {
       case 'text':
         return ['text'];
@@ -71,7 +71,7 @@ const Demo = () => {
       </Paragraph>
       Trigger edit with:{' '}
       <Radio.Group
-        onChange={e => setChooseTrigger(radioToState(e.target.value))}
+        onChange={(e) => setChooseTrigger(radioToState(e.target.value))}
         value={stateToRadio()}
       >
         <Radio value="icon">icon</Radio>

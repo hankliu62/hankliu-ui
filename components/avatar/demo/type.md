@@ -15,7 +15,7 @@ Image, Icon and letter are supported, and the latter two kinds of avatar can hav
 
 ```tsx
 import { Avatar } from '@hankliu/hankliu-ui';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

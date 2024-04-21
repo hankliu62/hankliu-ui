@@ -15,7 +15,7 @@ Avatar group display.
 
 ```tsx
 import { Avatar, Divider, Tooltip } from '@hankliu/hankliu-ui';
-import { UserOutlined, AntDesignOutlined } from '@ant-design/icons';
+import { UserOutlined, AntDesignOutlined } from '@hankliu/icons';
 
 const Demo = () => (
   <>

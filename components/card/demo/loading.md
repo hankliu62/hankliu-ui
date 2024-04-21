@@ -15,7 +15,7 @@ Shows a loading indicator while the contents of the card is being fetched.
 
 ```jsx
 import { Skeleton, Switch, Card, Avatar } from '@hankliu/hankliu-ui';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { Meta } = Card;
 
@@ -24,7 +24,7 @@ class App extends React.Component {
     loading: true,
   };
 
-  onChange = checked => {
+  onChange = (checked) => {
     this.setState({ loading: !checked });
   };
 
@@ -37,7 +37,9 @@ class App extends React.Component {
 
         <Card style={{ width: 300, marginTop: 16 }} loading={loading}>
           <Meta
-            avatar={<Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />}
+            avatar={
+              <Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />
+            }
             title="Card title"
             description="This is the description"
           />
@@ -53,7 +55,9 @@ class App extends React.Component {
         >
           <Skeleton loading={loading} avatar active>
             <Meta
-              avatar={<Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />}
+              avatar={
+                <Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />
+              }
               title="Card title"
               description="This is the description"
             />

@@ -15,7 +15,7 @@ Showing more detailed info of every row.
 
 ```jsx
 import { Table, Badge, Menu, Dropdown, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const menu = (
   <Menu>

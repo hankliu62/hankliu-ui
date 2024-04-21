@@ -15,7 +15,7 @@ Use `confirm()` to show a confirmation modal dialog. Let onCancel/onOk function 
 
 ```jsx
 import { Modal, Button, Space } from '@hankliu/hankliu-ui';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { ExclamationCircleOutlined } from '@hankliu/icons';
 
 const { confirm } = Modal;
 

@@ -16,7 +16,7 @@ Use `suffixIcon` to customize the selection box suffix icon, and use `expandIcon
 
 ```jsx
 import { Cascader } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const options = [
   {

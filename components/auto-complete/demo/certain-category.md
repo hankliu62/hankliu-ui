@@ -15,7 +15,7 @@ Demonstration of [Lookup Patterns: Certain Category](https://ant.design/docs/spe
 
 ```tsx
 import { Input, AutoComplete } from '@hankliu/hankliu-ui';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@hankliu/icons';
 
 const renderTitle = (title: string) => (
   <span>

@@ -15,7 +15,7 @@ A button is on the left, and a related functional menu is on the right. You can 
 
 ```jsx
 import { Menu, Dropdown, Button, message, Space, Tooltip } from '@hankliu/hankliu-ui';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined } from '@hankliu/icons';
 
 function handleButtonClick(e) {
   message.info('Click on left button.');

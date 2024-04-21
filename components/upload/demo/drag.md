@@ -18,7 +18,7 @@ You can drag files to a specific area, to upload. Alternatively, you can also up
 We can upload serveral files at once in modern browsers by giving the input the `multiple` attribute.
 
 ```tsx
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { message, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';

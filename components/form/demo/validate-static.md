@@ -22,8 +22,17 @@ We provide properties like `validateStatus` `help` `hasFeedback` to customize yo
 3. `help`: display validate message.
 
 ```tsx
-import { SmileOutlined } from '@ant-design/icons';
-import { Form, Input, DatePicker, TimePicker, Select, Cascader, InputNumber, Mentions } from '@hankliu/hankliu-ui';
+import { SmileOutlined } from '@hankliu/icons';
+import {
+  Form,
+  Input,
+  DatePicker,
+  TimePicker,
+  Select,
+  Cascader,
+  InputNumber,
+  Mentions,
+} from '@hankliu/hankliu-ui';
 
 const { Option } = Select;
 

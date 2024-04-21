@@ -15,7 +15,7 @@ Both the top navigation and the sidebar, commonly used in documentation site.
 
 ```jsx
 import { Layout, Menu, Breadcrumb } from '@hankliu/hankliu-ui';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cl from 'classnames';
-import IconMore from '@ant-design/icons/MoreOutlined';
+import IconMore from '@hankliu/icons/MoreOutlined';
 import Checkbox from '../checkbox';
 import SimpleTreeNodeFoldButton from './SimpleTreeNodeFoldButton';
 

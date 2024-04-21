@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from 'react';
 import selectFile, { ERRORS as SelectFileErrors } from '../_util/selectFile';
-import IconTips from '@ant-design/icons/MessageFilled';
+import IconTips from '@hankliu/icons/MessageFilled';
 import HlModal from '../hl-modal';
 import Button, { ButtonProps } from '../button';
 import Radio from '../radio';
@@ -222,9 +222,7 @@ export default class ImageCropper extends React.Component<ImageCropperProps, any
   }
 
   renderFooter = (locale: any) => {
-    const {
-      onReupload, okText, okButtonProps = {}, reuploadText,
-    } = this.props;
+    const { onReupload, okText, okButtonProps = {}, reuploadText } = this.props;
     okButtonProps.width = okButtonProps.width || 100;
     return (
       <div className="hlui-image-cropper-btn">

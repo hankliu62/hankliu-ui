@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { IntlProvider } from 'react-intl';
-import { presetPalettes, presetDarkPalettes } from '@ant-design/colors';
+import { presetPalettes, presetDarkPalettes } from '@hankliu/colors';
 import themeSwitcher from 'theme-switcher';
-import { setTwoToneColor } from '@ant-design/icons';
+import { setTwoToneColor } from '@hankliu/icons';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import 'moment/locale/zh-cn';
 import { ConfigProvider } from '@hankliu/hankliu-ui';
@@ -17,8 +17,8 @@ import cnLocale from '../../zh-CN';
 import * as utils from '../utils';
 
 if (typeof window !== 'undefined' && navigator.serviceWorker) {
-  navigator.serviceWorker.getRegistrations().then(registrations => {
-    registrations.forEach(registration => registration.unregister());
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((registration) => registration.unregister());
   });
 }
 
@@ -37,7 +37,7 @@ if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
   window.antd = require('@hankliu/hankliu-ui');
   // eslint-disable-next-line global-require
-  window['@ant-design/icons'] = require('@ant-design/icons');
+  window['@hankliu/icons'] = require('@hankliu/icons');
 
   // Error log statistic
   window.addEventListener('error', function onError(e) {
@@ -82,12 +82,12 @@ export default class Layout extends React.Component {
   }
 
   componentDidMount() {
-    const mainLoader = document.getElementById('main-loader')
+    const mainLoader = document.getElementById('main-loader');
     if (mainLoader) {
       mainLoader.className += ' leaving';
       setTimeout(() => {
         mainLoader.parentNode.removeChild(mainLoader);
-      }, 400)
+      }, 400);
     }
 
     const { location, router } = this.props;
@@ -181,7 +181,7 @@ export default class Layout extends React.Component {
 
     const iframeNodes = document.querySelectorAll('.iframe-demo');
     // loop element node
-    [].forEach.call(iframeNodes, iframeNode => {
+    [].forEach.call(iframeNodes, (iframeNode) => {
       this.setIframeTheme(iframeNode, theme);
     });
 
@@ -195,7 +195,7 @@ export default class Layout extends React.Component {
     setTwoToneColor(iconTwoToneThemeMap[theme] || iconTwoToneThemeMap.default);
   };
 
-  changeDirection = direction => {
+  changeDirection = (direction) => {
     this.setState({
       direction,
     });

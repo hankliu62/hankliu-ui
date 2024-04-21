@@ -1,9 +1,11 @@
 const path = require('path');
 const replaceLib = require('@ant-design/tools/lib/replaceLib');
 const getWebpackConfig = require('@ant-design/tools/lib/getWebpackConfig');
+// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const { version } = require('../package.json');
 const themeConfig = require('./themeConfig');
+// const constants = require('@hankliu/rc-monaco-editor/lib/constants');
 
 const { webpack } = getWebpackConfig;
 
@@ -17,6 +19,7 @@ function alertBabelConfig(rules) {
       if (rule.options.plugins.indexOf(replaceLib) === -1) {
         rule.options.plugins.push(replaceLib);
       }
+
       rule.options.plugins = rule.options.plugins.filter(
         (plugin) => !plugin.indexOf || plugin.indexOf('babel-plugin-add-module-exports') === -1,
       );
@@ -31,7 +34,9 @@ function alertBabelConfig(rules) {
 module.exports = {
   port: 6200,
   // 如果网站将部署在域的子目录下（类似 https://hankliu62.github.io/hankliu-ui/ ），我们必须设置它（例如 /hankliu-ui/ ）
-  root: process.env.GITHUB_ACTIONS ? "/" + process.env.GITHUB_REPOSITORY.replace(/.*?\//, "") + "/" : "/",
+  root: process.env.GITHUB_ACTIONS
+    ? '/' + process.env.GITHUB_REPOSITORY.replace(/.*?\//, '') + '/'
+    : '/',
   hash: true,
   source: {
     components: './components',
@@ -107,6 +112,20 @@ module.exports = {
       include: /node_modules/,
       type: 'javascript/auto',
     });
+
+    // // 处理 Worker Loader
+    // config.module.rules.push({
+    //   test: /\.(worker.(j|t)s)$/,
+    //   include: /node_modules/,
+    //   use: 'worker-loader',
+    // });
+
+    // config.plugins.push(
+    //   new MonacoWebpackPlugin({
+    //     languages: constants.Languages,
+    //     filename: 'static/[name].worker.js',
+    //   }),
+    // );
 
     config.plugins.push(
       new webpack.DefinePlugin({

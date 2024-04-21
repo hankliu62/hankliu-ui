@@ -14,7 +14,7 @@ title:
 Classic mode. File selection dialog pops up when upload button is clicked.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { Button, message, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';

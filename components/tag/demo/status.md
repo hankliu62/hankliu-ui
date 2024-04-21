@@ -22,7 +22,7 @@ import {
   ExclamationCircleOutlined,
   ClockCircleOutlined,
   MinusCircleOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 ReactDOM.render(
   <>

@@ -30,7 +30,7 @@ import {
   Cascader,
   Tooltip,
 } from '@hankliu/hankliu-ui';
-import { CopyOutlined } from '@ant-design/icons';
+import { CopyOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 

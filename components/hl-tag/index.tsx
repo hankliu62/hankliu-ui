@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import cs from 'classnames';
-import IconShut from '@ant-design/icons/ShakeOutlined';
+import IconShut from '@hankliu/icons/ShakeOutlined';
 import Popover from '../popover';
 import CheckableTag from './CheckableTag';
 import StatusTag from './StatusTag';

@@ -1,21 +1,19 @@
 // @ts-nocheck
-import React, {
-  useState, useRef, useEffect, useCallback,
-} from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import cs from 'classnames';
 import remove from 'lodash/remove';
-import IconLeft from '@ant-design/icons/lib/icons/LeftOutlined';
-import IconRight from '@ant-design/icons/lib/icons/RightOutlined';
-import IconExpand from '@ant-design/icons/lib/icons/ExpandOutlined';
+import IconLeft from '@hankliu/icons/lib/icons/LeftOutlined';
+import IconRight from '@hankliu/icons/lib/icons/RightOutlined';
+import IconExpand from '@hankliu/icons/lib/icons/ExpandOutlined';
 
 import { isAllChecked, isChecked } from './list';
 import Checkbox from '../checkbox';
 import Dropdown from '../dropdown';
 import { CheckListRowsProps } from './interfaces';
 
-export type TimerHandler = string | Function | null
+export type TimerHandler = string | Function | null;
 
-function Rows(props:CheckListRowsProps) {
+function Rows(props: CheckListRowsProps) {
   const rootRef = useRef();
   const innerRef = useRef();
   const [temp, settemp] = useState({});
@@ -38,10 +36,12 @@ function Rows(props:CheckListRowsProps) {
       window.removeEventListener('resize', handleWindowResize, false);
     };
   });
-  const debounce = useCallback((fn:Function, delay:number, imediateBool:boolean = false) => {
-    let timer:TimerHandler = null; let result; const self = this;
+  const debounce = useCallback((fn: Function, delay: number, imediateBool: boolean = false) => {
+    let timer: TimerHandler = null;
+    let result;
+    const self = this;
     const redebounce = function () {
-      if (timer)clearTimeout(timer as number);
+      if (timer) clearTimeout(timer as number);
       if (imediateBool) {
         result = fn.apply(self, arguments);
         return result;
@@ -71,11 +71,10 @@ function Rows(props:CheckListRowsProps) {
     const width = innerRef.current.clientWidth;
 
     const bool = width > _width;
-    settemp(
-      {
-        _width, width,
-      },
-    );
+    settemp({
+      _width,
+      width,
+    });
     setscrollX(bool ? scrollX : 0);
     setscrolled(bool as boolean);
   };
@@ -151,11 +150,13 @@ function Rows(props:CheckListRowsProps) {
   //   setactiveSubIndex('')
   // }
   const renderRoot = () => {
-    const {
-      rows, style, className = '', useDropdown = true,
-    } = props;
+    const { rows, style, className = '', useDropdown = true } = props;
     return (
-      <div ref={rootRef} style={style} className={cs('hlui-checklist-rows', className, { scrolled })}>
+      <div
+        ref={rootRef}
+        style={style}
+        className={cs('hlui-checklist-rows', className, { scrolled })}
+      >
         <div onClick={scrollLeft} className="scroll-left">
           <IconLeft />
         </div>
@@ -171,16 +172,14 @@ function Rows(props:CheckListRowsProps) {
         <div onClick={scrollRight} className="scroll-right">
           <IconRight />
         </div>
-        {useDropdown ? null : <div className="hlui-checklist-drop">{renderSub()}</div> }
+        {useDropdown ? null : <div className="hlui-checklist-drop">{renderSub()}</div>}
       </div>
     );
   };
 
   const renderItem = (group: any, idx: number) => {
     const { value = [], itemStyle } = props;
-    const {
-      title, subtitle, disabled, options,
-    } = group;
+    const { title, subtitle, disabled, options } = group;
     const allChecked = isAllChecked(value[idx] || [], options);
     return (
       <span
@@ -230,7 +229,7 @@ function Rows(props:CheckListRowsProps) {
         style={{ width }}
         className={cs('hlui-checklist-rows-sub', {
           'no-tlr': !scrolled && activeSubIndex === 0,
-          'no-trr': !scrolled && (temp.width === temp._width) && (activeSubIndex === rows.length - 1),
+          'no-trr': !scrolled && temp.width === temp._width && activeSubIndex === rows.length - 1,
         })}
       >
         {(group.options as []).map(renderSubItem)}

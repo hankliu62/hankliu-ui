@@ -118,6 +118,7 @@ module.exports = {
     'app.docs.components.icon.outlined': 'Outlined',
     'app.docs.components.icon.filled': 'Filled',
     'app.docs.components.icon.two-tone': 'Two Tone',
+    'app.docs.components.icon.custom': 'Custom',
     'app.docs.components.icon.category.direction': 'Directional Icons',
     'app.docs.components.icon.category.suggestion': 'Suggested Icons',
     'app.docs.components.icon.category.editor': 'Editor Icons',

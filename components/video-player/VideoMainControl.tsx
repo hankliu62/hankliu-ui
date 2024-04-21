@@ -1,5 +1,5 @@
 import React from 'react';
-import IconVideoPlay from '@ant-design/icons/lib/icons/PlayCircleOutlined';
+import IconVideoPlay from '@hankliu/icons/lib/icons/PlayCircleOutlined';
 
 interface VideoMainControlProps {
   togglePlay: React.MouseEventHandler<HTMLDivElement>;
@@ -7,9 +7,14 @@ interface VideoMainControlProps {
 }
 function VideoMainControl({ togglePlay, show }: VideoMainControlProps) {
   return (
-    <div onClick={togglePlay} className={`hlui-chapters-video-main-control ${show ? '' : 'hlui-chapters-video-main-control-hide'}`}>
+    <div
+      onClick={togglePlay}
+      className={`hlui-chapters-video-main-control ${
+        show ? '' : 'hlui-chapters-video-main-control-hide'
+      }`}
+    >
       <IconVideoPlay className="hlui-chapters-video-play-icon" />
     </div>
   );
 }
-export default React.memo(VideoMainControl)
+export default React.memo(VideoMainControl);

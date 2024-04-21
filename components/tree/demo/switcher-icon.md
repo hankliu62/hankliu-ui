@@ -15,7 +15,7 @@ customize collapse/expand icon of tree node
 
 ```jsx
 import { Tree } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 class Demo extends React.Component {
   onSelect = (selectedKeys, info) => {

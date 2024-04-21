@@ -1,6 +1,22 @@
 ## @hankliu/hankliu-ui
 
-基于 `AntDesign@4.x` 的一个 `UI` 组件库，一套企业级 `UI` 设计语言和 `React` 组件库
+[![NPM version][npm-image]][npm-url] [![npm download][download-image]][download-url] [![build status][github-actions-image]][github-actions-url] [![Codecov][codecov-image]][codecov-url] [![bundle size][bundlephobia-image]][bundlephobia-url] [![dumi][dumi-image]][dumi-url]
+
+[npm-image]: http://img.shields.io/npm/v/@hankliu/hankliu-ui.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@hankliu/hankliu-ui
+[travis-image]: https://img.shields.io/travis/hankliu62/hankliu-ui/master?style=flat-square
+[github-actions-image]: https://github.com/hankliu62/hankliu-ui/workflows/CI/badge.svg
+[github-actions-url]: https://github.com/hankliu62/hankliu-ui/actions
+[codecov-image]: https://img.shields.io/codecov/c/github/hankliu62/hankliu-ui/master.svg?style=flat-square
+[codecov-url]: https://app.codecov.io/gh/hankliu62/hankliu-ui
+[download-image]: https://img.shields.io/npm/dm/@hankliu/hankliu-ui.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@hankliu/hankliu-ui
+[bundlephobia-url]: https://bundlephobia.com/package/@hankliu/hankliu-ui
+[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/@hankliu/hankliu-ui
+[dumi-url]: https://github.com/umijs/dumi
+[dumi-image]: https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square
+
+🥭 基于 `AntDesign@4.x` 的一个 `UI` 组件库，一套企业级 `UI` 设计语言和 `React` 组件库
 
 ### 安装
 
@@ -21,29 +37,30 @@ pnpm add -D @hankliu/hankliu-ui
 ```
 
 ### 使用
-``` tsx
-import { Button, ImageCropper } from "@hankliu/hankliu-ui";
+
+```tsx
+import { Button, ImageCropper } from '@hankliu/hankliu-ui';
 
 const DEFAULT_PROPS = {
   aspectRatios: [
     {
-      title: 'free'
+      title: 'free',
     },
     {
-      value: 1/1,
-      title: '1:1'
+      value: 1 / 1,
+      title: '1:1',
     },
     {
-      value: 2/1,
-      title: '2:1'
+      value: 2 / 1,
+      title: '2:1',
     },
     {
-      value: 4/3,
-      title: '4:3'
-    }
+      value: 4 / 3,
+      title: '4:3',
+    },
   ],
-  title: "图像裁剪",
-  previewTitle: "此为预览图片",
+  title: '图像裁剪',
+  previewTitle: '此为预览图片',
   tip: (
     <div>
       <div>
@@ -52,57 +69,55 @@ const DEFAULT_PROPS = {
         每张图片文件请保持在 10Mb 以内
       </div>
     </div>
-  )
+  ),
 };
 
 class ImageCropperDefault extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "https://github.com/hankliu62/hankliu62.github.com/assets/8088864/91a13d0f-4685-411e-90bf-d8ecbec2ab56"
+      url: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/91a13d0f-4685-411e-90bf-d8ecbec2ab56',
     };
   }
 
   onChooseImage = () => {
-    ImageCropper.selectImage().then(img => this.setState({url: img.url}))
-  }
+    ImageCropper.selectImage().then((img) => this.setState({ url: img.url }));
+  };
 
   onUpload = (data) => {
     this.setState({
-      okButtonProps: { loading: true }
-    })
+      okButtonProps: { loading: true },
+    });
 
     // 上传操作
     setTimeout(() => {
       this.setState({
         cropperVisible: false,
-        okButtonProps: { loading: false }
-      })
-    }, 3000)
-  }
+        okButtonProps: { loading: false },
+      });
+    }, 3000);
+  };
 
   render() {
     const { cropperProps, okButtonProps, cropperVisible, url } = this.state;
     return (
       <div>
-        {
-          cropperVisible && (
-            <ImageCropper
-              {...cropperProps}
-              url={url}
-              open={cropperVisible}
-              onCancel={() => this.setState({ cropperVisible: false })}
-              onOk={this.onUpload}
-              onReupload={this.onChooseImage}
-              okButtonProps={okButtonProps}
-            />
-          )
-        }
+        {cropperVisible && (
+          <ImageCropper
+            {...cropperProps}
+            url={url}
+            open={cropperVisible}
+            onCancel={() => this.setState({ cropperVisible: false })}
+            onOk={this.onUpload}
+            onReupload={this.onChooseImage}
+            okButtonProps={okButtonProps}
+          />
+        )}
         <Button
-        className="mr-8"
+          className="mr-8"
           onClick={() =>
-            ImageCropper.selectImage().then(img => {
-              this.setState({ url: img.url, cropperProps: DEFAULT_PROPS, cropperVisible: true })
+            ImageCropper.selectImage().then((img) => {
+              this.setState({ url: img.url, cropperProps: DEFAULT_PROPS, cropperVisible: true });
             })
           }
         >
@@ -120,7 +135,6 @@ ReactDOM.render(<ImageCropperDefault />, mountNode);
 
 - 🍉 基于 `AntDesign@4.x`，具有其所有特性。
 - 🍑 新增更多的高质量 `React` 组件，开箱即用。
-
 
 ## 兼容环境
 

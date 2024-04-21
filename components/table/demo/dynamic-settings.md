@@ -15,7 +15,7 @@ Select different settings to see the result.
 
 ```jsx
 import { Table, Switch, Radio, Form, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const columns = [
   {
@@ -68,7 +68,7 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-const expandable = { expandedRowRender: record => <p>{record.description}</p> };
+const expandable = { expandedRowRender: (record) => <p>{record.description}</p> };
 const title = () => 'Here is title';
 const showHeader = true;
 const footer = () => 'Here is footer';
@@ -92,51 +92,51 @@ class Demo extends React.Component {
     bottom: 'bottomRight',
   };
 
-  handleToggle = prop => enable => {
+  handleToggle = (prop) => (enable) => {
     this.setState({ [prop]: enable });
   };
 
-  handleSizeChange = e => {
+  handleSizeChange = (e) => {
     this.setState({ size: e.target.value });
   };
 
-  handleTableLayoutChange = e => {
+  handleTableLayoutChange = (e) => {
     this.setState({ tableLayout: e.target.value });
   };
 
-  handleExpandChange = enable => {
+  handleExpandChange = (enable) => {
     this.setState({ expandable: enable ? expandable : undefined });
   };
 
-  handleEllipsisChange = enable => {
+  handleEllipsisChange = (enable) => {
     this.setState({ ellipsis: enable });
   };
 
-  handleTitleChange = enable => {
+  handleTitleChange = (enable) => {
     this.setState({ title: enable ? title : undefined });
   };
 
-  handleHeaderChange = enable => {
+  handleHeaderChange = (enable) => {
     this.setState({ showHeader: enable ? showHeader : false });
   };
 
-  handleFooterChange = enable => {
+  handleFooterChange = (enable) => {
     this.setState({ footer: enable ? footer : undefined });
   };
 
-  handleRowSelectionChange = enable => {
+  handleRowSelectionChange = (enable) => {
     this.setState({ rowSelection: enable ? {} : undefined });
   };
 
-  handleYScrollChange = enable => {
+  handleYScrollChange = (enable) => {
     this.setState({ yScroll: enable });
   };
 
-  handleXScrollChange = e => {
+  handleXScrollChange = (e) => {
     this.setState({ xScroll: e.target.value });
   };
 
-  handleDataChange = hasData => {
+  handleDataChange = (hasData) => {
     this.setState({ hasData });
   };
 
@@ -151,7 +151,7 @@ class Demo extends React.Component {
       scroll.x = '100vw';
     }
 
-    const tableColumns = columns.map(item => ({ ...item, ellipsis: state.ellipsis }));
+    const tableColumns = columns.map((item) => ({ ...item, ellipsis: state.ellipsis }));
     if (xScroll === 'fixed') {
       tableColumns[0].fixed = true;
       tableColumns[tableColumns.length - 1].fixed = 'right';
@@ -217,7 +217,7 @@ class Demo extends React.Component {
           <Form.Item label="Pagination Top">
             <Radio.Group
               value={this.state.top}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ top: e.target.value });
               }}
             >
@@ -230,7 +230,7 @@ class Demo extends React.Component {
           <Form.Item label="Pagination Bottom">
             <Radio.Group
               value={this.state.bottom}
-              onChange={e => {
+              onChange={(e) => {
                 this.setState({ bottom: e.target.value });
               }}
             >

@@ -15,7 +15,7 @@ The icon can be customized to any react node.
 
 ```jsx
 import { Button, notification } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const openNotification = () => {
   notification.open({

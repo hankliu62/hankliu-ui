@@ -20,7 +20,7 @@ import {
   PieChartOutlined,
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;

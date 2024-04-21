@@ -14,7 +14,7 @@ title:
 Upload files manually after `beforeUpload` returns `false`.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import { Button, message, Upload } from '@hankliu/hankliu-ui';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import React, { useState } from 'react';
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   const handleUpload = () => {
     const formData = new FormData();
-    fileList.forEach(file => {
+    fileList.forEach((file) => {
       formData.append('files[]', file as RcFile);
     });
     setUploading(true);
@@ -34,7 +34,7 @@ const App: React.FC = () => {
       method: 'POST',
       body: formData,
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(() => {
         setFileList([]);
         message.success('upload successfully.');
@@ -48,13 +48,13 @@ const App: React.FC = () => {
   };
 
   const props: UploadProps = {
-    onRemove: file => {
+    onRemove: (file) => {
       const index = fileList.indexOf(file);
       const newFileList = fileList.slice();
       newFileList.splice(index, 1);
       setFileList(newFileList);
     },
-    beforeUpload: file => {
+    beforeUpload: (file) => {
       setFileList([...fileList, file]);
 
       return false;

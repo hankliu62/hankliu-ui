@@ -17,7 +17,7 @@ Used in standalone when children is empty.
 
 ```jsx
 import { Badge, Space, Switch } from '@hankliu/hankliu-ui';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined } from '@hankliu/icons';
 
 const Demo = () => {
   const [show, setShow] = React.useState(true);

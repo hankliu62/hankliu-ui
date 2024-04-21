@@ -8,7 +8,7 @@ debug: true
 
 ```jsx
 import { Tree, Switch } from '@hankliu/hankliu-ui';
-import { CarryOutOutlined } from '@ant-design/icons';
+import { CarryOutOutlined } from '@hankliu/icons';
 
 const x = 3;
 const y = 2;
@@ -47,7 +47,7 @@ class Demo extends React.Component {
     showLeafIcon: true,
   };
 
-  onDragEnter = info => {
+  onDragEnter = (info) => {
     console.log(info);
     // expandedKeys 需要受控时设置
     // this.setState({
@@ -55,7 +55,7 @@ class Demo extends React.Component {
     // });
   };
 
-  onDrop = info => {
+  onDrop = (info) => {
     console.log(info);
     const dropKey = info.node.key;
     const dragKey = info.dragNode.key;
@@ -83,7 +83,7 @@ class Demo extends React.Component {
 
     if (!info.dropToGap) {
       // Drop on the content
-      loop(data, dropKey, item => {
+      loop(data, dropKey, (item) => {
         item.children = item.children || [];
         // where to insert 示例添加到尾部，可以是随意位置
         item.children.push(dragObj);
@@ -93,7 +93,7 @@ class Demo extends React.Component {
       info.node.props.expanded && // Is expanded
       dropPosition === 1 // On the bottom gap
     ) {
-      loop(data, dropKey, item => {
+      loop(data, dropKey, (item) => {
         item.children = item.children || [];
         // where to insert 示例添加到头部，可以是随意位置
         item.children.unshift(dragObj);
@@ -117,7 +117,7 @@ class Demo extends React.Component {
     });
   };
 
-  setShowLine = showLine => {
+  setShowLine = (showLine) => {
     const { showLeafIcon } = this.state;
     if (showLine) {
       if (showLeafIcon) {
@@ -138,13 +138,13 @@ class Demo extends React.Component {
     }
   };
 
-  setShowIcon = showIcon => {
+  setShowIcon = (showIcon) => {
     this.setState({
       showIcon,
     });
   };
 
-  setShowLeafIcon = showLeafIcon => {
+  setShowLeafIcon = (showLeafIcon) => {
     this.setState({
       showLeafIcon,
       showLine: { showLeafIcon },

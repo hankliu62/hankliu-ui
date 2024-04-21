@@ -1,6 +1,6 @@
 import React from 'react';
-import IconPlay from '@ant-design/icons/lib/icons/PlaySquareOutlined';
-import IconSuspend from '@ant-design/icons/lib/icons/PauseOutlined';
+import IconPlay from '@hankliu/icons/lib/icons/PlaySquareOutlined';
+import IconSuspend from '@hankliu/icons/lib/icons/PauseOutlined';
 
 interface PlayButtonProps {
   paused: boolean;
@@ -18,4 +18,4 @@ function PlayButton({ paused, onTogglePlay }: PlayButtonProps) {
   );
 }
 
-export default React.memo(PlayButton)
+export default React.memo(PlayButton);

@@ -16,7 +16,7 @@ Config component and icon prefixCls.
 
 ```jsx
 import { ConfigProvider, Select, Button } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 import React, { useState } from 'react';
 
 // Ant Design site use `es` module for view

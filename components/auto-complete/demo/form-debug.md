@@ -8,7 +8,7 @@ debug: true
 
 ```tsx
 import { Input, AutoComplete, Form, TreeSelect, Button } from '@hankliu/hankliu-ui';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@hankliu/icons';
 
 const formItemLayout = {
   labelCol: {

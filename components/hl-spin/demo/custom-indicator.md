@@ -13,11 +13,14 @@ title:
 
 Use custom loading indicator.
 
-````jsx
+```jsx
 import { HlSpin as Spin } from '@hankliu/hankliu-ui';
-import IconLoading from '@ant-design/icons/LoadingOutlined'
+import IconLoading from '@hankliu/icons/LoadingOutlined';
 
 const antIcon = <IconLoading style={{ fontSize: 24 }} spin />;
 
-ReactDOM.render(<Spin coverStyle={{backgroundColor: 'rgba(240,251,249,0.9)'}} indicator={antIcon} />, mountNode);
-````
+ReactDOM.render(
+  <Spin coverStyle={{ backgroundColor: 'rgba(240,251,249,0.9)' }} indicator={antIcon} />,
+  mountNode,
+);
+```

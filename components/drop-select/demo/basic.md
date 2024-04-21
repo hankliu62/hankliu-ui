@@ -13,40 +13,44 @@ title:
 
 The most basic dropdown menu.
 
-````jsx
+```jsx
 import { DropSelect, Icon } from '@hankliu/hankliu-ui';
-import IconSelect from '@ant-design/icons/SelectOutlined'
+import IconSelect from '@hankliu/icons/SelectOutlined';
 
-const options = [{
-  title: 'test1',
-  value: 1,
-}, {
-  title: 'test2',
-  value: 2,
-}, {
-  title: 'test3',
-  value: 3,
-  disabled: true,
-}];
+const options = [
+  {
+    title: 'test1',
+    value: 1,
+  },
+  {
+    title: 'test2',
+    value: 2,
+  },
+  {
+    title: 'test3',
+    value: 3,
+    disabled: true,
+  },
+];
 
 class App extends React.Component {
-  state = { value: 2 }
+  state = { value: 2 };
 
   change = (value) => {
-    this.setState({value});
-  }
+    this.setState({ value });
+  };
 
   render() {
-    const { value } = this.state
+    const { value } = this.state;
     return (
       <DropSelect value={value} onChange={this.change} options={options}>
         <a className="ant-dropdown-link" href="#">
           Hover me <IconSelect />
         </a>
       </DropSelect>
-    )
+    );
   }
-};
+}
 
 ReactDOM.render(<App />, mountNode);
-````
+```

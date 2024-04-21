@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { ChangeEvent, FocusEvent, KeyboardEvent } from 'react';
 import cs from 'classnames';
-import IconEdit from '@ant-design/icons/EditOutlined';
+import IconEdit from '@hankliu/icons/EditOutlined';
 import { getLocale } from './locale';
 
 function getValue(value: string, max?: number) {

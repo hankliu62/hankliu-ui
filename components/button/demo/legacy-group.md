@@ -16,7 +16,7 @@ Debug usage
 
 ```jsx
 import { Button, Tooltip } from '@hankliu/hankliu-ui';
-import { DownloadOutlined } from '@ant-design/icons';
+import { DownloadOutlined } from '@hankliu/icons';
 
 function getGroup(props) {
   return (

@@ -14,7 +14,7 @@ title:
 By using `itemRender`, we can integrate upload with react-dnd to implement drag sorting of uploadList.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import { Button, Tooltip, Upload } from '@hankliu/hankliu-ui';
 import type { UploadFile, UploadProps } from 'antd/es/upload/interface';
 import update from 'immutability-helper';
@@ -41,7 +41,7 @@ const DragableUploadListItem = ({
   const index = fileList.indexOf(file);
   const [{ isOver, dropClassName }, drop] = useDrop({
     accept: type,
-    collect: monitor => {
+    collect: (monitor) => {
       const { index: dragIndex } = monitor.getItem() || {};
       if (dragIndex === index) {
         return {};
@@ -58,7 +58,7 @@ const DragableUploadListItem = ({
   const [, drag] = useDrag({
     type,
     item: { index },
-    collect: monitor => ({
+    collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
   });

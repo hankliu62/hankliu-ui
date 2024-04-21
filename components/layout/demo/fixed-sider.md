@@ -25,7 +25,7 @@ import {
   UserOutlined,
   UploadOutlined,
   VideoCameraOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 

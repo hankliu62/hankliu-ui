@@ -16,7 +16,7 @@ To see if bordered style applied to other tables.
 
 ```jsx
 import { Table, Badge, Menu, Dropdown, Switch, Form, Space } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const menu = (
   <Menu>
@@ -26,7 +26,7 @@ const menu = (
 );
 
 function NestedTable() {
-  const createExpandedRowRender = bordered => () => {
+  const createExpandedRowRender = (bordered) => () => {
     const columns = [
       { title: 'Date', dataIndex: 'date', key: 'date' },
       { title: 'Name', dataIndex: 'name', key: 'name' },
@@ -104,10 +104,10 @@ function NestedTable() {
         style={{ marginBottom: 16 }}
       >
         <Form.Item label="Root Table Bordered">
-          <Switch checked={rootTableBordered} onChange={v => setRootTableBordered(v)} />
+          <Switch checked={rootTableBordered} onChange={(v) => setRootTableBordered(v)} />
         </Form.Item>
         <Form.Item label="Child Table Bordered">
-          <Switch checked={childTableBordered} onChange={v => setChildTableBordered(v)} />
+          <Switch checked={childTableBordered} onChange={(v) => setChildTableBordered(v)} />
         </Form.Item>
       </Form>
       <Table

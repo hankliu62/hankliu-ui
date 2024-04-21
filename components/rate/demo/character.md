@@ -15,7 +15,7 @@ Replace the default star to other character like alphabet, digit, iconfont or ev
 
 ```jsx
 import { Rate } from '@hankliu/hankliu-ui';
-import { HeartOutlined } from '@ant-design/icons';
+import { HeartOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '@ant-design/icons';
+import Icon from '@hankliu/icons';
 
 const ThemeIcon = props => {
   const SVGIcon = React.useCallback(

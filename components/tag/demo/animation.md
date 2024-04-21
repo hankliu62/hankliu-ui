@@ -16,7 +16,7 @@ Animating the Tag by using [rc-tween-one](https://github.com/react-component/twe
 ```jsx
 import { Tag, Input } from '@hankliu/hankliu-ui';
 import { TweenOneGroup } from 'rc-tween-one';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@hankliu/icons';
 
 class EditableTagGroup extends React.Component {
   state = {
@@ -25,8 +25,8 @@ class EditableTagGroup extends React.Component {
     inputValue: '',
   };
 
-  handleClose = removedTag => {
-    const tags = this.state.tags.filter(tag => tag !== removedTag);
+  handleClose = (removedTag) => {
+    const tags = this.state.tags.filter((tag) => tag !== removedTag);
     console.log(tags);
     this.setState({ tags });
   };
@@ -35,7 +35,7 @@ class EditableTagGroup extends React.Component {
     this.setState({ inputVisible: true }, () => this.input.focus());
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     this.setState({ inputValue: e.target.value });
   };
 
@@ -53,15 +53,15 @@ class EditableTagGroup extends React.Component {
     });
   };
 
-  saveInputRef = input => {
+  saveInputRef = (input) => {
     this.input = input;
   };
 
-  forMap = tag => {
+  forMap = (tag) => {
     const tagElem = (
       <Tag
         closable
-        onClose={e => {
+        onClose={(e) => {
           e.preventDefault();
           this.handleClose(tag);
         }}
@@ -89,7 +89,7 @@ class EditableTagGroup extends React.Component {
               type: 'from',
               duration: 100,
             }}
-            onEnd={e => {
+            onEnd={(e) => {
               if (e.type === 'appear' || e.type === 'enter') {
                 e.target.style = 'display: inline-block';
               }

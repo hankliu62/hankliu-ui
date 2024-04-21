@@ -15,7 +15,7 @@ This will simply display a red badge, without a specific count. If count equals 
 
 ```jsx
 import { Badge } from '@hankliu/hankliu-ui';
-import { NotificationOutlined } from '@ant-design/icons';
+import { NotificationOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

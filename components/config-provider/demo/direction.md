@@ -43,7 +43,7 @@ import {
   RightOutlined,
   MinusOutlined,
   PlusOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const InputGroup = Input.Group;
 const ButtonGroup = Button.Group;
@@ -130,9 +130,9 @@ class Page extends React.Component {
 
   // ==== Cascader ====
   cascaderFilter = (inputValue, path) =>
-    path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
+    path.some((option) => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
 
-  onCascaderChange = value => {
+  onCascaderChange = (value) => {
     console.log(value);
   };
   // ==== End Cascader ====
@@ -144,14 +144,14 @@ class Page extends React.Component {
     });
   };
 
-  handleOk = e => {
+  handleOk = (e) => {
     console.log(e);
     this.setState({
       modalVisible: false,
     });
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     console.log(e);
     this.setState({
       modalVisible: false,
@@ -159,7 +159,7 @@ class Page extends React.Component {
   };
   // ==== End Modal ====
 
-  onStepsChange = currentStep => {
+  onStepsChange = (currentStep) => {
     console.log('onChange:', currentStep);
     this.setState({ currentStep });
   };
@@ -179,7 +179,7 @@ class Page extends React.Component {
     this.setState({ badgeCount });
   };
 
-  onChangeBadge = showBadge => {
+  onChangeBadge = (showBadge) => {
     this.setState({ showBadge });
   };
   // ==== End Badge ====
@@ -526,7 +526,7 @@ class App extends React.Component {
     popupPlacement: 'bottomLeft',
   };
 
-  changeDirection = e => {
+  changeDirection = (e) => {
     const directionValue = e.target.value;
     this.setState({ direction: directionValue });
     if (directionValue === 'rtl') {

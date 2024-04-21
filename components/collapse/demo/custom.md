@@ -15,7 +15,7 @@ Customize the background, border, margin styles and icon for each panel.
 
 ```jsx
 import { Collapse } from '@hankliu/hankliu-ui';
-import { CaretRightOutlined } from '@ant-design/icons';
+import { CaretRightOutlined } from '@hankliu/icons';
 
 const { Panel } = Collapse;
 

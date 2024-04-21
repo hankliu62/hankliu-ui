@@ -25,7 +25,7 @@ import {
   Table,
   List,
 } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const customizeRenderEmpty = () => (
   <div style={{ textAlign: 'center' }}>
@@ -49,7 +49,7 @@ class Demo extends React.Component {
           unCheckedChildren="default"
           checkedChildren="customize"
           checked={customize}
-          onChange={val => {
+          onChange={(val) => {
             this.setState({ customize: val });
           }}
         />

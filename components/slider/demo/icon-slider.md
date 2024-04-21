@@ -15,14 +15,14 @@ You can add an icon beside the slider to make it meaningful.
 
 ```jsx
 import { Slider } from '@hankliu/hankliu-ui';
-import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
+import { FrownOutlined, SmileOutlined } from '@hankliu/icons';
 
 class IconSlider extends React.Component {
   state = {
     value: 0,
   };
 
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 

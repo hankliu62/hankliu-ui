@@ -17,12 +17,7 @@ Modify global theme color by css variable which IE not support. Css variable dep
 ```jsx
 import { SketchPicker } from 'react-color';
 import React, { useState } from 'react';
-import {
-  DownOutlined,
-  MailOutlined,
-  SettingOutlined,
-  ClockCircleOutlined,
-} from '@ant-design/icons';
+import { DownOutlined, MailOutlined, SettingOutlined, ClockCircleOutlined } from '@hankliu/icons';
 import {
   ConfigProvider,
   Tag,
@@ -59,7 +54,7 @@ import {
   Transfer,
 } from '@hankliu/hankliu-ui';
 
-const SplitSpace = props => <Space split={<Divider type="vertical" />} size={4} {...props} />;
+const SplitSpace = (props) => <Space split={<Divider type="vertical" />} size={4} {...props} />;
 
 const inputProps = {
   style: { width: 128 },
@@ -124,7 +119,7 @@ const MyTransfer = () => {
       dataSource={mockData}
       targetKeys={['18']}
       selectedKeys={['3']}
-      render={item => item.title}
+      render={(item) => item.title}
     />
   );
 };
@@ -287,7 +282,7 @@ const FormSizeDemo = () => {
                 </Menu>
               }
             >
-              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+              <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
                 Hover me <DownOutlined />
               </a>
             </Dropdown>

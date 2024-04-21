@@ -2,7 +2,7 @@ import React from 'react';
 import { message } from '@hankliu/hankliu-ui';
 import RcFooter from 'rc-footer';
 import { Link } from 'bisheng/router';
-import { presetPalettes } from '@ant-design/colors';
+import { presetPalettes } from '@hankliu/colors';
 import { FormattedMessage, injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   AntDesignOutlined,
@@ -17,7 +17,7 @@ import {
   IssuesCloseOutlined,
   QuestionCircleOutlined,
   BgColorsOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 import ColorPicker from '../Color/ColorPicker';
 import { loadScript, getLocalizedPathname } from '../utils';
 

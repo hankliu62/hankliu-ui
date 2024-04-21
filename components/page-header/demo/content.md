@@ -15,7 +15,7 @@ Show all props provided by PageHeader.
 
 ```jsx
 import { PageHeader, Menu, Dropdown, Button, Tag, Typography, Row } from '@hankliu/hankliu-ui';
-import { EllipsisOutlined } from '@ant-design/icons';
+import { EllipsisOutlined } from '@hankliu/icons';
 
 const { Paragraph } = Typography;
 

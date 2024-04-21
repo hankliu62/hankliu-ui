@@ -15,7 +15,7 @@ Add unit through `prefix` and `suffix`.
 
 ```jsx
 import { Statistic, Row, Col } from '@hankliu/hankliu-ui';
-import { LikeOutlined } from '@ant-design/icons';
+import { LikeOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Row gutter={16}>

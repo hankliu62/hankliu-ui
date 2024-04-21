@@ -33,3 +33,5 @@ _website
 _site
 
 .env.local
+
+.vscode

@@ -23,7 +23,7 @@ import {
   PaperClipOutlined,
   PictureTwoTone,
   PlusOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 import { Modal, Upload } from '@hankliu/hankliu-ui';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import React, { useState } from 'react';
@@ -33,7 +33,7 @@ const getBase64 = (file: RcFile): Promise<string> =>
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result as string);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 
 const App: React.FC = () => {
@@ -99,7 +99,7 @@ const App: React.FC = () => {
       if (listType === 'picture-card' && file.status === 'uploading') {
         icon = <LoadingOutlined />; // or icon = 'uploading...';
       } else {
-        fileSufIconList.forEach(item => {
+        fileSufIconList.forEach((item) => {
           if (item.suf.includes(file.name.slice(file.name.lastIndexOf('.')))) {
             icon = item.type;
           }

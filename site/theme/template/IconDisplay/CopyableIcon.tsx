@@ -2,7 +2,7 @@ import * as React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { Badge, message } from '@hankliu/hankliu-ui';
 import classNames from 'classnames';
-import * as AntdIcons from '@ant-design/icons';
+import * as AntdIcons from '@hankliu/icons';
 import { ThemeType } from './index';
 
 const allIcons: {

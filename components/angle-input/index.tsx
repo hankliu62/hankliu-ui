@@ -1,7 +1,7 @@
 // @ts-nocheck
 import * as React from 'react';
 import cs from 'classnames';
-import AimOutlined from '@ant-design/icons/AimOutlined';
+import AimOutlined from '@hankliu/icons/AimOutlined';
 import InputNumber from '../input-number';
 
 export interface AngleInputProps {}
@@ -24,9 +24,7 @@ class AngleInput extends React.Component<any, any> {
     const { disabled } = this.props;
     if (disabled) return;
     const rect = this.$diskRef.getBoundingClientRect();
-    const {
-      width, height, left, top,
-    } = rect;
+    const { width, height, left, top } = rect;
     const { clientX, clientY } = e;
     const value = Math.atan2(clientY - (top + height / 2), clientX - (left + width / 2));
     let ret = Math.round((value * 180) / Math.PI);
@@ -55,9 +53,7 @@ class AngleInput extends React.Component<any, any> {
   };
 
   render() {
-    const {
-      className, value, size, ...rest
-    } = this.props;
+    const { className, value, size, ...rest } = this.props;
     return (
       <div
         className={cs(className, {

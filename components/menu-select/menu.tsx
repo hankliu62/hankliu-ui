@@ -4,42 +4,42 @@ import arrayTreeFilter from 'array-tree-filter';
 import { findDOMNode } from 'react-dom';
 import { ConfigContext } from 'antd4x/lib/config-provider';
 import Checkbox from '../checkbox';
-import IconRightMin from '@ant-design/icons/lib/icons/RightOutlined';
+import IconRightMin from '@hankliu/icons/lib/icons/RightOutlined';
 import { Option } from './interfaces';
 
 type Name = {
-  label: string,
-  value: string,
-  children: string,
-}
-type NameKeys = 'label' | 'value' | 'children'
-type OnSelect = (option?: Option, menuIndex?: number) => void
+  label: string;
+  value: string;
+  children: string;
+};
+type NameKeys = 'label' | 'value' | 'children';
+type OnSelect = (option?: Option, menuIndex?: number) => void;
 
 interface ExpandProps {
-  onMouseEnter?: OnSelect,
-  onMouseLeave?: OnSelect,
-  ref?: (node: React.ReactNode) => void,
-  onClick: OnSelect,
+  onMouseEnter?: OnSelect;
+  onMouseLeave?: OnSelect;
+  ref?: (node: React.ReactNode) => void;
+  onClick: OnSelect;
 }
 
 interface MenusProps {
-  activeValue: number[] | string[],
-  options: Option[],
-  filteredOptions?: Option[], // 搜索文本过滤的选项
-  prefixCls: string,
-  expandTrigger?: string,
-  onSelect: OnSelect,
-  open?: boolean,
-  menuColumnStyle?: object,
-  defaultFieldNames: Name,
-  fieldNames?: any,
-  expandIcon?: React.ReactNode,
-  loadingIcon?: React.ReactNode,
-  checkable?: boolean,
-  checkedValue?: string[] | number[],
-  onCheck?: (keys: any[]) => void,
-  onClick: OnSelect,
-  disabled?: boolean,
+  activeValue: number[] | string[];
+  options: Option[];
+  filteredOptions?: Option[]; // 搜索文本过滤的选项
+  prefixCls: string;
+  expandTrigger?: string;
+  onSelect: OnSelect;
+  open?: boolean;
+  menuColumnStyle?: object;
+  defaultFieldNames: Name;
+  fieldNames?: any;
+  expandIcon?: React.ReactNode;
+  loadingIcon?: React.ReactNode;
+  checkable?: boolean;
+  checkedValue?: string[] | number[];
+  onCheck?: (keys: any[]) => void;
+  onClick: OnSelect;
+  disabled?: boolean;
 }
 
 export default function Menus({
@@ -50,7 +50,7 @@ export default function Menus({
   prefixCls: menuPrefixCls,
   open = false,
   expandTrigger = 'click',
-  expandIcon = (<IconRightMin />),
+  expandIcon = <IconRightMin />,
   checkable = false,
   checkedValue = [],
   ...restProps
@@ -60,12 +60,17 @@ export default function Menus({
   // 前缀
   const prefixCls = menuPrefixCls || `${antdCls}-cascader-menus`;
 
-  const menuItems = useRef<Record<number, any>>()
-  const delayTimer = useRef<any>()
-  const status = useRef<Record<string, {
-    checked: boolean,
-    indeterminate: boolean,
-  }>>({})
+  const menuItems = useRef<Record<number, any>>();
+  const delayTimer = useRef<any>();
+  const status = useRef<
+    Record<
+      string,
+      {
+        checked: boolean;
+        indeterminate: boolean;
+      }
+    >
+  >({});
 
   function getFieldName(name: NameKeys) {
     const { fieldNames = {}, defaultFieldNames } = restProps;
@@ -81,66 +86,70 @@ export default function Menus({
     if (!e.target.checked) {
       // 当前节点和子节点全部移除选中
       const removeChildValue = (opt: Option) => {
-        tempcheckedValue = tempcheckedValue.filter(key => key !== opt[getFieldName('value')])
-        const children = opt[getFieldName('children')] || []
+        tempcheckedValue = tempcheckedValue.filter((key) => key !== opt[getFieldName('value')]);
+        const children = opt[getFieldName('children')] || [];
         // tslint:disable-next-line:no-unused-expression
-        children && children.forEach((c: Option) => {
-          removeChildValue(c)
-        });
-      }
-      removeChildValue(option)
+        children &&
+          children.forEach((c: Option) => {
+            removeChildValue(c);
+          });
+      };
+      removeChildValue(option);
 
       // 移除当前节点关联的所有父节点
       const removeParentValue = (opts: Option[]) => {
         opts.forEach((opt: Option) => {
-          const optChildren = opt[getFieldName('children')] || []
-          removeParentValue(optChildren)
+          const optChildren = opt[getFieldName('children')] || [];
+          removeParentValue(optChildren);
           const filteredOpts = optChildren.filter((oc: Option) => {
-            return tempcheckedValue.find((v: string|number) => (v === oc[getFieldName('value')]))
-          })
+            return tempcheckedValue.find((v: string | number) => v === oc[getFieldName('value')]);
+          });
           if (optChildren.length > 0 && filteredOpts.length !== optChildren.length) {
-            tempcheckedValue = tempcheckedValue.filter(key => key !== opt[getFieldName('value')])
+            tempcheckedValue = tempcheckedValue.filter((key) => key !== opt[getFieldName('value')]);
           }
-        })
-      }
-      removeParentValue(options)
-
+        });
+      };
+      removeParentValue(options);
     } else {
       // 当前节点和子节点全部加入选中
       const addChildValue = (opt: Option) => {
-        tempcheckedValue.push(opt[getFieldName('value')])
-        const children = opt[getFieldName('children')] || []
+        tempcheckedValue.push(opt[getFieldName('value')]);
+        const children = opt[getFieldName('children')] || [];
         // tslint:disable-next-line:no-unused-expression
-        children && children.forEach((c: Option) => {
-          addChildValue(c)
-        });
-      }
-      addChildValue(option)
+        children &&
+          children.forEach((c: Option) => {
+            addChildValue(c);
+          });
+      };
+      addChildValue(option);
 
       // 判断当前节点的父节点是否选中，加入选中节点集合中
       const addParentValue = (opts: Option[]) => {
         opts.forEach((opt: Option) => {
-          const optChildren = opt[getFieldName('children')] || []
-          addParentValue(optChildren)
+          const optChildren = opt[getFieldName('children')] || [];
+          addParentValue(optChildren);
           const filteredOpts = optChildren.filter((oc: Option) => {
-            return tempcheckedValue.find((v: string|number) => (v === oc[getFieldName('value')]))
-          })
+            return tempcheckedValue.find((v: string | number) => v === oc[getFieldName('value')]);
+          });
           if (optChildren.length > 0 && filteredOpts.length === optChildren.length) {
-            tempcheckedValue.push(opt[getFieldName('value')])
+            tempcheckedValue.push(opt[getFieldName('value')]);
           }
-        })
-      }
-      addParentValue(options)
-
+        });
+      };
+      addParentValue(options);
     }
-    if (onCheck) onCheck([...new Set(tempcheckedValue)])
+    if (onCheck) onCheck([...new Set(tempcheckedValue)]);
   }
 
   // 渲染节点
   function getOption(option: Option, menuIndex: number) {
     const { loadingIcon, disabled, onClick } = restProps;
-    const onClickOption: OnSelect = () => { onClick && onClick(option, menuIndex) };
-    const onSelectOption: OnSelect = () => { onSelect(option, menuIndex) };
+    const onClickOption: OnSelect = () => {
+      onClick && onClick(option, menuIndex);
+    };
+    const onSelectOption: OnSelect = () => {
+      onSelect(option, menuIndex);
+    };
     let expandProps: ExpandProps = {
       onClick: onClickOption,
     };
@@ -191,16 +200,18 @@ export default function Menus({
         title={title}
         {...expandProps}
       >
-        {
-          checkable ?
-            <Checkbox
-              disabled={disabled}
-              checked={status.current?.[option[getFieldName('value')]]?.checked}
-              onChange={(e: any) => handleSelect(e, option)}
-              indeterminate={status.current?.[option[getFieldName('value')]]?.indeterminate}
-            >{option[getFieldName('label')]}</Checkbox> :
-            <span className='ant-checkbox-wrapper'>{option[getFieldName('label')]}</span>
-        }
+        {checkable ? (
+          <Checkbox
+            disabled={disabled}
+            checked={status.current?.[option[getFieldName('value')]]?.checked}
+            onChange={(e: any) => handleSelect(e, option)}
+            indeterminate={status.current?.[option[getFieldName('value')]]?.indeterminate}
+          >
+            {option[getFieldName('label')]}
+          </Checkbox>
+        ) : (
+          <span className="ant-checkbox-wrapper">{option[getFieldName('label')]}</span>
+        )}
         {expandIconNode}
       </li>
     );
@@ -227,18 +238,20 @@ export default function Menus({
   }
 
   // 选中延迟
-  const delayOnSelect = (onSelect?: OnSelect) => (...args: any[]) => {
-    if (delayTimer.current) {
-      clearTimeout(delayTimer.current);
-      delayTimer.current = null;
-    }
-    if (typeof onSelect === 'function') {
-      delayTimer.current = setTimeout(() => {
-        onSelect(args);
+  const delayOnSelect =
+    (onSelect?: OnSelect) =>
+    (...args: any[]) => {
+      if (delayTimer.current) {
+        clearTimeout(delayTimer.current);
         delayTimer.current = null;
-      }, 150);
-    }
-  }
+      }
+      if (typeof onSelect === 'function') {
+        delayTimer.current = setTimeout(() => {
+          onSelect(args);
+          delayTimer.current = null;
+        }, 150);
+      }
+    };
 
   function scrollActiveItemToView() {
     // scroll into view
@@ -259,7 +272,7 @@ export default function Menus({
 
   const saveMenuItem = (index: number) => (node: React.ReactNode) => {
     if (!menuItems.current) {
-      menuItems.current = {}
+      menuItems.current = {};
     }
     menuItems.current[index] = node;
   };
@@ -267,7 +280,7 @@ export default function Menus({
   // 设置节点的checked和indeterminate
   function setCheckableOptionsStatus(options: Option[], checkedValue: string[] | number[]) {
     if (options && checkedValue) {
-      options.forEach(option => {
+      options.forEach((option) => {
         setCheckableOptionsStatus(option[getFieldName('children')], checkedValue);
 
         status.current[option[getFieldName('value')]] = {
@@ -279,18 +292,21 @@ export default function Menus({
         const children: Option[] = option[getFieldName('children')] || [];
         let checkedAndIndeterminateChildren: Option[] = [];
         checkedAndIndeterminateChildren = children.filter((child: Option) => {
-          return status.current[child[getFieldName('value')]].checked || status.current[child[getFieldName('value')]].indeterminate
-        })
+          return (
+            status.current[child[getFieldName('value')]].checked ||
+            status.current[child[getFieldName('value')]].indeterminate
+          );
+        });
 
-        let checkedChildren: Option[] = []
+        let checkedChildren: Option[] = [];
         checkedChildren = children.filter((child: Option) => {
-          return status.current[child[getFieldName('value')]].checked
-        })
+          return status.current[child[getFieldName('value')]].checked;
+        });
 
-        let indeterminateChildren: Option[] = []
+        let indeterminateChildren: Option[] = [];
         indeterminateChildren = children.filter((child: Option) => {
-          return status.current[child[getFieldName('value')]].indeterminate
-        })
+          return status.current[child[getFieldName('value')]].indeterminate;
+        });
 
         if (checked) {
           status.current[option[getFieldName('value')]].checked = true;
@@ -298,7 +314,10 @@ export default function Menus({
             status.current[c[getFieldName('value')]].checked = true;
           });
         }
-        if (checkedAndIndeterminateChildren.length > 0 && children.length !== checkedChildren.length) {
+        if (
+          checkedAndIndeterminateChildren.length > 0 &&
+          children.length !== checkedChildren.length
+        ) {
           status.current[option[getFieldName('value')]].indeterminate = true;
         }
         if (checkedChildren.length > 0 && checkedChildren.length === children.length) {
@@ -306,7 +325,7 @@ export default function Menus({
         } else if (indeterminateChildren.length > 0) {
           status.current[option[getFieldName('value')]].indeterminate = true;
         }
-      })
+      });
     }
   }
 
@@ -317,12 +336,12 @@ export default function Menus({
   return (
     <div className={prefixCls}>
       {showOpts.map((opts: Option[], menuIndex: number) => {
-        const key = opts.map((opt: Option) => opt.value).join(',')
+        const key = opts.map((opt: Option) => opt.value).join(',');
         return (
           <ul className={`${prefixCls}-menu`} key={key} style={menuColumnStyle}>
             {opts.map((option: Option) => getOption(option, menuIndex))}
           </ul>
-        )
+        );
       })}
     </div>
   );

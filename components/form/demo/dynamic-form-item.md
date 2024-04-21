@@ -15,7 +15,7 @@ Add or remove form items dynamically. `add` function support config initial valu
 
 ```jsx
 import { Form, Input, Button } from '@hankliu/hankliu-ui';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@hankliu/icons';
 
 const formItemLayout = {
   labelCol: {
@@ -35,7 +35,7 @@ const formItemLayoutWithOutLabel = {
 };
 
 const DynamicFieldSet = () => {
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
 

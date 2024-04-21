@@ -16,7 +16,7 @@ An event will be triggered when you click menu items, in which you can make diff
 ```jsx
 import { Menu, Dropdown, Space, message } from '@hankliu/hankliu-ui';
 import type { MenuProps } from '@hankliu/hankliu-ui';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@hankliu/icons';
 
 const onClick: MenuProps['onClick'] = ({ key }) => {
   message.info(`Click on item ${key}`);
@@ -39,7 +39,7 @@ const items: MenuProps['items'] = [
 
 ReactDOM.render(
   <Dropdown menu={{ items, onClick }}>
-    <a onClick={e => e.preventDefault()}>
+    <a onClick={(e) => e.preventDefault()}>
       <Space>
         Hover me, Click menu item
         <DownOutlined />

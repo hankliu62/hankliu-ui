@@ -21,7 +21,7 @@ import {
   AppstoreOutlined,
   SettingOutlined,
   LinkOutlined,
-} from '@ant-design/icons';
+} from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
@@ -29,11 +29,11 @@ const Demo = () => {
   const [mode, setMode] = React.useState('inline');
   const [theme, setTheme] = React.useState('light');
 
-  const changeMode = value => {
+  const changeMode = (value) => {
     setMode(value ? 'vertical' : 'inline');
   };
 
-  const changeTheme = value => {
+  const changeTheme = (value) => {
     setTheme(value ? 'dark' : 'light');
   };
 

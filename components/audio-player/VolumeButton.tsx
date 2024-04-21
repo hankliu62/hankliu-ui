@@ -1,6 +1,6 @@
 import React from 'react';
-import IconMute from '@ant-design/icons/MutedOutlined';
-import IconSound from '@ant-design/icons/SoundOutlined';
+import IconMute from '@hankliu/icons/MutedOutlined';
+import IconSound from '@hankliu/icons/SoundOutlined';
 import Slider from '../slider';
 import Dropdown from '../dropdown';
 
@@ -12,31 +12,30 @@ export interface VolumeButtonProps {
 }
 
 export interface State {
-  volumeSliderVisible: boolean,
+  volumeSliderVisible: boolean;
 }
 
 class VolumeButton extends React.Component<VolumeButtonProps, State> {
-
   state = {
     volumeSliderVisible: false,
-  }
+  };
 
   setVolume = (value: any) => {
     this.props.onVolumeChange(value);
-  }
+  };
 
   toggleMuted = (e: any) => {
     const { onToggleMuted } = this.props;
     onToggleMuted(e);
-  }
+  };
 
   handleVisibleChange = (open: boolean) => {
-    this.setState({ volumeSliderVisible: open })
-  }
+    this.setState({ volumeSliderVisible: open });
+  };
 
   render() {
     const { muted, volumeValue } = this.props;
-    const value = Math.round(muted ? 0 : volumeValue * 100)
+    const value = Math.round(muted ? 0 : volumeValue * 100);
 
     const overlay = (
       <div className="hlui-audio-sound-slider">
@@ -51,13 +50,17 @@ class VolumeButton extends React.Component<VolumeButtonProps, State> {
           />
         </div>
       </div>
-    )
+    );
 
     return (
-      <Dropdown overlay={overlay} placement="top"
-        onOpenChange={this.handleVisibleChange} open={this.state.volumeSliderVisible}>
+      <Dropdown
+        overlay={overlay}
+        placement="top"
+        onOpenChange={this.handleVisibleChange}
+        open={this.state.volumeSliderVisible}
+      >
         <div className="control-btn" onClick={this.toggleMuted}>
-          {muted?<IconMute />: <IconSound/>}
+          {muted ? <IconMute /> : <IconSound />}
         </div>
       </Dropdown>
     );

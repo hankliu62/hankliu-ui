@@ -1,6 +1,6 @@
 import React from 'react';
-import IconLoading from '@ant-design/icons/lib/icons/LoadingOutlined';
-import IconDescend from '@ant-design/icons/SortDescendingOutlined';
+import IconLoading from '@hankliu/icons/lib/icons/LoadingOutlined';
+import IconDescend from '@hankliu/icons/SortDescendingOutlined';
 import classnames from 'classnames';
 
 let PTR: any;
@@ -52,7 +52,12 @@ export default class PullToRefresh extends React.Component<PullToRefreshProps, a
     }
     const { className, distance, ...rest } = this.props;
     return (
-      <PTR className={classnames('hlui-ptr', className )} distanceToRefresh={distance} onRefresh={this.handleRefresh} {...rest} />
+      <PTR
+        className={classnames('hlui-ptr', className)}
+        distanceToRefresh={distance}
+        onRefresh={this.handleRefresh}
+        {...rest}
+      />
     );
   }
 }

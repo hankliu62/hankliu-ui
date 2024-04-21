@@ -15,7 +15,7 @@ Display statistic data in Card.
 
 ```jsx
 import { Statistic, Card, Row, Col } from '@hankliu/hankliu-ui';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ArrowDownOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <div className="site-statistic-demo-card">

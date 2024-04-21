@@ -15,7 +15,7 @@ A Card that supports `cover`, `avatar`, `title` and `description`.
 
 ```jsx
 import { Card, Avatar } from '@hankliu/hankliu-ui';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { Meta } = Card;
 
@@ -35,7 +35,9 @@ ReactDOM.render(
     ]}
   >
     <Meta
-      avatar={<Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />}
+      avatar={
+        <Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" />
+      }
       title="Card title"
       description="This is the description"
     />

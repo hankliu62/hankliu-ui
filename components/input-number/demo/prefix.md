@@ -15,7 +15,7 @@ Add a prefix inside input.
 
 ```jsx
 import { InputNumber } from '@hankliu/hankliu-ui';
-import { InfoCircleOutlined, SmileOutlined, UserOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined, SmileOutlined, UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

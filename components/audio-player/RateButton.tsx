@@ -1,5 +1,5 @@
 import React from 'react';
-import IconSetUp from '@ant-design/icons/SettingOutlined';
+import IconSetUp from '@hankliu/icons/SettingOutlined';
 import DropSelect from '../drop-select';
 import { getLocale } from './locale';
 
@@ -11,21 +11,26 @@ export interface RateButtonProps {
 const RateButton = ({ rateValue, onRateChange }: RateButtonProps) => {
   const setPlaybackRate = (value: any) => {
     onRateChange(value);
-  }
+  };
 
-  const options = [{
-    title: '0.5 x',
-    value: 0.5,
-  }, {
-    title: '1.0 x',
-    value: 1,
-  }, {
-    title: '1.5 x',
-    value: 1.5,
-  }, {
-    title: '2.0 x',
-    value: 2,
-  }];
+  const options = [
+    {
+      title: '0.5 x',
+      value: 0.5,
+    },
+    {
+      title: '1.0 x',
+      value: 1,
+    },
+    {
+      title: '1.5 x',
+      value: 1.5,
+    },
+    {
+      title: '2.0 x',
+      value: 2,
+    },
+  ];
   const locale = getLocale();
 
   return (
@@ -42,7 +47,6 @@ const RateButton = ({ rateValue, onRateChange }: RateButtonProps) => {
       </div>
     </DropSelect>
   );
-}
-
+};
 
 export default RateButton;

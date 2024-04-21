@@ -14,7 +14,7 @@ title:
 After users upload picture, the thumbnail will be shown in list. The upload button will disappear when count meets limitation.
 
 ```tsx
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@hankliu/icons';
 import { Modal, Upload } from '@hankliu/hankliu-ui';
 import type { RcFile, UploadProps } from 'antd/es/upload';
 import type { UploadFile } from 'antd/es/upload/interface';
@@ -25,7 +25,7 @@ const getBase64 = (file: RcFile): Promise<string> =>
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result as string);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 
 const App: React.FC = () => {

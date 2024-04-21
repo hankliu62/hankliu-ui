@@ -6,7 +6,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import classNames from 'classnames';
 import LZString from 'lz-string';
 import { Tooltip, Alert, Badge } from '@hankliu/hankliu-ui';
-import { SnippetsOutlined, CheckOutlined, ThunderboltOutlined } from '@ant-design/icons';
+import { SnippetsOutlined, CheckOutlined, ThunderboltOutlined } from '@hankliu/icons';
 import stackblitzSdk from '@stackblitz/sdk';
 import CodePreview from './CodePreview';
 import EditButton from '../EditButton';
@@ -203,7 +203,7 @@ class Demo extends React.Component {
       { antd: antdReproduceVersion },
     );
 
-    dependencies['@ant-design/icons'] = 'latest';
+    dependencies['@hankliu/icons'] = 'latest';
 
     const codepenPrefillConfig = {
       title: `${localizedTitle} - antd@${dependencies.antd}`,
@@ -229,7 +229,7 @@ class Demo extends React.Component {
         'moment/min/moment-with-locales.js',
         // eslint-disable-next-line no-undef
         `antd@${antdReproduceVersion}/dist/antd-with-locales.js`,
-        `@ant-design/icons/dist/index.umd.js`,
+        `@hankliu/icons/dist/index.umd.js`,
         'react-router-dom/umd/react-router-dom.min.js',
         'react-router@3.x/umd/ReactRouter.min.js',
       ]

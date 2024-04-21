@@ -15,7 +15,7 @@ You can use your own custom icons by setting the property `icon` for `Steps.Step
 
 ```jsx
 import { Steps } from '@hankliu/hankliu-ui';
-import { UserOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@ant-design/icons';
+import { UserOutlined, SolutionOutlined, LoadingOutlined, SmileOutlined } from '@hankliu/icons';
 
 const { Step } = Steps;
 

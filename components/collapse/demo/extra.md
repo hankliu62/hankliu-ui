@@ -15,7 +15,7 @@ More than one panel can be expanded at a time, the first panel is initialized to
 
 ```jsx
 import { Collapse, Select } from '@hankliu/hankliu-ui';
-import { SettingOutlined } from '@ant-design/icons';
+import { SettingOutlined } from '@hankliu/icons';
 
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -32,7 +32,7 @@ const text = `
 
 const genExtra = () => (
   <SettingOutlined
-    onClick={event => {
+    onClick={(event) => {
       // If you don't want click extra trigger collapse, you can prevent this:
       event.stopPropagation();
     }}
@@ -44,7 +44,7 @@ class Demo extends React.Component {
     expandIconPosition: 'left',
   };
 
-  onPositionChange = expandIconPosition => {
+  onPositionChange = (expandIconPosition) => {
     this.setState({ expandIconPosition });
   };
 

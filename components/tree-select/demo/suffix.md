@@ -16,7 +16,7 @@ The most basic usage.
 
 ```jsx
 import { TreeSelect } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 const { TreeNode } = TreeSelect;
 const icon = <SmileOutlined />;
@@ -26,7 +26,7 @@ class Demo extends React.Component {
     value: undefined,
   };
 
-  onChange = value => {
+  onChange = (value) => {
     console.log(value);
     this.setState({ value });
   };

@@ -15,7 +15,7 @@ title:
 
 ```jsx
 import { Modal, Button } from '@hankliu/hankliu-ui';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { ExclamationCircleOutlined } from '@hankliu/icons';
 
 function destroyAll() {
   Modal.destroyAll();

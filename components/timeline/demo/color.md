@@ -15,7 +15,7 @@ Set the color of circles. `green` means completed or success status, `red` means
 
 ```jsx
 import { Timeline } from '@hankliu/hankliu-ui';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <Timeline>

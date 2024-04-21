@@ -15,7 +15,7 @@ Click the menu and you will see that all the other menus gets collapsed to keep 
 
 ```jsx
 import { Menu } from '@hankliu/hankliu-ui';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@hankliu/icons';
 
 const { SubMenu } = Menu;
 
@@ -25,8 +25,8 @@ const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 const Sider = () => {
   const [openKeys, setOpenKeys] = React.useState(['sub1']);
 
-  const onOpenChange = keys => {
-    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
+  const onOpenChange = (keys) => {
+    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
     if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       setOpenKeys(keys);
     } else {

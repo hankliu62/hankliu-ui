@@ -14,7 +14,7 @@ title:
 Use Aliyun OSS upload example.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import type { UploadProps } from '@hankliu/hankliu-ui';
 import { Button, Form, message, Upload } from '@hankliu/hankliu-ui';
 import type { UploadFile } from 'antd/es/upload/interface';
@@ -67,21 +67,21 @@ const AliyunOSSUpload = ({ value, onChange }: AliyunOSSUploadProps) => {
   };
 
   const onRemove = (file: UploadFile) => {
-    const files = (value || []).filter(v => v.url !== file.url);
+    const files = (value || []).filter((v) => v.url !== file.url);
 
     if (onChange) {
       onChange(files);
     }
   };
 
-  const getExtraData: UploadProps['data'] = file => ({
+  const getExtraData: UploadProps['data'] = (file) => ({
     key: file.url,
     OSSAccessKeyId: OSSData?.accessId,
     policy: OSSData?.policy,
     Signature: OSSData?.signature,
   });
 
-  const beforeUpload: UploadProps['beforeUpload'] = async file => {
+  const beforeUpload: UploadProps['beforeUpload'] = async (file) => {
     if (!OSSData) return false;
 
     const expire = Number(OSSData.expire) * 1000;

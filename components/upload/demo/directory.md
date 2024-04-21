@@ -14,7 +14,7 @@ title:
 You can select and upload a whole directory.
 
 ```tsx
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined } from '@hankliu/icons';
 import { Button, Upload } from '@hankliu/hankliu-ui';
 import React from 'react';
 

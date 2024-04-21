@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import IconVideoFullscreen from '@ant-design/icons/lib/icons/FullscreenOutlined';
-import IconVideoNarrow from '@ant-design/icons/lib/icons/NodeExpandOutlined';
+import IconVideoFullscreen from '@hankliu/icons/lib/icons/FullscreenOutlined';
+import IconVideoNarrow from '@hankliu/icons/lib/icons/NodeExpandOutlined';
 
 import isFullScreen from '../_util/isFullScreen';
 import isFullScreenEnabled from '../_util/isFullScreenEnabled';

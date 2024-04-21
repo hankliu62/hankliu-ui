@@ -15,7 +15,7 @@ Usually used for reminders and notifications.
 
 ```tsx
 import { Avatar, Badge } from '@hankliu/hankliu-ui';
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@hankliu/icons';
 
 ReactDOM.render(
   <>

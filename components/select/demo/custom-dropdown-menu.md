@@ -15,7 +15,7 @@ Customize the dropdown menu via `dropdownRender`.
 
 ```jsx
 import { Select, Divider, Input } from '@hankliu/hankliu-ui';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 
@@ -27,7 +27,7 @@ class App extends React.Component {
     name: '',
   };
 
-  onNameChange = event => {
+  onNameChange = (event) => {
     this.setState({
       name: event.target.value,
     });
@@ -48,7 +48,7 @@ class App extends React.Component {
       <Select
         style={{ width: 240 }}
         placeholder="custom dropdown render"
-        dropdownRender={menu => (
+        dropdownRender={(menu) => (
           <div>
             {menu}
             <Divider style={{ margin: '4px 0' }} />
@@ -64,7 +64,7 @@ class App extends React.Component {
           </div>
         )}
       >
-        {items.map(item => (
+        {items.map((item) => (
           <Option key={item}>{item}</Option>
         ))}
       </Select>

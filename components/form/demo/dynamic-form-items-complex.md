@@ -15,7 +15,7 @@ This example demonstrates the case that a form contains multiple form controls.
 
 ```jsx
 import { Form, Input, Button, Space, Select } from '@hankliu/hankliu-ui';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@hankliu/icons';
 
 const { Option } = Select;
 
@@ -32,7 +32,7 @@ const sights = {
 const Demo = () => {
   const [form] = Form.useForm();
 
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
 
@@ -48,7 +48,7 @@ const Demo = () => {
       <Form.List name="sights">
         {(fields, { add, remove }) => (
           <>
-            {fields.map(field => (
+            {fields.map((field) => (
               <Space key={field.key} align="baseline">
                 <Form.Item
                   noStyle
@@ -64,7 +64,7 @@ const Demo = () => {
                       rules={[{ required: true, message: 'Missing sight' }]}
                     >
                       <Select disabled={!form.getFieldValue('area')} style={{ width: 130 }}>
-                        {(sights[form.getFieldValue('area')] || []).map(item => (
+                        {(sights[form.getFieldValue('area')] || []).map((item) => (
                           <Option key={item} value={item}>
                             {item}
                           </Option>
