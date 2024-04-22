@@ -3,13 +3,11 @@ order: 3
 title: 项目实战
 ---
 
-在真实项目开发中，你可能会需要 Redux 或者 MobX 这样的数据流方案，Ant Design React 作为一个 UI 库，可以和任何 React 生态圈内的数据流方案以及应用框架搭配使用。我们基于业务场景的场景，推出了可插拔的企业级应用框架 umi，推荐你在项目中使用。
+在真实项目开发中，你可能会需要 Redux 或者 MobX 这样的数据流方案，HankLiu UI React 作为一个 UI 库，可以和任何 React 生态圈内的数据流方案以及应用框架搭配使用。我们基于业务场景的场景，推出了可插拔的企业级应用框架 umi，推荐你在项目中使用。
 
 [umi](https://umijs.org/zh-CN) 则是一个可插拔的企业级 react 应用框架。umi 以路由为基础的，支持[类 next.js 的约定式路由](https://umijs.org/zh-CN/docs/convention-routing)，以及各种进阶的路由功能，并以此进行功能扩展，比如[支持路由级的按需加载](https://umijs.org/zh-CN/config#dynamicimport)。然后配以完善的[插件体系](https://umijs.org/zh-CN/plugins/api)，覆盖从源码到构建产物的每个生命周期，支持各种功能扩展和业务需求，同时提供 [Umi UI](https://umijs.org/zh-CN/docs/use-umi-ui) 通过可视化辅助编程（VAP）提高开发体验和研发效率。
 
-> 你可能也会对 [Ant Design Pro](https://pro.ant.design/) 感兴趣，这是一个基于 umi、dva 和 ant design 的开箱即用的中台前端/设计解决方案。
-
-本文会引导你使用 Umi、dva 和 antd 从 0 开始创建一个简单应用。
+本文会引导你使用 Umi、dva 和 `hankliu-ui` 从 0 开始创建一个简单应用。
 
 ## 安装 Umi
 
@@ -22,8 +20,6 @@ $ yarn
 ```
 
 > 如果你使用 npm，可执行 `npx @umijs/create-umi-app`，效果一致。
-
-> 默认使用 `"antd": "^4.0.0"`，如果要使用固定版本的 antd，你可以在项目里安装额外的 antd 依赖，`package.json` 里声明的 antd 依赖会被优先使用。
 
 ## 新建路由
 
@@ -38,17 +34,26 @@ Write: src/pages/products.tsx
 Write: src/pages/products.css
 ```
 
-在 `.umirc.ts` 中配置路由，如果有国际化需要，可以配置 `locale` 开启 antd 国际化：
+在 `.umirc.ts` 中配置路由，如果有国际化需要，可以配置 `locale` 开启 hankliu-ui 国际化：
 
 ```diff
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-+ locale: { antd: true },
   routes: [
     { path: '/', component: '@/pages/index' },
 +   { path: '/products', component: '@/pages/products' },
   ],
++ extraBabelPlugins: [
++   [
++     'babel-plugin-import',
++     {
++       libraryName: '@hankliu/hankliu-ui',
++       libraryDirectory: 'lib',
++       style: true,
++     },
++   ],
++ ],
 });
 ```
 
@@ -268,6 +273,5 @@ $ yarn build
 - 访问 [umi 官网](https://umijs.org/)和 [dva 官网](https://dvajs.com/)
 - 理解 [umi 的路由](https://umijs.org/zh/guide/router.html)
 - 理解 [如何部署 umi 应用](https://umijs.org/zh/guide/deploy.html)
-- 开箱即用的脚手架 [Ant Design Pro](https://pro.ant.design)
 - 高级布局 [ProLayout](https://prolayout.ant.design)
 - 高级表格 [ProTable](https://protable.ant.design)

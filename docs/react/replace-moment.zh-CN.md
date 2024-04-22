@@ -9,7 +9,7 @@ title: 替换 Moment.js
 
 第一种方法是使用 `generatePicker`（或 `generateCalendar`）辅助创建 Picker 组件。
 
-我们先初始化一个 `create-react-app` 的 antd demo，你可以参考 [在 TypeScript 中使用](/docs/react/use-in-typescript) 进行构建，也可以直接从这里开始[init antd](https://github.com/xiaohuoni/antd4x-generate-picker/commit/47fec964e36d48bd15760f8f5abcb9655c259aa6)
+我们先初始化一个 `create-react-app` 的 hankliu-ui demo，你可以参考 [在 TypeScript 中使用](/docs/react/use-in-typescript) 进行构建
 
 ### DatePicker.tsx
 
@@ -20,8 +20,8 @@ title: 替换 Moment.js
 ```tsx
 import { Dayjs } from 'dayjs';
 import dayjsGenerateConfig from 'rc-picker/es/generate/dayjs';
-import generatePicker from 'antd/es/date-picker/generatePicker';
-import 'antd/es/date-picker/style/index';
+import generatePicker from '@hankliu/hankliu-ui/es/date-picker/generatePicker';
+import '@hankliu/hankliu-ui/es/date-picker/style/index';
 
 const DatePicker = generatePicker<Dayjs>(dayjsGenerateConfig);
 
@@ -38,7 +38,7 @@ export default DatePicker;
 import { Dayjs } from 'dayjs';
 import * as React from 'react';
 import DatePicker from './DatePicker';
-import { PickerTimeProps } from 'antd/es/date-picker/generatePicker';
+import { PickerTimeProps } from '@hankliu/hankliu-ui/es/date-picker/generatePicker';
 
 export interface TimePickerProps extends Omit<PickerTimeProps<Dayjs>, 'picker'> {}
 
@@ -60,8 +60,8 @@ export default TimePicker;
 ```tsx
 import { Dayjs } from 'dayjs';
 import dayjsGenerateConfig from 'rc-picker/es/generate/dayjs';
-import generateCalendar from 'antd/es/calendar/generateCalendar';
-import 'antd/es/calendar/style';
+import generateCalendar from '@hankliu/hankliu-ui/es/calendar/generateCalendar';
+import '@hankliu/hankliu-ui/es/calendar/style';
 
 const Calendar = generateCalendar<Dayjs>(dayjsGenerateConfig);
 
@@ -100,7 +100,7 @@ export { default as TimePicker } from './TimePicker';
 
 ## antd-dayjs-webpack-plugin
 
-我们还提供另一种实现方式。使用 `antd-dayjs-webpack-plugin` 插件，无需对现有代码做任何修改直接替换成 `Day.js`。请参考 [antd-dayjs-webpack-plugin](https://github.com/ant-design/antd-dayjs-webpack-plugin)。
+我们还提供另一种实现方式。使用 `antd-dayjs-webpack-plugin` 插件，无需对现有代码做任何修改直接替换成 `Day.js`。请参考 [antd-dayjs-webpack-plugin](https://github.com/hankliu62/antd-dayjs-webpack-plugin)。
 
 ```js
 // webpack-config.js
@@ -114,7 +114,7 @@ module.exports = {
 
 ## 使用 date-fns
 
-[date-fns](https://date-fns.org/) 目前支持和 dayjs 类似的自定义组件方法，区别在于使用的参数类型不同，在 antd 4.5.0 以上版本提供支持。
+[date-fns](https://date-fns.org/) 目前支持和 dayjs 类似的自定义组件方法，区别在于使用的参数类型不同，在 hankliu-ui 0.0.1 以上版本提供支持。
 
 做一个简单的例子：
 
@@ -126,8 +126,8 @@ module.exports = {
 
 ```tsx
 import dateFnsGenerateConfig from 'rc-picker/es/generate/dateFns';
-import generatePicker from 'antd/es/date-picker/generatePicker';
-import 'antd/es/date-picker/style/index';
+import generatePicker from '@hankliu/hankliu-ui/es/date-picker/generatePicker';
+import '@hankliu/hankliu-ui/es/date-picker/style/index';
 
 const DatePicker = generatePicker<Date>(dateFnsGenerateConfig);
 
