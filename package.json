@@ -21,8 +21,8 @@
   "scripts": {
     "start": "antd-tools run clean && cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider concurrently \"bisheng start -c ./site/bisheng.config.js\"",
     "clean": "antd-tools run clean && rm -rf es lib coverage dist report.html",
-    "compile": "npm run clean && antd-tools run compile && cross-env NODE_OPTIONS=--openssl-legacy-provider antd-tools run dist",
-    "dist": "antd-tools run dist",
+    "compile": "npm run clean && antd-tools run compile && npm run dist",
+    "dist": " cross-env NODE_OPTIONS=--openssl-legacy-provider antd-tools run dist",
     "prepublishOnlyNot": "npm run compile",
     "site": "rimraf _site && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",
     "less": "lessc --js --modify-var=\"root-entry-name=variable\" --global-var=\"root-entry-name=variable\" ./components/button/style/index.less ./components/button/style/index.css"
@@ -165,5 +165,6 @@
   "peerDependencies": {
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0"
-  }
+  },
+  "published": false
 }
