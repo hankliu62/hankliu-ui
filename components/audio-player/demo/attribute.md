@@ -5,14 +5,14 @@ title: 支持属性
 
 支持属性
 
-````jsx
+```jsx
 import { AudioPlayer } from '@hankliu/hankliu-ui';
+import audio from './audio/flower-dance.mp3';
 
-class Card  extends React.Component{
-
+class Card extends React.Component {
   state = {
-    source: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/d5612b11-1fec-49c1-b802-d5a5bf3a8de2',
-  }
+    source: audio,
+  };
 
   render() {
     let { source } = this.state;
@@ -25,4 +25,4 @@ class Card  extends React.Component{
 }
 
 ReactDOM.render(<Card />, mountNode);
-````
+```

@@ -5,14 +5,14 @@ title: 可配置宽高
 
 可配置宽高
 
-````jsx
+```jsx
 import { AudioPlayer } from '@hankliu/hankliu-ui';
+import audio from './audio/flower-dance.mp3';
 
-class Card  extends React.Component{
-
+class Card extends React.Component {
   state = {
-    source: 'https://ws.stream.qqmusic.qq.com/C400001RZl5x2xQw6C.m4a?guid=2220211&vkey=17C7398CCC576748859419CFDD13EAC8DB04A64DAF2DAE7262F2E4399B0719DC1D68AFC2479DF983D7FD06D3C2FE4B5EA3E89335C65A6F3D&uin=626567678&fromtag=103032',
-  }
+    source: audio,
+  };
 
   render() {
     let { source } = this.state;
@@ -25,4 +25,4 @@ class Card  extends React.Component{
 }
 
 ReactDOM.render(<Card />, mountNode);
-````
+```
