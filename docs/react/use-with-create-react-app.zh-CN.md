@@ -3,7 +3,7 @@ order: 4
 title: 在 create-react-app 中使用
 ---
 
-[create-react-app](https://github.com/facebookincubator/create-react-app) 是业界最优秀的 React 应用开发工具之一，本文会尝试在 create-react-app 创建的工程中使用 hankliu-ui 组件，并自定义 webpack 的配置以满足各类工程化需求。
+[create-react-app](https://github.com/facebookincubator/create-react-app) 是业界最优秀的 React 应用开发工具之一，本文会尝试在 create-react-app 创建的工程中使用 antd 组件，并自定义 webpack 的配置以满足各类工程化需求。
 
 ---
 
@@ -12,11 +12,11 @@ title: 在 create-react-app 中使用
 在开始之前，你可能需要安装 [yarn](https://github.com/yarnpkg/yarn/)。
 
 ```bash
-$ yarn create react-app hankliu-ui-demo
+$ yarn create react-app antd-demo
 
 # or
 
-$ npx create-react-app hankliu-ui-demo
+$ npx create-react-app antd-demo
 ```
 
 工具会自动初始化一个脚手架并安装 React 项目的各种必要依赖，如果在过程中出现网络问题，请尝试配置代理或使用其他 npm registry。
@@ -24,13 +24,13 @@ $ npx create-react-app hankliu-ui-demo
 然后我们进入项目并启动。
 
 ```bash
-$ cd hankliu-ui-demo
+$ cd antd-demo
 $ yarn start
 ```
 
 此时浏览器会访问 http://localhost:3000/ ，看到 `Welcome to React` 的界面就算成功了。
 
-## 引入 hankliu-ui
+## 引入 antd
 
 这是 create-react-app 生成的默认目录结构。
 
@@ -50,13 +50,13 @@ $ yarn start
 └── yarn.lock
 ```
 
-现在从 yarn 或 npm 安装并引入 hankliu-ui。
+现在从 yarn 或 npm 安装并引入 antd。
 
 ```bash
-$ yarn add @hankliu/hankliu-ui
+$ yarn add antd
 ```
 
-修改 `src/App.js`，引入 hankliu-ui 的按钮组件。
+修改 `src/App.js`，引入 antd 的按钮组件。
 
 ```jsx
 import React from 'react';
@@ -72,15 +72,15 @@ const App = () => (
 export default App;
 ```
 
-修改 `src/App.css`，在文件顶部引入 `@hankliu/hankliu-ui/dist/hlui.css`。
+修改 `src/App.css`，在文件顶部引入 `antd/dist/antd.css`。
 
 ```css
-@import '~@hankliu/hankliu-ui/dist/hlui.css';
+@import '~antd/dist/antd.css';
 ```
 
-好了，现在你应该能看到页面上已经有了 hankliu-ui 的蓝色按钮组件，接下来就可以继续选用其他组件开发应用了。其他开发流程你可以参考 create-react-app 的[官方文档](https://create-react-app.dev/docs/getting-started)。
+好了，现在你应该能看到页面上已经有了 antd 的蓝色按钮组件，接下来就可以继续选用其他组件开发应用了。其他开发流程你可以参考 create-react-app 的[官方文档](https://create-react-app.dev/docs/getting-started)。
 
-我们现在已经把 hankliu-ui 组件成功运行起来了，开始开发你的应用吧！
+我们现在已经把 antd 组件成功运行起来了，开始开发你的应用吧！
 
 ## 高级配置
 
@@ -129,8 +129,8 @@ module.exports = {
 
 ```diff
 /* src/App.less */
-- @import '~@hankliu/hankliu-ui/dist/hlui.css';
-+ @import '~@hankliu/hankliu-ui/dist/hlui.less';
+- @import '~antd/dist/antd.css';
++ @import '~antd/dist/antd.less';
 ```
 
 然后安装 `craco-less` 并修改 `craco.config.js` 文件如下。
@@ -161,7 +161,7 @@ module.exports = {
 
 这里利用了 [less-loader](https://github.com/webpack/less-loader#less-options) 的 `modifyVars` 来进行主题配置，变量和其他配置方式可以参考 [配置主题](/docs/react/customize-theme) 文档。修改后重启 `yarn start`，如果看到一个绿色的按钮就说明配置成功了。
 
-hankliu-ui 内建了深色主题和紧凑主题，你可以参照 [使用暗色主题和紧凑主题](/docs/react/customize-theme#使用暗色主题和紧凑主题) 进行接入。
+antd 内建了深色主题和紧凑主题，你可以参照 [使用暗色主题和紧凑主题](/docs/react/customize-theme#使用暗色主题和紧凑主题) 进行接入。
 
 > 同样，你可以使用 [react-app-rewired](https://github.com/timarney/react-app-rewired) 和 [customize-cra](https://github.com/arackaf/customize-cra) 来自定义 create-react-app 的 webpack 配置。
 
@@ -171,6 +171,8 @@ hankliu-ui 内建了深色主题和紧凑主题，你可以参照 [使用暗色�
 
 ## 小结
 
-以上是在 create-react-app 中使用 hankliu-ui 的相关实践，你也可以借鉴此文的做法在自己的 webpack 工作流中使用 hankliu-ui
+以上是在 create-react-app 中使用 antd 的相关实践，你也可以借鉴此文的做法在自己的 webpack 工作流中使用 antd。
 
-接下来我们会介绍如何在 [TypeScript](/docs/react/use-in-typescript) 和 [Umi](/docs/react/practical-projects) 中使用 hankliu-ui，欢迎继续阅读。
+上述教程的脚手架源码我们放在 [create-react-app-antd](https://github.com/ant-design/create-react-app-antd) 中，你可以直接下载使用。
+
+接下来我们会介绍如何在 [TypeScript](/docs/react/use-in-typescript) 和 [Umi](/docs/react/practical-projects) 中使用 antd，欢迎继续阅读。
