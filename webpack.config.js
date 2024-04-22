@@ -146,15 +146,15 @@ if (process.env.RUN_ENV === 'PRODUCTION') {
       });
     }
 
-    if (process.env.NODE_ENV === 'development') {
-      config.plugins.push(
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-          openAnalyzer: false,
-          reportFilename: '../report.html',
-        }),
-      );
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   config.plugins.push(
+    //     new BundleAnalyzerPlugin({
+    //       analyzerMode: 'static',
+    //       openAnalyzer: false,
+    //       reportFilename: '../report.html',
+    //     }),
+    //   );
+    // }
 
     if (!process.env.NO_DUP_CHECK) {
       config.plugins.push(
