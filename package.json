@@ -59,7 +59,7 @@
     "qs": "^6.10.1",
     "rc-util": "^5.39.1",
     "react-color": "^2.19.3",
-    "react-pull-to-refresh": "1.1.2",
+    "react-pull-to-refresh": "2.0.1",
     "react-waypoint": "^10.3.0",
     "react-window": "^1.8.10"
   },
