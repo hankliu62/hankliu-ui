@@ -32,10 +32,16 @@ const Placeholder = () => {
 
 const PortalWatermarkDemo = () => {
   const [showModal, setShowModal] = React.useState(false);
+  const [showModal2, setShowModal2] = React.useState(false);
+  const [showModal3, setShowModal3] = React.useState(false);
+  const [showModal4, setShowModal4] = React.useState(false);
   const [showDrawer, setShowDrawer] = React.useState(false);
   const [showDrawer2, setShowDrawer2] = React.useState(false);
 
   const closeModal = () => setShowModal(false);
+  const closeModal2 = () => setShowModal2(false);
+  const closeModal3 = () => setShowModal3(false);
+  const closeModal4 = () => setShowModal4(false);
   const closeDrawer = () => setShowDrawer(false);
   const closeDrawer2 = () => setShowDrawer2(false);
 
@@ -44,6 +50,15 @@ const PortalWatermarkDemo = () => {
       <Space size="large">
         <Button type="primary" onClick={() => setShowModal(true)}>
           Show in Modal
+        </Button>
+        <Button type="primary" onClick={() => setShowModal2(true)}>
+          Show in Modal2
+        </Button>
+        <Button type="primary" onClick={() => setShowModal3(true)}>
+          Not Show in Modal3
+        </Button>
+        <Button type="primary" onClick={() => setShowModal3(true)}>
+          Not Show in Modal4
         </Button>
         <Button type="primary" onClick={() => setShowDrawer(true)}>
           Show in Drawer
@@ -62,6 +77,9 @@ const PortalWatermarkDemo = () => {
         >
           {<Placeholder />}
         </Modal>
+        <Modal open={showModal2} title="Modal2" onCancel={closeModal2} onOk={closeModal2}>
+          {<Placeholder />}
+        </Modal>
         <Drawer destroyOnClose open={showDrawer} title="Drawer" onClose={closeDrawer}>
           {<Placeholder />}
         </Drawer>
@@ -70,7 +88,19 @@ const PortalWatermarkDemo = () => {
         <Drawer destroyOnClose open={showDrawer2} title="Drawer" onClose={closeDrawer2}>
           {<Placeholder />}
         </Drawer>
+        <Modal open={showModal3} title="Modal3" onCancel={closeModal3} onOk={closeModal3}>
+          {<Placeholder />}
+        </Modal>
       </Watermark>
+      <Modal
+        destroyOnClose
+        open={showModal4}
+        title="Modal4"
+        onCancel={closeModal4}
+        onOk={closeModal4}
+      >
+        {<Placeholder />}
+      </Modal>
     </div>
   );
 };

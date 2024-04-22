@@ -118,14 +118,15 @@ export default function Page2({ isMobile, locale }) {
   const componentButton = (
     <div key="b" className="components-button-wrapper">
       <Link to={utils.getLocalizedPathname('/docs/react/introduce', isZhCN)}>
-        Ant Design of React <Icon type="right" />
+        HankLiu UI of React <Icon type="right" />
       </Link>
+      {/*
       <a href="https://ng.ant.design/" target="_black">
-        Ant Design of Angular <Icon type="right" />
+        HankLiu UI of Angular <Icon type="right" />
       </a>
       <a href="https://vue.ant.design/" target="_black">
-        Ant Design of Vue <Icon type="right" />
-      </a>
+        HankLiu UI of  Vue <Icon type="right" />
+      </a>*/}
     </div>
   );
   const children = page2Data.map((item, i) => {

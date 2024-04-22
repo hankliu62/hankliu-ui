@@ -74,7 +74,7 @@ module.exports = {
       '@hankliu/hankliu-ui/lib': path.join(process.cwd(), 'components'),
       '@hankliu/hankliu-ui/es': path.join(process.cwd(), 'components'),
       // Change antd from `index.js` to `site/antd.js` to remove deps of root style
-      '@hankliu/hankliu-ui': path.join(process.cwd(), 'site', 'antd'),
+      '@hankliu/hankliu-ui': path.join(process.cwd(), 'site', 'hankliu'),
       site: path.join(process.cwd(), 'site'),
       'react-router': 'react-router/umd/ReactRouter',
     };
@@ -179,7 +179,7 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /\.(mp4)$/,
+      test: /\.(mp(4|3))$/,
       use: 'file-loader?name=video/[name].[ext]',
     });
 

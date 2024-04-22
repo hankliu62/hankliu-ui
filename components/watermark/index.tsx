@@ -126,7 +126,7 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
 
   // ============================ Content =============================
   /**
-   * Get the width and height of the watermark. The default values are as follows
+   * 获得每一个水印印记的高度和宽度
    * Image: [120, 64]; Content: It's calculated by content;
    */
   const getMarkSize = (ctx: CanvasRenderingContext2D) => {
@@ -136,14 +136,20 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
       ctx.font = `${parseInt(fontSize.toString())}px ${fontFamily}`;
       const contents = Array.isArray(content) ? content : [content];
       const sizes = contents.map((item) => {
+        // measureText()方法可以度量字体的宽度。measureText()方法返回了一个包含width属性的TextMetrics对象
         const metrics = ctx.measureText(item!);
 
+        // fontBoundingBoxAscent + fontBoundingBoxDescent 可以获得当前渲染文本的高度
+        // fontBoundingBoxAscent: 属性标明的水平线到渲染文本的所有字体的矩形最高边界顶部的距离，使用 CSS 像素计算。
+        // fontBoundingBoxDescent: 属性标明的水平线到渲染文本的所有字体的矩形边界最底部的距离，使用 CSS 像素计算。
         return [metrics.width, metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent];
       });
       defaultWidth = Math.ceil(Math.max(...sizes.map((size) => size[0])));
       defaultHeight =
-        Math.ceil(Math.max(...sizes.map((size) => size[1]))) * contents.length +
-        (contents.length - 1) * FontGap;
+        sizes.reduce((total, [_, height]) => total + height, 0) + (contents.length - 1) * FontGap;
+      // defaultHeight =
+      //   Math.ceil(Math.max(...sizes.map((size) => size[1]))) * contents.length +
+      //   (contents.length - 1) * FontGap;
     }
     return [width ?? defaultWidth, height ?? defaultHeight] as const;
   };
@@ -156,16 +162,20 @@ const Watermark: React.FC<WatermarkProps> = (props) => {
 
   // Generate new Watermark content
   const renderWatermark = () => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    // 主要用来判断是否能使用canvas
+    const ctx = document.createElement('canvas').getContext('2d');
 
     if (ctx) {
       const ratio = getPixelRatio();
+      // 获得每一个水印印记的大小
       const [markWidth, markHeight] = getMarkSize(ctx);
 
+      // 绘制水印
       const drawCanvas = (
+        // 水印文字或者图片
         drawContent?: NonNullable<WatermarkProps['content']> | HTMLImageElement,
       ) => {
+        // 获得水印的Base64格式的图片数据，以及区域的面积
         const [nextClips, clipWidth] = getClips(
           drawContent || '',
           rotate,

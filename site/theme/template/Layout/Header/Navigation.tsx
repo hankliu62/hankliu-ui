@@ -46,7 +46,7 @@ export default ({
   let additional: React.ReactNode = null;
   const additionalItems = [
     <Menu.Item key="github">
-      <a href="https://github.com/ant-design/ant-design" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/hankliu62/hankliu-ui" target="_blank" rel="noopener noreferrer">
         Github
       </a>
     </Menu.Item>,
@@ -93,7 +93,9 @@ export default ({
         </Link>
       </Menu.Item>
       <Menu.Item key="gitlab">
-        <a href="https://github.com/hankliu62/hankliu-ui" target="_blank" rel="noreferrer">github仓库</a>
+        <a href="https://github.com/hankliu62/hankliu-ui" target="_blank" rel="noreferrer">
+          github仓库
+        </a>
       </Menu.Item>
       {additional}
     </Menu>

@@ -1,5 +1,6 @@
 import type { WatermarkProps } from '.';
 
+// 垂直方向字体间距
 export const FontGap = 3;
 
 function prepareCanvas(
@@ -25,11 +26,23 @@ function prepareCanvas(
 }
 
 /**
- * Get the clips of text content.
- * This is a lazy hook function since SSR no need this
+ * 获取文本或者图片内容的水印图片剪辑。
+ * Lazy 的钩子函数，在服务端渲染SSR的时候不要使用。
  */
 export default function useClips() {
-  // Get single clips
+  /**
+   * 获取文本或者图片内容的水印图片剪辑
+   *
+   * @param content 文本或者图片内容
+   * @param rotate 旋转角度
+   * @param ratio 缩放大小
+   * @param width mark宽度
+   * @param height mark高度
+   * @param font 字体样式
+   * @param gapX 水平方向间距
+   * @param gapY 垂直方向间距
+   * @returns
+   */
   function getClips(
     content: NonNullable<WatermarkProps['content']> | HTMLImageElement,
     rotate: number,

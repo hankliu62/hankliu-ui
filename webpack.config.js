@@ -12,8 +12,8 @@ const compactVars = require('./scripts/compact-vars');
 const { webpack } = getWebpackConfig;
 
 function injectLessVariables(config, variables) {
-  (Array.isArray(config) ? config : [config]).forEach(conf => {
-    conf.module.rules.forEach(rule => {
+  (Array.isArray(config) ? config : [config]).forEach((conf) => {
+    conf.module.rules.forEach((rule) => {
       // filter less rule
       if (rule.test instanceof RegExp && rule.test.test('.less')) {
         const lessRule = rule.use[rule.use.length - 1];
@@ -43,8 +43,8 @@ function ignoreMomentLocale(webpackConfig) {
 }
 
 function addLocales(webpackConfig) {
-  let packageName = 'antd-with-locales';
-  if (webpackConfig.entry['antd.min']) {
+  let packageName = 'hlui-with-locales';
+  if (webpackConfig.entry['hlui.min']) {
     packageName += '.min';
   }
   webpackConfig.entry[packageName] = './index-with-locales.js';
@@ -60,31 +60,13 @@ function externalMoment(config) {
   };
 }
 
-function injectWarningCondition(config) {
-  config.module.rules.forEach(rule => {
-    // Remove devWarning if needed
-    if (rule.test.test('test.tsx')) {
-      rule.use = [
-        ...rule.use,
-        {
-          loader: 'string-replace-loader',
-          options: {
-            search: 'devWarning(',
-            replace: "if (process.env.NODE_ENV !== 'production') devWarning(",
-          },
-        },
-      ];
-    }
-  });
-}
-
 function processWebpackThemeConfig(themeConfig, theme, vars) {
-  themeConfig.forEach(config => {
+  themeConfig.forEach((config) => {
     ignoreMomentLocale(config);
     externalMoment(config);
 
     // rename default entry to ${theme} entry
-    Object.keys(config.entry).forEach(entryName => {
+    Object.keys(config.entry).forEach((entryName) => {
       const originPath = config.entry[entryName];
       let replacedPath = [...originPath];
 
@@ -96,7 +78,7 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
         console.log(chalk.red('🆘 Seems entry has changed! It should be `./index`'));
       }
 
-      config.entry[entryName.replace('antd', `antd.${theme}`)] = replacedPath;
+      config.entry[entryName.replace('hlui', `hlui.${theme}`)] = replacedPath;
       delete config.entry[entryName];
     });
 
@@ -109,10 +91,10 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
         after: {
           root: './dist',
           include: [
-            `antd.${theme}.js`,
-            `antd.${theme}.js.map`,
-            `antd.${theme}.min.js`,
-            `antd.${theme}.min.js.map`,
+            `hlui.${theme}.js`,
+            `hlui.${theme}.js.map`,
+            `hlui.${theme}.min.js`,
+            `hlui.${theme}.min.js.map`,
           ],
           log: false,
           logWarning: false,
@@ -132,12 +114,25 @@ const webpackVariableConfig = injectLessVariables(getWebpackConfig(false), {
   'root-entry-name': 'variable',
 });
 
-webpackConfig.forEach(config => {
-  injectWarningCondition(config);
-});
+for (const curConfig of [
+  webpackConfig,
+  webpackDarkConfig,
+  webpackCompactConfig,
+  webpackVariableConfig,
+]) {
+  for (const config of curConfig) {
+    for (const key in config.entry) {
+      if (/\@hankliu\/hankliu\-ui/.test(key)) {
+        const newKey = key.replace(/\@hankliu\/hankliu\-ui/, 'hlui');
+        config.entry[newKey] = config.entry[key];
+        delete config.entry[key];
+      }
+    }
+  }
+}
 
 if (process.env.RUN_ENV === 'PRODUCTION') {
-  webpackConfig.forEach(config => {
+  webpackConfig.forEach((config) => {
     ignoreMomentLocale(config);
     externalMoment(config);
     addLocales(config);
@@ -151,13 +146,15 @@ if (process.env.RUN_ENV === 'PRODUCTION') {
       });
     }
 
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        openAnalyzer: false,
-        reportFilename: '../report.html',
-      }),
-    );
+    if (process.env.NODE_ENV === 'development') {
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+          reportFilename: '../report.html',
+        }),
+      );
+    }
 
     if (!process.env.NO_DUP_CHECK) {
       config.plugins.push(
