@@ -1,33 +1,33 @@
 // 加载 antd 的 button 是为了给一些依赖 antd button 的组件 如 modal 提供支持
-@import "../../style/themes/variable";
+@import '../../style/themes/variable';
 
 .@{ant-prefix}-image-cropper {
   .avatar-preview {
     display: flex;
     flex-flow: column;
-    height: 100%;
     justify-content: center;
+    height: 100%;
 
     .avatar-item {
-      text-align: center;
-      font-size: @font-size-sm;
-      color: @color-text-dark;
       margin-bottom: 40px;
+      color: @color-text-dark;
+      font-size: @font-size-sm;
+      text-align: center;
       &:last-child {
         margin-bottom: 0;
       }
       .item-preview {
         display: inline-block;
+        margin-bottom: 10px;
         border: solid 1px @color-border;
         border-radius: 50%;
-        margin-bottom: 10px;
       }
     }
   }
   .cropper-preview {
     .preview-title {
-      color: @color-text-light;
       margin-bottom: 16px;
+      color: @color-text-light;
       text-align: center;
     }
     .item-preview {
@@ -39,9 +39,9 @@
   }
   .cropper-ratio-controls {
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     text-align: center;
   }
   .item-preview {
@@ -49,17 +49,17 @@
   }
   .gif-preview {
     height: 100%;
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
   }
 }
 .@{ant-prefix}-image-cropper-header {
   padding: 20px 48px 0;
+  color: @color-text-dark;
   font-weight: @font-weight-bold;
   font-size: 20px;
   line-height: @line-height;
-  color: @color-text-dark;
 }
 .@{ant-prefix}-image-cropper-content {
   display: flex;
@@ -79,27 +79,25 @@
       opacity: 1;
     }
   }
-  
 }
 .@{ant-prefix}-cropper-preview {
-  flex: 1;
   position: relative;
+  flex: 1;
 }
 .@{ant-prefix}-image-cropper-footer {
-  border-top: solid 1px @color-border;
   display: flex;
   align-items: center;
   padding: 20px 48px;
+  border-top: solid 1px @color-border;
 }
 .@{ant-prefix}-image-cropper-tips-wrap {
+  display: flex;
+  flex: 1;
   color: @color-text-light;
   font-size: @font-size-base;
-  flex: 1;
-  display: flex;
   > i {
     font-size: 18px;
   }
-  
 }
 .@{ant-prefix}-image-cropper-tips {
   flex: 1;

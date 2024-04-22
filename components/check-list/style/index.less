@@ -1,24 +1,25 @@
 @import '../../style/themes/variable';
 @import '../../style/mixins/clearfix.less';
+
 // checklist
 .@{ant-prefix}-checklist {
   &-list-item {
-    margin-top: 8px;
     display: flex;
     align-items: flex-start;
+    margin-top: 8px;
     &:first-child {
       margin-top: 0;
     }
     &-item-title {
       flex: 1;
       .@{ant-prefix}-checkbox-wrapper {
-        display: block;
         position: relative;
+        display: block;
         padding-left: 16px;
         .@{ant-prefix}-checkbox {
           position: absolute;
-          left: 0;
           top: 3px;
+          left: 0;
         }
         .@{ant-prefix}-checkbox + span {
           display: block;
@@ -26,9 +27,9 @@
       }
     }
     &-item-subtitle {
+      color: @color-text-light;
       font-size: 12px;
       line-height: 23px;
-      color: @color-text-light;
     }
   }
   &-more {
@@ -38,7 +39,7 @@
     color: @color-text-light;
     cursor: pointer;
     &:hover {
-      color:@primary-color;
+      color: @primary-color;
     }
   }
 }
@@ -46,17 +47,18 @@
 // end
 
 .@{ant-prefix}-head-subtitle {
-  font-size: 12px;
   position: absolute;
-  right: 20px;
   top: 0px;
+  right: 20px;
   bottom: 0;
+  height: 1em;
   margin: auto;
   color: @color-text-light;
+  font-size: 12px;
   line-height: 1;
-  height: 1em;
 }
-.@{ant-prefix}-checklist-group, .@{ant-prefix}-checklist-groups {
+.@{ant-prefix}-checklist-group,
+.@{ant-prefix}-checklist-groups {
   .check-list {
     padding-left: 18px;
   }
@@ -79,13 +81,14 @@
   color: @color-text-light;
   cursor: pointer;
   &:hover {
-    color:@primary-color;
+    color: @primary-color;
   }
 }
 
-.@{ant-prefix}-checklist-groups.hlui-collapse , .hlui-checklist-group.hlui-collapse  {
-  border: none;
+.@{ant-prefix}-checklist-groups.hlui-collapse,
+.hlui-checklist-group.hlui-collapse {
   background-color: transparent;
+  border: none;
   & > .hlui-collapse-item > .hlui-collapse-header {
     padding: 2px 12px 2px 0;
   }
@@ -93,10 +96,12 @@
     padding: 6px 34px;
   }
   .hlui-collapse-item {
-    padding-bottom: 0;
     margin: 6px 0;
+    padding-bottom: 0;
   }
-  .hlui-collapse-item, .hlui-collapse-header, .hlui-collapse-content {
+  .hlui-collapse-item,
+  .hlui-collapse-header,
+  .hlui-collapse-content {
     border: none;
   }
 }
@@ -110,28 +115,30 @@
   // z-index: 99;
   &.scrolled {
     padding: 0 24px;
-    .scroll-left, .scroll-right {
+    .scroll-left,
+    .scroll-right {
       display: flex;
     }
   }
   .rows-scroll {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
   }
-  .scroll-left, .scroll-right {
-    display: none;
-    z-index: 9;
+  .scroll-left,
+  .scroll-right {
     position: absolute;
     top: 0;
     bottom: 0;
-    font-size: 16px;
-    width: 24px;
+    z-index: 9;
+    display: none;
     // display: flex;
     align-items: center;
     justify-content: center;
+    width: 24px;
+    font-size: 16px;
     cursor: pointer;
     &:hover {
-      color:@primary-color;
+      color: @primary-color;
     }
   }
   .scroll-left {
@@ -143,27 +150,27 @@
     // background: linear-gradient(to left, #FFFFFF 50px, rgba(255, 255, 255, 0) 100%);
   }
   .rows-inner {
-    white-space: nowrap;
     display: inline-block;
+    white-space: nowrap;
     transform: translate3d(0, 0, 0);
     transition: all 400ms;
   }
   .row-item {
-    padding: 8px;
-    display: inline-block;
-    white-space: nowrap;
     position: relative;
+    display: inline-block;
+    padding: 8px;
     padding-right: 30px;
+    white-space: nowrap;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     .anticon-icon-expand {
       position: absolute;
       top: 0;
-      bottom: 0;
       right: 8px;
-      margin: auto;
+      bottom: 0;
       width: 1em;
       height: 1em;
+      margin: auto;
       transform: rotateZ(0deg);
       transition: all 400ms;
     }
@@ -177,10 +184,9 @@
 
   .@{ant-prefix}-checklist-drop {
     position: absolute;
-    left: 0;
     right: 0;
+    left: 0;
     display: none;
-
   }
   .@{ant-prefix}-checklist-rows-sub {
     // position: ;
@@ -191,7 +197,6 @@
       display: block;
     }
   }
-
 }
 
 .@{ant-prefix}-checklist-rows-sub {

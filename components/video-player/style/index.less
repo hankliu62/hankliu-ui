@@ -72,20 +72,20 @@
 .@{ant-prefix}-chapters-video-play-icon {
   position: absolute;
   top: 0;
-  bottom: 0;
-  left:0;
   right: 0;
-  margin: auto;
-  cursor: pointer;
-  color: #fff;
+  bottom: 0;
+  left: 0;
   width: 88px;
   height: 88px;
+  margin: auto;
+  padding: 22px 0;
+  color: #fff;
   font-size: 44px;
   line-height: 1em;
-  padding: 22px 0;
-  border-radius: 50%;
   background-color: @primary-color;
+  border-radius: 50%;
   box-shadow: 0 4px 16px rgb(0, 0, 0, 0.25);
+  cursor: pointer;
   opacity: 1;
   transition: opacity 0.3s;
 }
@@ -232,8 +232,8 @@
   position: relative;
   z-index: 1;
   margin-right: 2px;
-  transition: transform 0.3s;
   overflow: hidden;
+  transition: transform 0.3s;
   // &:hover,
   &.@{ant-prefix}-chapters-progress-item-wrap-active {
     .@{ant-prefix}-chapters-progress-item,
@@ -336,8 +336,8 @@
   border-radius: 4px;
   cursor: pointer;
   &:hover {
-    background-color: @primary-color;
     color: #fff;
+    background-color: @primary-color;
   }
 }
 .@{ant-prefix}-chapters-video-play-btn-wrap {

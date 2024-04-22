@@ -2,11 +2,11 @@
 
 .slider-thumb() {
   box-sizing: border-box;
-  border: none;
-  height: 10px;
   width: 10px;
-  border-radius: 50%;
+  height: 10px;
   background: @primary-color;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -14,18 +14,22 @@
   position: relative;
 
   &:hover {
-    .progress-bg, .progress-loaded, .progress-value {
+    .progress-bg,
+    .progress-loaded,
+    .progress-value {
       opacity: 0.5;
     }
   }
 
-  .progress-bg, .progress-loaded, .progress-value {
+  .progress-bg,
+  .progress-loaded,
+  .progress-value {
     position: absolute;
-    z-index: 0;
-    height: 4px;
-    left: 0;
     top: 0;
     bottom: 0;
+    left: 0;
+    z-index: 0;
+    height: 4px;
     margin: auto;
     border-radius: 3px;
   }
@@ -40,19 +44,19 @@
     background: @primary-color;
   }
   input {
-    cursor: pointer;
     position: relative;
     z-index: 3;
-    appearance: none;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: @primary-color;
     display: block;
+    width: 100%;
     height: 20px;
     margin: 0;
     padding: 0;
-    width: 100%;
+    color: @primary-color;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
     // webkit
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
@@ -79,7 +83,7 @@
     //
     // Mozilla
     &::-moz-range-track {
-      background-color: transparent
+      background-color: transparent;
     }
 
     &::-moz-range-thumb {
@@ -89,7 +93,5 @@
     &::-moz-range-progress {
       background: transparent;
     }
-
   }
-
 }

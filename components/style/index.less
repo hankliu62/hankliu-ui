@@ -17,7 +17,6 @@
   --color-primary: #2f54eb;
   --color-primary-dark: #10239e;
 
-
   --color-border-light: #e6ebf0;
   --color-border: #dce1e5;
   --color-border-dark: #d3d7db;
@@ -65,32 +64,27 @@
 
 // 关闭波纹动画
 [hlui-click-animating-without-extra-node='true']::after,
-.hlui-click-animating-node
-{
-  animation: none;
-  transition: none;
+.hlui-click-animating-node {
   display: none;
+  transition: none;
+  animation: none;
 }
 
-
 body {
-
   // ie 浏览器hover 显示滚动条
   // -ms-overflow-style: -ms-autohiding-scrollbar;
 
-  ::-webkit-scrollbar
-  {
+  ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
     background-color: transparent;
   }
 
-  ::-webkit-scrollbar-thumb
-  {
-    border-radius: 8px;
+  ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     background-clip: content-box;
     border: 2px solid transparent;
+    border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb:hover {

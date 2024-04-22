@@ -1,7 +1,6 @@
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 @import '../color/colors';
 
-
 @root-entry-name: variable;
 
 @theme: variable;
@@ -16,19 +15,19 @@
 // >>> Primary
 @primary-color: var(--color-primary);
 @primary-color-hover: var(--color-primary-hover);
-@primary-color-active:@color-primary-dark;
+@primary-color-active: @color-primary-dark;
 @primary-color-outline: ~'var(--@{ant-prefix}-primary-color-outline)';
 
 @processing-color: @primary-color;
 
 // >>> Info
-@info-color:var(--color-progress);
+@info-color: var(--color-progress);
 @info-color-deprecated-bg: #f0faff;
 @info-color-deprecated-border: #b0e1ff;
 
 // >>> Success
 @success-color: var(--color-success);
-@success-color-hover:var(--color-success-light);
+@success-color-hover:var (--color-success-light);
 @success-color-active: var(--color-success-dark);
 @success-color-outline: ~'var(--@{ant-prefix}-success-color-outline)';
 @success-color-deprecated-bg: #e6fff4;
@@ -130,7 +129,7 @@
 // The background colors for active and hover states for things like
 // list items or table cells.
 @item-active-bg: none;
-@item-hover-bg: var(--color-bg);;
+@item-hover-bg: var(--color-bg);
 
 // ICONFONT
 @iconfont-css-prefix: anticon;
@@ -669,12 +668,12 @@
 // TimePicker
 // ---
 @picker-bg: @component-background;
-@picker-basic-cell-hover-color:  @primary-1;
+@picker-basic-cell-hover-color: @primary-1;
 @picker-basic-cell-active-with-range-color: @primary-1;
 @picker-basic-cell-hover-with-range-color: @primary-1;
 @picker-basic-cell-disabled-bg: rgba(0, 0, 0, 0.04);
 @picker-border-color: @border-color-split;
-@picker-date-hover-range-border-color:@color-primary-active;
+@picker-date-hover-range-border-color: @color-primary-active;
 @picker-date-hover-range-color: @picker-basic-cell-hover-with-range-color;
 @picker-time-panel-column-width: 56px;
 @picker-time-panel-column-height: 224px;
@@ -1056,7 +1055,6 @@
 
 // extra color variable
 
-
 @color-primary-slight: var(--color-primary-slight);
 @color-primary-active: var(--color-primary-active);
 @color-primary-light: var(--color-primary-light);
@@ -1064,7 +1062,6 @@
 @color-primary-hover: var(--color-primary-hover);
 @color-primary: var(--color-primary);
 @color-primary-dark: var(--color-primary-dark);
-
 
 @btn-line-height: 1;
 
@@ -1074,17 +1071,14 @@
 @height-md: 36px;
 @height-sm: 24px;
 
-
 @btn-height-md: @height-md;
 @btn-height-sm: @height-sm;
-
 
 @btn-border-radius-lg: 6px;
 @btn-border-radius-md: 6px;
 @btn-border-radius-base: 6px;
 @btn-border-radius-sm: 4px;
 @btn-border-radius-smedium: 4px;
-
 
 @color-progress-light: var(--color-progress-light);
 @color-progress: var(--color-progress);
@@ -1097,7 +1091,7 @@
 @color-warning-light: var(--color-warning-light);
 @color-warning: var(--color-warning);
 @color-warning-dark: var(--color-warning-dark);
-@input-hover-border-color:var(--color-primary-hover);
+@input-hover-border-color:var (--color-primary-hover);
 
 @outline-width: 0;
 
@@ -1109,11 +1103,8 @@
 @font-weight-normal-bolder: 500;
 @font-weight-bold: 600;
 
-@box-shadow-normal:
-  0px 9px 28px 8px rgba(87, 98, 114, 0.05),
-  0px 6px 10px rgba(87, 98, 114, 0.05),
+@box-shadow-normal: 0px 9px 28px 8px rgba(87, 98, 114, 0.05), 0px 6px 10px rgba(87, 98, 114, 0.05),
   0px 3px 6px -4px rgba(87, 98, 114, 0.05);
-
 
 @color-border-light: #f3f3f3;
 
@@ -1132,7 +1123,6 @@
 @color-border-light: var(--color-border-light);
 @color-border: var(--color-border);
 @color-border-dark: var(--color-border-dark);
-
 
 @color-bg-light: var(--color-bg-light);
 @color-bg: var(--color-bg);
@@ -1155,7 +1145,6 @@
 @color-text: var(--color-text);
 @color-text-dark: var(--color-text-dark);
 
-
 @color-danger-hover: var(--color-danger-hover);
 @color-danger-light: var(--color-danger-light);
 @color-danger: var(--color-danger);
@@ -1169,19 +1158,16 @@
 @color-dark: var(--color-dark);
 @color-highlight: var(--color-highlight);
 
-
 // 阴影
 @box-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.1);
 @box-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.12);
 @box-shadow-3: 0 4px 12px rgba(0, 0, 0, 0.15);
 @box-shadow-4: 0 4px 14px rgba(0, 0, 0, 0.15);
-@box-shadow-dropdown:
-  //0 0 0 1px @color-border-light,
+@box-shadow-dropdown: //0 0 0 1px @color-border-light,
   0 0 1px 0px #7e7f80,
-  0px 9px 28px 8px rgba(87, 98, 114, 0.05), 0px 6px 10px rgba(87, 98, 114, 0.05), 0px 3px 6px -4px rgba(87, 98, 114, 0.05);
-@box-shadow-normal:
-  0px 9px 28px 8px rgba(87, 98, 114, 0.05),
-  0px 6px 10px rgba(87, 98, 114, 0.05),
+  0px 9px 28px 8px rgba(87, 98, 114, 0.05), 0px 6px 10px rgba(87, 98, 114, 0.05),
+  0px 3px 6px -4px rgba(87, 98, 114, 0.05);
+@box-shadow-normal: 0px 9px 28px 8px rgba(87, 98, 114, 0.05), 0px 6px 10px rgba(87, 98, 114, 0.05),
   0px 3px 6px -4px rgba(87, 98, 114, 0.05);
 // 行间距
 @line-height-small: 1.5;

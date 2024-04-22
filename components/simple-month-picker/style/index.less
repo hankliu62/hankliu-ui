@@ -2,31 +2,31 @@
 
 .hlui-smp {
   position: relative;
-  cursor: pointer;
   display: inline-block;
+  min-width: 120px;
   vertical-align: middle;
   border: 1px solid @color-border;
   border-radius: 2px;
-  min-width: 120px;
+  cursor: pointer;
 
   .hlui-smp-icon,
   .hlui-smp-active-icon {
     position: absolute;
-    font-size: 12px;
-    height: 1em;
-    right: 0.75em;
     top: 0;
+    right: 0.75em;
     bottom: 0;
+    height: 1em;
     margin: auto;
+    font-size: 12px;
   }
 
-.hlui-smp-icon {
-  color: @color-text-light;
-}
+  .hlui-smp-icon {
+    color: @color-text-light;
+  }
 
-.hlui-smp-active-icon {
-  color: @color-primary;
-}
+  .hlui-smp-active-icon {
+    color: @color-primary;
+  }
 
   & + span {
     margin: 0px 10px;
@@ -43,10 +43,10 @@
 
   &-value,
   &-placeholder {
-    border-radius: 2px;
     padding: 7px 1em;
     line-height: 20px;
     background-color: #fff;
+    border-radius: 2px;
   }
 
   &-value {
@@ -57,8 +57,8 @@
     color: @color-text-light;
   }
   &-date-value {
-    cursor: pointer;
     text-align: center;
+    cursor: pointer;
 
     &.disabled {
       color: @color-text-light;
@@ -70,7 +70,6 @@
     }
   }
 
-
   &-year-value {
     display: block;
     line-height: 36px;
@@ -78,17 +77,17 @@
 
   &-empty-block {
     display: flex;
-    width: 100%;
-    height: 100%;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 
   &-months {
-    flex: 1;
-    height: 100%;
     display: block;
+    flex: 1;
     box-sizing: border-box;
+    height: 100%;
     padding: 10px 12px;
   }
 
@@ -97,9 +96,9 @@
     float: left;
     width: 40px;
     height: 20px;
+    margin: 10px 6px;
     line-height: 20px;
     border-radius: 2px;
-    margin: 10px 6px;
   }
 }
 
@@ -111,8 +110,8 @@
   }
 
   .@{ant-prefix}-popover-inner {
-    border-radius: @border-radius;
     border: 1px solid @color-border-light;
+    border-radius: @border-radius;
     box-shadow: @box-shadow-4;
     // overflow: hidden;
   }
@@ -123,12 +122,11 @@
 }
 
 .hlui-smp-wrap {
-  width: 250px;
-  border-radius: 2px;
   display: flex;
+  width: 250px;
   height: 180px;
   background-color: #fff;
-
+  border-radius: 2px;
 }
 .hlui-smp-years {
   display: block;
