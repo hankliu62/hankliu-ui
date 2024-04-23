@@ -123,9 +123,10 @@ const Resources = (props: ResourcesProps) => {
   const { localizedPageData, location } = props;
   const { locale } = useIntl();
 
-  const content = React.useMemo(() => injectCards(localizedPageData.content), [
-    localizedPageData.content,
-  ]);
+  const content = React.useMemo(
+    () => injectCards(localizedPageData.content),
+    [localizedPageData.content],
+  );
 
   return (
     <div id="resources-page">
@@ -152,6 +153,5 @@ export default collect(async (nextProps: ResourcesProps) => {
   const pageData = nextProps.utils.get(nextProps.data, pageDataPath);
 
   const locale = utils.isZhCN(pathname) ? 'zh-CN' : 'en-US';
-  const pageDataPromise = pageData[locale]();
-  return { localizedPageData: await pageDataPromise };
+  return { localizedPageData: pageData ? await pageData[locale]() : {} };
 })(Resources);

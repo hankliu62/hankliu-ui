@@ -46,7 +46,7 @@ class Article extends React.Component<ArticleProps> {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  onResourceClick: React.MouseEventHandler<HTMLAnchorElement> = event => {
+  onResourceClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
     const { target } = event as unknown as { target: HTMLAnchorElement };
     if (!window.gtag) {
       return;
@@ -78,7 +78,7 @@ class Article extends React.Component<ArticleProps> {
     const timelineItems = [];
     let temp: React.ReactNode[] = [];
     let i = 1;
-    Children.forEach(article.props.children, child => {
+    Children.forEach(article.props.children, (child) => {
       if (child.type === 'h2' && temp.length > 0) {
         timelineItems.push(<Timeline.Item key={i}>{temp}</Timeline.Item>);
         temp = [];
@@ -104,7 +104,7 @@ class Article extends React.Component<ArticleProps> {
     const { meta, description } = content;
     const { title, subtitle, filename } = meta;
     const isNotTranslated = locale === 'en-US' && typeof title === 'object';
-    const helmetTitle = `${(title as LocaleString)[locale] || title} - Ant Design`;
+    const helmetTitle = `${(title as LocaleString)?.[locale] || title} - Ant Design`;
     const helmetDesc = getMetaDescription(description);
     const contentChild = getMetaDescription(getChildren(content.content));
     const metaDesc = helmetDesc || contentChild;
@@ -131,7 +131,7 @@ class Article extends React.Component<ArticleProps> {
         )}
         <div className={titleRegionClassName}>
           <h1>
-            {(title as LocaleString)[locale] || title}
+            {((title as LocaleString)?.[locale] || title) as string}
             {!subtitle || locale === 'en-US' ? null : <span className="subtitle">{subtitle}</span>}
             <EditButton
               title={<FormattedMessage id="app.content.edit-page" />}

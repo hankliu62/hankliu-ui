@@ -66,9 +66,10 @@ function isUpdate(pathname: string) {
 export default collect(async (nextProps: ResourcesProps) => {
   const { pathname } = nextProps.location;
   const pageDataPath = pathname.replace('-cn', '').split('/');
-  const pageData = isUpdate(pathname) ? nextProps.data.update.UPDATE : nextProps.utils.get(nextProps.data, pageDataPath);
+  const pageData = isUpdate(pathname)
+    ? nextProps.data.update.UPDATE
+    : nextProps.utils.get(nextProps.data, pageDataPath);
 
   const locale = utils.isZhCN(pathname) ? 'zh-CN' : 'en-US';
-  const pageDataPromise = pageData[locale]();
-  return { localizedPageData: await pageDataPromise };
+  return { localizedPageData: pageData ? await pageData[locale]() : {} };
 })(Resources);
