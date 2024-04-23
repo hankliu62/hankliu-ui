@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[223],{5064:function(c,e){c.exports={content:["article",["embed",{src:"./practical-projects.zh-CN.md"}]],meta:{filename:"docs/react/practical-projects.en-US.md"},toc:["ul"]}}}]);

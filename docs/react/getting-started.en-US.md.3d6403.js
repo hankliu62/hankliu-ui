@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[217],{5058:function(e,t){e.exports={content:["article",["embed",{src:"./getting-started.zh-CN.md"}]],meta:{filename:"docs/react/getting-started.en-US.md"},toc:["ul"]}}}]);

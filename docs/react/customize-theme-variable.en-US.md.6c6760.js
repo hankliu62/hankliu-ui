@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[211],{5052:function(e,t){e.exports={content:["article",["embed",{src:"./customize-theme-variable.zh-CN.md"}]],meta:{filename:"docs/react/customize-theme-variable.en-US.md"},toc:["ul"]}}}]);
