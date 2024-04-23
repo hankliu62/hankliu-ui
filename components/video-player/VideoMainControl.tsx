@@ -1,5 +1,5 @@
 import React from 'react';
-import IconVideoPlay from '@hankliu/icons/lib/icons/PlayCircleOutlined';
+import IconVideoPlay from '@hankliu/icons/lib/icons/IconVideoPlay';
 
 interface VideoMainControlProps {
   togglePlay: React.MouseEventHandler<HTMLDivElement>;

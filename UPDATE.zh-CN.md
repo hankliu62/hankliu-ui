@@ -26,6 +26,11 @@ timeline: false
 
 开发一套基于 `AntDesign@4.x` 的 `React UI` 组件库，有自己的主题，丰富 `AntDesign` 的组件。
 
+## 0.0.4
+
+- 🗑 移除 `dist` 文件夹，只支持 `import` 按需引入的方式。
+- 🐞 修复按需引入组件时，`Calendar`，`Card` 等组件样式异常的问题。
+
 ## 0.0.3
 
 - 🐞 `Watermark` 组件支持 `Modal` 和 `Drawer` 组件。

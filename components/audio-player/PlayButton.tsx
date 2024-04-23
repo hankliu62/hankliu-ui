@@ -1,6 +1,6 @@
 import React from 'react';
-import IconVideoPlay from '@hankliu/icons/PlaySquareOutlined';
-import IconSuspend from '@hankliu/icons/PauseOutlined';
+import IconVideoPlay from '@hankliu/icons/IconVideoPlay';
+import IconSuspend from '@hankliu/icons/IconSuspend';
 
 export interface PlayButtonProps {
   paused: boolean;

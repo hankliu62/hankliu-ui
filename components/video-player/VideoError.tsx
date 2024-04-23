@@ -1,5 +1,5 @@
 import React from 'react';
-import IconRemind from '@hankliu/icons/lib/icons/WarningOutlined';
+import IconRemind from '@hankliu/icons/lib/icons/IconRemind';
 import { getLocale } from './locale';
 
 function VideoError() {

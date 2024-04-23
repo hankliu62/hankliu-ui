@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingOutlined from '@hankliu/icons/lib/icons/SettingOutlined';
+import IconSetUp from '@hankliu/icons/lib/icons/IconSetUp';
 import { DropDownProps } from 'antd4x/es/dropdown';
 import DropSelect, { DropSelectProps } from '../drop-select';
 import { getLocale } from './locale';
@@ -47,7 +47,7 @@ function ControlPlaybackRate({
       trigger={isIE() ? ['click'] : undefined}
     >
       <div className="hlui-chapters-video-control-btn">
-        <SettingOutlined className="hlui-chapters-video-icon" />
+        <IconSetUp className="hlui-chapters-video-icon" />
       </div>
     </DropSelect>
   );

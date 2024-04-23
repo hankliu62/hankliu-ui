@@ -1,6 +1,6 @@
 {
   "name": "@hankliu/hankliu-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "description": "🥭 HankLiu UI Components base on Ant-design@4.x",
   "files": [
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "antd-tools run clean && cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider concurrently \"bisheng start -c ./site/bisheng.config.js\"",
     "clean": "antd-tools run clean && rm -rf es lib coverage dist report.html",
-    "compile": "npm run clean && antd-tools run compile && npm run dist",
+    "compile": "npm run clean && antd-tools run compile",
     "dist": " cross-env NODE_OPTIONS=--openssl-legacy-provider antd-tools run dist",
     "prepublishOnlyNot": "npm run compile",
     "site": "rimraf _site && cross-env NODE_OPTIONS=--max_old_space_size=4096 NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production OUTPUT=_website bisheng build --ssr -c ./site/bisheng.config.js",

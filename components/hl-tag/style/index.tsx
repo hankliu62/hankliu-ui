@@ -1,4 +1,5 @@
-import '../../style/index.less'
+import '../../style/index.less';
 import './index.less';
 
-import '../../popover/style'
+// style dependencies
+import '../../popover/style';

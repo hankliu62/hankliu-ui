@@ -1,6 +1,6 @@
 import React from 'react';
-import IconMute from '@hankliu/icons/MutedOutlined';
-import IconSound from '@hankliu/icons/SoundOutlined';
+import IconMute from '@hankliu/icons/IconMute';
+import IconSound from '@hankliu/icons/IconSound';
 import Slider from '../slider';
 import Dropdown from '../dropdown';
 

@@ -53,7 +53,7 @@ const InnerHlSelect = React.forwardRef<RefSelectProps, HlSelectProps>((props, re
       {...rest}
       mode={mode}
       className={cl(randomClass, className, {
-        'hl-select-lock-height': lockHeight,
+        'hlui-select-lock-height': lockHeight,
       })}
       ref={ref}
     />

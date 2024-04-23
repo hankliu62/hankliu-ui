@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import IconMute from '@hankliu/icons/lib/icons/MutedOutlined';
-import IconSound from '@hankliu/icons/lib/icons/SoundOutlined';
+import IconMute from '@hankliu/icons/lib/icons/IconMute';
+import IconSound from '@hankliu/icons/lib/icons/IconSound';
 import { SliderSingleProps } from 'antd4x/es/slider';
 import { DropDownProps } from 'antd4x/es/dropdown';
 import Slider from '../slider';

@@ -59,7 +59,7 @@ const HlTreeSelect = React.forwardRef<RefSelectProps, HlTreeSelectProps>((props,
       {...rest}
       className={cl(
         {
-          'hl-tree-select-lock-height': lockHeight,
+          'hlui-tree-select-lock-height': lockHeight,
         },
         randomClass,
         className,
@@ -70,10 +70,10 @@ const HlTreeSelect = React.forwardRef<RefSelectProps, HlTreeSelectProps>((props,
 });
 
 const HlTreeSelectAssign: typeof HlTreeSelect & {
-  TreeNode: typeof TreeSelect.TreeNode,
-  SHOW_ALL: typeof TreeSelect.SHOW_ALL,
-  SHOW_PARENT: typeof TreeSelect.SHOW_PARENT,
-  SHOW_CHILD: typeof TreeSelect.SHOW_CHILD,
+  TreeNode: typeof TreeSelect.TreeNode;
+  SHOW_ALL: typeof TreeSelect.SHOW_ALL;
+  SHOW_PARENT: typeof TreeSelect.SHOW_PARENT;
+  SHOW_CHILD: typeof TreeSelect.SHOW_CHILD;
 } = Object.assign(HlTreeSelect, {
   TreeNode: TreeSelect.TreeNode,
   SHOW_ALL: TreeSelect.SHOW_ALL,

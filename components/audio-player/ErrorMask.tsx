@@ -1,6 +1,6 @@
 import React from 'react';
 import { getLocale } from './locale';
-import IconRemind from '@hankliu/icons/CloseCircleOutlined';
+import IconRemind from '@hankliu/icons/IconRemind';
 
 export interface ErrorMaskProps {
   errorText?: string;

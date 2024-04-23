@@ -1,10 +1,10 @@
 // @ts-nocheck
 import * as React from 'react';
 import loadImg from '../_util/loadImage';
-import IconPictureEnlarge from '@hankliu/icons/PictureOutlined';
-import IconPictureNarrow from '@hankliu/icons/PictureOutlined';
-import IconPictureRotate from '@hankliu/icons/PictureOutlined';
-import IconRefresh from '@hankliu/icons/PictureOutlined';
+import IconPictureEnlarge from '@hankliu/icons/IconPictureEnlarge';
+import IconPictureNarrow from '@hankliu/icons/IconPictureNarrow';
+import IconPictureRotate from '@hankliu/icons/IconPictureRotate';
+import IconRefresh from '@hankliu/icons/IconRefresh';
 import { getLocale } from './locale';
 import Tooltip from '../tooltip';
 import LoadingOutlined from '@hankliu/icons/LoadingOutlined';

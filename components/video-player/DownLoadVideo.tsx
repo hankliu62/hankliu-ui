@@ -1,5 +1,5 @@
 import React from 'react';
-import IconDownload from '@hankliu/icons/lib/icons/DownloadOutlined';
+import IconDownload from '@hankliu/icons/lib/icons/IconDownload';
 
 interface DownLoadVideoProps {
   source: string;

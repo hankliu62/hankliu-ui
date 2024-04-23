@@ -1,5 +1,5 @@
 import React from 'react';
-import IconDownload from '@hankliu/icons/DownloadOutlined';
+import IconDownload from '@hankliu/icons/IconDownload';
 
 export interface DownloadButtonProps {
   source: string;

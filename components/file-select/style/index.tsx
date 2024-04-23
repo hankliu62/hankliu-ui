@@ -1,4 +1,5 @@
 import '../../style/index.less';
 import './index.less';
 
-import '../../message/style/'
+// style dependencies
+import '../../message/style/';

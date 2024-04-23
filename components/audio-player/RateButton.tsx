@@ -1,5 +1,5 @@
 import React from 'react';
-import IconSetUp from '@hankliu/icons/SettingOutlined';
+import IconSetUp from '@hankliu/icons/IconSetUp';
 import DropSelect from '../drop-select';
 import { getLocale } from './locale';
 

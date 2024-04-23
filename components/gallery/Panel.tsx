@@ -1,10 +1,10 @@
 // @ts-nocheck
 import React from 'react';
 import cs from 'classnames';
-import IconLeft from '@hankliu/icons/LeftOutlined';
-import IconRight from '@hankliu/icons/RightOutlined';
-import IconDownload from '@hankliu/icons/DownloadOutlined';
-import IconShut from '@hankliu/icons/ShrinkOutlined';
+import IconLeft from '@hankliu/icons/IconLeft';
+import IconRight from '@hankliu/icons/IconRight';
+import IconDownload from '@hankliu/icons/IconDownload';
+import IconShut from '@hankliu/icons/IconShut';
 import getFileName from '../_util/getFileName';
 import _downloadFile from '../_util/downloadFile';
 import Image from './Image';

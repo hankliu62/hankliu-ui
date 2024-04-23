@@ -156,7 +156,7 @@ jobs:
       # 获得最后的Tag
       - name: 获得最后 Tag
         id: get_tag
-        run: echo "::set-env name=LAST_TAG::$(git describe --tags --abbrev=0)"
+        run: echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
       - name: 提交 Tag 🏄
         id: tag
