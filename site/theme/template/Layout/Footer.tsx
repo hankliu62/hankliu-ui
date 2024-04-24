@@ -56,27 +56,27 @@ class Footer extends React.Component<WrappedComponentProps & { location: any }> 
       title: <FormattedMessage id="app.footer.resources" />,
       items: [
         {
-          title: 'Ant Design Charts',
+          title: 'HankLiu UI Charts',
           url: 'https://charts.ant.design',
           openExternal: true,
         },
         {
-          title: 'Ant Design Pro',
+          title: 'HankLiu UI Pro',
           url: 'https://pro.ant.design',
           openExternal: true,
         },
         {
-          title: 'Ant Design Pro Components',
+          title: 'HankLiu UI Pro Components',
           url: 'https://procomponents.ant.design',
           openExternal: true,
         },
         {
-          title: 'Ant Design Mobile',
+          title: 'HankLiu UI Mobile',
           url: 'https://mobile.ant.design',
           openExternal: true,
         },
         {
-          title: 'Ant Design Landing',
+          title: 'HankLiu UI Landing',
           description: <FormattedMessage id="app.footer.landing" />,
           url: 'https://landing.ant.design',
           openExternal: true,
@@ -383,9 +383,7 @@ class Footer extends React.Component<WrappedComponentProps & { location: any }> 
   render() {
     return (
       <section className="footer-bottom">
-        <div className="footer-bottom-container">
-           HankLiu 前端 & 设计团队倾情奉献
-        </div>
+        <div className="footer-bottom-container">HankLiu 前端 & 设计团队倾情奉献</div>
       </section>
     );
   }

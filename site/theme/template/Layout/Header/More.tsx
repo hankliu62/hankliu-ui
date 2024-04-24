@@ -45,7 +45,7 @@ export function getEcosystemGroup(): React.ReactNode {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Ant Design of Angular
+        HankLiu UI of Angular
         <span style={smallStyle}>
           (<FormattedMessage id="app.implementation.community" />)
         </span>
@@ -53,7 +53,7 @@ export function getEcosystemGroup(): React.ReactNode {
     </Menu.Item>,
     <Menu.Item key="vue">
       <a href="http://antdv.com" className="header-link" target="_blank" rel="noopener noreferrer">
-        Ant Design of Vue
+        HankLiu UI of Vue
         <span style={smallStyle}>
           (<FormattedMessage id="app.implementation.community" />)
         </span>

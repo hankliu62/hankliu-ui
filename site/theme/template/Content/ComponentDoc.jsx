@@ -29,7 +29,7 @@ class ComponentDoc extends React.Component {
         this.setState({ visibleAll: true });
       }
     }
-    this.pingTimer = ping(status => {
+    this.pingTimer = ping((status) => {
       if (status !== 'timeout' && status !== 'error') {
         this.setState({
           showRiddleButton: true,
@@ -90,16 +90,16 @@ class ComponentDoc extends React.Component {
       demos,
     } = this.props;
     const { content, meta } = doc;
-    const demoValues = Object.keys(demos).map(key => demos[key]);
+    const demoValues = Object.keys(demos).map((key) => demos[key]);
     const { expandAll, visibleAll, showRiddleButton } = this.state;
     const isSingleCol = meta.cols === 1;
     const leftChildren = [];
     const rightChildren = [];
-    let showedDemo = demoValues.some(demo => demo.meta.only)
-      ? demoValues.filter(demo => demo.meta.only)
-      : demoValues.filter(demo => demo.preview);
+    let showedDemo = demoValues.some((demo) => demo.meta.only)
+      ? demoValues.filter((demo) => demo.meta.only)
+      : demoValues.filter((demo) => demo.preview);
     if (!visibleAll) {
-      showedDemo = showedDemo.filter(item => !item.meta.debug);
+      showedDemo = showedDemo.filter((item) => !item.meta.debug);
     }
     showedDemo
       .sort((a, b) => a.meta.order - b.meta.order)
@@ -126,7 +126,7 @@ class ComponentDoc extends React.Component {
       'code-box-expand-trigger-active': expandAll,
     });
 
-    const jumper = showedDemo.map(demo => {
+    const jumper = showedDemo.map((demo) => {
       const { title } = demo.meta;
       const localizeTitle = title[locale] || title;
       return (
@@ -143,7 +143,7 @@ class ComponentDoc extends React.Component {
     });
 
     const { title, subtitle, filename } = meta;
-    const helmetTitle = `${subtitle || ''} ${title[locale] || title} - Ant Design`;
+    const helmetTitle = `${subtitle || ''} ${title[locale] || title} - HankLiu UI`;
     const contentChild = getMetaDescription(getChildren(content));
     return (
       <article>

@@ -11,17 +11,17 @@ import svgBgToParallax from './util';
 const page2Data = [
   {
     img: 'https://gw.alipayobjects.com/zos/rmsportal/eYNnmGagLWdrkdMHVUuA.svg',
-    name: 'Ant Design Components',
+    name: 'HankLiu UI Components',
   },
   {
     img: 'https://gw.alipayobjects.com/zos/rmsportal/EPaPtDVGnJhyqyBAUZMl.svg',
-    name: 'Ant Design Pro',
+    name: 'HankLiu UI Pro',
     slogan: <FormattedMessage id="app.home.product-pro-slogan" />,
     link: 'https://pro.ant.design/index-cn',
   },
   {
     img: 'https://gw.alipayobjects.com/zos/rmsportal/GobRAKexhfTSJdLFzDFY.svg',
-    name: 'Ant Design Mobile',
+    name: 'HankLiu UI Mobile',
     slogan: <FormattedMessage id="app.home.product-mobile-slogan" />,
   },
   {
@@ -32,7 +32,7 @@ const page2Data = [
   },
   {
     img: 'https://gw.alipayobjects.com/zos/rmsportal/EAHlyTmYeDtTkZIPbUnP.svg',
-    name: 'Ant Design Landing',
+    name: 'HankLiu UI Landing',
     slogan: <FormattedMessage id="app.home.product-landing-slogan" />,
     link: 'https://landing.ant.design',
     new: true,
@@ -197,7 +197,7 @@ export default function Page2({ isMobile, locale }) {
             type="bottom"
             leaveReverse
           >
-            <h3 key="h1">Ant Design Components</h3>
+            <h3 key="h1">HankLiu UI Components</h3>
             <p key="p">
               <FormattedMessage id="app.home.components-explain" />
             </p>
