@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[219],{5064:function(e,n){e.exports={content:["article",["embed",{src:"./i18n.zh-CN.md"}]],meta:{filename:"docs/react/i18n.en-US.md"},toc:["ul"]}}}]);

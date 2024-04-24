@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[231],{5072:function(e,t){e.exports={content:["article",["embed",{src:"./use-with-create-react-app.zh-CN.md"}]],meta:{filename:"docs/react/use-with-create-react-app.en-US.md"},toc:["ul"]}}}]);

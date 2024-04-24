@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[227],{5068:function(e,n){e.exports={content:["article",["embed",{src:"./replace-moment.zh-CN.md"}]],meta:{filename:"docs/react/replace-moment.en-US.md"},toc:["ul"]}}}]);

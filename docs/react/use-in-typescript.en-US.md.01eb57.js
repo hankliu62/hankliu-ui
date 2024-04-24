@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[229],{5070:function(e,n){e.exports={content:["article",["embed",{src:"./use-in-typescript.zh-CN.md"}]],meta:{filename:"docs/react/use-in-typescript.en-US.md"},toc:["ul"]}}}]);
