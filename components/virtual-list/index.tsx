@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import type { FixedSizeListProps, VariableSizeListProps } from 'react-window';
-import { FixedSizeList, VariableSizeList } from 'react-window';
+import type { FixedSizeListProps } from 'react-window';
+import { FixedSizeList } from 'react-window';
 
 export interface VirtualListProps<T> extends Omit<FixedSizeListProps<T>, 'children'> {
   /**
