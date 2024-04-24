@@ -19,7 +19,7 @@ import { Button } from '@hankliu/hankliu-ui';
 ReactDOM.render(
   <>
     <Button>Primary Button</Button>
-    <Button type="secondary">secondary  Button</Button>
+    <Button type="secondary">secondary Button</Button>
     <Button type="dashed">Dashed Button</Button>
     <br />
     <Button type="text">Text Button</Button>

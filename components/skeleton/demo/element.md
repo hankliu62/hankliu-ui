@@ -25,19 +25,19 @@ class Demo extends React.Component {
     avatarShape: 'circle',
   };
 
-  handleActiveChange = checked => {
+  handleActiveChange = (checked) => {
     this.setState({ active: checked });
   };
 
-  handleBlockChange = checked => {
+  handleBlockChange = (checked) => {
     this.setState({ block: checked });
   };
 
-  handleSizeChange = e => {
+  handleSizeChange = (e) => {
     this.setState({ size: e.target.value });
   };
 
-  handleShapeChange = prop => e => {
+  handleShapeChange = (prop) => (e) => {
     this.setState({ [prop]: e.target.value });
   };
 

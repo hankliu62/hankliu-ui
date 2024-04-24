@@ -19,7 +19,7 @@ Used together with `react-router@6+`.
 import { HashRouter, Route, Routes, Link, useLocation } from 'react-router-dom';
 import React from 'react';
 import { Breadcrumb } from '@hankliu/hankliu-ui';
-console.log('------------------', Breadcrumb)
+console.log('------------------', Breadcrumb);
 const Apps = () => (
   <ul className="app-list">
     <li>
@@ -38,10 +38,10 @@ const breadcrumbNameMap = {
   '/apps/1/detail': 'Detail',
   '/apps/2/detail': 'Detail',
 };
-const Home = props => {
-  console.log('Breadcrumb', Breadcrumb)
+const Home = (props) => {
+  console.log('Breadcrumb', Breadcrumb);
   const location = useLocation();
-  const pathSnippets = location.pathname.split('/').filter(i => i);
+  const pathSnippets = location.pathname.split('/').filter((i) => i);
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
     return (

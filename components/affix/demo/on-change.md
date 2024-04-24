@@ -17,7 +17,7 @@ Callback with affixed state.
 import { Affix, Button } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(
-  <Affix offsetTop={120} onChange={affixed => console.log(affixed)}>
+  <Affix offsetTop={120} onChange={(affixed) => console.log(affixed)}>
     <Button>120px to affix top</Button>
   </Affix>,
   mountNode,

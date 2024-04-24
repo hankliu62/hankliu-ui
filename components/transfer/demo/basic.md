@@ -26,7 +26,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const initialTargetKeys = mockData.filter(item => +item.key > 10).map(item => item.key);
+const initialTargetKeys = mockData.filter((item) => +item.key > 10).map((item) => item.key);
 
 const App = () => {
   const [targetKeys, setTargetKeys] = useState(initialTargetKeys);
@@ -58,7 +58,7 @@ const App = () => {
       onChange={onChange}
       onSelectChange={onSelectChange}
       onScroll={onScroll}
-      render={item => item.title}
+      render={(item) => item.title}
     />
   );
 };

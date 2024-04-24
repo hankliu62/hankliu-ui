@@ -28,7 +28,7 @@ class Demo extends React.Component {
     expandable: false,
   };
 
-  onChange = rows => {
+  onChange = (rows) => {
     this.setState({ rows });
   };
 
@@ -39,15 +39,15 @@ class Demo extends React.Component {
         <Switch
           checked={longText}
           checkedChildren="Long Text"
-          onChange={val => this.setState({ longText: val })}
+          onChange={(val) => this.setState({ longText: val })}
         />
-        <Switch checked={copyable} onChange={val => this.setState({ copyable: val })} />
-        <Switch checked={editable} onChange={val => this.setState({ editable: val })} />
-        <Switch checked={expandable} onChange={val => this.setState({ expandable: val })} />
+        <Switch checked={copyable} onChange={(val) => this.setState({ copyable: val })} />
+        <Switch checked={editable} onChange={(val) => this.setState({ editable: val })} />
+        <Switch checked={expandable} onChange={(val) => this.setState({ expandable: val })} />
         <Slider value={rows} min={1} max={10} onChange={this.onChange} />
         {longText ? (
           <Paragraph ellipsis={{ rows, expandable }} copyable={copyable} editable={editable}>
-            Ant Design, a design language for background applications, is refined by Ant UED Team.
+            HankLiu UI, a design language for background applications, is refined by Ant UED Team.
             This is a nest sample{' '}
             <Text code strong delete>
               Test
@@ -65,7 +65,7 @@ class Demo extends React.Component {
         )}
 
         <Text style={{ width: 100 }} ellipsis copyable>
-          Ant Design is a design language for background applications, is refined by Ant UED Team.
+          HankLiu UI is a design language for background applications, is refined by Ant UED Team.
         </Text>
 
         <p>

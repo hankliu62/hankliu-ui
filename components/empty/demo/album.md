@@ -3,7 +3,6 @@ order: 5
 title:
   zh-CN: 内置图片
   en-US: Inner Image
-
 ---
 
 ## zh-CN
@@ -23,7 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="empty-preview-wrap">
-        {Object.keys(IMAGES).map(key => {
+        {Object.keys(IMAGES).map((key) => {
           return (
             <div className="empty-preview">
               <p>{key}</p>

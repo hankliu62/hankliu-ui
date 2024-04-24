@@ -38,7 +38,7 @@ function DebounceSelect<
       setOptions([]);
       setFetching(true);
 
-      fetchOptions(value).then(newOptions => {
+      fetchOptions(value).then((newOptions) => {
         if (fetchId !== fetchRef.current) {
           // for fetch callback order
           return;
@@ -74,8 +74,8 @@ async function fetchUserList(username: string): Promise<UserValue[]> {
   console.log('fetching user', username);
 
   return fetch('https://randomuser.me/api/?results=5')
-    .then(response => response.json())
-    .then(body =>
+    .then((response) => response.json())
+    .then((body) =>
       body.results.map(
         (user: { name: { first: string; last: string }; login: { username: string } }) => ({
           label: `${user.name.first} ${user.name.last}`,
@@ -94,7 +94,7 @@ const Demo = () => {
       value={value}
       placeholder="Select users"
       fetchOptions={fetchUserList}
-      onChange={newValue => {
+      onChange={(newValue) => {
         setValue(newValue);
       }}
       style={{ width: '100%' }}

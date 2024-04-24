@@ -5,4 +5,3 @@ appendDefaultProps();
 
 export * from 'antd4x/lib/carousel';
 export default Carousel;
-

@@ -22,7 +22,7 @@ class App extends React.Component {
     condition: true, // Whether meet the condition, if not show popconfirm.
   };
 
-  changeCondition = value => {
+  changeCondition = (value) => {
     this.setState({ condition: value });
   };
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     message.error('Click on cancel.');
   };
 
-  handleVisibleChange = open => {
+  handleVisibleChange = (open) => {
     if (!open) {
       this.setState({ open });
       return;

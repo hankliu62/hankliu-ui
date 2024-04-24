@@ -24,7 +24,9 @@ ReactDOM.render(
     </Button>
     <br />
     <Button type="secondary">Secondary</Button>
-    <Button type="secondary" disabled>Secondary(disabled)</Button>
+    <Button type="secondary" disabled>
+      Secondary(disabled)
+    </Button>
     <br />
     <Button type="dashed">Dashed</Button>
     <Button type="dashed" disabled>
@@ -41,7 +43,9 @@ ReactDOM.render(
       Link(disabled)
     </Button>
     <br />
-    <Button type="secondary" danger>Danger Secondary</Button>
+    <Button type="secondary" danger>
+      Danger Secondary
+    </Button>
     <Button type="secondary" danger disabled>
       Danger Secondary(disabled)
     </Button>
@@ -60,7 +64,9 @@ ReactDOM.render(
       Danger Link(disabled)
     </Button>
     <div className="site-button-ghost-wrapper">
-      <Button type="secondary" ghost>Ghost</Button>
+      <Button type="secondary" ghost>
+        Ghost
+      </Button>
       <Button type="secondary" ghost disabled>
         Ghost(disabled)
       </Button>

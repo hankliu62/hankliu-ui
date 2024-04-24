@@ -49,7 +49,7 @@ class App extends React.Component {
     this.setState({ targetKeys });
   };
 
-  renderItem = item => {
+  renderItem = (item) => {
     const customLabel = (
       <span className="custom-item">
         {item.title} - {item.description}

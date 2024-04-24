@@ -2,13 +2,7 @@ import * as React from 'react';
 import HookModal, { HookModalRef } from 'antd4x/lib/modal/useModal/HookModal';
 import usePatchElement from 'antd4x/lib/_util/hooks/usePatchElement';
 import type { ModalFuncProps } from 'antd4x/lib/modal';
-import {
-  withConfirm,
-  withInfo,
-  withSuccess,
-  withError,
-  withWarn,
-} from '../confirm';
+import { withConfirm, withInfo, withSuccess, withError, withWarn } from '../confirm';
 
 let uuid = 0;
 
@@ -50,50 +44,51 @@ export default function useModal() {
 
   // =========================== Hook ===========================
   const getConfirmFunc = React.useCallback(
-    (withFunc: WithFunc) => function hookConfirm(config: ModalFuncProps) {
-      uuid += 1;
+    (withFunc: WithFunc) =>
+      function hookConfirm(config: ModalFuncProps) {
+        uuid += 1;
 
-      const modalRef = React.createRef<HookModalRef>();
+        const modalRef = React.createRef<HookModalRef>();
 
-      let closeFunc: Function;
-      const modal = (
-        <HookModal
-          key={`hlui-modal-${uuid}`}
-          config={withFunc(config)}
-          ref={modalRef}
-          afterClose={() => {
-            closeFunc();
-          }}
-        />
-      );
+        let closeFunc: Function;
+        const modal = (
+          <HookModal
+            key={`hlui-modal-${uuid}`}
+            config={withFunc(config)}
+            ref={modalRef}
+            afterClose={() => {
+              closeFunc();
+            }}
+          />
+        );
 
-      closeFunc = holderRef.current?.patchElement(modal);
+        closeFunc = holderRef.current?.patchElement(modal);
 
-      return {
-        destroy: () => {
-          function destroyAction() {
-            modalRef.current?.destroy();
-          }
+        return {
+          destroy: () => {
+            function destroyAction() {
+              modalRef.current?.destroy();
+            }
 
-          if (modalRef.current) {
-            destroyAction();
-          } else {
-            setActionQueue((prev) => [...prev, destroyAction]);
-          }
-        },
-        update: (newConfig: ModalFuncProps) => {
-          function updateAction() {
-            modalRef.current?.update(newConfig);
-          }
+            if (modalRef.current) {
+              destroyAction();
+            } else {
+              setActionQueue((prev) => [...prev, destroyAction]);
+            }
+          },
+          update: (newConfig: ModalFuncProps) => {
+            function updateAction() {
+              modalRef.current?.update(newConfig);
+            }
 
-          if (modalRef.current) {
-            updateAction();
-          } else {
-            setActionQueue((prev) => [...prev, updateAction]);
-          }
-        },
-      };
-    },
+            if (modalRef.current) {
+              updateAction();
+            } else {
+              setActionQueue((prev) => [...prev, updateAction]);
+            }
+          },
+        };
+      },
     [],
   );
 

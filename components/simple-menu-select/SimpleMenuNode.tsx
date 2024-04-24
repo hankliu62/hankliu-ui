@@ -1,7 +1,5 @@
 // @ts-nocheck
-import React, {
-  ForwardRefRenderFunction, useImperativeHandle, forwardRef, useRef,
-} from 'react';
+import React, { ForwardRefRenderFunction, useImperativeHandle, forwardRef, useRef } from 'react';
 import cl from 'classnames';
 import ICON_ARROW from './arrow.svg';
 import Checkbox from '../checkbox';

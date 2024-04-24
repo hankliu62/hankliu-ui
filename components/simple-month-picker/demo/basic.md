@@ -7,33 +7,27 @@ title:
 
 基础用法
 
-````jsx
+```jsx
 import { SimpleMonthPicker } from '@hankliu/hankliu-ui';
 
 class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: {}
+      value: {},
     };
   }
 
   handleChange = (value) => {
-    console.log('change', value)
-    this.setState({value})
-  }
+    console.log('change', value);
+    this.setState({ value });
+  };
 
   render() {
     let { value } = this.state;
-    return (
-      <SimpleMonthPicker
-        value={value}
-        onChange={this.handleChange}
-      />
-    )
+    return <SimpleMonthPicker value={value} onChange={this.handleChange} />;
   }
 }
 
 ReactDOM.render(<Demo />, mountNode);
-
-````
+```

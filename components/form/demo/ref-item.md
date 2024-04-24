@@ -29,8 +29,8 @@ const Demo = () => {
       </Form.Item>
 
       <Form.List name="list">
-        {fields =>
-          fields.map(field => (
+        {(fields) =>
+          fields.map((field) => (
             <Form.Item key={field.key} {...field}>
               <Input ref={ref} />
             </Form.Item>

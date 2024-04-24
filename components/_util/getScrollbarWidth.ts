@@ -3,9 +3,9 @@ export default function getScrollbarWidth($current?: HTMLElement) {
   if (document === undefined) return 0;
   if (!$current) $current = document.body;
   // Create the measurement node
-  const scrollDiv = document.createElement("div");
+  const scrollDiv = document.createElement('div');
   scrollDiv.className = 'hlui-scrollbar-measure';
-  scrollDiv.innerHTML = '<div></div>'
+  scrollDiv.innerHTML = '<div></div>';
   $current.appendChild(scrollDiv);
   // Get the scrollbar width
   const width = scrollDiv.offsetWidth - scrollDiv.clientWidth;

@@ -62,7 +62,7 @@ const Demo = () => {
       <CheckboxGroup
         options={options}
         value={position}
-        onChange={value => {
+        onChange={(value) => {
           setPosition(value);
         }}
       />

@@ -106,7 +106,7 @@ modal.update({
 });
 
 // 在 4.8.0 或更高版本中，可以通过传入函数的方式更新弹窗
-modal.update(prevConfig => ({
+modal.update((prevConfig) => ({
   ...prevConfig,
   title: `${prevConfig.title}（新）`,
 }));

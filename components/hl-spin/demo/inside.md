@@ -13,24 +13,24 @@ title:
 
 Spin in a container.
 
-````jsx
+```jsx
 import { HlSpin as Spin } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(
   <div className="example">
     <Spin />
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```
 
-````css
+```css
 .example {
-  text-align: center;
-  background: rgba(0,0,0,0.05);
-  border-radius: 4px;
+  margin: 20px 0;
   margin-bottom: 20px;
   padding: 30px 50px;
-  margin: 20px 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
-````
+```

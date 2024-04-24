@@ -27,7 +27,7 @@ class App extends React.Component {
     });
   };
 
-  handleVisibleChange = open => {
+  handleVisibleChange = (open) => {
     this.setState({ open });
   };
 

@@ -21,7 +21,7 @@ class IntegerStep extends React.Component {
     inputValue: 1,
   };
 
-  onChange = value => {
+  onChange = (value) => {
     this.setState({
       inputValue: value,
     });
@@ -58,7 +58,7 @@ class DecimalStep extends React.Component {
     inputValue: 0,
   };
 
-  onChange = value => {
+  onChange = (value) => {
     if (isNaN(value)) {
       return;
     }

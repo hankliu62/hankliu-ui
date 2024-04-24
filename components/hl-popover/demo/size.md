@@ -11,7 +11,7 @@ title:
 
 ## en-US
 
-````jsx
+```jsx
 import { HlPopover, Button } from '@hankliu/hankliu-ui';
 
 const content = '这里输入一段长文字作为视觉预览。';
@@ -21,11 +21,11 @@ ReactDOM.render(
     <HlPopover content={content} title="This is Title">
       <Button type="primary">设置了 title 时默认为 large</Button>
     </HlPopover>
-    <br/>
+    <br />
     <HlPopover content={content} size="default" title="This is Title">
       <Button type="primary">设置了 title 时，你也可以手动设置为 default</Button>
     </HlPopover>
-    <br/>
+    <br />
     <HlPopover content={content}>
       <Button type="primary">没有 title & size=default</Button>
     </HlPopover>
@@ -39,7 +39,7 @@ ReactDOM.render(
   </div>,
   mountNode,
 );
-````
+```
 
 <style>
 p {

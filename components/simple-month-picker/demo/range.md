@@ -5,13 +5,11 @@ title: 月份范围选择
 
 月份范围选择的用法。
 
-````jsx
+```jsx
 import { SimpleMonthPicker } from '@hankliu/hankliu-ui';
 
-
 class MonthPickerDemo extends React.Component {
-
-  state = {}
+  state = {};
 
   handleStartChange = (value) => {
     let { startM, startY, endM, endY } = this.state;
@@ -26,8 +24,8 @@ class MonthPickerDemo extends React.Component {
         endM = undefined;
       }
     }
-    this.setState({startM, startY, endM, endY})
-  }
+    this.setState({ startM, startY, endM, endY });
+  };
 
   handleEndChange = (value) => {
     let { endM, endY, hitherto } = this.state;
@@ -40,11 +38,11 @@ class MonthPickerDemo extends React.Component {
       endM = value.month;
       hitherto = false;
     }
-    this.setState({hitherto, endM, endY})
-  }
+    this.setState({ hitherto, endM, endY });
+  };
 
   render() {
-    const { startM, startY, endM, endY, hitherto } = this.state ;
+    const { startM, startY, endM, endY, hitherto } = this.state;
     return (
       <div>
         <SimpleMonthPicker
@@ -52,25 +50,25 @@ class MonthPickerDemo extends React.Component {
           onChange={this.handleStartChange}
           value={{
             month: startM,
-            year: startY
+            year: startY,
           }}
         />
-        <span>  至  </span>
+        <span> 至 </span>
         <SimpleMonthPicker
           placeholder="日期选择器"
           hitherto={true}
           value={{
             month: endM,
             year: endY,
-            hitherto
+            hitherto,
           }}
-          disableYear={(year)=> {
+          disableYear={(year) => {
             if (startY) {
               return year < startY;
             }
             return false;
           }}
-          disableMonth={(month, year)=> {
+          disableMonth={(month, year) => {
             if (startY && startM) {
               if (year < startY) {
                 return true;
@@ -83,16 +81,9 @@ class MonthPickerDemo extends React.Component {
           onChange={this.handleEndChange}
         />
       </div>
-    )
+    );
   }
 }
 
-ReactDOM.render(
-  <MonthPickerDemo />
-  , mountNode);
-
-
-
-
-
-````
+ReactDOM.render(<MonthPickerDemo />, mountNode);
+```

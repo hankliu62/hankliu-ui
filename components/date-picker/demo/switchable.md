@@ -37,7 +37,7 @@ function SwitchablePicker() {
         <Option value="quarter">Quarter</Option>
         <Option value="year">Year</Option>
       </Select>
-      <PickerWithType type={type} onChange={value => console.log(value)} />
+      <PickerWithType type={type} onChange={(value) => console.log(value)} />
     </Space>
   );
 }

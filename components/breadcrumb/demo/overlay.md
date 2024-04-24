@@ -38,7 +38,7 @@ const menu = (
 
 ReactDOM.render(
   <Breadcrumb>
-    <Breadcrumb.Item>Ant Design</Breadcrumb.Item>
+    <Breadcrumb.Item>HankLiu UI</Breadcrumb.Item>
     <Breadcrumb.Item>
       <a href="">Component</a>
     </Breadcrumb.Item>

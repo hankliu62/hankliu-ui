@@ -21,7 +21,7 @@ class Demo extends React.Component {
     disabled: false,
   };
 
-  handleDisabledChange = disabled => {
+  handleDisabledChange = (disabled) => {
     this.setState({ disabled });
   };
 

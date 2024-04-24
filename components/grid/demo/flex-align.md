@@ -16,7 +16,7 @@ Child elements vertically aligned.
 ```jsx
 import { Row, Col, Divider } from '@hankliu/hankliu-ui';
 
-const DemoBox = props => <p className={`height-${props.value}`}>{props.children}</p>;
+const DemoBox = (props) => <p className={`height-${props.value}`}>{props.children}</p>;
 
 ReactDOM.render(
   <>

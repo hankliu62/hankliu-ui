@@ -28,5 +28,4 @@ cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*5mC5TomY4B0AAAAAAA
 
 ### 静态方法
 
-- `Spin.setDefaultIndicator(indicator: ReactElement)`
-  同上 `indicator`，你可以自定义全局默认元素
+- `Spin.setDefaultIndicator(indicator: ReactElement)` 同上 `indicator`，你可以自定义全局默认元素

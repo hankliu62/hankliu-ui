@@ -65,7 +65,7 @@ function onChange(value, selectedOptions) {
 }
 
 function filter(inputValue, path) {
-  return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
+  return path.some((option) => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
 }
 
 ReactDOM.render(
@@ -74,7 +74,7 @@ ReactDOM.render(
     onChange={onChange}
     placeholder="Please select"
     showSearch={{ filter }}
-    onSearch={value => console.log(value)}
+    onSearch={(value) => console.log(value)}
   />,
   mountNode,
 );

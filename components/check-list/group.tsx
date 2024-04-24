@@ -30,9 +30,7 @@ function Group(props: CheckListGroupProps) {
     }
   };
   const renderTitle = () => {
-    const {
-      title, subtitle, disabled, value, options,
-    } = props;
+    const { title, subtitle, disabled, value, options } = props;
     const allChecked: boolean = isAllChecked(value, options);
     return (
       <span onClick={stopPropagation}>

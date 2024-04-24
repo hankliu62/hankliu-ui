@@ -60,7 +60,11 @@ ReactDOM.render(
             <Typography.Title level={4}>Custom header</Typography.Title>
             <Row gutter={8}>
               <Col>
-                <Radio.Group size="small" onChange={e => onTypeChange(e.target.value)} value={type}>
+                <Radio.Group
+                  size="small"
+                  onChange={(e) => onTypeChange(e.target.value)}
+                  value={type}
+                >
                   <Radio.Button value="month">Month</Radio.Button>
                   <Radio.Button value="year">Year</Radio.Button>
                 </Radio.Group>
@@ -70,7 +74,7 @@ ReactDOM.render(
                   size="small"
                   dropdownMatchSelectWidth={false}
                   className="my-year-select"
-                  onChange={newYear => {
+                  onChange={(newYear) => {
                     const now = value.clone().year(newYear);
                     onChange(now);
                   }}
@@ -84,7 +88,7 @@ ReactDOM.render(
                   size="small"
                   dropdownMatchSelectWidth={false}
                   value={String(month)}
-                  onChange={selectedMonth => {
+                  onChange={(selectedMonth) => {
                     const newValue = value.clone();
                     newValue.month(parseInt(selectedMonth, 10));
                     onChange(newValue);

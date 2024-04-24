@@ -21,5 +21,3 @@ title: CheckCard
 | border | 边框大小 | number\|boolean | 0 |
 | className | 添加 className | string | - |
 | style | 添加 style | object | - |
-
-

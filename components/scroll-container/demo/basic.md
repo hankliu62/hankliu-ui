@@ -13,7 +13,7 @@ title:
 
 The simplest usage.
 
-````jsx
+```jsx
 import { ScrollContainer } from '@hankliu/hankliu-ui';
 
 class Demo extends React.Component {
@@ -21,12 +21,12 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      count: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+      count: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     };
   }
 
   handleScroll(e) {
-    console.log(e)
+    console.log(e);
   }
 
   render() {
@@ -35,16 +35,18 @@ class Demo extends React.Component {
       <div className="demo-scroll-wrap">
         <ScrollContainer maxHeight={200} indicated={true} onScroll={this.handleScroll}>
           <ul>
-            {count.map((value, idx) => <li key={idx}/>)}
+            {count.map((value, idx) => (
+              <li key={idx} />
+            ))}
           </ul>
         </ScrollContainer>
       </div>
-    )
+    );
   }
 }
 
 ReactDOM.render(<Demo />, mountNode);
-````
+```
 
 <style>
   #components-scroll-container-demo-basic .demo-scroll-wrap
@@ -61,4 +63,3 @@ ReactDOM.render(<Demo />, mountNode);
     margin-bottom: 10px;
   }
 </style>
-

@@ -59,7 +59,7 @@ import { Form, Input, Select, Tooltip, Button, Space, Typography } from '@hankli
 const { Option } = Select;
 
 const Demo = () => {
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
 

@@ -13,13 +13,13 @@ title:
 
 In the various types of information modal dialog, only one button to close dialog is provided.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 function dangerAlert() {
   Modal.alert({
     okButtonProps: {
-      type: 'danger'
+      type: 'danger',
     },
     title: 'This is a danger alert',
     content: 'some messages...some messages...',
@@ -36,8 +36,10 @@ function normalAlert() {
 ReactDOM.render(
   <div>
     <Button onClick={normalAlert}>normal alert</Button>
-    <Button onClick={dangerAlert} type="danger">danger alert</Button>
+    <Button onClick={dangerAlert} type="danger">
+      danger alert
+    </Button>
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

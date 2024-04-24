@@ -58,10 +58,10 @@ const TabsCard = () => {
   const [activeTabKey1, setActiveTabKey1] = useState('tab1');
   const [activeTabKey2, setActiveTabKey2] = useState('app');
 
-  const onTab1Change = key => {
+  const onTab1Change = (key) => {
     setActiveTabKey1(key);
   };
-  const onTab2Change = key => {
+  const onTab2Change = (key) => {
     setActiveTabKey2(key);
   };
 
@@ -73,7 +73,7 @@ const TabsCard = () => {
         extra={<a href="#">More</a>}
         tabList={tabList}
         activeTabKey={activeTabKey1}
-        onTabChange={key => {
+        onTabChange={(key) => {
           onTab1Change(key);
         }}
       >
@@ -86,7 +86,7 @@ const TabsCard = () => {
         tabList={tabListNoTitle}
         activeTabKey={activeTabKey2}
         tabBarExtraContent={<a href="#">More</a>}
-        onTabChange={key => {
+        onTabChange={(key) => {
           onTab2Change(key);
         }}
       >

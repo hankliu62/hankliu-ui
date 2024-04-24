@@ -3,7 +3,7 @@ import type { Locale } from 'antd4x/lib/locale-provider';
 
 const antdLocale: Locale = {
   ...localeValues,
-}
+};
 
 const hankliuLocale = {
   FileSelect: {
@@ -49,11 +49,11 @@ const hankliuLocale = {
     textPlaceholder: '请输入',
   },
   ImageCropper: {
-    okText: "确 认",
-    reuploadText: "重新上传",
+    okText: '确 认',
+    reuploadText: '重新上传',
   },
 };
 
 const tzLocaleValues = Object.assign(antdLocale, hankliuLocale);
-export type HlLocale = typeof tzLocaleValues
+export type HlLocale = typeof tzLocaleValues;
 export default tzLocaleValues;

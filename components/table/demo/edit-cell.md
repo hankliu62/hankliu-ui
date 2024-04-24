@@ -182,7 +182,7 @@ class EditableTable extends React.Component<EditableTableProps, EditableTableSta
 
   handleDelete = (key: React.Key) => {
     const dataSource = [...this.state.dataSource];
-    this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+    this.setState({ dataSource: dataSource.filter((item) => item.key !== key) });
   };
 
   handleAdd = () => {
@@ -201,7 +201,7 @@ class EditableTable extends React.Component<EditableTableProps, EditableTableSta
 
   handleSave = (row: DataType) => {
     const newData = [...this.state.dataSource];
-    const index = newData.findIndex(item => row.key === item.key);
+    const index = newData.findIndex((item) => row.key === item.key);
     const item = newData[index];
     newData.splice(index, 1, {
       ...item,
@@ -218,7 +218,7 @@ class EditableTable extends React.Component<EditableTableProps, EditableTableSta
         cell: EditableCell,
       },
     };
-    const columns = this.columns.map(col => {
+    const columns = this.columns.map((col) => {
       if (!col.editable) {
         return col;
       }

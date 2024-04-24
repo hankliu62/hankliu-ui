@@ -100,7 +100,7 @@ const EditableTable = () => {
       const row = (await form.validateFields()) as Item;
 
       const newData = [...data];
-      const index = newData.findIndex(item => key === item.key);
+      const index = newData.findIndex((item) => key === item.key);
       if (index > -1) {
         const item = newData[index];
         newData.splice(index, 1, {
@@ -161,7 +161,7 @@ const EditableTable = () => {
     },
   ];
 
-  const mergedColumns = columns.map(col => {
+  const mergedColumns = columns.map((col) => {
     if (!col.editable) {
       return col;
     }

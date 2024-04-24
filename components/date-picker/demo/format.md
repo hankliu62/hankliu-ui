@@ -25,9 +25,9 @@ const monthFormat = 'YYYY/MM';
 
 const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 
-const customFormat = value => `custom format: ${value.format(dateFormat)}`;
+const customFormat = (value) => `custom format: ${value.format(dateFormat)}`;
 
-const customWeekStartEndFormat = value =>
+const customWeekStartEndFormat = (value) =>
   `${moment(value).startOf('week').format(weekFormat)} ~ ${moment(value)
     .endOf('week')
     .format(weekFormat)}`;

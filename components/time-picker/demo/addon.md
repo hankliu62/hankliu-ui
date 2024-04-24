@@ -19,7 +19,7 @@ import { TimePicker, Button } from '@hankliu/hankliu-ui';
 class TimePickerAddonDemo extends React.Component {
   state = { open: false };
 
-  handleOpenChange = open => {
+  handleOpenChange = (open) => {
     this.setState({ open });
   };
 

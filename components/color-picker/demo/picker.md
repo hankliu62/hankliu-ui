@@ -5,21 +5,32 @@ title: Popover 用法
 
 Popover 用法，添加 onCancel onOk 事件回调
 
-````jsx
+```jsx
 import { ColorPicker, Button } from '@hankliu/hankliu-ui';
 
 const GradientValue = {
   angle: 20,
   type: 'linear',
   current: 0,
-  colors: [{
-    r: 49, g: 32, b: 138, a: 0.67, stop: 0.35
-  }, {
-    r: 22, g: 55, b: 89, a: 0.9, stop: 0.8
-  }]
-}
+  colors: [
+    {
+      r: 49,
+      g: 32,
+      b: 138,
+      a: 0.67,
+      stop: 0.35,
+    },
+    {
+      r: 22,
+      g: 55,
+      b: 89,
+      a: 0.9,
+      stop: 0.8,
+    },
+  ],
+};
 
-const BasicValue = '#666'
+const BasicValue = '#666';
 
 class Panel extends React.Component {
   state = {
@@ -30,38 +41,38 @@ class Panel extends React.Component {
   };
 
   showBasicPicker = () => {
-    this.setState({basicVisible: true})
-  }
+    this.setState({ basicVisible: true });
+  };
 
   hideBasicPicker = () => {
-    this.setState({basicVisible: false})
-  }
+    this.setState({ basicVisible: false });
+  };
 
   handleBasicChange = (value) => {
-    console.log('basic color change ', value)
+    console.log('basic color change ', value);
     this.setState({ basicValue: value });
-  }
+  };
 
   resetBasicValue = () => {
-    this.setState({ basicValue: BasicValue, basicVisible: false })
-  }
+    this.setState({ basicValue: BasicValue, basicVisible: false });
+  };
 
   showGradientPicker = () => {
-    this.setState({gradientVisible: true})
-  }
+    this.setState({ gradientVisible: true });
+  };
 
   hideGradientPicker = () => {
-    this.setState({gradientVisible: false})
-  }
+    this.setState({ gradientVisible: false });
+  };
 
   handleGradientChange = (value) => {
-    console.log('gradient color change ', value)
+    console.log('gradient color change ', value);
     this.setState({ gradientValue: value });
-  }
+  };
 
   resetGradientValue = () => {
-    this.setState({ gradientValue: Object.assign({}, GradientValue), gradientVisible: false })
-  }
+    this.setState({ gradientValue: Object.assign({}, GradientValue), gradientVisible: false });
+  };
 
   render() {
     const { basicValue, basicVisible, gradientValue, gradientVisible } = this.state;
@@ -75,10 +86,12 @@ class Panel extends React.Component {
           onOk={this.hideBasictPicker}
           onChange={this.handleBasicChange}
         >
-          <Button type="primary" onClick={this.showBasicPicker}>show BasicPicker</Button>
+          <Button type="primary" onClick={this.showBasicPicker}>
+            show BasicPicker
+          </Button>
         </ColorPicker.Popover>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <ColorPicker.Popover
           alpha={false}
           open={gradientVisible}
@@ -88,13 +101,14 @@ class Panel extends React.Component {
           onOk={this.hideGradientPicker}
           onChange={this.handleGradientChange}
         >
-          <Button type="primary"  onClick={this.showGradientPicker}>show GradientPicker</Button>
-      </ColorPicker.Popover>
+          <Button type="primary" onClick={this.showGradientPicker}>
+            show GradientPicker
+          </Button>
+        </ColorPicker.Popover>
       </div>
     );
   }
 }
 
 ReactDOM.render(<Panel />, mountNode);
-
-````
+```

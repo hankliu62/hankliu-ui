@@ -23,14 +23,14 @@ class App extends React.Component {
     selectedValue: moment('2017-01-25'),
   };
 
-  onSelect = value => {
+  onSelect = (value) => {
     this.setState({
       value,
       selectedValue: value,
     });
   };
 
-  onPanelChange = value => {
+  onPanelChange = (value) => {
     this.setState({ value });
   };
 

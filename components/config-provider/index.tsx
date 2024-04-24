@@ -2,7 +2,7 @@ import * as React from 'react';
 import ConfigProvider from 'antd4x/lib/config-provider';
 import type { ConfigProviderProps } from 'antd4x/lib/config-provider';
 
-import customAntdChangeConfirmLocale from '../hl-modal/customAntdChangeConfirmLocale'
+import customAntdChangeConfirmLocale from '../hl-modal/customAntdChangeConfirmLocale';
 import { changeConfirmLocale } from '../hl-modal/locale';
 import { changeLocale as changeFileSelectLocale } from '../file-select/locale';
 import { changeLocale as changeCaptchaLocale } from '../captcha/locale';
@@ -34,12 +34,12 @@ function initLocale(locale: HlLocale) {
 
 const HlConfigProvider: React.FC<HlConfigProviderProps> = (props) => {
   const { locale } = props;
-  initLocale(locale)
+  initLocale(locale);
   React.useEffect(
     () => () => {
       setTimeout(() => {
-        initLocale(locale)
-      }, 10)
+        initLocale(locale);
+      }, 10);
     },
     [],
   );

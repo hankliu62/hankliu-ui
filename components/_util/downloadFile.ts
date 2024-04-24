@@ -1,3 +1,3 @@
-import saveAs from 'file-saver'
+import saveAs from 'file-saver';
 
-export default saveAs
+export default saveAs;

@@ -43,8 +43,8 @@ cover: https://gw.alipayobjects.com/zos/alicdn/Vyyeu8jq2/Tooltp.svg
 | open | 用于手动控制浮层显隐 | boolean | false |  |
 | zIndex | 设置 Tooltip 的 `z-index` | number | - |  |
 | onOpenChange | 显示隐藏的回调 | (open: boolean) => void | - |  |
-| disabled | 不渲染 popover | boolean | false | |
-| ghosted | 幽灵模式，鼠标移入 Tooltip 内不会响应交互 | boolean | false | |
+| disabled | 不渲染 popover | boolean | false |  |
+| ghosted | 幽灵模式，鼠标移入 Tooltip 内不会响应交互 | boolean | false |  |
 
 ## 注意
 

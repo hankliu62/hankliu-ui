@@ -21,7 +21,7 @@ class Demo extends React.Component {
     size: 'default',
   };
 
-  onChange = e => {
+  onChange = (e) => {
     console.log('size checked', e.target.value);
     this.setState({
       size: e.target.value,

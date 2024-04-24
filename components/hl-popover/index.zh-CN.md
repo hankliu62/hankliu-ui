@@ -14,8 +14,8 @@ cover: https://gw.alipayobjects.com/zos/alicdn/1PNL1p_cO/Popover.svg
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
-| layout | 内容布局，可选值 `filled` ，当设置为 `filled` 时忽略 `title` 并且清除内 padding| string | - |  |
-| size | 大小，可选值 `large` `default` `small`，当设置了 `title` 时默认为 `large`| string | `default` |  |
+| layout | 内容布局，可选值 `filled` ，当设置为 `filled` 时忽略 `title` 并且清除内 padding | string | - |  |
+| size | 大小，可选值 `large` `default` `small`，当设置了 `title` 时默认为 `large` | string | `default` |  |
 | disabled | 不渲染 popover | boolean | false |  |
 | ghosted | 幽灵模式，鼠标移入 Popover 内不会响应交互 | boolean | false |  |
 

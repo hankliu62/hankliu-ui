@@ -23,7 +23,7 @@ class Demo extends React.Component {
     tabPosition: 'left',
   };
 
-  changeTabPosition = e => {
+  changeTabPosition = (e) => {
     this.setState({ tabPosition: e.target.value });
   };
 

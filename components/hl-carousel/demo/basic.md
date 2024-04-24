@@ -47,10 +47,12 @@ const CarouselDemo = () => {
           <h3 style={contentStyle}>4</h3>
         </div>
       </HlCarousel>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <Button onClick={() => carouselRef.current.prev()}>prev</Button>
-      <Button onClick={() => carouselRef.current.goTo(2)} className="ml-10 mr-10">goTo 2</Button>
+      <Button onClick={() => carouselRef.current.goTo(2)} className="ml-10 mr-10">
+        goTo 2
+      </Button>
       <Button onClick={() => carouselRef.current.next()}>next</Button>
     </div>
   );
@@ -58,4 +60,3 @@ const CarouselDemo = () => {
 
 ReactDOM.render(<CarouselDemo />, mountNode);
 ```
-

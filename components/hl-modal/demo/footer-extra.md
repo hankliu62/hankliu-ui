@@ -9,8 +9,7 @@ title:
 
 添加底部额外内容
 
-
-````jsx
+```jsx
 import { HlModal as Modal, Button, HlTag as Tag } from '@hankliu/hankliu-ui';
 
 class App extends React.Component {
@@ -18,38 +17,37 @@ class App extends React.Component {
     loading: false,
     title: 'The Title',
     open: false,
-    footerExtraContent: '提示内容：这里的默认行高为 36px'
-  }
-
+    footerExtraContent: '提示内容：这里的默认行高为 36px',
+  };
 
   showCustomExtra = () => {
     this.setState({
       open: true,
       footerExtraContent: (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          提示：<Tag.StatusTag  status="error">未通过</Tag.StatusTag>
+          提示：<Tag.StatusTag status="error">未通过</Tag.StatusTag>
         </div>
       ),
     });
-  }
+  };
 
   showModal = () => {
     this.setState({
       open: true,
-      footerExtraContent: '提示内容：这里的默认行高为 36px'
+      footerExtraContent: '提示内容：这里的默认行高为 36px',
     });
-  }
+  };
 
   handleOk = () => {
     this.setState({ loading: true });
     setTimeout(() => {
       this.setState({ loading: false, open: false });
     }, 3000);
-  }
+  };
 
   handleCancel = () => {
     this.setState({ open: false });
-  }
+  };
 
   render() {
     const { open, title, loading, footerExtraContent } = this.state;
@@ -81,4 +79,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
-````
+```

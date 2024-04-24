@@ -7,7 +7,7 @@ function Panel(props: ColorPickerProps) {
   const { type, ...rest } = props;
   if (typeof type === 'string' && type === 'gradient') {
     return <GradientPicker {...rest} />;
-  };
+  }
   return <BasicPicker {...rest} />;
 }
 

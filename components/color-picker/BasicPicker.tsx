@@ -1,11 +1,7 @@
 // @ts-nocheck
 import classnames from 'classnames';
-import React, {
-  useCallback, useEffect, useRef, useState,
-} from 'react';
-import {
-  Color, ColorResult, SketchPicker, SketchPickerProps,
-} from 'react-color';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Color, ColorResult, SketchPicker, SketchPickerProps } from 'react-color';
 import Select from '../select';
 import Tooltip from '../tooltip';
 import { ColorPickerProps, ColorPickerValue } from './interfaces';

@@ -13,28 +13,30 @@ title:
 
 To customize the text of the buttons, you need to set `okText` and `cancelText` props.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 class LocalizedModal extends React.Component {
-  state = { open: false }
+  state = { open: false };
 
   showModal = () => {
     this.setState({
       open: true,
     });
-  }
+  };
 
   hideModal = () => {
     this.setState({
       open: false,
     });
-  }
+  };
 
   render() {
     return (
       <div>
-        <Button type="primary" onClick={this.showModal}>Modal</Button>
+        <Button type="primary" onClick={this.showModal}>
+          Modal
+        </Button>
         <Modal
           title="Modal"
           open={this.state.open}
@@ -67,6 +69,6 @@ ReactDOM.render(
     <br />
     <Button onClick={confirm}>Confirm</Button>
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

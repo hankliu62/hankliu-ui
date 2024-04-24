@@ -13,8 +13,8 @@ title:
 
 A simple loading status.
 
-````jsx
+```jsx
 import { HlSpin as Spin } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(<Spin />, mountNode);
-````
+```

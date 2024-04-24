@@ -17,7 +17,7 @@ title:
 
 > it is an absolute controlled component and has no uncontrolled mode.
 
-````jsx
+```jsx
 import { HlTag } from '@hankliu/hankliu-ui';
 
 const { CheckableTag } = HlTag;
@@ -27,10 +27,12 @@ class MyTag extends React.Component {
 
   handleChange = (checked) => {
     this.setState({ checked });
-  }
+  };
 
   render() {
-    return <CheckableTag {...this.props} checked={this.state.checked} onChange={this.handleChange} />;
+    return (
+      <CheckableTag {...this.props} checked={this.state.checked} onChange={this.handleChange} />
+    );
   }
 }
 
@@ -38,6 +40,6 @@ ReactDOM.render(
   <div>
     <MyTag>Checkable HlTag</MyTag>
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

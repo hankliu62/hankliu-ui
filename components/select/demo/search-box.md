@@ -36,12 +36,12 @@ function fetch(value, callback) {
       q: value,
     });
     jsonp(`https://suggest.taobao.com/sug?${str}`)
-      .then(response => response.json())
-      .then(d => {
+      .then((response) => response.json())
+      .then((d) => {
         if (currentValue === value) {
           const { result } = d;
           const data = [];
-          result.forEach(r => {
+          result.forEach((r) => {
             data.push({
               value: r[0],
               text: r[0],
@@ -61,20 +61,20 @@ class SearchInput extends React.Component {
     value: undefined,
   };
 
-  handleSearch = value => {
+  handleSearch = (value) => {
     if (value) {
-      fetch(value, data => this.setState({ data }));
+      fetch(value, (data) => this.setState({ data }));
     } else {
       this.setState({ data: [] });
     }
   };
 
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 
   render() {
-    const options = this.state.data.map(d => <Option key={d.value}>{d.text}</Option>);
+    const options = this.state.data.map((d) => <Option key={d.value}>{d.text}</Option>);
     return (
       <Select
         showSearch

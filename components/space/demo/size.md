@@ -26,7 +26,7 @@ function SpaceSize() {
 
   return (
     <>
-      <Radio.Group value={size} onChange={e => setSize(e.target.value)}>
+      <Radio.Group value={size} onChange={(e) => setSize(e.target.value)}>
         <Radio value="small">Small</Radio>
         <Radio value="middle">Middle</Radio>
         <Radio value="large">Large</Radio>

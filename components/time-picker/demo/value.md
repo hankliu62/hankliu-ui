@@ -20,7 +20,7 @@ import { TimePicker } from '@hankliu/hankliu-ui';
 const Demo = () => {
   const [value, setValue] = useState(null);
 
-  const onChange = time => {
+  const onChange = (time) => {
     setValue(time);
   };
 

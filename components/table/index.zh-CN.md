@@ -11,7 +11,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg
 
 ## 设计师专属
 
-安装 [Kitchen Sketch 插件 💎](https://kitchen.alipay.com/)，两步就可以自动生成 Ant Design 表格组件。
+安装 [Kitchen Sketch 插件 💎](https://kitchen.alipay.com/)，两步就可以自动生成 HankLiu UI 表格组件。
 
 ## 何时使用
 
@@ -99,13 +99,13 @@ const columns = [
 
 ```jsx
 <Table
-  onRow={record => {
+  onRow={(record) => {
     return {
-      onClick: event => {}, // 点击行
-      onDoubleClick: event => {},
-      onContextMenu: event => {},
-      onMouseEnter: event => {}, // 鼠标移入行
-      onMouseLeave: event => {},
+      onClick: (event) => {}, // 点击行
+      onDoubleClick: (event) => {},
+      onContextMenu: (event) => {},
+      onMouseEnter: (event) => {}, // 鼠标移入行
+      onMouseLeave: (event) => {},
     };
   }}
   onHeaderRow={(columns, index) => {
@@ -284,7 +284,7 @@ TypeScript 里使用 Table 的 [CodeSandbox 实例](https://codesandbox.io/s/ser
 // 比如你的数据主键是 uid
 return <Table rowKey="uid" />;
 // 或
-return <Table rowKey={record => record.uid} />;
+return <Table rowKey={(record) => record.uid} />;
 ```
 
 ## 从 v3 升级到 v4

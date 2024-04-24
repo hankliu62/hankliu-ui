@@ -6,8 +6,7 @@ title:
 
 ## zh-CN
 
-设置lockHeight将固定输入框高度
-
+设置 lockHeight 将固定输入框高度
 
 ```jsx
 import { HlSelect, Switch } from '@hankliu/hankliu-ui';
@@ -17,7 +16,9 @@ const { Option } = HlSelect;
 
 const children = [];
 for (let i = 10; i < 36; i++) {
-  children.push(<Option key={i.toString(36) + i}>{'----------------------------' + i.toString(36) + i}</Option>);
+  children.push(
+    <Option key={i.toString(36) + i}>{'----------------------------' + i.toString(36) + i}</Option>,
+  );
 }
 
 function handleChange(value) {
@@ -28,7 +29,7 @@ function Demo() {
   const [lockHeight, setLockHeight] = useState(true);
   return (
     <>
-      <div style={{marginBottom: 20}}>
+      <div style={{ marginBottom: 20 }}>
         lockHeight：
         <Switch checked={lockHeight} onChange={setLockHeight} />
       </div>

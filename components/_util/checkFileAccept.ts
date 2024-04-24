@@ -1,19 +1,19 @@
-import getFilePostfix from './getFilePostfix'
-import isImage from './isImage'
-import isAudio from './isAudio'
-import isVideo from './isVideo'
-import isFunction from 'lodash/isFunction'
-import isRegExp from 'lodash/isRegExp'
-import isString from 'lodash/isString'
+import getFilePostfix from './getFilePostfix';
+import isImage from './isImage';
+import isAudio from './isAudio';
+import isVideo from './isVideo';
+import isFunction from 'lodash/isFunction';
+import isRegExp from 'lodash/isRegExp';
+import isString from 'lodash/isString';
 
-const reg_jpg = /^jpe?g$/
+const reg_jpg = /^jpe?g$/;
 
-const reg_split = /[\/\.]/
+const reg_split = /[\/\.]/;
 
 export function getAcceptTypes(accept = '') {
   let types = accept.split(reg_split);
-  if (types.length === 1) types.unshift('*')
-  return types
+  if (types.length === 1) types.unshift('*');
+  return types;
 }
 
 export function checkFilenameAccept(filename: string, accept: string) {
@@ -25,19 +25,19 @@ export function checkFilenameAccept(filename: string, accept: string) {
     return acceptPostfix === pf;
   }
   if (acceptPrefix === 'image') {
-    return isImage(filename)
+    return isImage(filename);
   }
   if (acceptPrefix === 'audio') {
-    return isAudio(filename)
+    return isAudio(filename);
   }
   if (acceptPrefix === 'video') {
-    return isVideo(filename)
+    return isVideo(filename);
   }
   //todo 添加更多类型检测
   return true;
 }
 
-function checkFileAccept(file: File|string, accept: string) {
+function checkFileAccept(file: File | string, accept: string) {
   if (typeof file === 'string') return checkFilenameAccept(file, accept);
   if (file instanceof File) return checkFilenameAccept(file.name, accept);
   return false;
@@ -52,20 +52,20 @@ const reg_space = /\s/g;
  * @param accept {string} 接受的文件类型，多个文件类型以逗号(,)分隔，
  * @return {boolean} 判断结果
  */
-export default function(file: File|string, accept: string) {
-  if (isFunction(accept)) return accept(file)
+export default function (file: File | string, accept: string) {
+  if (isFunction(accept)) return accept(file);
   if (isRegExp(accept)) {
-    if (isString(file)) return accept.test(file)
-    if (file instanceof File) return accept.test(file.name)
-    return false
+    if (isString(file)) return accept.test(file);
+    if (file instanceof File) return accept.test(file.name);
+    return false;
   }
   if (isString(accept)) {
     const as = accept.replace(reg_space, '').split(',');
     if (as.length > 1) {
-      return as.some(item => checkFileAccept(file, item))
+      return as.some((item) => checkFileAccept(file, item));
     } else {
       return checkFileAccept(file, accept);
     }
   }
-  return true
-};
+  return true;
+}

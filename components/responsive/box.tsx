@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 export type BoxProps = {
-  width?: string|number;
-  height?: string|number;
+  width?: string | number;
+  height?: string | number;
   ratio?: number;
   style?: any;
   className?: string;
@@ -10,7 +10,11 @@ export type BoxProps = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const InnerStyle: React.CSSProperties = {
-  position: 'absolute', top: 0, right: 0, bottom: 0, left: 0,
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
 };
 
 // todo 修改 2 个地址 内联样式，relative
@@ -25,9 +29,7 @@ export default class Box extends React.Component<BoxProps, any> {
   }
 
   render() {
-    const {
-      width, height, style = {}, ratio, children, ...rest
-    } = this.props;
+    const { width, height, style = {}, ratio, children, ...rest } = this.props;
     if (width) style.width = width;
     if (height) style.height = height;
     style.position = 'relative';

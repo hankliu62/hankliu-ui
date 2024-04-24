@@ -31,7 +31,7 @@ class App extends React.Component {
     });
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({
       placement: e.target.value,
     });

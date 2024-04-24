@@ -1,6 +1,4 @@
-import React, {
-  useEffect, useRef, useState, useLayoutEffect,
-} from 'react';
+import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 
 let globalImg;
 
@@ -47,14 +45,12 @@ function cacheImage(url: string, onLoad: () => void) {
 }
 
 export interface CardSpriteProps {
-  sprite: ISprite
+  sprite: ISprite;
 }
 export default function CardSprite({ sprite }: CardSpriteProps) {
   const [percent, setPercent] = useState(0);
   const [hover, setHover] = useState(false);
-  const [{
-    src, left, top, width, height,
-  }, setSrc] = useState({
+  const [{ src, left, top, width, height }, setSrc] = useState({
     src: '',
     left: 0,
     top: 0,

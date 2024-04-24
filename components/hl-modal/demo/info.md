@@ -69,13 +69,27 @@ function delete1() {
 }
 ReactDOM.render(
   <div>
-    <Button onClick={info} type="neutral">Info</Button>
-    <Button onClick={success} type="neutral">Success</Button>
-    <Button onClick={error} type="neutral">Error</Button>
-    <Button onClick={warning} type="neutral">Warning</Button>
-    <Button onClick={confirm} type="neutral">confirm</Button>
-    <Button onClick={alert} type="neutral">alert</Button>
-    <Button onClick={delete1} type="neutral">delete</Button>
+    <Button onClick={info} type="neutral">
+      Info
+    </Button>
+    <Button onClick={success} type="neutral">
+      Success
+    </Button>
+    <Button onClick={error} type="neutral">
+      Error
+    </Button>
+    <Button onClick={warning} type="neutral">
+      Warning
+    </Button>
+    <Button onClick={confirm} type="neutral">
+      confirm
+    </Button>
+    <Button onClick={alert} type="neutral">
+      alert
+    </Button>
+    <Button onClick={delete1} type="neutral">
+      delete
+    </Button>
   </div>,
   mountNode,
 );

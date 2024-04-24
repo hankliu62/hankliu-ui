@@ -21,7 +21,7 @@ const { RangePicker } = DatePicker;
 ReactDOM.render(
   <Space direction="vertical" size={12}>
     <DatePicker
-      dateRender={current => {
+      dateRender={(current) => {
         const style = {};
         if (current.date() === 1) {
           style.border = '1px solid #1890ff';
@@ -35,7 +35,7 @@ ReactDOM.render(
       }}
     />
     <RangePicker
-      dateRender={current => {
+      dateRender={(current) => {
         const style = {};
         if (current.date() === 1) {
           style.border = '1px solid #1890ff';

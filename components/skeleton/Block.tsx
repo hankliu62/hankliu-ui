@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 
 export interface SkeletonBlockProps {
   width?: number | string;

@@ -32,7 +32,7 @@ class Demo extends React.Component {
     };
   }
 
-  onChange = activeKey => {
+  onChange = (activeKey) => {
     this.setState({ activeKey });
   };
 
@@ -47,7 +47,7 @@ class Demo extends React.Component {
     this.setState({ panes, activeKey });
   };
 
-  remove = targetKey => {
+  remove = (targetKey) => {
     let { activeKey } = this.state;
     let lastIndex;
     this.state.panes.forEach((pane, i) => {
@@ -55,7 +55,7 @@ class Demo extends React.Component {
         lastIndex = i - 1;
       }
     });
-    const panes = this.state.panes.filter(pane => pane.key !== targetKey);
+    const panes = this.state.panes.filter((pane) => pane.key !== targetKey);
     if (panes.length && activeKey === targetKey) {
       if (lastIndex >= 0) {
         activeKey = panes[lastIndex].key;
@@ -79,7 +79,7 @@ class Demo extends React.Component {
           type="editable-card"
           onEdit={this.onEdit}
         >
-          {this.state.panes.map(pane => (
+          {this.state.panes.map((pane) => (
             <TabPane tab={pane.title} key={pane.key}>
               {pane.content}
             </TabPane>

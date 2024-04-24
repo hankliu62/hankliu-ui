@@ -1,10 +1,10 @@
 import localeValues from 'antd4x/lib/locale/default';
 import type { Locale } from 'antd4x/lib/locale-provider';
-import type { HlLocale } from './zh_CN'
+import type { HlLocale } from './zh_CN';
 
 const antdLocale: Locale = {
   ...localeValues,
-}
+};
 const hankliuLocale = {
   FileSelect: {
     title: 'Click to choose files or dragged in',
@@ -50,9 +50,9 @@ const hankliuLocale = {
     textPlaceholder: 'Enter words',
   },
   ImageCropper: {
-    okText: "OK",
-    reuploadText: "Re Upload",
+    okText: 'OK',
+    reuploadText: 'Re Upload',
   },
-}
+};
 const tzLocaleValues: HlLocale = Object.assign(antdLocale, hankliuLocale);
 export default tzLocaleValues;

@@ -21,7 +21,7 @@ const columns = [
     title: 'Name (all screens)',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a>{text}</a>,
+    render: (text) => <a>{text}</a>,
   },
   {
     title: 'Age (medium screen or bigger)',

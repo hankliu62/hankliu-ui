@@ -20,7 +20,12 @@ const ExampleComment = ({ children }) => (
   <Comment
     actions={[<span key="comment-nested-reply-to">Reply to</span>]}
     author={<a>Han Solo</a>}
-    avatar={<Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" alt="Han Solo" />}
+    avatar={
+      <Avatar
+        src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b"
+        alt="Han Solo"
+      />
+    }
     content={
       <p>
         We supply a series of design principles, practical patterns and high quality design

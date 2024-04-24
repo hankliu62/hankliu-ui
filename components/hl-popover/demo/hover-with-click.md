@@ -29,14 +29,14 @@ class App extends React.Component {
     });
   };
 
-  handleHoverChange = open => {
+  handleHoverChange = (open) => {
     this.setState({
       hovered: open,
       clicked: false,
     });
   };
 
-  handleClickChange = open => {
+  handleClickChange = (open) => {
     this.setState({
       clicked: open,
       hovered: false,

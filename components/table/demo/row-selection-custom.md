@@ -46,7 +46,7 @@ class App extends React.Component {
     selectedRowKeys: [], // Check here to configure the default column
   };
 
-  onSelectChange = selectedRowKeys => {
+  onSelectChange = (selectedRowKeys) => {
     console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({ selectedRowKeys });
   };
@@ -63,7 +63,7 @@ class App extends React.Component {
         {
           key: 'odd',
           text: 'Select Odd Row',
-          onSelect: changableRowKeys => {
+          onSelect: (changableRowKeys) => {
             let newSelectedRowKeys = [];
             newSelectedRowKeys = changableRowKeys.filter((key, index) => {
               if (index % 2 !== 0) {
@@ -77,7 +77,7 @@ class App extends React.Component {
         {
           key: 'even',
           text: 'Select Even Row',
-          onSelect: changableRowKeys => {
+          onSelect: (changableRowKeys) => {
             let newSelectedRowKeys = [];
             newSelectedRowKeys = changableRowKeys.filter((key, index) => {
               if (index % 2 !== 0) {

@@ -91,10 +91,10 @@ const treeData = [
 function Demo() {
   const [lockHeight, setLockHeight] = useState(true);
   const [value, setValue] = useState();
-  console.log('HlTreeSelect', HlTreeSelect)
+  console.log('HlTreeSelect', HlTreeSelect);
   return (
     <>
-      <div style={{marginBottom: 20}}>
+      <div style={{ marginBottom: 20 }}>
         lockHeight：
         <Switch checked={lockHeight} onChange={setLockHeight} />
       </div>

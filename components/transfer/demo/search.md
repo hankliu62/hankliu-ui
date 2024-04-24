@@ -46,7 +46,7 @@ class App extends React.Component {
 
   filterOption = (inputValue, option) => option.description.indexOf(inputValue) > -1;
 
-  handleChange = targetKeys => {
+  handleChange = (targetKeys) => {
     this.setState({ targetKeys });
   };
 
@@ -63,7 +63,7 @@ class App extends React.Component {
         targetKeys={this.state.targetKeys}
         onChange={this.handleChange}
         onSearch={this.handleSearch}
-        render={item => item.title}
+        render={(item) => item.title}
       />
     );
   }

@@ -91,14 +91,16 @@ for (let i = 0; i < 100; i++) {
 }
 
 function Demo() {
-  const [bottomOffset, setBottomOffset] = useState(0)
+  const [bottomOffset, setBottomOffset] = useState(0);
   return (
     <>
-      <div style={{
-          marginBottom: 20
-      }}>
+      <div
+        style={{
+          marginBottom: 20,
+        }}
+      >
         <span>bottomOffset：</span>
-        <InputNumber value={bottomOffset} onChange={setBottomOffset}/>
+        <InputNumber value={bottomOffset} onChange={setBottomOffset} />
       </div>
       <Table
         bottomOffset={bottomOffset}
@@ -110,8 +112,8 @@ function Demo() {
         }}
       />
     </>
-  )
-};
+  );
+}
 
-ReactDOM.render(<Demo/>, mountNode);
+ReactDOM.render(<Demo />, mountNode);
 ```

@@ -23,7 +23,7 @@ class Demo extends React.Component {
     current: 0,
   };
 
-  onChange = current => {
+  onChange = (current) => {
     console.log('onChange:', current);
     this.setState({ current });
   };

@@ -3,7 +3,7 @@ import cl from 'classnames';
 import type { HlTooltipProps } from '../tooltip';
 import Tooltip from '../tooltip';
 
-export type TooltipTextProps = HlTooltipProps
+export type TooltipTextProps = HlTooltipProps;
 
 export default function TooltipText({ children, title, className, ...rest }: TooltipTextProps) {
   const [enabledTooltip, setEnabledTooltip] = useState(false);

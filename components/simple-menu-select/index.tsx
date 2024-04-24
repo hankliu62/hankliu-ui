@@ -134,7 +134,7 @@ function SimpleMenuSelect({
       value={value}
       onChange={(val, title) => {
         onChange(val, title);
-        setSearchVal('')
+        setSearchVal('');
       }}
     />
   );

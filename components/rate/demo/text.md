@@ -23,7 +23,7 @@ class Rater extends React.Component {
     value: 3,
   };
 
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 

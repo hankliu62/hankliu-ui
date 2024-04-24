@@ -7,19 +7,18 @@ export interface ProgressProps {
 }
 
 class Progress extends Component<ProgressProps, any> {
-
   onChange = (e: any) => {
     const { progressChange } = this.props;
     progressChange && progressChange(e);
-  }
+  };
 
   render() {
     const { value = 0, loaded = 0 } = this.props;
     return (
       <div className="control-progress hlui-audio-control-progress">
         <div className="progress-bg" />
-        <div style={{width: `${loaded * 100}%`}} className="progress-loaded" />
-        <div style={{width: `${value * 100}%`}}className="progress-value" />
+        <div style={{ width: `${loaded * 100}%` }} className="progress-loaded" />
+        <div style={{ width: `${value * 100}%` }} className="progress-value" />
         <input
           type="range"
           min="0"
@@ -30,7 +29,7 @@ class Progress extends Component<ProgressProps, any> {
           onChange={this.onChange}
         />
       </div>
-    )
+    );
   }
 }
 

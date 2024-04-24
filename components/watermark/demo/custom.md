@@ -56,7 +56,7 @@ const WaterBasicDemo = () => {
             The light-speed iteration of the digital world makes products more complex. However,
             human consciousness and attention resources are limited. Facing this design
             contradiction, the pursuit of natural interaction will be the consistent direction of
-            Ant Design.
+            HankLiu UI.
           </Paragraph>
           <Paragraph>
             Natural user cognition: According to cognitive psychology, about 80% of external

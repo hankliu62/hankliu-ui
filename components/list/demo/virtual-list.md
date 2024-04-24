@@ -27,8 +27,8 @@ const VirtualizedExample = () => {
 
   const appendData = () => {
     fetch(fakeDataUrl)
-      .then(res => res.json())
-      .then(body => {
+      .then((res) => res.json())
+      .then((body) => {
         setData(data.concat(body.results));
         message.success(`${body.results.length} more items loaded!`);
       });
@@ -38,7 +38,7 @@ const VirtualizedExample = () => {
     appendData();
   }, []);
 
-  const onScroll = e => {
+  const onScroll = (e) => {
     if (e.target.scrollHeight - e.target.scrollTop === ContainerHeight) {
       appendData();
     }
@@ -53,7 +53,7 @@ const VirtualizedExample = () => {
         itemKey="email"
         onScroll={onScroll}
       >
-        {item => (
+        {(item) => (
           <List.Item key={item.email}>
             <List.Item.Meta
               avatar={<Avatar src={item.picture.large} />}

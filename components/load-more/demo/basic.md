@@ -46,11 +46,7 @@ class Demo extends React.Component {
             <li key={idx} />
           ))}
         </ul>
-        <LoadMore
-          disabled={loading}
-          onEnter={this.loadMore}
-          visible={hasMore}
-        />
+        <LoadMore disabled={loading} onEnter={this.loadMore} visible={hasMore} />
       </div>
     );
   }

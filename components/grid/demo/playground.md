@@ -37,15 +37,15 @@ class App extends React.Component {
     colCountKey: 2,
   };
 
-  onGutterChange = gutterKey => {
+  onGutterChange = (gutterKey) => {
     this.setState({ gutterKey });
   };
 
-  onVGutterChange = vgutterKey => {
+  onVGutterChange = (vgutterKey) => {
     this.setState({ vgutterKey });
   };
 
-  onColCountChange = colCountKey => {
+  onColCountChange = (colCountKey) => {
     this.setState({ colCountKey });
   };
 
@@ -73,7 +73,7 @@ class App extends React.Component {
             onChange={this.onGutterChange}
             marks={gutters}
             step={null}
-            tipFormatter={value => gutters[value]}
+            tipFormatter={(value) => gutters[value]}
           />
         </div>
         <span>Vertical Gutter (px): </span>
@@ -85,7 +85,7 @@ class App extends React.Component {
             onChange={this.onVGutterChange}
             marks={vgutters}
             step={null}
-            tipFormatter={value => vgutters[value]}
+            tipFormatter={(value) => vgutters[value]}
           />
         </div>
         <span>Column Count:</span>
@@ -97,7 +97,7 @@ class App extends React.Component {
             onChange={this.onColCountChange}
             marks={colCounts}
             step={null}
-            tipFormatter={value => colCounts[value]}
+            tipFormatter={(value) => colCounts[value]}
           />
         </div>
         <Row gutter={[gutters[gutterKey], vgutters[vgutterKey]]}>

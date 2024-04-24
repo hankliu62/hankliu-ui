@@ -21,7 +21,7 @@ const { TabPane } = Tabs;
 class Demo extends React.Component {
   state = { size: 'small' };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ size: e.target.value });
   };
 

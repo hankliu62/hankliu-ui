@@ -50,7 +50,7 @@ class Demo extends React.Component {
     expandedKeys: ['0-0', '0-0-0', '0-0-0-0'],
   };
 
-  onDragEnter = info => {
+  onDragEnter = (info) => {
     console.log(info);
     // expandedKeys 需要受控时设置
     // this.setState({
@@ -58,7 +58,7 @@ class Demo extends React.Component {
     // });
   };
 
-  onDrop = info => {
+  onDrop = (info) => {
     console.log(info);
     const dropKey = info.node.key;
     const dragKey = info.dragNode.key;
@@ -86,7 +86,7 @@ class Demo extends React.Component {
 
     if (!info.dropToGap) {
       // Drop on the content
-      loop(data, dropKey, item => {
+      loop(data, dropKey, (item) => {
         item.children = item.children || [];
         // where to insert 示例添加到头部，可以是随意位置
         item.children.unshift(dragObj);
@@ -96,7 +96,7 @@ class Demo extends React.Component {
       info.node.props.expanded && // Is expanded
       dropPosition === 1 // On the bottom gap
     ) {
-      loop(data, dropKey, item => {
+      loop(data, dropKey, (item) => {
         item.children = item.children || [];
         // where to insert 示例添加到头部，可以是随意位置
         item.children.unshift(dragObj);

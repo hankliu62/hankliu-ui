@@ -19,9 +19,10 @@ import { Form, InputNumber } from '@hankliu/hankliu-ui';
 
 type ValidateStatus = Parameters<typeof Form.Item>[0]['validateStatus'];
 
-function validatePrimeNumber(
-  number: number,
-): { validateStatus: ValidateStatus; errorMsg: string | null } {
+function validatePrimeNumber(number: number): {
+  validateStatus: ValidateStatus;
+  errorMsg: string | null;
+} {
   if (number === 11) {
     return {
       validateStatus: 'success',

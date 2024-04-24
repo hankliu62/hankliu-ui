@@ -4,6 +4,7 @@ title:
   zh-CN: 新版用法
   en-US: Basic
 ---
+
 参考[FixedSizeList](https://react-window.vercel.app/#/api/FixedSizeList)
 
 ```jsx
@@ -17,19 +18,14 @@ const Row = ({ index, style }) => (
 );
 
 const Example = () => (
-  <VirtualList
-    className="List"
-    height={150}
-    itemCount={1000}
-    itemSize={35}
-  >
+  <VirtualList className="List" height={150} itemCount={1000} itemSize={35}>
     {Row}
   </VirtualList>
 );
 ReactDOM.render(<Example />, mountNode);
 ```
 
-```css
+````css
 .List {
   border: 1px solid #d9dddd;
 }
@@ -46,3 +42,4 @@ ReactDOM.render(<Example />, mountNode);
 }
 
 ```_
+````

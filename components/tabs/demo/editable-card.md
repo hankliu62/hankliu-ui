@@ -37,7 +37,7 @@ class Demo extends React.Component {
     panes: initialPanes,
   };
 
-  onChange = activeKey => {
+  onChange = (activeKey) => {
     this.setState({ activeKey });
   };
 
@@ -56,7 +56,7 @@ class Demo extends React.Component {
     });
   };
 
-  remove = targetKey => {
+  remove = (targetKey) => {
     const { panes, activeKey } = this.state;
     let newActiveKey = activeKey;
     let lastIndex;
@@ -65,7 +65,7 @@ class Demo extends React.Component {
         lastIndex = i - 1;
       }
     });
-    const newPanes = panes.filter(pane => pane.key !== targetKey);
+    const newPanes = panes.filter((pane) => pane.key !== targetKey);
     if (newPanes.length && newActiveKey === targetKey) {
       if (lastIndex >= 0) {
         newActiveKey = newPanes[lastIndex].key;
@@ -88,7 +88,7 @@ class Demo extends React.Component {
         activeKey={activeKey}
         onEdit={this.onEdit}
       >
-        {panes.map(pane => (
+        {panes.map((pane) => (
           <TabPane tab={pane.title} key={pane.key} closable={pane.closable}>
             {pane.content}
           </TabPane>

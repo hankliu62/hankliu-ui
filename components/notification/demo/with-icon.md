@@ -16,7 +16,7 @@ A notification box with a icon at the left side.
 ```jsx
 import { Button, notification, Space } from '@hankliu/hankliu-ui';
 
-const openNotificationWithIcon = type => {
+const openNotificationWithIcon = (type) => {
   notification[type]({
     message: 'Notification Title',
     description:

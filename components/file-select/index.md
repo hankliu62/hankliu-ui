@@ -32,16 +32,16 @@ subtitle: 文件选择器
 | height | 设置容器的高度 | string\|number | - |
 
 ## 静态属性
+
 - `FileSelect.SIZE_KB` = `1024`
 - `FileSelect.SIZE_MB` = `1024 * 1024`
 - `FileSelect.MAXSIZE` = `10 * 1024 * 1024`
 - `FileSelect.ERRORS`
-    - `FileSelect.ERRORS.EXCEED_MAXSIZE` 文件过大
-    - `FileSelect.ERRORS.EXCEED_MAXIMUM` 选择的文件数量超过最大值
-    - `FileSelect.ERRORS.ACCEPT_FAILED` 文件类型校验失败
-    - `FileSelect.ERRORS.CANCELED` 用户取消选择
+  - `FileSelect.ERRORS.EXCEED_MAXSIZE` 文件过大
+  - `FileSelect.ERRORS.EXCEED_MAXIMUM` 选择的文件数量超过最大值
+  - `FileSelect.ERRORS.ACCEPT_FAILED` 文件类型校验失败
+  - `FileSelect.ERRORS.CANCELED` 用户取消选择
 
 ## ref 方法
+
 - open 主动触发用户选择文件
-
-

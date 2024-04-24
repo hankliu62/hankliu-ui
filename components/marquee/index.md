@@ -17,7 +17,7 @@ title: Marquee
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | direction | 播放方向，可选值 `horizontal` `vertical` 默认为横向滚动 | string | horizontal |
-| duration | 播放时长，单位 ms<br/>横向滚动时，播放时长指容器右边的内容滚动到左边的时间<br/>纵向滚动时，播放时长指容器每一行内容停留时长 | number | 3000  |
+| duration | 播放时长，单位 ms<br/>横向滚动时，播放时长指容器右边的内容滚动到左边的时间<br/>纵向滚动时，播放时长指容器每一行内容停留时长 | number | 3000 |
 | width | 容器宽度 | number\|string | 100% |
 | height | 容器高度，**如果内容为文本时，应当设置高度为行高** | number\|string | 100% |
 | className | 输入框大小 | string |  |

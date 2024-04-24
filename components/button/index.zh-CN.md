@@ -12,7 +12,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 
 标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
 
-在 Ant Design 中我们提供了五种按钮。
+在 HankLiu UI 中我们提供了五种按钮。
 
 - 主按钮：用于主行动点，一个操作区域只能有一个主按钮。
 - 默认按钮：用于没有主次之分的一组行动点。
@@ -36,7 +36,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 按钮的属性说明如下：
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | block | 将按钮宽度调整为其父宽度的选项 | boolean | false |  |
 | danger | 设置危险按钮 | boolean | false |  |
 | disabled | 按钮失效状态 | boolean | false |  |
@@ -46,7 +46,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 | icon | 设置按钮的图标组件 | ReactNode | - |  |
 | loading | 设置按钮载入状态 | boolean \| { delay: number } | false |  |
 | shape | 设置按钮形状 | `default` \| `circle` \| `round` | 'default' |  |
-| size | 设置按钮大小 | `large`(大) `medium`(中偏大) `smedium`(中偏小) `small`(小) | 'default' | |
+| size | 设置按钮大小 | `large`(大) `medium`(中偏大) `smedium`(中偏小) `small`(小) | 'default' |  |
 | target | 相当于 a 链接的 target 属性，href 存在时生效 | string | - |  |
 | type | 设置按钮类型 | `primary` \| `ghost` \| `dashed` \| `link` \| `text` \| `neutral` | `primary` |  |
 | onClick | 点击按钮时的回调 | (event) => void | - |  |
@@ -57,7 +57,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 
 ### 如何移除两个汉字之间的空格？
 
-根据 Ant Design 设计规范要求，我们会在按钮内(文本按钮和链接按钮除外)只有两个汉字时自动添加空格，如果你不需要这个特性，可以设置 [ConfigProvider](/components/config-provider/#API) 的 `autoInsertSpaceInButton` 为 `false`。
+根据 HankLiu UI 设计规范要求，我们会在按钮内(文本按钮和链接按钮除外)只有两个汉字时自动添加空格，如果你不需要这个特性，可以设置 [ConfigProvider](/components/config-provider/#API) 的 `autoInsertSpaceInButton` 为 `false`。
 
 <img src="https://gw.alipayobjects.com/zos/antfincdn/MY%26THAPZrW/38f06cb9-293a-4b42-b183-9f443e79ffea.png" style="box-shadow: none; margin: 0; width: 100px" alt="移除两个汉字之间的空格"  />
 
@@ -80,4 +80,4 @@ cover: https://gw.alipayobjects.com/zos/alicdn/fNUKzY1sk/Button.svg
 
 ## 设计指引
 
-- [我的按钮究竟该放哪儿！？| Ant Design 4.0 系列分享](https://zhuanlan.zhihu.com/p/109644406)
+- [我的按钮究竟该放哪儿！？| HankLiu UI 4.0 系列分享](https://zhuanlan.zhihu.com/p/109644406)

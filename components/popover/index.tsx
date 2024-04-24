@@ -4,4 +4,4 @@ import appendDefaultProps from '../_util/appendDefaultProps';
 appendDefaultProps();
 
 export * from 'antd4x/lib/popover';
-export default Popover
+export default Popover;

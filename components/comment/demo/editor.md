@@ -24,7 +24,7 @@ const CommentList = ({ comments }) => (
     dataSource={comments}
     header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
     itemLayout="horizontal"
-    renderItem={props => <Comment {...props} />}
+    renderItem={(props) => <Comment {...props} />}
   />
 );
 
@@ -65,7 +65,8 @@ class App extends React.Component {
           ...this.state.comments,
           {
             author: 'Han Solo',
-            avatar: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
+            avatar:
+              'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
             content: <p>{this.state.value}</p>,
             datetime: moment().fromNow(),
           },
@@ -74,7 +75,7 @@ class App extends React.Component {
     }, 1000);
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       value: e.target.value,
     });
@@ -87,7 +88,12 @@ class App extends React.Component {
       <>
         {comments.length > 0 && <CommentList comments={comments} />}
         <Comment
-          avatar={<Avatar src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b" alt="Han Solo" />}
+          avatar={
+            <Avatar
+              src="https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b"
+              alt="Han Solo"
+            />
+          }
           content={
             <Editor
               onChange={this.handleChange}

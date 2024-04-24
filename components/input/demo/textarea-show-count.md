@@ -18,7 +18,7 @@ import { Input } from '@hankliu/hankliu-ui';
 
 const { TextArea } = Input;
 
-const onChange = e => {
+const onChange = (e) => {
   console.log('Change:', e.target.value);
 };
 

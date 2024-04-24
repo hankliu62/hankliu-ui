@@ -22,15 +22,16 @@ cover: https://gw.alipayobjects.com/zos/alicdn/MNbKfLBVb/Empty.svg
 </Empty>
 ```
 
-| 参数 | 说明 | 类型 | 默认值 |   |
-| --- | --- | --- | --- |
+| 参数 | 说明 | 类型 | 默认值 |  |
+| --- | --- | --- | --- | --- |
 | image | 设置显示图片，为 string 时表示自定义图片地址 | string \| ReactNode | false |  |
 | description | 自定义描述内容 | string \| ReactNode | - |  |
-| height | 容器高度, 会覆盖 style 中的height值 | string \| number | '100%' |  |
+| height | 容器高度, 会覆盖 style 中的 height 值 | string \| number | '100%' |  |
 | style | 容器 style | {} | - |  |
 | size | 容器不同的大小，可选值 `small` `large` `default` | string | `default` |  |
 | className | className | string | - |  |
 | imageStyle | 图片样式 | CSSProperties | - |  |
+
 ## 内置图片
 
 - Empty.PRESENTED_IMAGE_SIMPLE

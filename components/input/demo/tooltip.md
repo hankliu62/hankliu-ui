@@ -33,7 +33,7 @@ function formatNumber(value) {
 }
 
 class NumericInput extends React.Component {
-  onChange = e => {
+  onChange = (e) => {
     const { value } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
     if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
@@ -86,7 +86,7 @@ class NumericInputDemo extends React.Component {
     this.state = { value: '' };
   }
 
-  onChange = value => {
+  onChange = (value) => {
     this.setState({ value });
   };
 

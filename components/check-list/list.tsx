@@ -80,7 +80,7 @@ function List(props: CheckListProps) {
   };
 
   const select = (item: any, checked: boolean) => {
-    const newValue = [...value]
+    const newValue = [...value];
     if (checked) {
       newValue.push(item);
     } else {

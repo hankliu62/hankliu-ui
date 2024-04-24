@@ -5,24 +5,21 @@ title: 自定义容器
 
 可以自定义容器
 
-````jsx
+```jsx
 import { FileSelect, Button, HlImage as Image } from '@hankliu/hankliu-ui';
 
 class BasiceDemo extends React.Component {
-
-  state = {
-
-  };
+  state = {};
 
   handleSelect = (files) => {
     console.log(files);
-  }
+  };
 
   render() {
     return (
       <FileSelect onSelect={this.handleSelect} accept=".jpg" drawable={false}>
         <div className="text-center">
-          <Image src="" block className="mb-15"/>
+          <Image src="" block className="mb-15" />
           <p className="mb-10">自定义文案类容，请选择图片上传</p>
           <Button>点击上传</Button>
         </div>
@@ -32,8 +29,7 @@ class BasiceDemo extends React.Component {
 }
 
 ReactDOM.render(<BasiceDemo />, mountNode);
-
-````
+```
 
 <style>
 .text-center {

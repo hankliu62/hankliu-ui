@@ -13,31 +13,31 @@ title:
 
 Passing `okButtonProps` and `cancelButtonProps` can customize the ok button and cancel button props.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 class App extends React.Component {
-  state = { open: false }
+  state = { open: false };
 
   showModal = () => {
     this.setState({
       open: true,
     });
-  }
+  };
 
   handleOk = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   handleCancel = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   render() {
     return (
@@ -63,3 +63,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
+```

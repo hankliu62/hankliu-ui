@@ -25,8 +25,8 @@ cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAA
 | className | 类名 | string | - |
 | style | 行内样式 | object | - |
 | fit | 图片填充，可选 fill, contain, cover, flex [参考说明](#fit) | string | - |
-| src | 图片URL | string | - |
-| alt | 图片alt | string | - |
+| src | 图片 URL | string | - |
+| alt | 图片 alt | string | - |
 | size | 给宽高设置相同的值，该属性覆盖 width 和 height | number | - |
 | width | 图片宽度 | string\|number | auto |
 | height | 图片高度 | string\|number | auto |
@@ -50,4 +50,3 @@ cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAA
 - `cover`：保持原有尺寸比例继续缩放，保证宽度和高度至少有一个和容器一致，图片部分区域不可见
 
 - `flex`: 在图片尺寸小于容器大小的情况下，保持原有尺寸居中显示，如果尺寸超出容器大小则使用 contain 代替
-

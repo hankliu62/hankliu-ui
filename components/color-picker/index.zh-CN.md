@@ -25,33 +25,33 @@ cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*PpY4RYNM8UcAAAAAAA
 
 #### AlphaColorValue
 
-| 属性 | 说明 | 类型 |
-| --- | --- | --- |
-| r | 颜色 r 通道值，取值范围 0 - 255 | number |
-| g | 颜色 g 通道值，取值范围 0 - 255 | number |
-| b | 颜色 b 通道值，取值范围 0 - 255 | number |
-| a | 颜色透明度，取值范围 0 - 1 | number |
-
+| 属性 | 说明                            | 类型   |
+| ---- | ------------------------------- | ------ |
+| r    | 颜色 r 通道值，取值范围 0 - 255 | number |
+| g    | 颜色 g 通道值，取值范围 0 - 255 | number |
+| b    | 颜色 b 通道值，取值范围 0 - 255 | number |
+| a    | 颜色透明度，取值范围 0 - 1      | number |
 
 #### GradientColorValue
 
-| 属性 | 说明 | 类型 |
-| --- | --- | --- |
-| type | 渐变类型 | string |
-| colors | 色块 | [GradientColorStopValue](#GradientColorStopValue)[] |
-| angle | 渐变角度，取值范围 0 - 359 | number |
+| 属性   | 说明                       | 类型                                                |
+| ------ | -------------------------- | --------------------------------------------------- |
+| type   | 渐变类型                   | string                                              |
+| colors | 色块                       | [GradientColorStopValue](#GradientColorStopValue)[] |
+| angle  | 渐变角度，取值范围 0 - 359 | number                                              |
 
 #### GradientColorStopValue
 
-| 属性 | 说明 | 类型 |
-| --- | --- | --- |
-| r | 颜色 r 通道值，取值范围 0 - 255 | number |
-| g | 颜色 g 通道值，取值范围 0 - 255 | number |
-| b | 颜色 b 通道值，取值范围 0 - 255 | number |
-| a | 颜色透明度，取值范围 0 - 1 | number |
-| stop | 颜色断点，取值范围 0 - 1 | number |
+| 属性 | 说明                            | 类型   |
+| ---- | ------------------------------- | ------ |
+| r    | 颜色 r 通道值，取值范围 0 - 255 | number |
+| g    | 颜色 g 通道值，取值范围 0 - 255 | number |
+| b    | 颜色 b 通道值，取值范围 0 - 255 | number |
+| a    | 颜色透明度，取值范围 0 - 1      | number |
+| stop | 颜色断点，取值范围 0 - 1        | number |
 
 #### Colors
+
 ```
 ['#D0021B', '#F5A623', '#F8E71C', '#8B572A', '#7ED321', '#417505', '#BD10E0', '#9013FE', '#4A90E2', '#50E3C2', '#B8E986', '#000000', '#4A4A4A', '#9B9B9B', '#FFFFFF']
 ```
@@ -69,7 +69,6 @@ cover: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*PpY4RYNM8UcAAAAAAA
 | onOk | 点击确认按钮的回调函数 | () => void | - |
 | cancelText | 设置取消按钮的文案 | string | 取消 |
 | okText | 设置确认按钮的文案 | string | 确认 |
-
 
 ### 静态方法
 

@@ -23,7 +23,7 @@ ReactDOM.render(
     <Badge count={5} status="default" />
     <Badge count={7} status="processing" />
     <Badge count={18} status="warning" />
-    <br/>
+    <br />
     <Badge status="success" />
     <Badge status="error" />
     <Badge status="default" />

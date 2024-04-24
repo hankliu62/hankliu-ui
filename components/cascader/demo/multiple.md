@@ -52,7 +52,7 @@ const options = [
 ];
 
 const App = () => {
-  const onChange = value => {
+  const onChange = (value) => {
     console.log(value);
   };
   return (

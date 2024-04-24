@@ -39,11 +39,11 @@ class Demo extends React.Component {
       <div>
         <Select
           style={{ width: 200 }}
-          onChange={val => {
+          onChange={(val) => {
             this.setState({ parentPos: val });
           }}
         >
-          {positionList.map(pos => (
+          {positionList.map((pos) => (
             <Option key={pos} value={pos}>
               Parent - {pos}
             </Option>
@@ -52,11 +52,11 @@ class Demo extends React.Component {
 
         <Select
           style={{ width: 200 }}
-          onChange={val => {
+          onChange={(val) => {
             this.setState({ childPos: val });
           }}
         >
-          {positionList.map(pos => (
+          {positionList.map((pos) => (
             <Option key={pos} value={pos}>
               Child - {pos}
             </Option>
@@ -65,7 +65,7 @@ class Demo extends React.Component {
 
         <Select
           style={{ width: 200 }}
-          onChange={val => {
+          onChange={(val) => {
             this.setState({ parentType: val });
           }}
         >
@@ -76,7 +76,7 @@ class Demo extends React.Component {
 
         <Select
           style={{ width: 200 }}
-          onChange={val => {
+          onChange={(val) => {
             this.setState({ childType: val });
           }}
         >
@@ -93,7 +93,7 @@ class Demo extends React.Component {
               type={childType}
               style={{ height: 300 }}
             >
-              {list.map(key => (
+              {list.map((key) => (
                 <TabPane tab={`Tab ${key}`} key={key}>
                   TTTT {key}
                 </TabPane>

@@ -38,7 +38,7 @@ const props: UploadProps = {
           ctx.fillStyle = 'red';
           ctx.textBaseline = 'middle';
           ctx.font = '33px Arial';
-          ctx.fillText('Ant Design', 20, 20);
+          ctx.fillText('HankLiu UI', 20, 20);
           canvas.toBlob((result) => resolve(result as any));
         };
       };

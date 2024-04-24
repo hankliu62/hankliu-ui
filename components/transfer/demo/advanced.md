@@ -46,7 +46,7 @@ class App extends React.Component {
     this.setState({ mockData, targetKeys });
   };
 
-  handleChange = targetKeys => {
+  handleChange = (targetKeys) => {
     this.setState({ targetKeys });
   };
 
@@ -77,7 +77,7 @@ class App extends React.Component {
         operations={['to right', 'to left']}
         targetKeys={this.state.targetKeys}
         onChange={this.handleChange}
-        render={item => `${item.title}-${item.description}`}
+        render={(item) => `${item.title}-${item.description}`}
         footer={this.renderFooter}
       />
     );

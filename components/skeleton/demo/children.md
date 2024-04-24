@@ -31,7 +31,7 @@ const Demo = () => {
     <div className="article">
       <Skeleton loading={state.loading}>
         <div>
-          <h4>Ant Design, a design language!</h4>
+          <h4>HankLiu UI, a design language!</h4>
           <p>
             We supply a series of design principles, practical patterns and high quality design
             resources (Sketch and Axure), to help people create their product prototypes beautifully

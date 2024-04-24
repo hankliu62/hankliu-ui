@@ -119,11 +119,11 @@ const RegistrationForm = () => {
     if (!value) {
       setAutoCompleteResult([]);
     } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map(domain => `${value}${domain}`));
+      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
     }
   };
 
-  const websiteOptions = autoCompleteResult.map(website => ({
+  const websiteOptions = autoCompleteResult.map((website) => ({
     label: website,
     value: website,
   }));

@@ -5,7 +5,7 @@ import Checkbox from '../checkbox';
 import Collapse from '../collapse';
 import List, { isAllChecked } from './list';
 import { getLocale } from './locale';
-import type { CheckListGroupsProps , CheckListProps } from './interfaces';
+import type { CheckListGroupsProps, CheckListProps } from './interfaces';
 
 const { Panel } = Collapse;
 

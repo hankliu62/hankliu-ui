@@ -20,15 +20,15 @@ const { Title, Paragraph, Text } = Typography;
 
 ReactDOM.render(
   <>
-    <Title>h1.  HankLiu </Title>
-    <Title level={2}>h2.  HankLiu </Title>
-    <Title level={3}>h3.  HankLiu </Title>
-    <Title level={4}>h4.  HankLiu </Title>
-    <Title level={5}>h5.  HankLiu </Title>
-    <Paragraph strong>Paragraph.  HankLiu </Paragraph>
-    <Paragraph>Paragraph.  HankLiu </Paragraph>
-    <Text strong>Text.  HankLiu </Text>
-    <Text>Text.  HankLiu </Text>
+    <Title>h1. HankLiu </Title>
+    <Title level={2}>h2. HankLiu </Title>
+    <Title level={3}>h3. HankLiu </Title>
+    <Title level={4}>h4. HankLiu </Title>
+    <Title level={5}>h5. HankLiu </Title>
+    <Paragraph strong>Paragraph. HankLiu </Paragraph>
+    <Paragraph>Paragraph. HankLiu </Paragraph>
+    <Text strong>Text. HankLiu </Text>
+    <Text>Text. HankLiu </Text>
   </>,
   mountNode,
 );

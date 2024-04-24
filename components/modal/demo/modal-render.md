@@ -32,14 +32,14 @@ class App extends React.Component {
     });
   };
 
-  handleOk = e => {
+  handleOk = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     console.log(e);
     this.setState({
       open: false,
@@ -98,7 +98,7 @@ class App extends React.Component {
           open={open}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          modalRender={modal => (
+          modalRender={(modal) => (
             <Draggable
               disabled={disabled}
               bounds={bounds}

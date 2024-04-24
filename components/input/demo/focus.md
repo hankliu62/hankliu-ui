@@ -22,7 +22,7 @@ const Demo = () => {
 
   const sharedProps = {
     style: { width: '100%' },
-    defaultValue: 'Ant Design love you!',
+    defaultValue: 'HankLiu UI love you!',
     ref: inputRef,
   };
 

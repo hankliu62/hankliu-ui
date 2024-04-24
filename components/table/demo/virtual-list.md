@@ -25,7 +25,7 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
   const [tableWidth, setTableWidth] = useState(0);
 
   const widthColumnCount = columns!.filter(({ width }) => !width).length;
-  const mergedColumns = columns!.map(column => {
+  const mergedColumns = columns!.map((column) => {
     if (column.width) {
       return column;
     }
@@ -52,10 +52,11 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
   });
 
   const resetVirtualGrid = () => {
-    gridRef.current?.resetAfterIndices && gridRef.current.resetAfterIndices({
-      columnIndex: 0,
-      shouldForceUpdate: true,
-    });
+    gridRef.current?.resetAfterIndices &&
+      gridRef.current.resetAfterIndices({
+        columnIndex: 0,
+        shouldForceUpdate: true,
+      });
   };
 
   useEffect(() => resetVirtualGrid, [tableWidth]);

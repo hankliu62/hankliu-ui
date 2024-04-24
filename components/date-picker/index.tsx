@@ -8,8 +8,8 @@ appendDefaultProps();
 // @ts-ignore
 const { RangePicker } = DatePicker;
 
-type AntdRangePickerProps = React.ComponentProps<typeof RangePicker>
-type AntdDatePickerProps = React.ComponentProps<typeof DatePicker>
+type AntdRangePickerProps = React.ComponentProps<typeof RangePicker>;
+type AntdDatePickerProps = React.ComponentProps<typeof DatePicker>;
 
 export interface HlDatePickerProps extends Omit<AntdDatePickerProps, 'size'> {
   size?: AntdDatePickerProps['size'] | 'medium' | 'smedium';
@@ -62,7 +62,7 @@ const HlDatePicker = React.forwardRef<CommonPickerMethods, HlDatePickerProps>((p
 
 export * from 'antd4x/lib/date-picker';
 
-const HlDatePickerAssign= Object.assign(HlDatePicker, {
+const HlDatePickerAssign = Object.assign(HlDatePicker, {
   RangePicker: HlRangePicker,
-})
+});
 export default HlDatePickerAssign;

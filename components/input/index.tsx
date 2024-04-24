@@ -1,8 +1,6 @@
 // @ts-nocheck
 import * as React from 'react';
-import type {
-  InputProps, TextAreaProps, GroupProps, InputRef,
-} from 'antd4x/lib/input';
+import type { InputProps, TextAreaProps, GroupProps, InputRef } from 'antd4x/lib/input';
 import Input from 'antd4x/lib/input';
 import appendDefaultProps from '../_util/appendDefaultProps';
 
@@ -22,7 +20,9 @@ const HlInput = React.forwardRef<InputRef, HlInputProps>((props, ref) => {
     finalClassName = `hlui-input-${size} ${className || ''}    `;
   }
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Input {...rest} size={finalSize as InputProps['size']} className={finalClassName} ref={ref} />;
+  return (
+    <Input {...rest} size={finalSize as InputProps['size']} className={finalClassName} ref={ref} />
+  );
 });
 
 export interface HlGroupProps extends Omit<GroupProps, 'size'> {
@@ -38,7 +38,9 @@ function HlGroup(props: HlGroupProps) {
     finalClassName = `hlui-input-group-${size} ${className || ''}    `;
   }
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Input.Group {...rest} size={finalSize as GroupProps['size']} className={finalClassName} />;
+  return (
+    <Input.Group {...rest} size={finalSize as GroupProps['size']} className={finalClassName} />
+  );
 }
 
 export interface HlTextAreaProps extends Omit<TextAreaProps, 'size'> {
@@ -55,7 +57,14 @@ const HlTextArea = React.forwardRef<InputRef, HlTextAreaProps>((props, ref) => {
     finalClassName = `hlui-input-${size} ${className || ''}    `;
   }
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Input.TextArea {...rest} size={finalSize as TextAreaProps['size']} className={finalClassName} ref={ref} />;
+  return (
+    <Input.TextArea
+      {...rest}
+      size={finalSize as TextAreaProps['size']}
+      className={finalClassName}
+      ref={ref}
+    />
+  );
 });
 
 export default Object.assign(HlInput, {

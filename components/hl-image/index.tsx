@@ -56,7 +56,8 @@ const ImageFlexStyle = {
   margin: 'auto',
 };
 
-const DEFUALT_ERROR_IMAGE = "data:image/svg+xml,%3Csvg width='39' height='37' viewBox='0 0 39 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M24 1H23.5V1.5V13.415L20.0281 23.3348L19.9691 23.5032L20.0301 23.6709L20.4684 24.8761L19.5 23.3544V13.5V13.4286L19.48 13.36L15.98 1.36L15.875 1H15.5H2.06055C1.19749 1 0.51246 1.72651 0.563141 2.58808L2.4414 34.5185C2.49048 35.3528 3.21201 35.9861 4.04568 35.9266L23.9879 34.5021L35.3698 35.868C36.2365 35.972 37.0086 35.3168 37.047 34.4448L38.4535 2.56611C38.4911 1.71257 37.8093 1 36.9549 1H24Z' stroke='%23A8A8A8' stroke-linecap='square'/%3E %3Cpath d='M23.5 21L25 23.5L30 19L37 26' stroke='%23A8A8A8' stroke-linecap='round'/%3E %3Cpath d='M2 26.5L7.5 20L10.5 22.5L16 17' stroke='%23A8A8A8' stroke-linecap='round'/%3E %3Ccircle cx='30' cy='9' r='2.5' stroke='%23A8A8A8'/%3E %3C/svg%3E";
+const DEFUALT_ERROR_IMAGE =
+  "data:image/svg+xml,%3Csvg width='39' height='37' viewBox='0 0 39 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M24 1H23.5V1.5V13.415L20.0281 23.3348L19.9691 23.5032L20.0301 23.6709L20.4684 24.8761L19.5 23.3544V13.5V13.4286L19.48 13.36L15.98 1.36L15.875 1H15.5H2.06055C1.19749 1 0.51246 1.72651 0.563141 2.58808L2.4414 34.5185C2.49048 35.3528 3.21201 35.9861 4.04568 35.9266L23.9879 34.5021L35.3698 35.868C36.2365 35.972 37.0086 35.3168 37.047 34.4448L38.4535 2.56611C38.4911 1.71257 37.8093 1 36.9549 1H24Z' stroke='%23A8A8A8' stroke-linecap='square'/%3E %3Cpath d='M23.5 21L25 23.5L30 19L37 26' stroke='%23A8A8A8' stroke-linecap='round'/%3E %3Cpath d='M2 26.5L7.5 20L10.5 22.5L16 17' stroke='%23A8A8A8' stroke-linecap='round'/%3E %3Ccircle cx='30' cy='9' r='2.5' stroke='%23A8A8A8'/%3E %3C/svg%3E";
 
 function HlImage(props: HlImageProps) {
   const {
@@ -99,7 +100,7 @@ function HlImage(props: HlImageProps) {
     const currentDelay = showLoading ? delay : 0;
     onErrorTimeoutId.current = window.setTimeout(() => {
       onErrorTimeoutId.current = 0;
-      setState((preState)=>({
+      setState((preState) => ({
         ...preState,
         loading: false,
         error: err,

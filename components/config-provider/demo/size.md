@@ -36,7 +36,7 @@ const FormSizeDemo = () => {
     <div>
       <Radio.Group
         value={componentSize}
-        onChange={e => {
+        onChange={(e) => {
           setComponentSize(e.target.value);
         }}
       >

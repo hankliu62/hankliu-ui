@@ -8,7 +8,7 @@ import confirm, {
   withError,
   withConfirm,
   withAlert,
-  withDelete
+  withDelete,
 } from './confirm';
 import show from './showModal';
 

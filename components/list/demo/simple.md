@@ -15,7 +15,7 @@ title:
 
 ## en-US
 
-Ant Design supports a default list size as well as a large and small size.
+HankLiu UI supports a default list size as well as a large and small size.
 
 If a large or small list is desired, set the size property to either large or small respectively. Omit the size property for a list with the default size.
 
@@ -40,7 +40,7 @@ ReactDOM.render(
       footer={<div>Footer</div>}
       bordered
       dataSource={data}
-      renderItem={item => (
+      renderItem={(item) => (
         <List.Item>
           <Typography.Text mark>[ITEM]</Typography.Text> {item}
         </List.Item>
@@ -53,7 +53,7 @@ ReactDOM.render(
       footer={<div>Footer</div>}
       bordered
       dataSource={data}
-      renderItem={item => <List.Item>{item}</List.Item>}
+      renderItem={(item) => <List.Item>{item}</List.Item>}
     />
     <Divider orientation="left">Large Size</Divider>
     <List
@@ -62,7 +62,7 @@ ReactDOM.render(
       footer={<div>Footer</div>}
       bordered
       dataSource={data}
-      renderItem={item => <List.Item>{item}</List.Item>}
+      renderItem={(item) => <List.Item>{item}</List.Item>}
     />
   </>,
   mountNode,

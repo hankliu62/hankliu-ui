@@ -13,6 +13,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg
 需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 `Modal` 在当前页面正中打开一个浮层，承载相应的操作。
 
 另外当需要一个简洁的确认框询问用户时，可以使用 `Modal.confirm()` 等语法糖方法。
+
 > 如果内容需要更新或交互时，可以使用 Modal.Dialog 组件
 
 ## API
@@ -34,7 +35,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg
 | cancelButtonVisible | 是否显示默认底部的取消按钮 | boolean | true |
 | cancelButtonProps | 默认底部的取消按钮 props | [ButtonProps](/components/button) | - |
 | ternary | 是否为三元操作，为 `true` 时默认底部有三个操作按钮 | boolean | false |
-| icon | 设置 modal 的 icon (ternary设为 true 时生效) | string\|ReactNode | - |
+| icon | 设置 modal 的 icon (ternary 设为 true 时生效) | string\|ReactNode | - |
 | onSecondly | 点击默认底部的 Second 按钮的回调 | function(e) | 无 |
 | secondText | 默认底部的 Second 按钮文字 | string\|ReactNode | 确定 |
 | secondType | 默认底部的 Second 按钮类型 | string | neutral |
@@ -55,12 +56,11 @@ cover: https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg
 | destroyOnClose | 关闭时销毁 Modal 里的子元素 | boolean | false |
 | forceRender | 强制渲染 Modal | boolean | false |
 | getContainer | 指定 Modal 挂载的 HTML 节点 | (instance): HTMLElement | () => document.body |
-| keyboard | 是否支持键盘esc关闭 | boolean | true |
+| keyboard | 是否支持键盘 esc 关闭 | boolean | true |
 | zIndex | 设置 Modal 的 `z-index` | Number | 1000 |
 | bodyStyle | Modal body 样式 | object | {} |
 | modalRender | 自定义渲染对话框 | (node: ReactNode) => ReactNode | - |
 | fixedCloseBtn | 关闭按钮是否固定到 Modal 外 | boolean | true |
-
 
 #### Modal scroll 说明
 
@@ -82,11 +82,11 @@ cover: https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg
 
 > 通过这个方法可以计算出内容的最大高度，方便设置包含滚动区域的自定义内容
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| head | 值为 `true` 时减去 head 的默认高度（66px） | boolean | false |
-| foot | 值为 `true` 时减去 foot 的默认高度（68px） | boolean | false |
-| bodyScrollPadding | 值为 `true` 时减去 scroll body 的默认上 padding（16px） | boolean | false |
+| 参数              | 说明                                                    | 类型    | 默认值 |
+| ----------------- | ------------------------------------------------------- | ------- | ------ |
+| head              | 值为 `true` 时减去 head 的默认高度（66px）              | boolean | false  |
+| foot              | 值为 `true` 时减去 foot 的默认高度（68px）              | boolean | false  |
+| bodyScrollPadding | 值为 `true` 时减去 scroll body 的默认上 padding（16px） | boolean | false  |
 
 ### Modal 方法式调用
 
@@ -94,10 +94,10 @@ cover: https://gw.alipayobjects.com/zos/alicdn/3StSdUlSH/Modal.svg
 
 通过调用方法来打开一个弹窗，适用于展示静态内容。参数为 object，具体属性参考 [Modal](#API)，部分参数区别如下
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| open | 值为 `true` 不支持修改 | boolean | true |
-| closable | 默认不显示右上角的关闭按钮 | boolean | false |
+| 参数     | 说明                       | 类型    | 默认值 |
+| -------- | -------------------------- | ------- | ------ |
+| open     | 值为 `true` 不支持修改     | boolean | true   |
+| closable | 默认不显示右上角的关闭按钮 | boolean | false  |
 
 函数调用后，会返回一个引用，可以通过该引用更新和关闭弹窗。
 
@@ -107,14 +107,15 @@ const mod = Modal.show({
   content: (
     <div>
       <p>some messages...some messages...</p>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <Button onClick={() => mod.destroy()}>我知道了</Button>
     </div>
   ),
 });
-mod.update({title: 'update title'});
+mod.update({ title: 'update title' });
 ```
+
 ### Modal 方法式调用
 
 包括：
@@ -169,7 +170,7 @@ modal.update({
 });
 
 // 可以通过传入函数的方式更新弹窗
-modal.update(prevConfig => ({
+modal.update((prevConfig) => ({
   ...prevConfig,
   title: `${prevConfig.title}（新）`,
 }));

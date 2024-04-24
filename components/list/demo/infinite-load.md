@@ -28,8 +28,8 @@ const InfiniteListExample = () => {
     }
     setLoading(true);
     fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
-      .then(res => res.json())
-      .then(body => {
+      .then((res) => res.json())
+      .then((body) => {
         setData([...data, ...body.results]);
         setLoading(false);
       })
@@ -62,7 +62,7 @@ const InfiniteListExample = () => {
       >
         <List
           dataSource={data}
-          renderItem={item => (
+          renderItem={(item) => (
             <List.Item key={item.id}>
               <List.Item.Meta
                 avatar={<Avatar src={item.picture.large} />}

@@ -14,7 +14,7 @@ title:
 Simplest Usage.
 
 ```jsx
- import { Empty, Radio, Select } from '@hankliu/hankliu-ui';
+import { Empty, Radio, Select } from '@hankliu/hankliu-ui';
 import React, { useState } from 'react';
 
 const { IMAGES } = Empty;
@@ -32,12 +32,12 @@ function App() {
   return (
     <div>
       Empty.IMAGES.
-      <Select style={{width:"300px"}}  value={imageKey} onChange={handleImageKeyChange}>
+      <Select style={{ width: '300px' }} value={imageKey} onChange={handleImageKeyChange}>
         {Object.keys(IMAGES).map((key) => (
           <Select.Option key={key}>{key}</Select.Option>
         ))}
       </Select>
-      <div className="float-right" style={{float:"right"}}>
+      <div className="float-right" style={{ float: 'right' }}>
         <Radio.Group value={size} onChange={handleSizeChange}>
           <Radio.Button value="large">Large</Radio.Button>
           <Radio.Button value="default">Default</Radio.Button>

@@ -23,7 +23,7 @@ class PickerSizesDemo extends React.Component {
     size: 'default',
   };
 
-  handleSizeChange = e => {
+  handleSizeChange = (e) => {
     this.setState({ size: e.target.value });
   };
 

@@ -12,18 +12,20 @@ function MenuSelect(props: MenuSelectProps) {
   const { type, children } = props;
 
   if (type === 'dropdown' || children) {
-    return (<Dropdown {...props} />);
+    return <Dropdown {...props} />;
   }
   if (type === 'input') {
-    return (<Input {...props} />);
+    return <Input {...props} />;
   }
-  return (<Panel {...props} />);
+  return <Panel {...props} />;
 }
 
-const GenericMenuSelect = MenuSelect as unknown as ((props: MenuSelectProps) => React.ReactElement) & {
-  SHOW_ALL: typeof EShowCheckedStrategy.SHOW_PARENT
-  SHOW_PARENT: typeof EShowCheckedStrategy.SHOW_CHILD
-  SHOW_CHILD: typeof EShowCheckedStrategy.SHOW_ALL
+const GenericMenuSelect = MenuSelect as unknown as ((
+  props: MenuSelectProps,
+) => React.ReactElement) & {
+  SHOW_ALL: typeof EShowCheckedStrategy.SHOW_PARENT;
+  SHOW_PARENT: typeof EShowCheckedStrategy.SHOW_CHILD;
+  SHOW_CHILD: typeof EShowCheckedStrategy.SHOW_ALL;
 };
 
 MenuSelect.SHOW_PARENT = EShowCheckedStrategy.SHOW_PARENT;

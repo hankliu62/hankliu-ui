@@ -31,9 +31,9 @@ title: DropSelect
 
 ### Option props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| disabled | 是否禁用 | boolean | false |
-| title | 选中该 Option 后，Select 的 title | string | - |
-| value | 默认根据此属性值进行筛选 | string\|number | - |
-| className | Option 器类名 | string | - |
+| 参数      | 说明                              | 类型           | 默认值 |
+| --------- | --------------------------------- | -------------- | ------ |
+| disabled  | 是否禁用                          | boolean        | false  |
+| title     | 选中该 Option 后，Select 的 title | string         | -      |
+| value     | 默认根据此属性值进行筛选          | string\|number | -      |
+| className | Option 器类名                     | string         | -      |

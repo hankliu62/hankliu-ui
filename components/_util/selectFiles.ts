@@ -5,8 +5,8 @@ export const ERRORS = {
   EXCEED_MAXSIZE: 'EXCEED_MAXSIZE',
   EXCEED_MAXIMUM: 'EXCEED_MAXIMUM',
   ACCEPT_FAILED: 'ACCEPT_FAILED',
-  CANCELED: 'CANCELED'
-}
+  CANCELED: 'CANCELED',
+};
 
 export function validFiles(files: File[], options: any) {
   const { accept, maxsize, maximum } = options;
@@ -14,7 +14,7 @@ export function validFiles(files: File[], options: any) {
     return ERRORS.EXCEED_MAXIMUM;
   }
   let result;
-  files.some(file => {
+  files.some((file) => {
     if (file.size > maxsize) {
       result = ERRORS.EXCEED_MAXSIZE;
       return true;
@@ -23,11 +23,11 @@ export function validFiles(files: File[], options: any) {
       result = ERRORS.ACCEPT_FAILED;
       return true;
     }
-  })
+  });
   return result;
 }
 
-export default function(options: any = {}) {
+export default function (options: any = {}) {
   return new Promise<File[]>(function (resolve, reject) {
     const { accept, maxsize, maximum, webkitdirectory, multiple = true } = options;
     let element = document.createElement('input');
@@ -51,7 +51,7 @@ export default function(options: any = {}) {
       const files: File[] = Array.from((element as any).files);
       document.body.removeChild(element);
       if (files.length === 0) return reject(ERRORS.CANCELED);
-      const error = validFiles(files, { accept, maxsize, maximum })
+      const error = validFiles(files, { accept, maxsize, maximum });
       if (error) {
         reject(error);
       } else {
@@ -65,11 +65,10 @@ export default function(options: any = {}) {
   });
 }
 
-
 function isMSBrowser() {
   const ua = navigator.userAgent; //取得浏览器的userAgent字符串
-  const ltIE11 = ua.indexOf("compatible") > -1 && ua.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+  const ltIE11 = ua.indexOf('compatible') > -1 && ua.indexOf('MSIE') > -1; //判断是否IE<11浏览器
   const isIE11 = ua.indexOf('Trident') > -1;
-  const isEdge = ua.indexOf("Edge") > -1 ; //判断是否IE的Edge浏览器
+  const isEdge = ua.indexOf('Edge') > -1; //判断是否IE的Edge浏览器
   return ltIE11 || isIE11 || isEdge;
 }

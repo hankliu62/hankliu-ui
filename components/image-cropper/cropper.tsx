@@ -45,10 +45,7 @@ export default class ImageCropper extends React.Component<CropperProps, CropperS
     const _ratio = pp.cropperProps.aspectRatio;
     const { aspectRatio } = cropperProps;
     if (pp.url !== url) {
-      this.cropper
-        .reset()
-        .clear()
-        .replace(url);
+      this.cropper.reset().clear().replace(url);
     }
     if (_ratio !== aspectRatio) {
       if (aspectRatio === undefined) {

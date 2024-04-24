@@ -36,28 +36,28 @@ class App extends React.Component {
     value4: 'Apple',
   };
 
-  onChange1 = e => {
+  onChange1 = (e) => {
     console.log('radio1 checked', e.target.value);
     this.setState({
       value1: e.target.value,
     });
   };
 
-  onChange2 = e => {
+  onChange2 = (e) => {
     console.log('radio2 checked', e.target.value);
     this.setState({
       value2: e.target.value,
     });
   };
 
-  onChange3 = e => {
+  onChange3 = (e) => {
     console.log('radio3 checked', e.target.value);
     this.setState({
       value3: e.target.value,
     });
   };
 
-  onChange4 = e => {
+  onChange4 = (e) => {
     console.log('radio4 checked', e.target.value);
     this.setState({
       value4: e.target.value,

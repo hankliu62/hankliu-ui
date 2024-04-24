@@ -1,6 +1,4 @@
-import React, {
-  CSSProperties, ReactNode, useEffect, useMemo, useRef, useState,
-} from 'react';
+import React, { CSSProperties, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import cl from 'classnames';
 import intersection from 'lodash/intersection';
 import union from 'lodash/union';
@@ -105,7 +103,9 @@ function SimpleMenuSelectDropDown({
         let onlyParentChecked = false;
         let parent: SimpleTreeSelectInnerOption | undefined;
         if (groupIndex !== 0) {
-          parent = groupList[groupIndex - 1].find((item) => item.children === groupList[groupIndex]);
+          parent = groupList[groupIndex - 1].find(
+            (item) => item.children === groupList[groupIndex],
+          );
         }
 
         const treeValues: SimpleTreeOptionValue[] = [];
@@ -113,7 +113,8 @@ function SimpleMenuSelectDropDown({
           walkTree(parent.children, (node) => {
             treeValues.push(node.value);
           });
-          onlyParentChecked = value.indexOf(parent.value) > -1 && intersection(value, treeValues).length === 0;
+          onlyParentChecked =
+            value.indexOf(parent.value) > -1 && intersection(value, treeValues).length === 0;
         }
 
         return (
@@ -128,12 +129,12 @@ function SimpleMenuSelectDropDown({
                   checkable
                   disabled={parent.disabled}
                   active={false}
-                  title={(
+                  title={
                     <span>
                       只选父级
                       {parent.title}
                     </span>
-)}
+                  }
                   checked={onlyParentChecked}
                   onClick={() => {
                     if (!parent) {

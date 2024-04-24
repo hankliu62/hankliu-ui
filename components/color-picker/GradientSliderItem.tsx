@@ -10,9 +10,7 @@ interface IProps {
 }
 
 function GradientSliderItem(props: IProps) {
-  const {
-    color, active, onSelect, idx,
-  } = props;
+  const { color, active, onSelect, idx } = props;
 
   const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
     onSelect(idx, e);

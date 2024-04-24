@@ -7,18 +7,18 @@ title:
 
 用来输入自定义标签
 
-````jsx
+```jsx
 import { TagInput } from '@hankliu/hankliu-ui';
 
 class DemoApp extends React.Component {
   state = {
     value: [],
-  }
+  };
 
   handleChange = (value, option) => {
     console.log('the select value is :', value, option);
     this.setState({ value });
-  }
+  };
 
   render() {
     return (
@@ -33,8 +33,5 @@ class DemoApp extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <DemoApp/>,
-  mountNode
-);
-````
+ReactDOM.render(<DemoApp />, mountNode);
+```

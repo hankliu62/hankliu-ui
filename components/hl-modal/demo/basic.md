@@ -13,52 +13,51 @@ title:
 
 Basic modal.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button, message } from '@hankliu/hankliu-ui';
 
 class App extends React.Component {
-  state = { open: false, layout: '', fullVisible: false, normalVisible: false }
+  state = { open: false, layout: '', fullVisible: false, normalVisible: false };
 
   showModal = () => {
     this.setState({
       open: true,
-      layout: ''
+      layout: '',
     });
-  }
+  };
 
   showLayoutModal = () => {
     this.setState({
       open: true,
-      layout: 'filled'
+      layout: 'filled',
     });
-  }
+  };
 
   showFullModal = () => {
     this.setState({
-      fullVisible: true
+      fullVisible: true,
     });
-  }
+  };
 
   showNormalModal = () => {
     this.setState({
-      normalVisible: true
+      normalVisible: true,
     });
-  }
-
+  };
 
   handleOk = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   handleCancel = (e) => {
     console.log(e);
     this.setState({
       open: false,
     });
-  }
+  };
 
   render() {
     return (
@@ -84,25 +83,28 @@ class App extends React.Component {
           onCancel={this.handleCancel}
         >
           <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
         </Modal>
         <Modal
           open={this.state.fullVisible}
-          onCancel={() => this.setState({fullVisible: false})}
+          onCancel={() => this.setState({ fullVisible: false })}
           full={true}
         >
           <div className="text-center">
             <p>Some contents...</p>
             <p>Some contents...</p>
-            <br/>
-            <Button ghost="solid" onClick={() => message.success('test message', {duration: 1000000})}>
+            <br />
+            <Button
+              ghost="solid"
+              onClick={() => message.success('test message', { duration: 1000000 })}
+            >
               Show Message
             </Button>
-            <br/>
-            <br/>
-            <br/>
-            <Button type="primary" onClick={() => this.setState({fullVisible: false})}>
+            <br />
+            <br />
+            <br />
+            <Button type="primary" onClick={() => this.setState({ fullVisible: false })}>
               Close Modal
             </Button>
           </div>
@@ -112,7 +114,7 @@ class App extends React.Component {
           open={this.state.normalVisible}
           onOk={this.handleOk}
           fixedCloseBtn={false}
-          onCancel={() => this.setState({normalVisible: false})}
+          onCancel={() => this.setState({ normalVisible: false })}
         >
           <p>Some contents...</p>
           <p>Some contents...</p>
@@ -124,7 +126,7 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
-````
+```
 
 <style>
 .text-center {

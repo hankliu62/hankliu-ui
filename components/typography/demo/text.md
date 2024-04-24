@@ -20,21 +20,21 @@ const { Text, Link } = Typography;
 
 ReactDOM.render(
   <Space direction="vertical">
-    <Text>Ant Design (default)</Text>
-    <Text type="secondary">Ant Design (secondary)</Text>
-    <Text type="success">Ant Design (success)</Text>
-    <Text type="warning">Ant Design (warning)</Text>
-    <Text type="danger">Ant Design (danger)</Text>
-    <Text disabled>Ant Design (disabled)</Text>
-    <Text mark>Ant Design (mark)</Text>
-    <Text code>Ant Design (code)</Text>
-    <Text keyboard>Ant Design (keyboard)</Text>
-    <Text underline>Ant Design (underline)</Text>
-    <Text delete>Ant Design (delete)</Text>
-    <Text strong>Ant Design (strong)</Text>
-    <Text italic>Ant Design (italic)</Text>
+    <Text>HankLiu UI (default)</Text>
+    <Text type="secondary">HankLiu UI (secondary)</Text>
+    <Text type="success">HankLiu UI (success)</Text>
+    <Text type="warning">HankLiu UI (warning)</Text>
+    <Text type="danger">HankLiu UI (danger)</Text>
+    <Text disabled>HankLiu UI (disabled)</Text>
+    <Text mark>HankLiu UI (mark)</Text>
+    <Text code>HankLiu UI (code)</Text>
+    <Text keyboard>HankLiu UI (keyboard)</Text>
+    <Text underline>HankLiu UI (underline)</Text>
+    <Text delete>HankLiu UI (delete)</Text>
+    <Text strong>HankLiu UI (strong)</Text>
+    <Text italic>HankLiu UI (italic)</Text>
     <Link href="https://ant.design" target="_blank">
-      Ant Design (Link)
+      HankLiu UI (Link)
     </Link>
   </Space>,
   mountNode,

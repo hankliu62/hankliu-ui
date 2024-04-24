@@ -36,7 +36,7 @@ const App = () => {
       <Radio.Group
         style={{ marginBottom: 16 }}
         value={size}
-        onChange={e => setSize(e.target.value)}
+        onChange={(e) => setSize(e.target.value)}
       >
         <Radio value="small">Small</Radio>
         <Radio value="default">Default</Radio>

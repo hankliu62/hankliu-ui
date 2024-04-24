@@ -21,7 +21,7 @@ class Demo extends React.Component {
     reverse: true,
   };
 
-  handleReverseChange = reverse => {
+  handleReverseChange = (reverse) => {
     this.setState({ reverse });
   };
 

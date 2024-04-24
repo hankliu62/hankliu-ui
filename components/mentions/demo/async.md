@@ -32,7 +32,7 @@ class AsyncMention extends React.Component {
     users: [],
   };
 
-  onSearch = search => {
+  onSearch = (search) => {
     this.setState({ search, loading: !!search, users: [] });
     console.log('Search:', search);
     this.loadGithubUsers(search);
@@ -47,7 +47,7 @@ class AsyncMention extends React.Component {
     }
 
     fetch(`https://api.github.com/search/users?q=${key}`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(({ items = [] }) => {
         const { search } = this.state;
         if (search !== key) return;

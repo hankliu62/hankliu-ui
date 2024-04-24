@@ -101,7 +101,7 @@ const Demo = () => {
       columns={columns}
       dataSource={data}
       scroll={{ x: 1500 }}
-      summary={pageData => (
+      summary={(pageData) => (
         <Table.Summary fixed={fixedTop ? 'top' : 'bottom'}>
           <Table.Summary.Row>
             <Table.Summary.Cell index={0} colSpan={2}>

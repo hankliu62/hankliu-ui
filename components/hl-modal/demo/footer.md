@@ -7,20 +7,15 @@ title:
 
 ## zh-CN
 
-自定义页头
-自定义了页脚的按钮，点击提交后进入 loading 状态，完成后关闭。
-不需要页头时，不传 title 即可
-不需要默认页脚时，你可以把 `footer` 设为 `null`。
+自定义页头自定义了页脚的按钮，点击提交后进入 loading 状态，完成后关闭。不需要页头时，不传 title 即可不需要默认页脚时，你可以把 `footer` 设为 `null`。
 
 ## en-US
 
-A more complex example which define a customized footer button bar,
-the dialog will change to loading state after clicking submit button, when the loading is over,
-the modal dialog will be closed.
+A more complex example which define a customized footer button bar, the dialog will change to loading state after clicking submit button, when the loading is over, the modal dialog will be closed.
 
 You could set `footer` to `null` if you don't need default footer buttons.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 class App extends React.Component {
@@ -28,31 +23,31 @@ class App extends React.Component {
     loading: false,
     title: 'The Title',
     open: false,
-  }
+  };
 
   showModalWithoutHeader = () => {
     this.setState({
       open: true,
-      title: ''
+      title: '',
     });
-  }
+  };
 
   showModal = () => {
     this.setState({
       open: true,
     });
-  }
+  };
 
   handleOk = () => {
     this.setState({ loading: true });
     setTimeout(() => {
       this.setState({ loading: false, open: false });
     }, 3000);
-  }
+  };
 
   handleCancel = () => {
     this.setState({ open: false });
-  }
+  };
 
   render() {
     const { open, title, loading } = this.state;
@@ -88,4 +83,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
-````
+```

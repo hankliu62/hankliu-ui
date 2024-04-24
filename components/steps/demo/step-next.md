@@ -47,7 +47,7 @@ const App = () => {
   return (
     <>
       <Steps current={current}>
-        {steps.map(item => (
+        {steps.map((item) => (
           <Step key={item.title} title={item.title} />
         ))}
       </Steps>

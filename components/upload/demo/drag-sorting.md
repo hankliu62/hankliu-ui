@@ -152,14 +152,14 @@ export default App;
 ```
 
 ```css
-#components-upload-demo-drag-sorting .ant-upload-draggable-list-item {
+#components-upload-demo-drag-sorting .hlui-upload-draggable-list-item {
   border-top: 2px dashed rgba(0, 0, 0, 0);
   border-bottom: 2px dashed rgba(0, 0, 0, 0);
 }
-#components-upload-demo-drag-sorting .ant-upload-draggable-list-item.drop-over-downward {
+#components-upload-demo-drag-sorting .hlui-upload-draggable-list-item.drop-over-downward {
   border-bottom-color: #1890ff;
 }
-#components-upload-demo-drag-sorting .ant-upload-draggable-list-item.drop-over-upward {
+#components-upload-demo-drag-sorting .hlui-upload-draggable-list-item.drop-over-upward {
   border-top-color: #1890ff;
 }
 ```

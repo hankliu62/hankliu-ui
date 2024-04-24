@@ -35,7 +35,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/cH1BOLfxC/Tag.svg
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| className | 给标签增加类名 | string | `undefined`|
+| className | 给标签增加类名 | string | `undefined` |
 | size | 标签大小, 可选值：`default` `middle` `small` | string | default |
 | checked | 设置标签的选中状态 | boolean | false |
 | maxWidth | 标签的最大宽度 | string | 无, ellipsis 为 true 时默认为 100% |

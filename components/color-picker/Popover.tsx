@@ -43,15 +43,15 @@ function ColorPickerPopover(props: ColorPickerPopoverProps) {
   } = props;
 
   const renderFooterInner = (locale: any) => (
-      <div className="hlui-popover-foot">
-        <Button key="cancel" ghost="solid" type="neutral" width={80} onClick={onCancel}>
-          {cancelText || locale.cancelText}
-        </Button>
-        <Button key="ok" width={80} onClick={onOk}>
-          {okText || locale.okText}
-        </Button>
-      </div>
-    );
+    <div className="hlui-popover-foot">
+      <Button key="cancel" ghost="solid" type="neutral" width={80} onClick={onCancel}>
+        {cancelText || locale.cancelText}
+      </Button>
+      <Button key="ok" width={80} onClick={onOk}>
+        {okText || locale.okText}
+      </Button>
+    </div>
+  );
 
   const renderFooter = () => {
     if (footer !== true) {

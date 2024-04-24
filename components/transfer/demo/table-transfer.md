@@ -31,10 +31,10 @@ const TableTransfer = ({ leftColumns, rightColumns, ...restProps }) => (
       const columns = direction === 'left' ? leftColumns : rightColumns;
 
       const rowSelection = {
-        getCheckboxProps: item => ({ disabled: listDisabled || item.disabled }),
+        getCheckboxProps: (item) => ({ disabled: listDisabled || item.disabled }),
         onSelectAll(selected, selectedRows) {
           const treeSelectedKeys = selectedRows
-            .filter(item => !item.disabled)
+            .filter((item) => !item.disabled)
             .map(({ key }) => key);
           const diffKeys = selected
             ? difference(treeSelectedKeys, listSelectedKeys)
@@ -79,7 +79,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const originTargetKeys = mockData.filter(item => +item.key % 3 > 1).map(item => item.key);
+const originTargetKeys = mockData.filter((item) => +item.key % 3 > 1).map((item) => item.key);
 
 const leftTableColumns = [
   {
@@ -89,7 +89,7 @@ const leftTableColumns = [
   {
     dataIndex: 'tag',
     title: 'Tag',
-    render: tag => <Tag>{tag}</Tag>,
+    render: (tag) => <Tag>{tag}</Tag>,
   },
   {
     dataIndex: 'description',
@@ -110,15 +110,15 @@ class App extends React.Component {
     showSearch: false,
   };
 
-  onChange = nextTargetKeys => {
+  onChange = (nextTargetKeys) => {
     this.setState({ targetKeys: nextTargetKeys });
   };
 
-  triggerDisable = disabled => {
+  triggerDisable = (disabled) => {
     this.setState({ disabled });
   };
 
-  triggerShowSearch = showSearch => {
+  triggerShowSearch = (showSearch) => {
     this.setState({ showSearch });
   };
 

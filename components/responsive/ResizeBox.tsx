@@ -45,14 +45,8 @@ export default function (props: any) {
     >
       <div className="resize-inner" style={{ width: movement.width }}>
         {children}
-        <div
-          className="resize-handle resize-handle-left"
-          onMouseDown={mouseDownLeft}
-        />
-        <div
-          className="resize-handle resize-handle-right"
-          onMouseDown={mouseDownRight}
-        />
+        <div className="resize-handle resize-handle-left" onMouseDown={mouseDownLeft} />
+        <div className="resize-handle resize-handle-right" onMouseDown={mouseDownRight} />
       </div>
     </div>
   );

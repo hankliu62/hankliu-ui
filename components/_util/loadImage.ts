@@ -6,7 +6,7 @@ export default function (src: string) {
     };
     img.onerror = function () {
       reject(img);
-    }
+    };
     img.src = src;
-  })
+  });
 }

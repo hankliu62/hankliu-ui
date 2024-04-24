@@ -13,7 +13,7 @@ title:
 
 Customized description content.
 
-````jsx
+```jsx
 import { HlSpin as Spin, Alert } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(
@@ -24,6 +24,6 @@ ReactDOM.render(
       type="error"
     />
   </Spin>,
-  mountNode
+  mountNode,
 );
-````
+```

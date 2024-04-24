@@ -171,9 +171,7 @@ class AudioPlayer extends Component<AudioPlayerProps, State> {
   };
 
   render() {
-    const {
-      paused, muted, volume, playbackRate, progressValue, error,
-    } = this.state;
+    const { paused, muted, volume, playbackRate, progressValue, error } = this.state;
     const {
       width,
       height,

@@ -87,7 +87,7 @@ cover: https://gw.alipayobjects.com/zos/alicdn/Xh-oWqg9k/Tree.svg
 {
   this.state.treeData.length ? (
     <Tree>
-      {this.state.treeData.map(data => (
+      {this.state.treeData.map((data) => (
         <TreeNode />
       ))}
     </Tree>

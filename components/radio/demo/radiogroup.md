@@ -19,7 +19,7 @@ import { Radio } from '@hankliu/hankliu-ui';
 const App = () => {
   const [value, setValue] = React.useState(1);
 
-  const onChange = e => {
+  const onChange = (e) => {
     console.log('radio checked', e.target.value);
     setValue(e.target.value);
   };

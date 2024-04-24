@@ -19,16 +19,12 @@ import { Button, Popconfirm } from '@hankliu/hankliu-ui';
 
 const App = () => {
   const confirm = () =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(() => resolve(), 3000);
     });
 
   return (
-    <Popconfirm
-      title="Title"
-      onConfirm={confirm}
-      onOpenChange={() => console.log('open change')}
-    >
+    <Popconfirm title="Title" onConfirm={confirm} onOpenChange={() => console.log('open change')}>
       <Button type="primary">Open Popconfirm with Promise</Button>
     </Popconfirm>
   );

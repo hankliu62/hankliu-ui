@@ -54,7 +54,7 @@ export function walkTree<T extends AbstractTree>(
   callback: (item: T, parent?: T) => void,
   parent?: T,
 ): void {
-  tree.forEach(item => {
+  tree.forEach((item) => {
     callback(item, parent);
     if (item.children && item.children.length) {
       walkTree(item.children, callback, item);
@@ -63,7 +63,7 @@ export function walkTree<T extends AbstractTree>(
 }
 
 export function generateCheckTree(options: AbstractTree[], values: any[]): CheckTreeNode[] {
-  return options.map(item => {
+  return options.map((item) => {
     const { children, value } = item;
     let newChildren: CheckTreeNode[] = [];
     if (children?.length) {
@@ -111,7 +111,7 @@ export function getTreeTitle(
   value: SimpleTreeOptionValue[],
 ): ReactNode[] {
   const title: ReactNode[] = [];
-  walkTree(tree, function(node) {
+  walkTree(tree, function (node) {
     if (value.includes(node.value)) {
       title.push(node.title as ReactNode);
     }

@@ -15,7 +15,7 @@ title:
 
 Usage of basic HlTag, and it could be closable by set `closable` property. Closable HlTag supports `onClose` `afterClose` events.
 
-````jsx
+```jsx
 import { HlTag } from '@hankliu/hankliu-ui';
 
 function log(e) {
@@ -33,23 +33,38 @@ ReactDOM.render(
     <div className="mb-12">
       <HlTag className="mr-4">Default HlTag</HlTag>
       <HlTag className="mr-4">超长文字的 HlTag 不设置 maxWidth 超长超长超长</HlTag>
-      <HlTag className="mr-4" closable onClose={preventDefault}>点击关闭试试</HlTag>
-      <HlTag className="mr-4" closable>我可以被关闭</HlTag>
+      <HlTag className="mr-4" closable onClose={preventDefault}>
+        点击关闭试试
+      </HlTag>
+      <HlTag className="mr-4" closable>
+        我可以被关闭
+      </HlTag>
     </div>
     <h5>simple</h5>
     <div className="mb-12">
-      <HlTag className="mr-4" type="simple">Simple HlTag</HlTag>
-      <HlTag className="mr-4" type="simple" maxWidth="200px" ellipsis>超长文字的 HlTag 设置 ellipsis 超长超长超长</HlTag>
-      <HlTag closable onClose={preventDefault} type="simple">点击关闭试试</HlTag>
+      <HlTag className="mr-4" type="simple">
+        Simple HlTag
+      </HlTag>
+      <HlTag className="mr-4" type="simple" maxWidth="200px" ellipsis>
+        超长文字的 HlTag 设置 ellipsis 超长超长超长
+      </HlTag>
+      <HlTag closable onClose={preventDefault} type="simple">
+        点击关闭试试
+      </HlTag>
     </div>
     <h5>heavy</h5>
     <div>
-      <HlTag type="heavy" className="mr-4">Heavy HlTag</HlTag>
-      <HlTag type="heavy" className="mr-4" maxWidth="100px">超长文字的 HlTag 设置 maxWidth 超长超长超长</HlTag>
-      <HlTag closable onClose={preventDefault} type="heavy">点击关闭试试</HlTag>
+      <HlTag type="heavy" className="mr-4">
+        Heavy HlTag
+      </HlTag>
+      <HlTag type="heavy" className="mr-4" maxWidth="100px">
+        超长文字的 HlTag 设置 maxWidth 超长超长超长
+      </HlTag>
+      <HlTag closable onClose={preventDefault} type="heavy">
+        点击关闭试试
+      </HlTag>
     </div>
-
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

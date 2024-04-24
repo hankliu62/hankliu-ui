@@ -6,19 +6,24 @@ import message from '../message';
 import { getLocale } from './locale';
 
 declare global {
-  interface Window { initNECaptcha: any; }
+  interface Window {
+    initNECaptcha: any;
+  }
 }
 
 const YIDUN_SDK_URL = '//cstaticdun.126.net/load.min.js?t=201903281201';
-const CAPTCHA_ID = 'fcd9d70927f6d07d36b7ba374da8a4da9dab27eb74ce5734578796a4e781d5e4'.split('').filter((item, index) => index % 2 === 0).join('');
+const CAPTCHA_ID = 'fcd9d70927f6d07d36b7ba374da8a4da9dab27eb74ce5734578796a4e781d5e4'
+  .split('')
+  .filter((item, index) => index % 2 === 0)
+  .join('');
 
 export interface CaptchaProps {
-  className?: string,
-  style?: any,
-  mode?: string,
-  lang?: string,
-  onSuccess?: (code?: any) => void,
-  onError?: (err?: any) => void,
+  className?: string;
+  style?: any;
+  mode?: string;
+  lang?: string;
+  onSuccess?: (code?: any) => void;
+  onError?: (err?: any) => void;
 }
 
 export default class Captcha extends React.Component<CaptchaProps, any> {
@@ -36,11 +41,13 @@ export default class Captcha extends React.Component<CaptchaProps, any> {
   }
 
   componentDidMount() {
-    this.perInit().then(() => this.init()).catch(() => {
-      const { onSuccess } = this.props;
-      message.error('初始化网易云盾失败');
-      if (onSuccess) onSuccess();
-    });
+    this.perInit()
+      .then(() => this.init())
+      .catch(() => {
+        const { onSuccess } = this.props;
+        message.error('初始化网易云盾失败');
+        if (onSuccess) onSuccess();
+      });
   }
 
   componentWillUnmount() {
@@ -65,20 +72,24 @@ export default class Captcha extends React.Component<CaptchaProps, any> {
     const { initNECaptcha } = window;
     const { lang = getLocale().lang, mode } = this.props;
     return new Promise<void>((resolve, reject) => {
-      initNECaptcha({
-        captchaId: CAPTCHA_ID,
-        element: this.captchaEle,
-        mode,
-        onVerify: this.validateHandler,
-        lang,
-      }, (instance: any) => {
-        // 初始化成功后得到验证实例instance，可以调用实例的方法
-        this.NECaptcha = instance;
-        resolve();
-      }, (err: any) => {
-        // 初始化失败后触发该函数，err对象描述当前错误信息
-        reject(err);
-      });
+      initNECaptcha(
+        {
+          captchaId: CAPTCHA_ID,
+          element: this.captchaEle,
+          mode,
+          onVerify: this.validateHandler,
+          lang,
+        },
+        (instance: any) => {
+          // 初始化成功后得到验证实例instance，可以调用实例的方法
+          this.NECaptcha = instance;
+          resolve();
+        },
+        (err: any) => {
+          // 初始化失败后触发该函数，err对象描述当前错误信息
+          reject(err);
+        },
+      );
     });
   }
 

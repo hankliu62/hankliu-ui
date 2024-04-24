@@ -29,7 +29,7 @@ const items = [
 ];
 return (
   <Breadcrumb>
-    <Breadcrumb.Item menu={{ items }}>Ant Design</Breadcrumb.Item>
+    <Breadcrumb.Item menu={{ items }}>HankLiu UI</Breadcrumb.Item>
   </Breadcrumb>
 );
 
@@ -42,7 +42,7 @@ const menu = (
 );
 return (
   <Breadcrumb>
-    <Breadcrumb.Item overlay={menu}>Ant Design</Breadcrumb.Item>
+    <Breadcrumb.Item overlay={menu}>HankLiu UI</Breadcrumb.Item>
   </Breadcrumb>
 );
 ```
@@ -70,9 +70,9 @@ return (
 
 ### Breadcrumb.Separator
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| children | 要显示的分隔符 | ReactNode | `/` |  |
+| 参数     | 说明           | 类型      | 默认值 | 版本 |
+| -------- | -------------- | --------- | ------ | ---- |
+| children | 要显示的分隔符 | ReactNode | `/`    |      |
 
 > 注意：在使用 `Breadcrumb.Separator` 时，其父组件的分隔符必须设置为 `separator=""`，否则会出现父组件默认的分隔符。
 

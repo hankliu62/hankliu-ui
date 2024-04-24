@@ -8,14 +8,14 @@
 
 export default function (filename: string) {
   let ext = '';
-  if(!filename) return ext;
+  if (!filename) return ext;
   filename = filename.trim();
   let queryIdx = filename.indexOf('?');
   let realName = filename;
   if (queryIdx !== -1) {
-    realName = filename.substring(0, queryIdx)
+    realName = filename.substring(0, queryIdx);
   }
-  let dotIndex = realName.lastIndexOf('.')
-  if(dotIndex === -1) return ext;
+  let dotIndex = realName.lastIndexOf('.');
+  if (dotIndex === -1) return ext;
   return realName.substring(dotIndex + 1).toLowerCase();
 }

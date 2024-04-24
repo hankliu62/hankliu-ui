@@ -7,13 +7,18 @@ import HlModal from './Modal';
 
 type ConfigUpdate = HlModalProps | ((prevConfig: HlModalProps) => HlModalProps);
 
-type ShowHlModalProps = HlModalProps & {content?: React.ReactNode}
+type ShowHlModalProps = HlModalProps & { content?: React.ReactNode };
 export default function show(config: ShowHlModalProps) {
   const container = document.createDocumentFragment();
   let currentConfig: HlModalProps;
 
   function render({
-    closable = false, open = true, footer, children, content, ...props
+    closable = false,
+    open = true,
+    footer,
+    children,
+    content,
+    ...props
   }: ShowHlModalProps) {
     let finalFooter: HlModalProps['footer'];
     // 兼容以前的问题：Modal.show 默认不显示 footer
@@ -29,12 +34,7 @@ export default function show(config: ShowHlModalProps) {
      */
     setTimeout(() => {
       ReactDOM.render(
-        <HlModal
-          closable={closable}
-          open={open}
-          footer={finalFooter}
-          {...props}
-        >
+        <HlModal closable={closable} open={open} footer={finalFooter} {...props}>
           {content || children}
         </HlModal>,
         container,

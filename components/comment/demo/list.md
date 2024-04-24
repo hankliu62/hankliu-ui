@@ -21,7 +21,8 @@ const data = [
   {
     actions: [<span key="comment-list-reply-to-0">Reply to</span>],
     author: 'Han Solo',
-    avatar: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
+    avatar:
+      'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
     content: (
       <p>
         We supply a series of design principles, practical patterns and high quality design
@@ -38,7 +39,8 @@ const data = [
   {
     actions: [<span key="comment-list-reply-to-0">Reply to</span>],
     author: 'Han Solo',
-    avatar: 'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
+    avatar:
+      'https://github.com/hankliu62/hankliu62.github.com/assets/8088864/3ca308ec-dc8c-449a-8f80-c55f6e1f448b',
     content: (
       <p>
         We supply a series of design principles, practical patterns and high quality design
@@ -60,7 +62,7 @@ ReactDOM.render(
     header={`${data.length} replies`}
     itemLayout="horizontal"
     dataSource={data}
-    renderItem={item => (
+    renderItem={(item) => (
       <li>
         <Comment
           actions={item.actions}

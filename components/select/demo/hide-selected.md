@@ -23,13 +23,13 @@ class SelectWithHiddenSelectedOptions extends React.Component {
     selectedItems: [],
   };
 
-  handleChange = selectedItems => {
+  handleChange = (selectedItems) => {
     this.setState({ selectedItems });
   };
 
   render() {
     const { selectedItems } = this.state;
-    const filteredOptions = OPTIONS.filter(o => !selectedItems.includes(o));
+    const filteredOptions = OPTIONS.filter((o) => !selectedItems.includes(o));
     return (
       <Select
         mode="multiple"
@@ -38,7 +38,7 @@ class SelectWithHiddenSelectedOptions extends React.Component {
         onChange={this.handleChange}
         style={{ width: '100%' }}
       >
-        {filteredOptions.map(item => (
+        {filteredOptions.map((item) => (
           <Select.Option key={item} value={item}>
             {item}
           </Select.Option>

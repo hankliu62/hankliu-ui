@@ -31,24 +31,24 @@ const App = () => {
   const [cities, setCities] = React.useState(cityData[provinceData[0]]);
   const [secondCity, setSecondCity] = React.useState(cityData[provinceData[0]][0]);
 
-  const handleProvinceChange = value => {
+  const handleProvinceChange = (value) => {
     setCities(cityData[value]);
     setSecondCity(cityData[value][0]);
   };
 
-  const onSecondCityChange = value => {
+  const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
 
   return (
     <>
       <Select defaultValue={provinceData[0]} style={{ width: 120 }} onChange={handleProvinceChange}>
-        {provinceData.map(province => (
+        {provinceData.map((province) => (
           <Option key={province}>{province}</Option>
         ))}
       </Select>
       <Select style={{ width: 120 }} value={secondCity} onChange={onSecondCityChange}>
-        {cities.map(city => (
+        {cities.map((city) => (
           <Option key={city}>{city}</Option>
         ))}
       </Select>

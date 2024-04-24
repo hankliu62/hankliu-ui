@@ -4,9 +4,10 @@
 @import 'motion/other';
 @import 'motion/slide';
 @import 'motion/zoom';
+@import '../themes/variable';
 
 // For common/openAnimation
-.ant-motion-collapse-legacy {
+.@{ant-prefix}-motion-collapse-legacy {
   overflow: hidden;
 
   &-active {
@@ -15,7 +16,7 @@
   }
 }
 
-.ant-motion-collapse {
+.@{ant-prefix}-motion-collapse {
   overflow: hidden;
   transition: height @animation-duration-base @ease-in-out,
     opacity @animation-duration-base @ease-in-out !important;

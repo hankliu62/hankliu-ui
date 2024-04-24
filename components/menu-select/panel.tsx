@@ -10,9 +10,9 @@ import { traverseTreeNode, convertTree2Map } from '../_util/tree';
 
 const DefaultMenuColumnStyle = {
   maxWidth: 240,
-}
+};
 
-const FieldNames = { label: 'label', value: 'value', children: 'children' }
+const FieldNames = { label: 'label', value: 'value', children: 'children' };
 
 export default function MenuPanelSelect({
   menuColumnStyle = DefaultMenuColumnStyle,
@@ -34,59 +34,63 @@ export default function MenuPanelSelect({
   const context = useContext(ConfigContext);
   const prefixCls = context?.getPrefixCls();
 
-  const [activeValue, setActiveValue] = useState<(string[] | number[])>([])
+  const [activeValue, setActiveValue] = useState<string[] | number[]>([]);
 
   function handleSelect(option: Option, menuIndex: number) {
-    let tempActiveValue: any[] = [...activeValue]
+    let tempActiveValue: any[] = [...activeValue];
     if (activeValue.length === 0) {
-      tempActiveValue = [...defaultActiveValue]
+      tempActiveValue = [...defaultActiveValue];
     }
-    tempActiveValue[menuIndex] = option.value
-    setActiveValue(tempActiveValue)
+    tempActiveValue[menuIndex] = option.value;
+    setActiveValue(tempActiveValue);
   }
 
   function handleChange(value: any) {
     if (showCheckedStrategy === EShowCheckedStrategy.SHOW_ALL) {
-      onChange && onChange(value)
-      return
+      onChange && onChange(value);
+      return;
     }
-    const map = convertTree2Map(options, { mapKey: 'value', parentMapKey: 'parentValue' })
-    let results: any[] = []
+    const map = convertTree2Map(options, { mapKey: 'value', parentMapKey: 'parentValue' });
+    let results: any[] = [];
     if (showCheckedStrategy === EShowCheckedStrategy.SHOW_PARENT) {
-      let _values: any = []
+      let _values: any = [];
       value.forEach((v: any) => {
-        let item = map[v]
-        if (!item) return
-        item.checked = true
-        _values.push(item)
-      })
+        let item = map[v];
+        if (!item) return;
+        item.checked = true;
+        _values.push(item);
+      });
       // 删掉父级被选中的元素
       remove(_values, (_v: any) => {
-        let item = map[_v.parentValue]
-        return item && item.checked
-      })
-      _values.forEach((_v: any) => results.push(_v.value))
+        let item = map[_v.parentValue];
+        return item && item.checked;
+      });
+      _values.forEach((_v: any) => results.push(_v.value));
     } else if (showCheckedStrategy === EShowCheckedStrategy.SHOW_CHILD) {
       value.forEach((v: any) => {
-        let item = map[v]
-        if (!item) return
-        if (item.children) return
-        results.push(v)
-      })
+        let item = map[v];
+        if (!item) return;
+        if (item.children) return;
+        results.push(v);
+      });
     }
-    onChange && onChange(results)
+    onChange && onChange(results);
   }
 
   function getMenuValue() {
-    if (showCheckedStrategy === EShowCheckedStrategy.SHOW_ALL || showCheckedStrategy === EShowCheckedStrategy.SHOW_CHILD) return value
-    const map = convertTree2Map(options, { mapKey: 'value', parentMapKey: 'parentValue' })
-    let results: Set<any> = new Set()
+    if (
+      showCheckedStrategy === EShowCheckedStrategy.SHOW_ALL ||
+      showCheckedStrategy === EShowCheckedStrategy.SHOW_CHILD
+    )
+      return value;
+    const map = convertTree2Map(options, { mapKey: 'value', parentMapKey: 'parentValue' });
+    let results: Set<any> = new Set();
     value.forEach((v: any) => {
-      let item = map[v]
-      if (!item) return
-      traverseTreeNode(item, ({ value }: any) => results.add(value))
-    })
-    return Array.from(results)
+      let item = map[v];
+      if (!item) return;
+      traverseTreeNode(item, ({ value }: any) => results.add(value));
+    });
+    return Array.from(results);
   }
 
   /**
@@ -117,7 +121,7 @@ export default function MenuPanelSelect({
       }
 
       return list
-        .map(dataNode => {
+        .map((dataNode) => {
           const children = dataNode[childrenKey];
 
           // label中包含该搜索字符
@@ -130,7 +134,7 @@ export default function MenuPanelSelect({
             return {
               ...dataNode,
               [childrenKey]: childList,
-              className: hasMatchedSearch ? 'menu-item-filtered' : ''
+              className: hasMatchedSearch ? 'menu-item-filtered' : '',
             };
           }
           return null;
@@ -139,10 +143,10 @@ export default function MenuPanelSelect({
     }
 
     return dig(options!);
-  };
+  }
 
-  const cls = cs(`${prefixCls}-menu`, `${prefixCls}-menu-select-menu`, className)
-  const curOptions = getFilterTreeData()
+  const cls = cs(`${prefixCls}-menu`, `${prefixCls}-menu-select-menu`, className);
+  const curOptions = getFilterTreeData();
 
   if (curOptions && curOptions.length) {
     return (
@@ -164,11 +168,15 @@ export default function MenuPanelSelect({
           prefixCls={`${prefixCls}-cascader-menus`}
         />
       </div>
-    )
+    );
   }
 
   // 暂无数据
   return (
-    <Empty size="default" image={Empty.IMAGES.NO_COLLECTION} className={`${prefixCls}-cascader-menus-empty`} />
-  )
+    <Empty
+      size="default"
+      image={Empty.IMAGES.NO_COLLECTION}
+      className={`${prefixCls}-cascader-menus-empty`}
+    />
+  );
 }

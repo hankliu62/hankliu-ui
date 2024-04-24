@@ -20,60 +20,78 @@ const RadioGroup = Radio.Group;
 
 class Demo extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      data: [{
-        label: 'Node1',
-        value: '0-0',
-        children: [{
-          label: 'Child Node1',
-          value: '0-0-0',
-          children: [{
-            label: 'Child Node1 child node1',
-            value: '0-0-0-0',
-          }, {
-            label: 'Child Node1 child node2',
-            value: '0-0-0-1',
-          }],
-        }, {
-          label: 'Child Node2',
-          value: '0-0-1',
-          children: [{
-            label: 'Child Node2 child node1',
-            value: '0-0-1-0',
-          }, {
-            label: 'Child Node2 child node2',
-            value: '0-0-1-1',
-          }],
-        }],
-      }, {
-        label: 'Node2',
-        value: '0-1',
-        children: [{
-          label: 'Child Node3',
-          value: '0-1-0',
-          children: [{
-            label: 'Child Node3 child node1',
-            value: '0-1-0-0',
-          }, {
-            label: 'Child Node3 child node2',
-            value: '0-1-0-1',
-          }],
-        }, {
-          label: 'Child Node4',
-          value: '0-1-1',
-        }, {
-          label: 'Child Node5',
-          value: '0-1-2',
-        }],
-      }],
-      value: ["0-0-1", "0-0-1-0", "0-0-1-1"],
-    }
+      data: [
+        {
+          label: 'Node1',
+          value: '0-0',
+          children: [
+            {
+              label: 'Child Node1',
+              value: '0-0-0',
+              children: [
+                {
+                  label: 'Child Node1 child node1',
+                  value: '0-0-0-0',
+                },
+                {
+                  label: 'Child Node1 child node2',
+                  value: '0-0-0-1',
+                },
+              ],
+            },
+            {
+              label: 'Child Node2',
+              value: '0-0-1',
+              children: [
+                {
+                  label: 'Child Node2 child node1',
+                  value: '0-0-1-0',
+                },
+                {
+                  label: 'Child Node2 child node2',
+                  value: '0-0-1-1',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Node2',
+          value: '0-1',
+          children: [
+            {
+              label: 'Child Node3',
+              value: '0-1-0',
+              children: [
+                {
+                  label: 'Child Node3 child node1',
+                  value: '0-1-0-0',
+                },
+                {
+                  label: 'Child Node3 child node2',
+                  value: '0-1-0-1',
+                },
+              ],
+            },
+            {
+              label: 'Child Node4',
+              value: '0-1-1',
+            },
+            {
+              label: 'Child Node5',
+              value: '0-1-2',
+            },
+          ],
+        },
+      ],
+      value: ['0-0-1', '0-0-1-0', '0-0-1-1'],
+    };
   }
 
-
   render() {
-    const {data, value} = this.state
+    const { data, value } = this.state;
     return (
       <div>
         <MenuSelect
@@ -83,22 +101,22 @@ class Demo extends React.Component {
           width="100%"
           maxTagCount="responsive"
           showCheckedStrategy={MenuSelect.SHOW_CHILD}
-          defaultActiveValue={["0-0"]}
-          onChange={value => {
+          defaultActiveValue={['0-0']}
+          onChange={(value) => {
             this.setState({
-              value
-            })
-            console.log(value)
+              value,
+            });
+            console.log(value);
           }}
           onSelect={(option, menuIndex) => {
-            console.log(option, menuIndex)
+            console.log(option, menuIndex);
           }}
           onDropdownVisibleChange={(open) => {
-            console.log(open)
+            console.log(open);
           }}
           allowSearch
           onSearch={(value) => {
-            console.log(value)
+            console.log(value);
           }}
         />
       </div>

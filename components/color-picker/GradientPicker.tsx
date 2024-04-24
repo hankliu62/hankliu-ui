@@ -8,9 +8,7 @@ import { ColorPickerProps, ColorPickerValue } from './interfaces';
 import { hex2Rgb } from './util';
 
 function GradientPicker(props: ColorPickerProps) {
-  const {
-    width, value, style, className, onChange, ...rest
-  } = props;
+  const { width, value, style, className, onChange, ...rest } = props;
 
   const handleTypeChange = (type: string) => {
     const newValue = { ...value, type, angle: type !== 'linear' ? 0 : value?.angle };

@@ -18,10 +18,10 @@ import { Button } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(
   <>
-    <Button danger>
-      Primary
+    <Button danger>Primary</Button>
+    <Button type="secondary" danger>
+      Secondary
     </Button>
-    <Button type="secondary" danger>Secondary</Button>
     <Button type="dashed" danger>
       Dashed
     </Button>

@@ -39,11 +39,11 @@ cover: https://gw.alipayobjects.com/zos/antfincdn/4n5H%24UX%24j/bianzu%2525204.s
 
 > 更多支持参考 React 标准的 DivElement 属性
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| width | 设置宽度 | string\|number | '100%' |
-| ratio | 宽高比，可通过 ratio 来自动设置高度 | number | - |
-| className | 类名 | string | - |
-| style | 样式 | Object | - |
+| 参数      | 说明                                | 类型           | 默认值 |
+| --------- | ----------------------------------- | -------------- | ------ |
+| width     | 设置宽度                            | string\|number | '100%' |
+| ratio     | 宽高比，可通过 ratio 来自动设置高度 | number         | -      |
+| className | 类名                                | string         | -      |
+| style     | 样式                                | Object         | -      |
 
 > 更多支持参考 React 标准的 DivElement 属性

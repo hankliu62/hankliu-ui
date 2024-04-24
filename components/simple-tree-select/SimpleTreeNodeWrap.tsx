@@ -44,7 +44,8 @@ function SimpleTreeNodeWrap({
     walkTree(item.children, (node) => {
       treeValues.push(node.value);
     });
-    onlyParentChecked = value.indexOf(item.value) > -1 && intersection(value, treeValues).length === 0;
+    onlyParentChecked =
+      value.indexOf(item.value) > -1 && intersection(value, treeValues).length === 0;
   }
 
   const hasChildren = Boolean(item.children && item.children.length);
@@ -108,18 +109,18 @@ function SimpleTreeNodeWrap({
       />
       {!isFold && hasChildren
         ? item.children?.map((option, index) => (
-          <SimpleTreeNodeWrap
-            key={index}
-            defaultUnfoldAll={defaultUnfoldAll}
-            item={option}
-            checkTree={checkTree}
-            foldTree={foldTree}
-            value={value}
-            foldValue={foldValue}
-            onFoldValueChange={onFoldValueChange}
-            onChange={onChange}
-          />
-        ))
+            <SimpleTreeNodeWrap
+              key={index}
+              defaultUnfoldAll={defaultUnfoldAll}
+              item={option}
+              checkTree={checkTree}
+              foldTree={foldTree}
+              value={value}
+              foldValue={foldValue}
+              onFoldValueChange={onFoldValueChange}
+              onChange={onChange}
+            />
+          ))
         : null}
     </div>
   );

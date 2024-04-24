@@ -1,13 +1,8 @@
 import * as React from 'react';
-import VideoPlayer from '../video-player';
+import VideoPlayer, { VideoPlayerProps } from '../video-player';
 
-export default class Video extends React.Component<any, any> {
-  state: any = { loading: true };
+const Video = ({ src }: { src: VideoPlayerProps['source'] }) => {
+  return <VideoPlayer width="100%" height="100%" fit="flex" source={src} />;
+};
 
-  render() {
-    const { src } = this.props;
-    return (
-      <VideoPlayer width="100%" height="100%" fit="flex" source={src} />
-    );
-  }
-}
+export default Video;

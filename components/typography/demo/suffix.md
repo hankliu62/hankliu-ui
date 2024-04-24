@@ -23,7 +23,7 @@ class Demo extends React.Component {
     rows: 1,
   };
 
-  onChange = rows => {
+  onChange = (rows) => {
     this.setState({ rows });
   };
 
@@ -39,7 +39,7 @@ class Demo extends React.Component {
             rows,
             expandable: true,
             suffix: '--William Shakespeare',
-            onEllipsis: ellipsis => {
+            onEllipsis: (ellipsis) => {
               console.log('Ellipsis changed:', ellipsis);
             },
           }}

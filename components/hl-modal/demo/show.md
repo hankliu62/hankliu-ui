@@ -7,8 +7,7 @@ title:
 
 使用 `Modal.show()` 可以动态的控制显示弹窗
 
-
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 function show() {
@@ -17,8 +16,8 @@ function show() {
     children: (
       <div>
         <p>some messages...some messages...</p>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <Button onClick={() => mod.destroy()}>我知道了</Button>
       </div>
     ),
@@ -30,6 +29,6 @@ ReactDOM.render(
   <div>
     <Button onClick={show}>Show Modal</Button>
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```

@@ -3,15 +3,15 @@ import copy from 'copy-to-clipboard';
 import Message from '../message';
 
 export interface ClipboardProps {
-  tag: string,
-  text: string | Function,
-  onSuccess: Function,
-  children: React.ReactElement,
+  tag: string;
+  text: string | Function;
+  onSuccess: Function;
+  children: React.ReactElement;
   options?: {
     debug?: boolean;
     message?: string;
     format?: string; // MIME type
-  }
+  };
 }
 
 class HlClipboard extends React.Component<ClipboardProps, any> {
@@ -29,7 +29,7 @@ class HlClipboard extends React.Component<ClipboardProps, any> {
   onClick = (event: any) => {
     const { children, text, onSuccess, options } = this.props;
     const elem = React.Children.only(children);
-    const copyText = (typeof text === 'function') ? text() : text;
+    const copyText = typeof text === 'function' ? text() : text;
     const result = copy(copyText, options);
 
     if (onSuccess) {
@@ -37,9 +37,9 @@ class HlClipboard extends React.Component<ClipboardProps, any> {
     }
 
     if (elem?.props && typeof elem.props.onClick === 'function') {
-      elem.props.onClick(event)
+      elem.props.onClick(event);
     }
-  }
+  };
 
   render() {
     const { children, tag } = this.props;

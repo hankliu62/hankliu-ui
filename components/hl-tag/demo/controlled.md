@@ -13,21 +13,18 @@ title:
 
 By using the `visible` prop, you can control the close state of HlTag.
 
-````jsx
+```jsx
 import { HlTag, Button } from '@hankliu/hankliu-ui';
 
 class Demo extends React.Component {
   state = {
     visible: true,
-  }
+  };
 
   render() {
     return (
       <div>
-        <HlTag
-          visible={this.state.visible}
-          onClose={() => this.setState({ visible: false })}
-        >
+        <HlTag visible={this.state.visible} onClose={() => this.setState({ visible: false })}>
           Movies
         </HlTag>
         <br />
@@ -44,4 +41,4 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(<Demo />, mountNode);
-````
+```

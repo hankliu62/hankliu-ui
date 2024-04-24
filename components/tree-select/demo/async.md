@@ -38,7 +38,7 @@ class Demo extends React.Component {
   };
 
   onLoadData = ({ id }) =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(() => {
         this.setState({
           treeData: this.state.treeData.concat([
@@ -51,7 +51,7 @@ class Demo extends React.Component {
       }, 300);
     });
 
-  onChange = value => {
+  onChange = (value) => {
     console.log(value);
     this.setState({ value });
   };

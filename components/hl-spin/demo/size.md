@@ -13,7 +13,7 @@ title:
 
 A small `Spin` use in loading text, default `Spin` use in loading card-level block, and large `Spin` use in loading **page**.
 
-````jsx
+```jsx
 import { HlSpin as Spin } from '@hankliu/hankliu-ui';
 
 ReactDOM.render(
@@ -22,12 +22,12 @@ ReactDOM.render(
     <Spin />
     <Spin size="large" />
   </div>,
-  mountNode
+  mountNode,
 );
-````
+```
 
 <style>
-.ant-spin {
+.hlui-spin {
   margin-right: 16px;
 }
 </style>

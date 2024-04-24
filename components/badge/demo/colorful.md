@@ -36,7 +36,7 @@ ReactDOM.render(
   <>
     <Divider orientation="left">Presets</Divider>
     <div>
-      {colors.map(color => (
+      {colors.map((color) => (
         <div key={color}>
           <Badge color={color} text={color} />
         </div>

@@ -293,7 +293,7 @@ export interface InputPhoneProps {
   onPhoneFocus?: (e: FocusEvent) => void;
   className?: string;
   style?: CSSProperties;
-  size?: typeof InputSizes[number];
+  size?: (typeof InputSizes)[number];
 }
 
 export default function InputPhone({

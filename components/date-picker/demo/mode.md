@@ -22,7 +22,7 @@ const { RangePicker } = DatePicker;
 class ControlledDatePicker extends React.Component {
   state = { mode: 'time' };
 
-  handleOpenChange = open => {
+  handleOpenChange = (open) => {
     if (open) {
       this.setState({ mode: 'time' });
     }
@@ -57,7 +57,7 @@ class ControlledRangePicker extends React.Component {
     });
   };
 
-  handleChange = value => {
+  handleChange = (value) => {
     this.setState({ value });
   };
 

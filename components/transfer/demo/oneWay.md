@@ -26,7 +26,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const oriTargetKeys = mockData.filter(item => +item.key % 3 > 1).map(item => item.key);
+const oriTargetKeys = mockData.filter((item) => +item.key % 3 > 1).map((item) => item.key);
 
 class App extends React.Component {
   state = {
@@ -55,7 +55,7 @@ class App extends React.Component {
     console.log('target:', e.target);
   };
 
-  handleDisable = disabled => {
+  handleDisable = (disabled) => {
     this.setState({ disabled });
   };
 
@@ -71,7 +71,7 @@ class App extends React.Component {
           onChange={this.handleChange}
           onSelectChange={this.handleSelectChange}
           onScroll={this.handleScroll}
-          render={item => item.title}
+          render={(item) => item.title}
           disabled={disabled}
           oneWay
           style={{ marginBottom: 16 }}

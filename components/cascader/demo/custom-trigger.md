@@ -46,7 +46,7 @@ class CitySwitcher extends React.Component {
 
   onChange = (value, selectedOptions) => {
     this.setState({
-      text: selectedOptions.map(o => o.label).join(', '),
+      text: selectedOptions.map((o) => o.label).join(', '),
     });
   };
 

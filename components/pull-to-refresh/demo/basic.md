@@ -5,7 +5,7 @@ title: 基本
 
 最简单的用法。
 
-````jsx
+```jsx
 import { PullToRefresh } from '@hankliu/hankliu-ui';
 
 class Demo extends React.Component {
@@ -17,11 +17,19 @@ class Demo extends React.Component {
   render() {
     return (
       <PullToRefresh onRefresh={handleRefresh}>
-        <div style={{height: 200, backgroundColor: '#ddd',display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
+        <div
+          style={{
+            height: 200,
+            backgroundColor: '#ddd',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           下拉刷新
         </div>
       </PullToRefresh>
-    )
+    );
   }
 }
 
@@ -30,8 +38,5 @@ function handleRefresh(resolve, reject) {
   setTimeout(resolve, 3000);
 }
 
-ReactDOM.render(
-  <Demo />
-  , mountNode);
-
-````
+ReactDOM.render(<Demo />, mountNode);
+```

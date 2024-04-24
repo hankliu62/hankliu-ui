@@ -20,7 +20,7 @@ const options = [{ value: 'gold' }, { value: 'lime' }, { value: 'green' }, { val
 
 function tagRender(props) {
   const { label, value, closable, onClose } = props;
-  const onPreventMouseDown = event => {
+  const onPreventMouseDown = (event) => {
     event.preventDefault();
     event.stopPropagation();
   };

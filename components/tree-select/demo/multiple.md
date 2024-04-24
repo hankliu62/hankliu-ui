@@ -23,7 +23,7 @@ class Demo extends React.Component {
     value: undefined,
   };
 
-  onChange = value => {
+  onChange = (value) => {
     console.log(value);
     this.setState({ value });
   };

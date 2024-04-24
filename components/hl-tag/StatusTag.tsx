@@ -17,9 +17,7 @@ export default class StatusTag extends React.Component<StatusTagProps> {
   };
 
   render() {
-    const {
-      className, status, ghost, size, style, children,
-    } = this.props;
+    const { className, status, ghost, size, style, children } = this.props;
     const classNames = cs(className, {
       'hlui-hl-status-tag': true,
       [`ghost-${ghost}`]: ghost,

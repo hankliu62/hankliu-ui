@@ -1,9 +1,14 @@
 import React, { useRef, useState, useContext } from 'react';
 import pick from 'lodash/pick';
 import difference from 'lodash/difference';
-import debounce from 'lodash/debounce'
+import debounce from 'lodash/debounce';
 import { ConfigContext } from 'antd4x/lib/config-provider';
-import { deleteAncestorTreeNodes, deleteTreeNodes, getOptions, convertTree2Map } from '../_util/tree';
+import {
+  deleteAncestorTreeNodes,
+  deleteTreeNodes,
+  getOptions,
+  convertTree2Map,
+} from '../_util/tree';
 import Select from '../select';
 import Panel from './panel';
 import { EShowCheckedStrategy, MenuInputSelectProps } from './interfaces';
@@ -58,18 +63,19 @@ const MENU_PROP_NAMES = [
 export default function MenuInputSelect(props: MenuInputSelectProps) {
   const showCheckedStrategy = props.showCheckedStrategy || EShowCheckedStrategy.SHOW_CHILD;
   // 下拉菜单和选择器是否同宽
-  const dropdownMatchSelectWidth = 'dropdownMatchSelectWidth' in props ? props.dropdownMatchSelectWidth : false;
+  const dropdownMatchSelectWidth =
+    'dropdownMatchSelectWidth' in props ? props.dropdownMatchSelectWidth : false;
 
   // 选择器组件中搜索文本框值改变的回调
   const onSearchDebounce = props.onSearch && debounce(props.onSearch, 500);
 
-  const [searchValue, setSearchValue] = useState<string>()
+  const [searchValue, setSearchValue] = useState<string>();
 
   const context = useContext(ConfigContext);
   const prefixCls = context?.getPrefixCls();
 
   // 选择器对象
-  const selectRef = useRef<any>()
+  const selectRef = useRef<any>();
 
   function handleSelectChange(val: any) {
     const { onChange, options } = props;
@@ -92,8 +98,7 @@ export default function MenuInputSelect(props: MenuInputSelectProps) {
       });
       onChange(value);
     }
-  };
-
+  }
 
   // 选择器组件中搜索文本框值改变的回调
   function handleSearchValueChange(val: string) {
@@ -136,11 +141,14 @@ export default function MenuInputSelect(props: MenuInputSelectProps) {
   }
 
   const renderOverlay = () => {
-    const selectProps: any = pick({
-      ...props,
-      showCheckedStrategy,
-      dropdownMatchSelectWidth,
-    }, MENU_PROP_NAMES);
+    const selectProps: any = pick(
+      {
+        ...props,
+        showCheckedStrategy,
+        dropdownMatchSelectWidth,
+      },
+      MENU_PROP_NAMES,
+    );
 
     return (
       <div onMouseDown={stopPropagation} className={`${prefixCls}-menu-dropdown`}>
@@ -150,11 +158,14 @@ export default function MenuInputSelect(props: MenuInputSelectProps) {
   };
 
   const { allowSearch, onDropdownVisibleChange, ...restProps } = props;
-  const selectProps: any = pick({
-    ...restProps,
-    showCheckedStrategy,
-    dropdownMatchSelectWidth,
-  }, SELECT_PROP_NAMES);
+  const selectProps: any = pick(
+    {
+      ...restProps,
+      showCheckedStrategy,
+      dropdownMatchSelectWidth,
+    },
+    SELECT_PROP_NAMES,
+  );
   if (!allowSearch) {
     if (selectProps.className) {
       selectProps.className += ` ${prefixCls}-menu-select-input`;

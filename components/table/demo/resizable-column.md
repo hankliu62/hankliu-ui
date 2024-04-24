@@ -18,7 +18,7 @@ Implement resizable column by integrate with [react-resizable](https://github.co
 import { Table } from '@hankliu/hankliu-ui';
 import { Resizable } from 'react-resizable';
 
-const ResizableTitle = props => {
+const ResizableTitle = (props) => {
   const { onResize, width, ...restProps } = props;
 
   if (!width) {
@@ -32,7 +32,7 @@ const ResizableTitle = props => {
       handle={
         <span
           className="react-resizable-handle"
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
           }}
         />
@@ -107,21 +107,23 @@ class Demo extends React.Component {
     },
   ];
 
-  handleResize = index => (e, { size }) => {
-    this.setState(({ columns }) => {
-      const nextColumns = [...columns];
-      nextColumns[index] = {
-        ...nextColumns[index],
-        width: size.width,
-      };
-      return { columns: nextColumns };
-    });
-  };
+  handleResize =
+    (index) =>
+    (e, { size }) => {
+      this.setState(({ columns }) => {
+        const nextColumns = [...columns];
+        nextColumns[index] = {
+          ...nextColumns[index],
+          width: size.width,
+        };
+        return { columns: nextColumns };
+      });
+    };
 
   render() {
     const columns = this.state.columns.map((col, index) => ({
       ...col,
-      onHeaderCell: column => ({
+      onHeaderCell: (column) => ({
         width: column.width,
         onResize: this.handleResize(index),
       }),

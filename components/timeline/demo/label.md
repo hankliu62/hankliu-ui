@@ -20,7 +20,7 @@ import { Timeline, Radio } from '@hankliu/hankliu-ui';
 function TimelimeLabelDemo() {
   const [mode, setMode] = useState('left');
 
-  const onChange = e => {
+  const onChange = (e) => {
     setMode(e.target.value);
   };
 

@@ -29,8 +29,8 @@ class LoadMoreList extends React.Component {
 
   componentDidMount() {
     fetch(fakeDataUrl)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           initLoading: false,
           data: res.results,
@@ -47,8 +47,8 @@ class LoadMoreList extends React.Component {
       ),
     });
     fetch(fakeDataUrl)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         const data = this.state.data.concat(res.results);
         this.setState(
           {
@@ -89,7 +89,7 @@ class LoadMoreList extends React.Component {
         itemLayout="horizontal"
         loadMore={loadMore}
         dataSource={list}
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item
             actions={[<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
           >
@@ -97,7 +97,7 @@ class LoadMoreList extends React.Component {
               <List.Item.Meta
                 avatar={<Avatar src={item.picture.large} />}
                 title={<a href="https://ant.design">{item.name.last}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                description="HankLiu UI, a design language for background applications, is refined by Ant UED Team"
               />
               <div>content</div>
             </Skeleton>

@@ -30,7 +30,7 @@ function handleChange(value) {
 const SelectSizesDemo = () => {
   const [size, setSize] = React.useState('default');
 
-  const handleSizeChange = e => {
+  const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
 

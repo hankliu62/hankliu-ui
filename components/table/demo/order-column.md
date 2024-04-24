@@ -61,7 +61,7 @@ ReactDOM.render(
     columns={columns}
     rowSelection={{}}
     expandable={{
-      expandedRowRender: record => <p style={{ margin: 0 }}>{record.description}</p>,
+      expandedRowRender: (record) => <p style={{ margin: 0 }}>{record.description}</p>,
     }}
     dataSource={data}
   />,

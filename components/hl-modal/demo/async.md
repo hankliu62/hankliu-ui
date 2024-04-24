@@ -11,10 +11,9 @@ title:
 
 ## en-US
 
-Asynchronously close a modal dialog when a user clicked OK button, for example,
-you can use this pattern when you submit a form.
+Asynchronously close a modal dialog when a user clicked OK button, for example, you can use this pattern when you submit a form.
 
-````jsx
+```jsx
 import { HlModal as Modal, Button } from '@hankliu/hankliu-ui';
 
 class App extends React.Component {
@@ -22,13 +21,13 @@ class App extends React.Component {
     ModalText: 'Content of the modal',
     open: false,
     confirmLoading: false,
-  }
+  };
 
   showModal = () => {
     this.setState({
       open: true,
     });
-  }
+  };
 
   handleOk = () => {
     this.setState({
@@ -41,14 +40,14 @@ class App extends React.Component {
         confirmLoading: false,
       });
     }, 2000);
-  }
+  };
 
   handleCancel = () => {
     console.log('Clicked cancel button');
     this.setState({
       open: false,
     });
-  }
+  };
 
   render() {
     const { open, confirmLoading, ModalText } = this.state;
@@ -72,4 +71,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, mountNode);
-````
+```

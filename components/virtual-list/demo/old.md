@@ -16,7 +16,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      items: times(3000, idx => idx + 1),
+      items: times(3000, (idx) => idx + 1),
     };
   }
 
@@ -32,7 +32,11 @@ class Demo extends React.Component {
 
 function renderItem(item, idx) {
   return (
-    <div className="hlui-list-item" key={idx} style={{ height: 60, lineHeight: '60px', border: '1px solid black' }}>
+    <div
+      className="hlui-list-item"
+      key={idx}
+      style={{ height: 60, lineHeight: '60px', border: '1px solid black' }}
+    >
       {item}
     </div>
   );
@@ -56,5 +60,4 @@ ReactDOM.render(<Demo />, mountNode);
 .ListItemEven {
   background-color: #f8f8f0;
 }
-
 ```

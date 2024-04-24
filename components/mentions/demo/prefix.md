@@ -42,7 +42,7 @@ class App extends React.Component {
         prefix={['@', '#']}
         onSearch={this.onSearch}
       >
-        {(MOCK_DATA[prefix] || []).map(value => (
+        {(MOCK_DATA[prefix] || []).map((value) => (
           <Option key={value} value={value}>
             {value}
           </Option>

@@ -61,9 +61,9 @@ ReactDOM.render(
       title="Tags"
       dataIndex="tags"
       key="tags"
-      render={tags => (
+      render={(tags) => (
         <>
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <Tag color="blue" key={tag}>
               {tag}
             </Tag>

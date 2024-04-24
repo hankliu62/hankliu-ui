@@ -11,14 +11,10 @@ title:
 
 ## en-US
 
-````jsx
+```jsx
 import { HlPopover, Button } from '@hankliu/hankliu-ui';
 
-const content = (
-  <div>
-    由自己控制 padding
-  </div>
-);
+const content = <div>由自己控制 padding</div>;
 
 ReactDOM.render(
   <div>
@@ -28,4 +24,4 @@ ReactDOM.render(
   </div>,
   mountNode,
 );
-````
+```

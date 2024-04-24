@@ -40,7 +40,7 @@ const LazyOptions = () => {
     console.log(value, selectedOptions);
   };
 
-  const loadData = selectedOptions => {
+  const loadData = (selectedOptions) => {
     const targetOption = selectedOptions[selectedOptions.length - 1];
     targetOption.loading = true;
 

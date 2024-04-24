@@ -7,7 +7,7 @@ title:
 
 ## zh-CN
 
-此处列出 Ant Design 中需要国际化支持的组件，你可以在演示里切换语言。
+此处列出 HankLiu UI 中需要国际化支持的组件，你可以在演示里切换语言。
 
 ## en-US
 
@@ -106,7 +106,7 @@ class Page extends React.Component {
           </Popconfirm>
         </div>
         <div className="example">
-          <Transfer dataSource={[]} showSearch targetKeys={[]} render={item => item.title} />
+          <Transfer dataSource={[]} showSearch targetKeys={[]} render={(item) => item.title} />
         </div>
         <div className="site-config-provider-calendar-wrapper">
           <Calendar fullscreen={false} value={moment()} />
@@ -130,7 +130,7 @@ class App extends React.Component {
     };
   }
 
-  changeLocale = e => {
+  changeLocale = (e) => {
     const localeValue = e.target.value;
     this.setState({ locale: localeValue });
     if (!localeValue) {

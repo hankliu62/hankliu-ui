@@ -23,7 +23,7 @@ appendDefaultProps();
 export * from 'antd4x/lib/empty';
 export interface EmptyProps extends LibEmptyProps {
   height?: string | number;
-  size?: 'small'|'large'|'normal';
+  size?: 'small' | 'large' | 'normal';
 }
 
 const IMAGES = {
@@ -44,9 +44,7 @@ const IMAGES = {
 };
 
 function Empty(props: EmptyProps) {
-  const {
-    height, size, className, children, ...rest
-  } = props;
+  const { height, size, className, children, ...rest } = props;
   let { style } = props;
   style = style || {};
   let emptyHeight: string | number = '100%';

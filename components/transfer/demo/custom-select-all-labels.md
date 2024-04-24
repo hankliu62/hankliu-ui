@@ -27,7 +27,7 @@ for (let i = 0; i < 10; i++) {
   });
 }
 
-const oriTargetKeys = mockData.filter(item => +item.key % 3 > 1).map(item => item.key);
+const oriTargetKeys = mockData.filter((item) => +item.key % 3 > 1).map((item) => item.key);
 
 const selectAllLabels = [
   'Select All',
@@ -41,7 +41,7 @@ const App = () => {
       dataSource={mockData}
       targetKeys={targetKeys}
       onChange={setTargetKeys}
-      render={item => item.title}
+      render={(item) => item.title}
       selectAllLabels={selectAllLabels}
     />
   );

@@ -19,7 +19,7 @@ import { Mentions } from '@hankliu/hankliu-ui';
 const { Option } = Mentions;
 
 function getOptions() {
-  return ['afc163', 'zombiej', 'yesmeck'].map(value => (
+  return ['afc163', 'zombiej', 'yesmeck'].map((value) => (
     <Option key={value} value={value}>
       {value}
     </Option>

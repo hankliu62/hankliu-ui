@@ -16,6 +16,6 @@ const InfoSvg: React.FC = () => (
       fill="#349AF9"
     />
   </svg>
-)
+);
 
 export default InfoSvg;

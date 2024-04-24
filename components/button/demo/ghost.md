@@ -21,7 +21,9 @@ ReactDOM.render(
     <Button type="primary" ghost>
       Primary
     </Button>
-    <Button type="secondary" ghost>Secondary</Button>
+    <Button type="secondary" ghost>
+      Secondary
+    </Button>
     <Button type="dashed" ghost>
       Dashed
     </Button>

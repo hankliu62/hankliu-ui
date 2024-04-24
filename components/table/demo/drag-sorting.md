@@ -26,7 +26,7 @@ const DraggableBodyRow = ({ index, moveRow, className, style, ...restProps }) =>
   const ref = useRef();
   const [{ isOver, dropClassName }, drop] = useDrop({
     accept: type,
-    collect: monitor => {
+    collect: (monitor) => {
       const { index: dragIndex } = monitor.getItem() || {};
       if (dragIndex === index) {
         return {};
@@ -36,14 +36,14 @@ const DraggableBodyRow = ({ index, moveRow, className, style, ...restProps }) =>
         dropClassName: dragIndex < index ? ' drop-over-downward' : ' drop-over-upward',
       };
     },
-    drop: item => {
+    drop: (item) => {
       moveRow(item.index, index);
     },
   });
   const [, drag] = useDrag({
     type,
     item: { index },
-    collect: monitor => ({
+    collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
   });
