@@ -234,7 +234,6 @@ const ChaptersProgress: ForwardRefRenderFunction<ChaptersProgressHandles, Chapte
   { onSeek, onSeeking, duration, currentTime, videoChapterList, previewFrameData },
   ref,
 ) => {
-
   const [clientX, setClientX] = useState(0);
 
   const [hover, setHover] = useState(false);
@@ -362,7 +361,7 @@ const ChaptersProgress: ForwardRefRenderFunction<ChaptersProgressHandles, Chapte
         : [{ startTime: 0, endTime: duration }];
     const availableWidth = rect.width - (actualVideoChapterList.length - 1) * CHAPTER_BAR_SPACING;
     chaptersWidthListRef.current = [];
-    return actualVideoChapterList.map(item => {
+    return actualVideoChapterList.map((item) => {
       const { startTime, endTime } = item;
       const length = endTime - startTime;
       const width = Math.round(availableWidth * (length / duration));
@@ -460,7 +459,10 @@ const ChaptersProgress: ForwardRefRenderFunction<ChaptersProgressHandles, Chapte
         })}
       </div>
       <div className="hlui-chapters-progress-item-indicator" style={indicatorStyle} />
-      <div className="hlui-chapters-progress-item-preview-indicator" style={previewIndicatorStyle} />
+      <div
+        className="hlui-chapters-progress-item-preview-indicator"
+        style={previewIndicatorStyle}
+      />
       {previewFrameData ? (
         <VideoFramePreview
           horizontalPreviewFrameCount={previewFrameData.horizontalPreviewFrameCount}

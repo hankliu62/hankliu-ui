@@ -26,6 +26,11 @@ timeline: false
 
 开发一套基于 `AntDesign@4.x` 的 `React UI` 组件库，有自己的主题，丰富 `AntDesign` 的组件。
 
+## 0.0.5
+
+- 🐞 修复组件 `VideoPlayer` 无法播放视频。
+- 🐞 修复组件 `VideoPlayer` 等样式问题。
+
 ## 0.0.4
 
 - 🗑 移除 `dist` 文件夹，只支持 `import` 按需引入的方式。

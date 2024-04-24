@@ -18,7 +18,7 @@ title: VideoPlayer
 | autoplay | 自动播放 | boolean | false |
 | loop | 设置循环播放 | boolean | false |
 | download | 支持下载，基于 a 标签的 download 来实现 | boolean | false |
-| poster | 默认（第一帧）图片| string | 无 |
+| poster | 默认（第一帧）图片 | string | 无 |
 | muted | 是否静音 | boolean | false |
 | size | 大小配置，可选值 `small` | string | - |
 | onEnded | 视频播放完的事件 | (e) => void | - |
@@ -28,29 +28,30 @@ title: VideoPlayer
 | videoChapterList | 视频章节数据 | VideoChapterItem[] | - |
 | previewFrameData | 视频预览帧数据 | PreviewFrameData | - |
 
-
 ### VideoChapterItem
-| 参数 | 说明 | 类型 |
-| --- | --- | --- |
+
+| 参数      | 说明                 | 类型   |
+| --------- | -------------------- | ------ |
 | startTime | 章节开始时间（毫秒） | number |
-| endTime | 章节开始时间（毫秒） | number |
+| endTime   | 章节开始时间（毫秒） | number |
 
 ### previewFrameData
-| 参数 | 说明 | 类型 |
-| --- | --- | --- |
-| horizontalPreviewFrameCount |水平方向预览帧的数量 | number |
-| verticalPreviewFrameCount | 竖直方向预览帧的数量 | number |
-| previewFrameWidth | 预览帧宽度 | number |
-| previewFrameHeight | 预览帧高度 | number |
-| previewFrameGroup | 预览帧组 | PreviewFrameItem[] |
 
+| 参数                        | 说明                 | 类型               |
+| --------------------------- | -------------------- | ------------------ |
+| horizontalPreviewFrameCount | 水平方向预览帧的数量 | number             |
+| verticalPreviewFrameCount   | 竖直方向预览帧的数量 | number             |
+| previewFrameWidth           | 预览帧宽度           | number             |
+| previewFrameHeight          | 预览帧高度           | number             |
+| previewFrameGroup           | 预览帧组             | PreviewFrameItem[] |
 
 ### PreviewFrameItem
-| 参数 | 说明 | 类型 |
-| --- | --- | --- |
-| startTime |预览帧组的开始时间 | number |
-| endTime | 预览帧组的结束时间 | number |
-| url | 预览帧组图片链接 | string |
+
+| 参数      | 说明               | 类型   |
+| --------- | ------------------ | ------ |
+| startTime | 预览帧组的开始时间 | number |
+| endTime   | 预览帧组的结束时间 | number |
+| url       | 预览帧组图片链接   | string |
 
 #### 高度设置
 
@@ -69,4 +70,3 @@ title: VideoPlayer
 - `play` 播放
 - `pause` 暂停
 - `setPlayerCurrentTime` 设置播放时间
-

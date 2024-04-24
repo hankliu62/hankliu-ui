@@ -145,6 +145,7 @@ const VideoPlayer: ForwardRefRenderFunction<VideoPlayerHandles, ChaptersVideoPla
   ref,
 ) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoSourceRef = useRef<HTMLSourceElement>(null);
   const wrapRef = useRef<PolyfillHTMLElement>(null);
   const chaptersProgressRef = useRef<ChaptersProgressHandles>(null);
 
@@ -341,36 +342,6 @@ const VideoPlayer: ForwardRefRenderFunction<VideoPlayerHandles, ChaptersVideoPla
   }, [ready]);
 
   const debounceSetVideoStyle = useCallback(debounce(setVideoStyle, 30), []);
-
-  useEffect(() => {
-    // 在处理视频，防止视频源暴露问题，以及资源的播放加载问题
-    // 视频”分段缓冲播放“处理
-    if (MediaSource && URL.createObjectURL) {
-      // 创建MediaSource对象
-      const mediaSource = new MediaSource();
-
-      // 将mediaSource通过createObjectURL函数赋值给src
-      videoRef.current.src = URL.createObjectURL(mediaSource);
-
-      // 监听sourceopen事件，当video产生src时，处理视频数据
-      mediaSource.addEventListener('sourceopen', sourceOpen);
-
-      function sourceOpen() {
-        // 构建一个存放视屏数据的 Buffer
-        const sourceBuffer = mediaSource.addSourceBuffer(
-          'video/mp4; codecs="avc1.42E01E, mp4a.40.2"',
-        );
-
-        // 监听updateend事件，数据加载完毕就播放视频
-        sourceBuffer.addEventListener('updateend', function () {
-          mediaSource.endOfStream();
-        });
-
-        // 添加缓冲数据，buf是用于存储视频数据的缓冲数组
-        sourceBuffer.appendBuffer(buf);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     document.addEventListener(FC_EVENT_NAME, handleFC, false);

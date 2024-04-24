@@ -11,4 +11,4 @@ function PlaybackRateTips({ playbackRate }: PlaybackRateTipsProps) {
   return <div className="hlui-chapters-video-tip-pr">{`${playbackRate.toFixed(1)} x`}</div>;
 }
 
-export default PlaybackRateTips
+export default PlaybackRateTips;

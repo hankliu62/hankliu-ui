@@ -151,12 +151,15 @@ jobs:
 
       - name: 从 package.json 中获得版本 ⭐
         id: version
-        run: echo "VERSION=$(node -p 'require(`./package.json`).published')" >> $GITHUB_ENV
+        run: echo "VERSION=$(node -p 'require(`./package.json`).version')" >> $GITHUB_ENV
 
       # 获得最后的Tag
       - name: 获得最后 Tag
         id: get_tag
-        run: echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+        run: |
+          git config --local user.email "${{ secrets.MY_GIT_USER_EMAIL }}"
+          git config --local user.name "${{ secrets.MY_GIT_USER_NAME }}"
+          echo "LAST_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
       - name: 提交 Tag 🏄
         id: tag

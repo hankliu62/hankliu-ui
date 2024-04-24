@@ -63,8 +63,9 @@ function VideoFramePreview({
   const frameStyle: any = {
     width: previewFrameWidth,
     height: previewFrameHeight,
-    backgroundSize: `${horizontalPreviewFrameCount *
-      previewFrameWidth}px ${verticalPreviewFrameCount * previewFrameHeight}px`,
+    backgroundSize: `${horizontalPreviewFrameCount * previewFrameWidth}px ${
+      verticalPreviewFrameCount * previewFrameHeight
+    }px`,
   };
   for (let i = 0; i < previewFrameGroup.length; i++) {
     const item = previewFrameGroup[i];
@@ -98,4 +99,4 @@ function VideoFramePreview({
   );
 }
 
-export default React.memo(VideoFramePreview)
+export default React.memo(VideoFramePreview);
