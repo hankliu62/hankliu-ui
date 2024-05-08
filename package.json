@@ -73,7 +73,7 @@
     "@hankliu/colors": "^0.0.2",
     "@icons/material": "^0.4.1",
     "@qixian.cs/github-contributors-list": "^2.0.1",
-    "@stackblitz/sdk": "~1.8.2",
+    "@stackblitz/sdk": "~1.10.0",
     "@types/file-saver": "^2.0.7",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
