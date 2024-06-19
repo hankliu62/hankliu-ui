@@ -160,7 +160,7 @@
     "theme-switcher": "^1.0.2",
     "typescript": "^5.4.5",
     "url-loader": "^3.0.0",
-    "webpack": "4.46.0",
+    "webpack": "5.92.1",
     "webpack-bundle-analyzer": "^4.10.2"
   },
   "peerDependencies": {
